@@ -13,6 +13,7 @@
 		D5983E232665D6AC00C199EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5983E212665D6AC00C199EA /* Main.storyboard */; };
 		D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5983E242665D6AD00C199EA /* Assets.xcassets */; };
 		D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5983E262665D6AD00C199EA /* LaunchScreen.storyboard */; };
+		D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0D61726678FFF0027AEF2 /* StructEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D5983E242665D6AD00C199EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5983E272665D6AD00C199EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5983E292665D6AD00C199EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5B0D61726678FFF0027AEF2 /* StructEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		D5983E1A2665D6AC00C199EA /* victory */ = {
 			isa = PBXGroup;
 			children = (
-				D5983E1B2665D6AC00C199EA /* AppDelegate.swift */,
-				D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */,
-				D5983E1F2665D6AC00C199EA /* ViewController.swift */,
-				D5983E212665D6AC00C199EA /* Main.storyboard */,
 				D5983E242665D6AD00C199EA /* Assets.xcassets */,
-				D5983E262665D6AD00C199EA /* LaunchScreen.storyboard */,
-				D5983E292665D6AD00C199EA /* Info.plist */,
+				D5B0D61026678D150027AEF2 /* Supporting Files */,
+				D5B0D60D26678D050027AEF2 /* Models */,
+				D5B0D60E26678D0B0027AEF2 /* Views */,
+				D5B0D60F26678D0F0027AEF2 /* Controllers */,
 			);
 			path = victory;
+			sourceTree = "<group>";
+		};
+		D5B0D60D26678D050027AEF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0D61726678FFF0027AEF2 /* StructEnum.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5B0D60E26678D0B0027AEF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5983E262665D6AD00C199EA /* LaunchScreen.storyboard */,
+				D5983E212665D6AC00C199EA /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D5B0D60F26678D0F0027AEF2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5983E1F2665D6AC00C199EA /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D5B0D61026678D150027AEF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5983E1B2665D6AC00C199EA /* AppDelegate.swift */,
+				D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */,
+				D5983E292665D6AD00C199EA /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5983E202665D6AC00C199EA /* ViewController.swift in Sources */,
+				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);
@@ -288,7 +324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
-				INFOPLIST_FILE = victory/Info.plist;
+				INFOPLIST_FILE = "victory/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
-				INFOPLIST_FILE = victory/Info.plist;
+				INFOPLIST_FILE = "victory/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
