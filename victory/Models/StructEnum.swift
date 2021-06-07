@@ -12,6 +12,17 @@ enum Kelas: Int {
     case k10 = 10
     case k11 = 11
     case k12 = 12
+    
+    func getImage() -> UIImage {
+        switch self {
+        case .k10:
+            return UIImage(named: "tortoise")!
+        case .k11:
+            return UIImage(named: "hare")!
+        case .k12:
+            return UIImage(named: "bolt")!
+        }
+    }
 }
 
 enum Mapel: String {
@@ -40,5 +51,37 @@ struct Praktikum {
     var nama: String
     var gambar: UIImage
     var kelas: Kelas
+    var mataPelajaran: Mapel
+    var pertanyaanQuiz: [Question]
+}
+
+struct Question {
+    let text: String
     
+    //Multiple choice questions have multiple answers, an Array of Strings would work for our quiz data.
+    let answers: [String]
+    //Look at the data in the quiz array, there is a seperate string that is the correctAnswer.
+    let rightAnswer: String
+    
+    let pembahasan: String
+    
+    //The initialiser needs to be updated to match the new multiple choice quiz data.
+    init(q: String, a: [String], correctAnswer: String, solusi: String) {
+        text = q
+        answers = a
+        rightAnswer = correctAnswer
+        pembahasan = solusi
+    }
+}
+
+struct TujuanPraktikum {
+    var textTujuan: String
+    var iconTujuan: UIImage
+    // MARK: - INI NANTI DIDISKUIIN LAGI,PERLU PAKE ICON ATAU CUKUP DENGAN PENOMORAN AJA
+}
+
+struct AlatPraktikum{
+    var namaAlat: String
+    var deskripsiAlat: String
+    var gambarAlat: UIImage
 }
