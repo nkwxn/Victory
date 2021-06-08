@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
+		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
 		D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1B2665D6AC00C199EA /* AppDelegate.swift */; };
 		D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */; };
 		D5983E202665D6AC00C199EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1F2665D6AC00C199EA /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
 		D5983E182665D6AC00C199EA /* victory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5983E1B2665D6AC00C199EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		D5B0D60E26678D0B0027AEF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D540E8FC266F6E9600FACF72 /* WebKitView */,
 				D5983E262665D6AD00C199EA /* LaunchScreen.storyboard */,
 				D5983E212665D6AC00C199EA /* Main.storyboard */,
 			);
@@ -168,6 +171,7 @@
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
+				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
