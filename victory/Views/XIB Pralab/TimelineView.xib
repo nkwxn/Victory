@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUh-ux-AQG">
+                    <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lz4-s7-WBP" userLabel="Lab Background" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
                     <rect key="frame" x="387" y="6" width="420" height="32"/>
                     <subviews>
@@ -238,11 +243,14 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="vc_nav_bar"/>
             <constraints>
+                <constraint firstItem="JUh-ux-AQG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2Ce-zS-Vfl"/>
                 <constraint firstItem="S8b-XS-Kqb" firstAttribute="leading" secondItem="Lz4-s7-WBP" secondAttribute="trailing" constant="60" id="8WB-hC-vzF"/>
                 <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="ySc-bH-N6N" secondAttribute="bottom" constant="12" id="9td-VW-NQW"/>
                 <constraint firstItem="Lz4-s7-WBP" firstAttribute="leading" secondItem="ySc-bH-N6N" secondAttribute="trailing" constant="60" id="DDg-FC-rLK"/>
                 <constraint firstItem="5dA-HG-m9o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="G2f-UJ-BX1"/>
+                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="JUh-ux-AQG" secondAttribute="bottom" id="GdJ-fJ-zSf"/>
                 <constraint firstItem="sgU-X8-axC" firstAttribute="leading" secondItem="Lz4-s7-WBP" secondAttribute="trailing" constant="10" id="Ikw-v7-mxG"/>
+                <constraint firstItem="JUh-ux-AQG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="KmK-FQ-BSm"/>
                 <constraint firstItem="ySc-bH-N6N" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="L1Z-mH-fB5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Lz4-s7-WBP" secondAttribute="bottom" constant="12" id="N3r-GR-8AF"/>
                 <constraint firstItem="vKA-rI-1Ju" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="22" id="Qb1-gO-QWb"/>
@@ -250,6 +258,7 @@
                 <constraint firstItem="vKA-rI-1Ju" firstAttribute="leading" secondItem="ySc-bH-N6N" secondAttribute="trailing" constant="10" id="byw-mg-eeF"/>
                 <constraint firstItem="sgU-X8-axC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="22" id="c6r-wQ-Mv6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5dA-HG-m9o" secondAttribute="bottom" id="cUo-DD-jtI"/>
+                <constraint firstItem="JUh-ux-AQG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="cw3-XW-5uu"/>
                 <constraint firstItem="Lz4-s7-WBP" firstAttribute="leading" secondItem="vKA-rI-1Ju" secondAttribute="trailing" constant="10" id="g1I-1A-DeG"/>
                 <constraint firstItem="S8b-XS-Kqb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="isf-Iq-WTU"/>
                 <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="S8b-XS-Kqb" secondAttribute="bottom" constant="12" id="k6n-j7-Vsg"/>
@@ -261,6 +270,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="contentView" destination="JUh-ux-AQG" id="Kgb-Vp-l3h"/>
                 <outlet property="kuisBtn" destination="ZhJ-Td-BCu" id="tq9-wi-tiT"/>
                 <outlet property="kuisPill" destination="S8b-XS-Kqb" id="vtX-Jl-g39"/>
                 <outlet property="labBg" destination="Lz4-s7-WBP" id="ZUt-Sq-c3T"/>
@@ -298,5 +308,8 @@
         <namedColor name="vc_separator">
             <color red="0.68199998140335083" green="0.68199998140335083" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
