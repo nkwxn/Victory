@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0VD-xx-QKv">
-    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,21 +9,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Materi View Controller-->
+        <!--Fisika-->
         <scene sceneID="HAk-Vg-DX2">
             <objects>
                 <viewController id="PG9-na-59i" customClass="MateriViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV7-QI-PeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="859.5" height="820"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mS-vc-dBz">
-                                <rect key="frame" x="0.0" y="50" width="859" height="44"/>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Temukan Eksperimen" translatesAutoresizingMaskIntoConstraints="NO" id="0mS-vc-dBz">
+                                <rect key="frame" x="0.0" y="50" width="873" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-Ye-Iny">
-                                <rect key="frame" x="0.0" y="94" width="859" height="706"/>
+                                <rect key="frame" x="0.0" y="94" width="873" height="720"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lXP-t1-ung">
@@ -47,21 +47,21 @@
                         <viewLayoutGuide key="safeArea" id="K89-Rz-LbC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OA1-Ao-POs"/>
+                    <navigationItem key="navigationItem" title="Fisika" id="OA1-Ao-POs"/>
                     <connections>
                         <segue destination="fIK-T7-WC0" kind="show" identifier="" id="oHg-mA-YsL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpx-d5-7jb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1239.6610169491526" y="441.21951219512192"/>
+            <point key="canvasLocation" x="1239.1959798994974" y="441.00719424460436"/>
         </scene>
         <!--Media View Controller-->
         <scene sceneID="ftI-fO-QnB">
             <objects>
                 <viewController id="fIK-T7-WC0" customClass="MediaViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oE6-yn-rh1">
-                        <rect key="frame" x="0.0" y="0.0" width="859.5" height="820"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="XBw-d9-GHU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -76,12 +76,12 @@
             </objects>
             <point key="canvasLocation" x="1908" y="440"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Eksperimen-->
         <scene sceneID="1Xm-as-d5Y">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="imt-g9-mnS" customClass="MataPelajaranTableController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="nuO-vs-3uK">
-                        <rect key="frame" x="0.0" y="0.0" width="420" height="820"/>
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
                             <tableViewSection id="ai3-Ah-OxX">
@@ -179,7 +179,7 @@
                             <outlet property="delegate" destination="imt-g9-mnS" id="M1a-ht-nJV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="LO6-eZ-6xB"/>
+                    <navigationItem key="navigationItem" title="Eksperimen" id="LO6-eZ-6xB"/>
                     <connections>
                         <outlet property="subjectListTableView" destination="nuO-vs-3uK" id="u01-mn-sd4"/>
                     </connections>
@@ -223,7 +223,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sdc-Xa-Dgq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="biR-vx-FQO">
-                        <rect key="frame" x="0.0" y="0.0" width="859.5" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
