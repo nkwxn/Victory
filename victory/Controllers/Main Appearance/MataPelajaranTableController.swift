@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabelEksperimenController: UITableViewController {
+class MataPelajaranTableController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

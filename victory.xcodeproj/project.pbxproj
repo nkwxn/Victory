@@ -10,30 +10,40 @@
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
+		D583289C267091D4007753E9 /* MateriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D583289B267091D4007753E9 /* MateriViewController.swift */; };
+		D583289E2670928A007753E9 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D583289D2670928A007753E9 /* MediaViewController.swift */; };
+		D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A0267093FE007753E9 /* PraktikumBerpanduan.storyboard */; };
+		D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A22670943D007753E9 /* PraktikumTanpaPanduan.storyboard */; };
+		D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A42670948A007753E9 /* TryoutXIB.storyboard */; };
+		D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328A626709527007753E9 /* XIBTryoutViewController.swift */; };
 		D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1B2665D6AC00C199EA /* AppDelegate.swift */; };
 		D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */; };
-		D5983E202665D6AC00C199EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1F2665D6AC00C199EA /* ViewController.swift */; };
 		D5983E232665D6AC00C199EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5983E212665D6AC00C199EA /* Main.storyboard */; };
 		D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5983E242665D6AD00C199EA /* Assets.xcassets */; };
 		D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5983E262665D6AD00C199EA /* LaunchScreen.storyboard */; };
 		D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0D61726678FFF0027AEF2 /* StructEnum.swift */; };
-		D5B0D63C2668B7070027AEF2 /* TabelEksperimenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0D63B2668B7070027AEF2 /* TabelEksperimenController.swift */; };
+		D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0D63B2668B7070027AEF2 /* MataPelajaranTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
+		D583289B267091D4007753E9 /* MateriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriViewController.swift; sourceTree = "<group>"; };
+		D583289D2670928A007753E9 /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		D58328A0267093FE007753E9 /* PraktikumBerpanduan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PraktikumBerpanduan.storyboard; sourceTree = "<group>"; };
+		D58328A22670943D007753E9 /* PraktikumTanpaPanduan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PraktikumTanpaPanduan.storyboard; sourceTree = "<group>"; };
+		D58328A42670948A007753E9 /* TryoutXIB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TryoutXIB.storyboard; sourceTree = "<group>"; };
+		D58328A626709527007753E9 /* XIBTryoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBTryoutViewController.swift; sourceTree = "<group>"; };
 		D5983E182665D6AC00C199EA /* victory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5983E1B2665D6AC00C199EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D5983E1F2665D6AC00C199EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D5983E222665D6AC00C199EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5983E242665D6AD00C199EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5983E272665D6AD00C199EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5983E292665D6AD00C199EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5B0D61726678FFF0027AEF2 /* StructEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructEnum.swift; sourceTree = "<group>"; };
-		D5B0D63B2668B7070027AEF2 /* TabelEksperimenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabelEksperimenController.swift; sourceTree = "<group>"; };
+		D5B0D63B2668B7070027AEF2 /* MataPelajaranTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MataPelajaranTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D583289926709111007753E9 /* Main Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				D5983E212665D6AC00C199EA /* Main.storyboard */,
+			);
+			path = "Main Appearance";
+			sourceTree = "<group>";
+		};
+		D583289A26709167007753E9 /* Main Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0D63B2668B7070027AEF2 /* MataPelajaranTableController.swift */,
+				D583289B267091D4007753E9 /* MateriViewController.swift */,
+				D583289D2670928A007753E9 /* MediaViewController.swift */,
+			);
+			path = "Main Appearance";
+			sourceTree = "<group>";
+		};
+		D583289F2670935D007753E9 /* XIB Container Praktikum */ = {
+			isa = PBXGroup;
+			children = (
+				D58328A22670943D007753E9 /* PraktikumTanpaPanduan.storyboard */,
+				D58328A0267093FE007753E9 /* PraktikumBerpanduan.storyboard */,
+			);
+			path = "XIB Container Praktikum";
+			sourceTree = "<group>";
+		};
 		D5983E0F2665D6AC00C199EA = {
 			isa = PBXGroup;
 			children = (
@@ -89,8 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				D540E8FC266F6E9600FACF72 /* WebKitView */,
+				D583289926709111007753E9 /* Main Appearance */,
+				D583289F2670935D007753E9 /* XIB Container Praktikum */,
 				D5983E262665D6AD00C199EA /* LaunchScreen.storyboard */,
-				D5983E212665D6AC00C199EA /* Main.storyboard */,
+				D58328A42670948A007753E9 /* TryoutXIB.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,8 +137,8 @@
 		D5B0D60F26678D0F0027AEF2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D5983E1F2665D6AC00C199EA /* ViewController.swift */,
-				D5B0D63B2668B7070027AEF2 /* TabelEksperimenController.swift */,
+				D583289A26709167007753E9 /* Main Appearance */,
+				D58328A626709527007753E9 /* XIBTryoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +211,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
+				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
+				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
+				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
@@ -185,11 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5983E202665D6AC00C199EA /* ViewController.swift in Sources */,
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
+				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
+				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
+				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
-				D5B0D63C2668B7070027AEF2 /* TabelEksperimenController.swift in Sources */,
+				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);
