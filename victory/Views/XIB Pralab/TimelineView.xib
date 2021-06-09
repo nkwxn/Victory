@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TimelineView" customModule="victory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lz4-s7-WBP" userLabel="Lab Background" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                    <rect key="frame" x="387" y="6" width="420" height="32"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RI6-2E-qOY" userLabel="Lab 1 Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dce-FW-zdC">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title=" Lab 1" image="2.circle.fill" catalog="system">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="vc_blue_active"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="420-dD-C9v"/>
+                                <constraint firstAttribute="trailing" secondItem="Dce-FW-zdC" secondAttribute="trailing" id="8sy-WU-Zao"/>
+                                <constraint firstAttribute="width" constant="100" id="DaE-z6-blp"/>
+                                <constraint firstItem="Dce-FW-zdC" firstAttribute="leading" secondItem="RI6-2E-qOY" secondAttribute="leading" id="ddz-cp-Vcb"/>
+                                <constraint firstItem="Dce-FW-zdC" firstAttribute="top" secondItem="RI6-2E-qOY" secondAttribute="top" id="kCk-xb-Ckv"/>
+                                <constraint firstAttribute="bottom" secondItem="Dce-FW-zdC" secondAttribute="bottom" id="oxq-O4-l5C"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="14"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yra-MD-fph" userLabel="Lab 2 Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                            <rect key="frame" x="160" y="0.0" width="100" height="32"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWJ-aG-Csg">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title=" Lab 2" image="3.circle.fill" catalog="system">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="vc_blue_active"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="QWJ-aG-Csg" secondAttribute="bottom" id="8Jf-K7-zsK"/>
+                                <constraint firstAttribute="trailing" secondItem="QWJ-aG-Csg" secondAttribute="trailing" id="Mw6-4V-WuC"/>
+                                <constraint firstAttribute="width" constant="100" id="b3e-1m-CW3"/>
+                                <constraint firstAttribute="height" constant="32" id="fFu-1Y-bJo"/>
+                                <constraint firstItem="QWJ-aG-Csg" firstAttribute="top" secondItem="Yra-MD-fph" secondAttribute="top" id="mBX-Be-RCL"/>
+                                <constraint firstItem="QWJ-aG-Csg" firstAttribute="leading" secondItem="Yra-MD-fph" secondAttribute="leading" id="ueP-x2-eZQ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="14"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNZ-AC-5fy" userLabel="Separator 2" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                            <rect key="frame" x="110" y="16" width="40" height="2"/>
+                            <color key="backgroundColor" name="vc_blue_active"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="QN2-Lf-e6O"/>
+                                <constraint firstAttribute="width" constant="40" id="cxB-QS-N8t"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhh-xA-uvB" userLabel="Separator 3" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                            <rect key="frame" x="270" y="16" width="40" height="2"/>
+                            <color key="backgroundColor" name="vc_blue_active"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="fu0-vF-jKZ"/>
+                                <constraint firstAttribute="height" constant="2" id="jfK-oK-xQR"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pe-99-AE7" userLabel="Lab 3 Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                            <rect key="frame" x="320" y="0.0" width="100" height="32"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE4-Zr-0AB">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title=" Lab 3" image="4.circle.fill" catalog="system">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="vc_blue_active"/>
+                            <constraints>
+                                <constraint firstItem="wE4-Zr-0AB" firstAttribute="top" secondItem="8pe-99-AE7" secondAttribute="top" id="Bb9-sI-H9t"/>
+                                <constraint firstAttribute="width" constant="100" id="NeW-1V-NTX"/>
+                                <constraint firstAttribute="trailing" secondItem="wE4-Zr-0AB" secondAttribute="trailing" id="PJD-op-kBG"/>
+                                <constraint firstItem="wE4-Zr-0AB" firstAttribute="leading" secondItem="8pe-99-AE7" secondAttribute="leading" id="VqQ-ca-3sg"/>
+                                <constraint firstAttribute="bottom" secondItem="wE4-Zr-0AB" secondAttribute="bottom" id="ewA-9B-JRp"/>
+                                <constraint firstAttribute="height" constant="32" id="oGm-ne-uya"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="14"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="vc_blue_bg"/>
+                    <constraints>
+                        <constraint firstItem="Yra-MD-fph" firstAttribute="top" secondItem="Lz4-s7-WBP" secondAttribute="top" id="1VV-bE-tbL"/>
+                        <constraint firstAttribute="bottom" secondItem="RI6-2E-qOY" secondAttribute="bottom" id="6fC-UO-R42"/>
+                        <constraint firstItem="8pe-99-AE7" firstAttribute="leading" secondItem="Rhh-xA-uvB" secondAttribute="trailing" constant="10" id="Bgr-f7-D5z"/>
+                        <constraint firstAttribute="trailing" secondItem="8pe-99-AE7" secondAttribute="trailing" id="FkT-T3-sVw"/>
+                        <constraint firstItem="RI6-2E-qOY" firstAttribute="leading" secondItem="Lz4-s7-WBP" secondAttribute="leading" id="FxT-kY-nZa"/>
+                        <constraint firstItem="Yra-MD-fph" firstAttribute="leading" secondItem="pNZ-AC-5fy" secondAttribute="trailing" constant="10" id="I7N-zN-hfN"/>
+                        <constraint firstItem="RI6-2E-qOY" firstAttribute="top" secondItem="Lz4-s7-WBP" secondAttribute="top" id="LbH-Hz-JS1"/>
+                        <constraint firstAttribute="width" constant="420" id="Paa-4z-nsT"/>
+                        <constraint firstItem="8pe-99-AE7" firstAttribute="top" secondItem="Lz4-s7-WBP" secondAttribute="top" id="R6I-or-G9j"/>
+                        <constraint firstAttribute="height" constant="32" id="Xak-HN-67n"/>
+                        <constraint firstItem="Yra-MD-fph" firstAttribute="centerX" secondItem="Lz4-s7-WBP" secondAttribute="centerX" id="Ye7-dy-MQw"/>
+                        <constraint firstItem="pNZ-AC-5fy" firstAttribute="leading" secondItem="RI6-2E-qOY" secondAttribute="trailing" constant="10" id="dko-N1-ROH"/>
+                        <constraint firstAttribute="bottom" secondItem="pNZ-AC-5fy" secondAttribute="bottom" constant="14" id="gXQ-Mz-eDa"/>
+                        <constraint firstItem="Rhh-xA-uvB" firstAttribute="top" secondItem="Lz4-s7-WBP" secondAttribute="top" constant="16" id="okn-MC-wwA"/>
+                        <constraint firstAttribute="bottom" secondItem="8pe-99-AE7" secondAttribute="bottom" id="vY8-R4-V3f"/>
+                        <constraint firstItem="pNZ-AC-5fy" firstAttribute="top" secondItem="Lz4-s7-WBP" secondAttribute="top" constant="16" id="wVp-E3-aON"/>
+                        <constraint firstAttribute="bottom" secondItem="Rhh-xA-uvB" secondAttribute="bottom" constant="14" id="yYq-LF-qdI"/>
+                        <constraint firstItem="Rhh-xA-uvB" firstAttribute="leading" secondItem="Yra-MD-fph" secondAttribute="trailing" constant="10" id="yz3-lr-Unn"/>
+                        <constraint firstAttribute="bottom" secondItem="Yra-MD-fph" secondAttribute="bottom" id="zGw-dl-SpH"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKA-rI-1Ju" userLabel="Separator 1" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                    <rect key="frame" x="337" y="22" width="40" height="2"/>
+                    <color key="backgroundColor" name="vc_blue_active"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgU-X8-axC" userLabel="Separator 4" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                    <rect key="frame" x="817" y="22" width="40" height="2"/>
+                    <color key="backgroundColor" name="vc_blue_active"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="x6w-m6-Umd"/>
+                        <constraint firstAttribute="width" constant="40" id="zA6-qR-uL3"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySc-bH-N6N" userLabel="Materi Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                    <rect key="frame" x="227" y="6" width="100" height="32"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2Z-hT-q7L">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title=" Materi" image="1.circle.fill" catalog="system">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="vc_blue_active"/>
+                    <constraints>
+                        <constraint firstItem="g2Z-hT-q7L" firstAttribute="top" secondItem="ySc-bH-N6N" secondAttribute="top" id="1rM-aW-NNx"/>
+                        <constraint firstAttribute="width" constant="100" id="3Z8-tH-lfO"/>
+                        <constraint firstAttribute="trailing" secondItem="g2Z-hT-q7L" secondAttribute="trailing" id="4xO-vv-NPc"/>
+                        <constraint firstAttribute="height" constant="32" id="Qc8-Xc-EAg"/>
+                        <constraint firstAttribute="bottom" secondItem="g2Z-hT-q7L" secondAttribute="bottom" id="UWM-vd-dvN"/>
+                        <constraint firstItem="g2Z-hT-q7L" firstAttribute="leading" secondItem="ySc-bH-N6N" secondAttribute="leading" id="mI4-az-DAO"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8b-XS-Kqb" userLabel="Kuis Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                    <rect key="frame" x="867" y="6" width="100" height="32"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-Td-BCu">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title=" Kuis" image="5.circle.fill" catalog="system">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="vc_blue_active"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="2C9-6O-jW0"/>
+                        <constraint firstAttribute="width" constant="100" id="2hU-by-aFZ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-HG-m9o" userLabel="Gray Separator">
+                    <rect key="frame" x="0.0" y="50" width="1194" height="0.0"/>
+                    <color key="backgroundColor" name="vc_separator"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1194" id="53y-hK-m4t"/>
+                        <constraint firstAttribute="height" id="s0d-JY-BCo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="vc_nav_bar"/>
+            <constraints>
+                <constraint firstItem="S8b-XS-Kqb" firstAttribute="leading" secondItem="Lz4-s7-WBP" secondAttribute="trailing" constant="60" id="8WB-hC-vzF"/>
+                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="ySc-bH-N6N" secondAttribute="bottom" constant="12" id="9td-VW-NQW"/>
+                <constraint firstItem="Lz4-s7-WBP" firstAttribute="leading" secondItem="ySc-bH-N6N" secondAttribute="trailing" constant="60" id="DDg-FC-rLK"/>
+                <constraint firstItem="5dA-HG-m9o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="G2f-UJ-BX1"/>
+                <constraint firstItem="sgU-X8-axC" firstAttribute="leading" secondItem="Lz4-s7-WBP" secondAttribute="trailing" constant="10" id="Ikw-v7-mxG"/>
+                <constraint firstItem="ySc-bH-N6N" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="L1Z-mH-fB5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Lz4-s7-WBP" secondAttribute="bottom" constant="12" id="N3r-GR-8AF"/>
+                <constraint firstItem="vKA-rI-1Ju" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="22" id="Qb1-gO-QWb"/>
+                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="sgU-X8-axC" secondAttribute="bottom" constant="26" id="S2t-jN-DRi"/>
+                <constraint firstItem="vKA-rI-1Ju" firstAttribute="leading" secondItem="ySc-bH-N6N" secondAttribute="trailing" constant="10" id="byw-mg-eeF"/>
+                <constraint firstItem="sgU-X8-axC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="22" id="c6r-wQ-Mv6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5dA-HG-m9o" secondAttribute="bottom" id="cUo-DD-jtI"/>
+                <constraint firstItem="Lz4-s7-WBP" firstAttribute="leading" secondItem="vKA-rI-1Ju" secondAttribute="trailing" constant="10" id="g1I-1A-DeG"/>
+                <constraint firstItem="S8b-XS-Kqb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="isf-Iq-WTU"/>
+                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="S8b-XS-Kqb" secondAttribute="bottom" constant="12" id="k6n-j7-Vsg"/>
+                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="vKA-rI-1Ju" secondAttribute="bottom" constant="26" id="m97-Uf-bxm"/>
+                <constraint firstItem="S8b-XS-Kqb" firstAttribute="leading" secondItem="sgU-X8-axC" secondAttribute="trailing" constant="10" id="n6H-O0-R8p"/>
+                <constraint firstItem="Lz4-s7-WBP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="o8F-FE-RjC"/>
+                <constraint firstItem="Lz4-s7-WBP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zXi-fu-tpm"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="kuisBtn" destination="ZhJ-Td-BCu" id="tq9-wi-tiT"/>
+                <outlet property="kuisPill" destination="S8b-XS-Kqb" id="vtX-Jl-g39"/>
+                <outlet property="labBg" destination="Lz4-s7-WBP" id="ZUt-Sq-c3T"/>
+                <outlet property="labDuaBtn" destination="QWJ-aG-Csg" id="6x6-yM-JSy"/>
+                <outlet property="labDuaPill" destination="Yra-MD-fph" id="xd1-tk-RRs"/>
+                <outlet property="labSatuBtn" destination="Dce-FW-zdC" id="xr9-Gi-IMQ"/>
+                <outlet property="labSatuPill" destination="RI6-2E-qOY" id="ev9-Fv-aGD"/>
+                <outlet property="labTigaBtn" destination="wE4-Zr-0AB" id="E3B-9M-kec"/>
+                <outlet property="labTigaPill" destination="8pe-99-AE7" id="m52-wA-Ygg"/>
+                <outlet property="materiBtn" destination="g2Z-hT-q7L" id="BF6-Dv-Sju"/>
+                <outlet property="materiPill" destination="ySc-bH-N6N" id="t5k-Kv-95g"/>
+                <outlet property="separatorDua" destination="pNZ-AC-5fy" id="wTE-dS-nVN"/>
+                <outlet property="separatorEmpat" destination="sgU-X8-axC" id="wIs-nl-4G3"/>
+                <outlet property="separatorSatu" destination="vKA-rI-1Ju" id="5J7-y3-fQs"/>
+                <outlet property="separatorTiga" destination="Rhh-xA-uvB" id="xNB-Qs-IYn"/>
+            </connections>
+            <point key="canvasLocation" x="138.69346733668343" y="145.32374100719426"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="1.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="2.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="3.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="4.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="5.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="vc_blue_active">
+            <color red="0.0" green="0.34099999070167542" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="vc_blue_bg">
+            <color red="0.0" green="0.34099999070167542" blue="1" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="vc_nav_bar">
+            <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="vc_separator">
+            <color red="0.68199998140335083" green="0.68199998140335083" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

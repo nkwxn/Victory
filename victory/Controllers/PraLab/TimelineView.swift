@@ -1,5 +1,5 @@
 //
-//  TimelineTableViewCell.swift
+//  TimelineView.swift
 //  victory
 //
 //  Created by Wuri Dita on 09/06/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimelineTableViewCell: UITableViewCell {
+class TimelineView: UIView {
     
     @IBOutlet weak var materiBtn: UIButton!
     @IBOutlet weak var labSatuBtn: UIButton!
@@ -26,16 +26,5 @@ class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var separatorDua: UIView!
     @IBOutlet weak var separatorTiga: UIView!
     @IBOutlet weak var separatorEmpat: UIView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 }
