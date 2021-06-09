@@ -16,11 +16,11 @@ enum Kelas: Int {
     func getImage() -> UIImage {
         switch self {
         case .k10:
-            return UIImage(named: "tortoise")!
+            return UIImage(systemName: "tortoise")!
         case .k11:
-            return UIImage(named: "hare")!
+            return UIImage(systemName: "hare")!
         case .k12:
-            return UIImage(named: "bolt")!
+            return UIImage(systemName: "bolt")!
         }
     }
 }
@@ -34,13 +34,13 @@ enum Mapel: String {
     func getImage() -> UIImage {
         switch self {
         case .fisika:
-            return UIImage(named: "thermometer.snowflake")!
+            return UIImage(systemName: "thermometer.snowflake")!
         case .kimia:
-            return UIImage(named: "drop.triangle")!
+            return UIImage(systemName: "drop.triangle")!
         case .biologi:
-            return UIImage(named: "ladybug")!
+            return UIImage(systemName: "ladybug")!
         case .matematika:
-            return UIImage(named: "function")!
+            return UIImage(systemName: "function")!
         default:
             return UIImage()
         }
