@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVH-JW-RQZ" userLabel="Lab Background" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
-                        <rect key="frame" x="399.5" y="6" width="395" height="32"/>
+                        <rect key="frame" x="387" y="6" width="420" height="32"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEq-fp-LwR" userLabel="Lab 1 Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
@@ -35,12 +34,12 @@
                                 </subviews>
                                 <color key="backgroundColor" name="vc_blue_active"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="frR-OM-xoO" secondAttribute="trailing" id="R7s-Wh-up4"/>
-                                    <constraint firstAttribute="width" constant="100" id="Uch-nv-X7C"/>
-                                    <constraint firstItem="frR-OM-xoO" firstAttribute="top" secondItem="WEq-fp-LwR" secondAttribute="top" id="hpK-Wy-fSl"/>
-                                    <constraint firstAttribute="height" constant="32" id="s59-qA-sFt"/>
-                                    <constraint firstAttribute="bottom" secondItem="frR-OM-xoO" secondAttribute="bottom" id="v5m-iA-NOE"/>
-                                    <constraint firstItem="frR-OM-xoO" firstAttribute="leading" secondItem="WEq-fp-LwR" secondAttribute="leading" id="y6u-Aa-JSx"/>
+                                    <constraint firstAttribute="bottom" secondItem="frR-OM-xoO" secondAttribute="bottom" id="1yv-t9-okC"/>
+                                    <constraint firstAttribute="height" constant="32" id="7Ir-OB-T69"/>
+                                    <constraint firstAttribute="width" constant="100" id="PqA-IW-GjG"/>
+                                    <constraint firstItem="frR-OM-xoO" firstAttribute="top" secondItem="WEq-fp-LwR" secondAttribute="top" id="g4F-cB-Fph"/>
+                                    <constraint firstItem="frR-OM-xoO" firstAttribute="leading" secondItem="WEq-fp-LwR" secondAttribute="leading" id="uBJ-qx-nei"/>
+                                    <constraint firstAttribute="trailing" secondItem="frR-OM-xoO" secondAttribute="trailing" id="vCA-k3-BDT"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -48,8 +47,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-dD-3ct" userLabel="Lab 2 Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="147.5" y="0.0" width="100" height="32"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7e-dD-3ct" userLabel="Lab 2 Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="160" y="0.0" width="100" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IV6-j6-Pdd">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
@@ -62,12 +61,12 @@
                                 </subviews>
                                 <color key="backgroundColor" name="vc_blue_active"/>
                                 <constraints>
-                                    <constraint firstItem="IV6-j6-Pdd" firstAttribute="top" secondItem="Q7e-dD-3ct" secondAttribute="top" id="Cie-V4-Lcw"/>
-                                    <constraint firstAttribute="trailing" secondItem="IV6-j6-Pdd" secondAttribute="trailing" id="DRk-oR-NTW"/>
-                                    <constraint firstAttribute="bottom" secondItem="IV6-j6-Pdd" secondAttribute="bottom" id="O5Q-8v-LcV"/>
-                                    <constraint firstAttribute="height" constant="32" id="Q4P-no-z0R"/>
-                                    <constraint firstAttribute="width" constant="100" id="Yg6-XZ-aQZ"/>
-                                    <constraint firstItem="IV6-j6-Pdd" firstAttribute="leading" secondItem="Q7e-dD-3ct" secondAttribute="leading" id="qBJ-pT-DTd"/>
+                                    <constraint firstItem="IV6-j6-Pdd" firstAttribute="top" secondItem="Q7e-dD-3ct" secondAttribute="top" id="Muy-sa-yKW"/>
+                                    <constraint firstItem="IV6-j6-Pdd" firstAttribute="leading" secondItem="Q7e-dD-3ct" secondAttribute="leading" id="S0v-ga-tUI"/>
+                                    <constraint firstAttribute="bottom" secondItem="IV6-j6-Pdd" secondAttribute="bottom" id="gH0-dC-ioC"/>
+                                    <constraint firstAttribute="trailing" secondItem="IV6-j6-Pdd" secondAttribute="trailing" id="nGg-Fu-l2K"/>
+                                    <constraint firstAttribute="height" constant="32" id="tvF-AM-4C1"/>
+                                    <constraint firstAttribute="width" constant="100" id="w4e-3s-D8g"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -75,8 +74,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvY-PY-grd" userLabel="Lab 3 Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="295" y="0.0" width="100" height="32"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PtB-cD-EdL" userLabel="Separator 2" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="110" y="16" width="40" height="2"/>
+                                <color key="backgroundColor" name="vc_blue_active"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ks5-c3-QNv" userLabel="Separator 3" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="270" y="15" width="40" height="2"/>
+                                <color key="backgroundColor" name="vc_blue_active"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvY-PY-grd" userLabel="Lab 3 Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="320" y="0.0" width="100" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fay-XK-LZu">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
@@ -89,12 +106,12 @@
                                 </subviews>
                                 <color key="backgroundColor" name="vc_blue_active"/>
                                 <constraints>
-                                    <constraint firstItem="Fay-XK-LZu" firstAttribute="leading" secondItem="bvY-PY-grd" secondAttribute="leading" id="Qxl-ww-LKK"/>
-                                    <constraint firstAttribute="height" constant="32" id="SjO-HN-Tpj"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fay-XK-LZu" secondAttribute="trailing" id="VXR-jV-PN5"/>
-                                    <constraint firstAttribute="bottom" secondItem="Fay-XK-LZu" secondAttribute="bottom" id="XbW-bY-9xN"/>
-                                    <constraint firstAttribute="width" constant="100" id="pi8-As-h1c"/>
-                                    <constraint firstItem="Fay-XK-LZu" firstAttribute="top" secondItem="bvY-PY-grd" secondAttribute="top" id="qbb-AU-EHz"/>
+                                    <constraint firstAttribute="width" constant="100" id="4sv-Un-6Vb"/>
+                                    <constraint firstItem="Fay-XK-LZu" firstAttribute="top" secondItem="bvY-PY-grd" secondAttribute="top" id="6Zf-6d-fdv"/>
+                                    <constraint firstAttribute="height" constant="32" id="BqF-bW-1QF"/>
+                                    <constraint firstItem="Fay-XK-LZu" firstAttribute="leading" secondItem="bvY-PY-grd" secondAttribute="leading" id="YnC-op-0fz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fay-XK-LZu" secondAttribute="bottom" id="mpQ-hG-wci"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fay-XK-LZu" secondAttribute="trailing" id="n9c-9L-7b3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -103,14 +120,26 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="vc_blue_bg_lock"/>
+                        <color key="backgroundColor" name="vc_blue_bg"/>
                         <constraints>
-                            <constraint firstItem="Q7e-dD-3ct" firstAttribute="centerX" secondItem="LVH-JW-RQZ" secondAttribute="centerX" id="1WP-O7-Ge5"/>
-                            <constraint firstAttribute="bottom" secondItem="WEq-fp-LwR" secondAttribute="bottom" id="Hfs-h1-jOh"/>
-                            <constraint firstItem="WEq-fp-LwR" firstAttribute="top" secondItem="LVH-JW-RQZ" secondAttribute="top" id="NDJ-EH-TPL"/>
-                            <constraint firstAttribute="height" constant="32" id="PHM-Po-RNl"/>
-                            <constraint firstAttribute="width" constant="395" id="TCc-sC-sR7"/>
-                            <constraint firstItem="WEq-fp-LwR" firstAttribute="leading" secondItem="LVH-JW-RQZ" secondAttribute="leading" id="wdg-f0-wR5"/>
+                            <constraint firstItem="PtB-cD-EdL" firstAttribute="top" secondItem="LVH-JW-RQZ" secondAttribute="top" constant="16" id="HXt-x5-fLR"/>
+                            <constraint firstItem="bvY-PY-grd" firstAttribute="top" secondItem="LVH-JW-RQZ" secondAttribute="top" id="IDf-9a-ZLX"/>
+                            <constraint firstItem="PtB-cD-EdL" firstAttribute="leading" secondItem="WEq-fp-LwR" secondAttribute="trailing" constant="10" id="MDU-SL-P6a"/>
+                            <constraint firstItem="Q7e-dD-3ct" firstAttribute="top" secondItem="LVH-JW-RQZ" secondAttribute="top" id="Niu-DM-wJx"/>
+                            <constraint firstItem="WEq-fp-LwR" firstAttribute="leading" secondItem="LVH-JW-RQZ" secondAttribute="leading" id="QVq-SN-Nzt"/>
+                            <constraint firstItem="WEq-fp-LwR" firstAttribute="top" secondItem="LVH-JW-RQZ" secondAttribute="top" id="V6U-9c-Sfu"/>
+                            <constraint firstItem="ks5-c3-QNv" firstAttribute="top" secondItem="LVH-JW-RQZ" secondAttribute="top" constant="15" id="Vkg-37-W4k"/>
+                            <constraint firstAttribute="bottom" secondItem="PtB-cD-EdL" secondAttribute="bottom" constant="14" id="WdS-eZ-F5C"/>
+                            <constraint firstAttribute="width" constant="420" id="WpO-aA-djy"/>
+                            <constraint firstAttribute="trailing" secondItem="bvY-PY-grd" secondAttribute="trailing" id="ab0-cG-AU4"/>
+                            <constraint firstItem="ks5-c3-QNv" firstAttribute="leading" secondItem="Q7e-dD-3ct" secondAttribute="trailing" constant="10" id="dfK-N3-2Av"/>
+                            <constraint firstAttribute="bottom" secondItem="ks5-c3-QNv" secondAttribute="bottom" constant="15" id="eS0-k6-zZV"/>
+                            <constraint firstItem="bvY-PY-grd" firstAttribute="leading" secondItem="ks5-c3-QNv" secondAttribute="trailing" constant="10" id="hLL-v2-yuU"/>
+                            <constraint firstItem="Q7e-dD-3ct" firstAttribute="leading" secondItem="PtB-cD-EdL" secondAttribute="trailing" constant="10" id="ite-sy-XvX"/>
+                            <constraint firstAttribute="bottom" secondItem="bvY-PY-grd" secondAttribute="bottom" id="jCZ-Nt-7z9"/>
+                            <constraint firstItem="Q7e-dD-3ct" firstAttribute="centerX" secondItem="LVH-JW-RQZ" secondAttribute="centerX" id="kCR-4k-dVB"/>
+                            <constraint firstAttribute="bottom" secondItem="WEq-fp-LwR" secondAttribute="bottom" id="pFS-uM-hJm"/>
+                            <constraint firstAttribute="bottom" secondItem="Q7e-dD-3ct" secondAttribute="bottom" id="z3A-Yd-Ask"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -118,8 +147,20 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVc-Wh-Hej" userLabel="Separator" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
-                        <rect key="frame" x="349" y="22" width="40.5" height="2"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVc-Wh-Hej" userLabel="Separator 1" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                        <rect key="frame" x="337" y="22" width="40" height="2"/>
+                        <color key="backgroundColor" name="vc_blue_active"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="hk9-zK-FbK"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwT-5I-zdm" userLabel="Separator 4" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                        <rect key="frame" x="817" y="22" width="40" height="2"/>
                         <color key="backgroundColor" name="vc_blue_active"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -127,17 +168,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwT-5I-zdm" userLabel="Separator" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
-                        <rect key="frame" x="804.5" y="22" width="41.5" height="2"/>
-                        <color key="backgroundColor" name="vc_blue_text_lock"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uky-ve-TnV" userLabel="Materi Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
-                        <rect key="frame" x="239" y="6" width="100" height="32"/>
+                        <rect key="frame" x="227" y="6" width="100" height="32"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF2-7a-WxX">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
@@ -150,12 +182,12 @@
                         </subviews>
                         <color key="backgroundColor" name="vc_blue_active"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="aF2-7a-WxX" secondAttribute="bottom" id="BcJ-t4-WKu"/>
-                            <constraint firstAttribute="height" constant="32" id="Fta-cq-Hz4"/>
-                            <constraint firstAttribute="width" constant="100" id="MYV-BP-i8T"/>
-                            <constraint firstItem="aF2-7a-WxX" firstAttribute="leading" secondItem="uky-ve-TnV" secondAttribute="leading" id="Mmr-e4-mo4"/>
-                            <constraint firstItem="aF2-7a-WxX" firstAttribute="top" secondItem="uky-ve-TnV" secondAttribute="top" id="kCB-vx-JHA"/>
-                            <constraint firstAttribute="trailing" secondItem="aF2-7a-WxX" secondAttribute="trailing" id="tE4-nK-mkI"/>
+                            <constraint firstAttribute="bottom" secondItem="aF2-7a-WxX" secondAttribute="bottom" id="2AO-mL-9h3"/>
+                            <constraint firstItem="aF2-7a-WxX" firstAttribute="leading" secondItem="uky-ve-TnV" secondAttribute="leading" id="Div-av-hUB"/>
+                            <constraint firstAttribute="height" constant="32" id="Uik-XC-KlT"/>
+                            <constraint firstAttribute="trailing" secondItem="aF2-7a-WxX" secondAttribute="trailing" id="a91-Bv-vxf"/>
+                            <constraint firstAttribute="width" constant="100" id="buu-0u-fBb"/>
+                            <constraint firstItem="aF2-7a-WxX" firstAttribute="top" secondItem="uky-ve-TnV" secondAttribute="top" id="ocx-VL-ncs"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -163,41 +195,84 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyS-Na-5yf" userLabel="Materi Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
-                        <rect key="frame" x="856" y="6" width="100" height="32"/>
-                        <color key="backgroundColor" systemColor="linkColor"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyS-Na-5yf" userLabel="Kuis Pill" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
+                        <rect key="frame" x="867" y="6" width="100" height="32"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wb-Me-DNi">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Kuis" image="5.circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="vc_blue_active"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="5cA-SN-xrs"/>
-                            <constraint firstAttribute="height" constant="32" id="bN0-HB-8Q4"/>
+                            <constraint firstItem="3Wb-Me-DNi" firstAttribute="top" secondItem="OyS-Na-5yf" secondAttribute="top" id="52G-DS-Bpc"/>
+                            <constraint firstAttribute="height" constant="32" id="9gq-2p-Q3N"/>
+                            <constraint firstAttribute="trailing" secondItem="3Wb-Me-DNi" secondAttribute="trailing" id="OWT-tl-enU"/>
+                            <constraint firstAttribute="bottom" secondItem="3Wb-Me-DNi" secondAttribute="bottom" id="Oo5-pJ-hs4"/>
+                            <constraint firstAttribute="width" constant="100" id="Zks-Pj-eHj"/>
+                            <constraint firstItem="3Wb-Me-DNi" firstAttribute="leading" secondItem="OyS-Na-5yf" secondAttribute="leading" id="gX0-x3-lTv"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="14"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPM-zN-km9" userLabel="Gray Separator">
+                        <rect key="frame" x="0.0" y="50" width="1194" height="0.0"/>
+                        <color key="backgroundColor" name="vc_separator"/>
+                        <constraints>
+                            <constraint firstAttribute="height" id="Oiq-a0-cDH"/>
+                            <constraint firstAttribute="width" constant="1194" id="c8k-nI-uUs"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="vc_nav_bar"/>
                 <constraints>
-                    <constraint firstItem="uky-ve-TnV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="0FH-cH-A6Z"/>
-                    <constraint firstAttribute="bottom" secondItem="YVc-Wh-Hej" secondAttribute="bottom" constant="26" id="4gO-tA-Ars"/>
-                    <constraint firstItem="OyS-Na-5yf" firstAttribute="leading" secondItem="LVH-JW-RQZ" secondAttribute="trailing" constant="61.5" id="50f-jK-dsH"/>
-                    <constraint firstItem="YVc-Wh-Hej" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="6GD-TC-zyv"/>
-                    <constraint firstItem="nwT-5I-zdm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="Da2-Cr-fkf"/>
-                    <constraint firstAttribute="bottom" secondItem="uky-ve-TnV" secondAttribute="bottom" constant="12" id="MjY-8P-Lfo"/>
-                    <constraint firstItem="nwT-5I-zdm" firstAttribute="leading" secondItem="LVH-JW-RQZ" secondAttribute="trailing" constant="10" id="QZI-oR-4vR"/>
-                    <constraint firstItem="LVH-JW-RQZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="T8S-u3-G5L"/>
-                    <constraint firstAttribute="bottom" secondItem="nwT-5I-zdm" secondAttribute="bottom" constant="26" id="WXl-Uf-hwu"/>
-                    <constraint firstAttribute="bottom" secondItem="OyS-Na-5yf" secondAttribute="bottom" constant="12" id="YxS-hC-f4O"/>
-                    <constraint firstAttribute="bottom" secondItem="LVH-JW-RQZ" secondAttribute="bottom" constant="12" id="Zyu-b3-6ZL"/>
-                    <constraint firstItem="LVH-JW-RQZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="hor-jl-8eP"/>
-                    <constraint firstItem="LVH-JW-RQZ" firstAttribute="leading" secondItem="uky-ve-TnV" secondAttribute="trailing" constant="60.5" id="ivC-Mk-VBa"/>
-                    <constraint firstItem="OyS-Na-5yf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="r5r-5V-lSh"/>
-                    <constraint firstItem="YVc-Wh-Hej" firstAttribute="leading" secondItem="uky-ve-TnV" secondAttribute="trailing" constant="10" id="ro7-S1-fvP"/>
-                    <constraint firstItem="LVH-JW-RQZ" firstAttribute="leading" secondItem="YVc-Wh-Hej" secondAttribute="trailing" constant="10" id="tgS-5x-vM8"/>
-                    <constraint firstItem="OyS-Na-5yf" firstAttribute="leading" secondItem="nwT-5I-zdm" secondAttribute="trailing" constant="10" id="wpG-n2-ag6"/>
+                    <constraint firstItem="LVH-JW-RQZ" firstAttribute="leading" secondItem="YVc-Wh-Hej" secondAttribute="trailing" constant="10" id="4q1-Bk-BlF"/>
+                    <constraint firstItem="OyS-Na-5yf" firstAttribute="leading" secondItem="nwT-5I-zdm" secondAttribute="trailing" constant="10" id="60s-9I-NbJ"/>
+                    <constraint firstAttribute="bottom" secondItem="LVH-JW-RQZ" secondAttribute="bottom" constant="12" id="8kF-SX-Fud"/>
+                    <constraint firstAttribute="bottom" secondItem="CPM-zN-km9" secondAttribute="bottom" id="A48-9r-HbI"/>
+                    <constraint firstItem="OyS-Na-5yf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="CPI-cI-JPQ"/>
+                    <constraint firstItem="LVH-JW-RQZ" firstAttribute="leading" secondItem="uky-ve-TnV" secondAttribute="trailing" constant="60" id="ETo-TM-3bS"/>
+                    <constraint firstAttribute="bottom" secondItem="nwT-5I-zdm" secondAttribute="bottom" constant="26" id="Fmj-hM-BsN"/>
+                    <constraint firstItem="CPM-zN-km9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Jb1-f5-5RM"/>
+                    <constraint firstItem="YVc-Wh-Hej" firstAttribute="leading" secondItem="uky-ve-TnV" secondAttribute="trailing" constant="10" id="KKL-xe-bML"/>
+                    <constraint firstAttribute="trailing" secondItem="CPM-zN-km9" secondAttribute="trailing" id="M0V-t8-dbC"/>
+                    <constraint firstItem="YVc-Wh-Hej" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="Vgh-PZ-P90"/>
+                    <constraint firstAttribute="bottom" secondItem="YVc-Wh-Hej" secondAttribute="bottom" constant="26" id="XMd-f6-DAx"/>
+                    <constraint firstItem="uky-ve-TnV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="XUB-Me-Rf7"/>
+                    <constraint firstItem="OyS-Na-5yf" firstAttribute="leading" secondItem="LVH-JW-RQZ" secondAttribute="trailing" constant="60" id="aS5-MM-YFe"/>
+                    <constraint firstItem="LVH-JW-RQZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="cLq-mw-iVi"/>
+                    <constraint firstAttribute="bottom" secondItem="uky-ve-TnV" secondAttribute="bottom" constant="12" id="gS1-aS-1F8"/>
+                    <constraint firstItem="nwT-5I-zdm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="hbZ-oK-8ei"/>
+                    <constraint firstAttribute="bottom" secondItem="OyS-Na-5yf" secondAttribute="bottom" constant="12" id="miL-gG-3YC"/>
+                    <constraint firstItem="nwT-5I-zdm" firstAttribute="leading" secondItem="LVH-JW-RQZ" secondAttribute="trailing" constant="10" id="mlj-wk-XJm"/>
+                    <constraint firstItem="LVH-JW-RQZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wQf-1L-qaW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="kuisBtn" destination="3Wb-Me-DNi" id="w3z-1A-25w"/>
+                <outlet property="kuisPill" destination="OyS-Na-5yf" id="H0j-bE-GoL"/>
+                <outlet property="labBg" destination="LVH-JW-RQZ" id="V3F-JC-960"/>
+                <outlet property="labDuaBtn" destination="IV6-j6-Pdd" id="Gui-er-1Kq"/>
+                <outlet property="labDuaPill" destination="Q7e-dD-3ct" id="4Hr-Py-M85"/>
+                <outlet property="labSatuBtn" destination="frR-OM-xoO" id="hoW-XD-TQb"/>
+                <outlet property="labSatuPill" destination="WEq-fp-LwR" id="DR6-pl-zIB"/>
+                <outlet property="labTigaBtn" destination="Fay-XK-LZu" id="Paa-Pw-jLQ"/>
+                <outlet property="labTigaPill" destination="bvY-PY-grd" id="FSg-1H-jyu"/>
+                <outlet property="materiBtn" destination="aF2-7a-WxX" id="8cB-oi-f53"/>
+                <outlet property="materiPill" destination="uky-ve-TnV" id="hDd-SP-63a"/>
+                <outlet property="separatorDua" destination="PtB-cD-EdL" id="Erg-8g-MYC"/>
+                <outlet property="separatorEmpat" destination="nwT-5I-zdm" id="KxM-BK-Bwl"/>
+                <outlet property="separatorSatu" destination="YVc-Wh-Hej" id="HqA-MU-I7V"/>
+                <outlet property="separatorTiga" destination="ks5-c3-QNv" id="z16-20-mBm"/>
+            </connections>
             <point key="canvasLocation" x="18.840579710144929" y="108.48214285714285"/>
         </tableViewCell>
     </objects>
@@ -206,17 +281,18 @@
         <image name="2.circle.fill" catalog="system" width="128" height="121"/>
         <image name="3.circle.fill" catalog="system" width="128" height="121"/>
         <image name="4.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="5.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="vc_blue_active">
             <color red="0.0" green="0.34099999070167542" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="vc_blue_bg_lock">
-            <color red="0.0" green="0.34099999070167542" blue="1" alpha="0.05000000074505806" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="vc_blue_bg">
+            <color red="0.0" green="0.34099999070167542" blue="1" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="vc_blue_text_lock">
-            <color red="0.0" green="0.34099999070167542" blue="1" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="vc_nav_bar">
+            <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="vc_separator">
+            <color red="0.68199998140335083" green="0.68199998140335083" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
