@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DCDFD842670AF96001F6B64 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCDFD822670AF96001F6B64 /* GeneralCollectionViewCell.swift */; };
+		5DCDFD852670AF96001F6B64 /* GeneralCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCDFD832670AF96001F6B64 /* GeneralCollectionViewCell.xib */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5DCDFD822670AF96001F6B64 /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
+		5DCDFD832670AF96001F6B64 /* GeneralCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralCollectionViewCell.xib; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				D5983E212665D6AC00C199EA /* Main.storyboard */,
+				5DCDFD832670AF96001F6B64 /* GeneralCollectionViewCell.xib */,
 			);
 			path = "Main Appearance";
 			sourceTree = "<group>";
@@ -71,6 +76,7 @@
 				D5B0D63B2668B7070027AEF2 /* MataPelajaranTableController.swift */,
 				D583289B267091D4007753E9 /* MateriViewController.swift */,
 				D583289D2670928A007753E9 /* MediaViewController.swift */,
+				5DCDFD822670AF96001F6B64 /* GeneralCollectionViewCell.swift */,
 			);
 			path = "Main Appearance";
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
+				5DCDFD852670AF96001F6B64 /* GeneralCollectionViewCell.xib in Resources */,
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
@@ -230,6 +237,7 @@
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
 				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
+				5DCDFD842670AF96001F6B64 /* GeneralCollectionViewCell.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,

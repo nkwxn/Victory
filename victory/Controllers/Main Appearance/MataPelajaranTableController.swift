@@ -8,10 +8,16 @@
 import UIKit
 
 class MataPelajaranTableController: UITableViewController {
+    
+    @IBOutlet weak var subjectListTableView: UITableView!
+    
+    let subjects: [Mapel] = [.fisika, .kimia, .biologi, .matematika]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "subjectListIdentifier")
+        subjectListTableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,23 +29,22 @@ class MataPelajaranTableController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return subjects.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subjectListIdentifier", for: indexPath)
 
-        // Configure the cell...
+        cell.imageView?.image = subjects[indexPath.row].getImage()
+        cell.textLabel?.text = subjects[indexPath.row].rawValue
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
