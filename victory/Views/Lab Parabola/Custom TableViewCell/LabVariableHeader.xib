@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LabVariableHeaderView" customModule="victory" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LabVariableHeaderView" customModule="victory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz7-6Q-om8">
+                    <rect key="frame" x="20" y="44" width="323" height="49"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b1-4P-eDt">
+                    <rect key="frame" x="351" y="44" width="43" height="49"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9b1-4P-eDt" firstAttribute="leading" secondItem="Jz7-6Q-om8" secondAttribute="trailing" constant="8" symbolic="YES" id="Pj0-UO-Sea"/>
+                <constraint firstItem="Jz7-6Q-om8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="aIa-qD-LE0"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Jz7-6Q-om8" secondAttribute="bottom" id="jub-4Q-jGJ"/>
+                <constraint firstItem="Jz7-6Q-om8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="kI0-3e-zUs"/>
+                <constraint firstAttribute="trailingMargin" secondItem="9b1-4P-eDt" secondAttribute="trailing" id="mtO-C2-FXz"/>
+                <constraint firstItem="9b1-4P-eDt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="njr-dG-AN2"/>
+                <constraint firstAttribute="bottomMargin" secondItem="9b1-4P-eDt" secondAttribute="bottom" id="yyO-U6-qrq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnHeader" destination="9b1-4P-eDt" id="M8W-QD-hRB"/>
+                <outlet property="lblHeaderTitle" destination="Jz7-6Q-om8" id="R2l-9G-fwB"/>
+            </connections>
+            <point key="canvasLocation" x="43.478260869565219" y="400.78125"/>
+        </view>
+    </objects>
+</document>

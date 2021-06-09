@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LabGerakParabolaView" customModule="victory" customModuleProvider="target">
+            <connections>
+                <outlet property="skView" destination="kw8-Zc-JQb" id="2Bo-6K-3f8"/>
+                <outlet property="variableTableView" destination="GoT-H0-g1P" id="Pfg-4b-p4g"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GoT-H0-g1P">
+                    <rect key="frame" x="0.0" y="0.0" width="325" height="820"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="325" id="tUT-ia-N7i"/>
+                    </constraints>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJL-IC-jZr">
+                    <rect key="frame" x="325" y="0.0" width="855" height="150"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="ZXZ-kJ-dLX"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFS-tV-2ju">
+                    <rect key="frame" x="325" y="690" width="855" height="130"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="Hy9-tb-t6t"/>
+                    </constraints>
+                </view>
+                <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kw8-Zc-JQb">
+                    <rect key="frame" x="325" y="150" width="855" height="540"/>
+                </skView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GoT-H0-g1P" secondAttribute="bottom" id="6IP-XJ-wjS"/>
+                <constraint firstItem="kw8-Zc-JQb" firstAttribute="top" secondItem="CJL-IC-jZr" secondAttribute="bottom" id="Bys-Ux-DII"/>
+                <constraint firstItem="CJL-IC-jZr" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="BzF-5l-kdo"/>
+                <constraint firstItem="GoT-H0-g1P" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FmF-Y4-4ZY"/>
+                <constraint firstItem="UFS-tV-2ju" firstAttribute="leading" secondItem="GoT-H0-g1P" secondAttribute="trailing" id="GTX-di-jhL"/>
+                <constraint firstItem="UFS-tV-2ju" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="MO2-aK-mZy"/>
+                <constraint firstAttribute="bottom" secondItem="UFS-tV-2ju" secondAttribute="bottom" id="Rkw-vX-QiU"/>
+                <constraint firstItem="CJL-IC-jZr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="S1B-CZ-x3q"/>
+                <constraint firstItem="GoT-H0-g1P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Z34-V2-lK6"/>
+                <constraint firstItem="CJL-IC-jZr" firstAttribute="leading" secondItem="GoT-H0-g1P" secondAttribute="trailing" id="ZBA-en-3d2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kw8-Zc-JQb" secondAttribute="trailing" id="cCW-ao-KDW"/>
+                <constraint firstItem="kw8-Zc-JQb" firstAttribute="leading" secondItem="GoT-H0-g1P" secondAttribute="trailing" id="djn-qF-ijn"/>
+                <constraint firstItem="UFS-tV-2ju" firstAttribute="top" secondItem="kw8-Zc-JQb" secondAttribute="bottom" id="mWy-oS-prX"/>
+            </constraints>
+            <point key="canvasLocation" x="131.69491525423729" y="131.70731707317074"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

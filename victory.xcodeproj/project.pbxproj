@@ -16,6 +16,13 @@
 		D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A22670943D007753E9 /* PraktikumTanpaPanduan.storyboard */; };
 		D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A42670948A007753E9 /* TryoutXIB.storyboard */; };
 		D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328A626709527007753E9 /* XIBTryoutViewController.swift */; };
+		D58328AB2670B690007753E9 /* LabGerakParabolaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328AA2670B690007753E9 /* LabGerakParabolaView.swift */; };
+		D58328AD2670B6A6007753E9 /* LabGerakParabola.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58328AC2670B6A6007753E9 /* LabGerakParabola.xib */; };
+		D58328B02670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328AF2670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift */; };
+		D58328B42670E7F1007753E9 /* VariabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328B22670E7F1007753E9 /* VariabelCell.swift */; };
+		D58328B52670E7F1007753E9 /* VariabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58328B32670E7F1007753E9 /* VariabelCell.xib */; };
+		D58328B82670F4B3007753E9 /* LabVariableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328B72670F4B3007753E9 /* LabVariableHeaderView.swift */; };
+		D58328BA2670F4D0007753E9 /* LabVariableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58328B92670F4D0007753E9 /* LabVariableHeader.xib */; };
 		D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1B2665D6AC00C199EA /* AppDelegate.swift */; };
 		D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */; };
 		D5983E232665D6AC00C199EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5983E212665D6AC00C199EA /* Main.storyboard */; };
@@ -35,6 +42,13 @@
 		D58328A22670943D007753E9 /* PraktikumTanpaPanduan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PraktikumTanpaPanduan.storyboard; sourceTree = "<group>"; };
 		D58328A42670948A007753E9 /* TryoutXIB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TryoutXIB.storyboard; sourceTree = "<group>"; };
 		D58328A626709527007753E9 /* XIBTryoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBTryoutViewController.swift; sourceTree = "<group>"; };
+		D58328AA2670B690007753E9 /* LabGerakParabolaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabGerakParabolaView.swift; sourceTree = "<group>"; };
+		D58328AC2670B6A6007753E9 /* LabGerakParabola.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabGerakParabola.xib; sourceTree = "<group>"; };
+		D58328AF2670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		D58328B22670E7F1007753E9 /* VariabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariabelCell.swift; sourceTree = "<group>"; };
+		D58328B32670E7F1007753E9 /* VariabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VariabelCell.xib; sourceTree = "<group>"; };
+		D58328B72670F4B3007753E9 /* LabVariableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabVariableHeaderView.swift; sourceTree = "<group>"; };
+		D58328B92670F4D0007753E9 /* LabVariableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabVariableHeader.xib; sourceTree = "<group>"; };
 		D5983E182665D6AC00C199EA /* victory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5983E1B2665D6AC00C199EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +98,51 @@
 			path = "XIB Container Praktikum";
 			sourceTree = "<group>";
 		};
+		D58328A82670B3B7007753E9 /* Lab Parabola */ = {
+			isa = PBXGroup;
+			children = (
+				D58328AA2670B690007753E9 /* LabGerakParabolaView.swift */,
+				D58328AE2670E0D1007753E9 /* Extensions */,
+				D58328B62670E7FA007753E9 /* CustomTableViewCell */,
+			);
+			path = "Lab Parabola";
+			sourceTree = "<group>";
+		};
+		D58328A92670B3D4007753E9 /* Lab Parabola */ = {
+			isa = PBXGroup;
+			children = (
+				D58328B12670E77E007753E9 /* Custom TableViewCell */,
+				D58328AC2670B6A6007753E9 /* LabGerakParabola.xib */,
+			);
+			path = "Lab Parabola";
+			sourceTree = "<group>";
+		};
+		D58328AE2670E0D1007753E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D58328AF2670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D58328B12670E77E007753E9 /* Custom TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D58328B32670E7F1007753E9 /* VariabelCell.xib */,
+				D58328B92670F4D0007753E9 /* LabVariableHeader.xib */,
+			);
+			path = "Custom TableViewCell";
+			sourceTree = "<group>";
+		};
+		D58328B62670E7FA007753E9 /* CustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D58328B22670E7F1007753E9 /* VariabelCell.swift */,
+				D58328B72670F4B3007753E9 /* LabVariableHeaderView.swift */,
+			);
+			path = CustomTableViewCell;
+			sourceTree = "<group>";
+		};
 		D5983E0F2665D6AC00C199EA = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +184,7 @@
 		D5B0D60E26678D0B0027AEF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D58328A92670B3D4007753E9 /* Lab Parabola */,
 				D540E8FC266F6E9600FACF72 /* WebKitView */,
 				D583289926709111007753E9 /* Main Appearance */,
 				D583289F2670935D007753E9 /* XIB Container Praktikum */,
@@ -137,6 +197,7 @@
 		D5B0D60F26678D0F0027AEF2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D58328A82670B3B7007753E9 /* Lab Parabola */,
 				D583289A26709167007753E9 /* Main Appearance */,
 				D58328A626709527007753E9 /* XIBTryoutViewController.swift */,
 			);
@@ -210,10 +271,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58328BA2670F4D0007753E9 /* LabVariableHeader.xib in Resources */,
+				D58328AD2670B6A6007753E9 /* LabGerakParabola.xib in Resources */,
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
+				D58328B52670E7F1007753E9 /* VariabelCell.xib in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
@@ -228,13 +292,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
+				D58328AB2670B690007753E9 /* LabGerakParabolaView.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
+				D58328B42670E7F1007753E9 /* VariabelCell.swift in Sources */,
+				D58328B82670F4B3007753E9 /* LabVariableHeaderView.swift in Sources */,
 				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
+				D58328B02670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
