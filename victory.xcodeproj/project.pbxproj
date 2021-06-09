@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		308E6F88267123F300D6A45D /* WelcomingLabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E6F86267123F300D6A45D /* WelcomingLabTableViewCell.swift */; };
+		308E6F89267123F300D6A45D /* WelcomingLabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F87267123F300D6A45D /* WelcomingLabTableViewCell.xib */; };
+		308E6F8E2671243700D6A45D /* PanduanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E6F8C2671243700D6A45D /* PanduanTableViewCell.swift */; };
+		308E6F8F2671243700D6A45D /* PanduanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F8D2671243700D6A45D /* PanduanTableViewCell.xib */; };
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
 		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
 		30B8DE612670E005002DEC0C /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8DE5F2670E005002DEC0C /* TimelineTableViewCell.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		308E6F86267123F300D6A45D /* WelcomingLabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomingLabTableViewCell.swift; sourceTree = "<group>"; };
+		308E6F87267123F300D6A45D /* WelcomingLabTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomingLabTableViewCell.xib; sourceTree = "<group>"; };
+		308E6F8C2671243700D6A45D /* PanduanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanduanTableViewCell.swift; sourceTree = "<group>"; };
+		308E6F8D2671243700D6A45D /* PanduanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanduanTableViewCell.xib; sourceTree = "<group>"; };
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		30B8DE5F2670E005002DEC0C /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				30B8DE602670E005002DEC0C /* TimelineTableViewCell.xib */,
+				308E6F87267123F300D6A45D /* WelcomingLabTableViewCell.xib */,
+				308E6F8D2671243700D6A45D /* PanduanTableViewCell.xib */,
 			);
 			path = "XIB Pralab";
 			sourceTree = "<group>";
@@ -93,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				30B8DE5F2670E005002DEC0C /* TimelineTableViewCell.swift */,
+				308E6F86267123F300D6A45D /* WelcomingLabTableViewCell.swift */,
+				308E6F8C2671243700D6A45D /* PanduanTableViewCell.swift */,
 			);
 			path = PraLab;
 			sourceTree = "<group>";
@@ -257,10 +269,12 @@
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
+				308E6F8F2671243700D6A45D /* PanduanTableViewCell.xib in Resources */,
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
 				3099E7212670C63200B44701 /* Colors.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
+				308E6F89267123F300D6A45D /* WelcomingLabTableViewCell.xib in Resources */,
 				30B8DE622670E005002DEC0C /* TimelineTableViewCell.xib in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
 			);
@@ -274,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
+				308E6F88267123F300D6A45D /* WelcomingLabTableViewCell.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
 				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
 				30B8DE612670E005002DEC0C /* TimelineTableViewCell.swift in Sources */,
@@ -283,6 +298,7 @@
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
 				3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */,
+				308E6F8E2671243700D6A45D /* PanduanTableViewCell.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
