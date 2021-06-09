@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
+		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1B2665D6AC00C199EA /* AppDelegate.swift */; };
 		D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */; };
 		D5983E202665D6AC00C199EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5983E1F2665D6AC00C199EA /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D5983E182665D6AC00C199EA /* victory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = victory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5983E1B2665D6AC00C199EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5983E1D2665D6AC00C199EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				D5B0D61726678FFF0027AEF2 /* StructEnum.swift */,
+				98D15B5426703EC00059EFF0 /* VictoryEngine.swift */,
 				984B52F6266E52A8002408C4 /* QuizBrain.swift */,
 			);
 			path = Models;
@@ -183,6 +186,7 @@
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				D5B0D63C2668B7070027AEF2 /* TabelEksperimenController.swift in Sources */,
+				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

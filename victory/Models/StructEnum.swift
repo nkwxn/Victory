@@ -66,11 +66,11 @@ struct Question {
     let pembahasan: String
     
     //The initialiser needs to be updated to match the new multiple choice quiz data.
-    init(q: String, a: [String], correctAnswer: String, solusi: String) {
+    init(q: String, a: [String], correctAnswer: String, solusi: String?) {
         text = q
         answers = a
         rightAnswer = correctAnswer
-        pembahasan = solusi
+        pembahasan = solusi ?? "belum ada"
     }
 }
 
