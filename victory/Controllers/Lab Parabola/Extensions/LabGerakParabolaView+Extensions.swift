@@ -1,5 +1,5 @@
 //
-//  LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift
+//  LabGerakParabolaView+Extensions.swift
 //  victory
 //
 //  Created by Nicholas on 09/06/21.
@@ -22,13 +22,20 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
     
     // Jumlah tergantung section dan context
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     // Cell tergantung section dan context
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Cell"
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as! VariabelCell
+            cell.lblVarName.text = "Asdf \(indexPath.row)"
+            return cell
+        default:
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Cell"
+            return cell
+        }
     }
 }

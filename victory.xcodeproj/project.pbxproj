@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
-		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
@@ -20,7 +19,7 @@
 		D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328A626709527007753E9 /* XIBTryoutViewController.swift */; };
 		D58328AB2670B690007753E9 /* LabGerakParabolaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328AA2670B690007753E9 /* LabGerakParabolaView.swift */; };
 		D58328AD2670B6A6007753E9 /* LabGerakParabola.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58328AC2670B6A6007753E9 /* LabGerakParabola.xib */; };
-		D58328B02670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328AF2670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift */; };
+		D58328B02670E11F007753E9 /* LabGerakParabolaView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328AF2670E11F007753E9 /* LabGerakParabolaView+Extensions.swift */; };
 		D58328B42670E7F1007753E9 /* VariabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328B22670E7F1007753E9 /* VariabelCell.swift */; };
 		D58328B52670E7F1007753E9 /* VariabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58328B32670E7F1007753E9 /* VariabelCell.xib */; };
 		D58328B82670F4B3007753E9 /* LabVariableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58328B72670F4B3007753E9 /* LabVariableHeaderView.swift */; };
@@ -48,7 +47,7 @@
 		D58328A626709527007753E9 /* XIBTryoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBTryoutViewController.swift; sourceTree = "<group>"; };
 		D58328AA2670B690007753E9 /* LabGerakParabolaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabGerakParabolaView.swift; sourceTree = "<group>"; };
 		D58328AC2670B6A6007753E9 /* LabGerakParabola.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabGerakParabola.xib; sourceTree = "<group>"; };
-		D58328AF2670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		D58328AF2670E11F007753E9 /* LabGerakParabolaView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabGerakParabolaView+Extensions.swift"; sourceTree = "<group>"; };
 		D58328B22670E7F1007753E9 /* VariabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariabelCell.swift; sourceTree = "<group>"; };
 		D58328B32670E7F1007753E9 /* VariabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VariabelCell.xib; sourceTree = "<group>"; };
 		D58328B72670F4B3007753E9 /* LabVariableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabVariableHeaderView.swift; sourceTree = "<group>"; };
@@ -140,7 +139,7 @@
 		D58328AE2670E0D1007753E9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D58328AF2670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift */,
+				D58328AF2670E11F007753E9 /* LabGerakParabolaView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,7 +324,7 @@
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
-				D58328B02670E11F007753E9 /* LabGerakParabola+UITableViewDelegate+UITableViewDataSource.swift in Sources */,
+				D58328B02670E11F007753E9 /* LabGerakParabolaView+Extensions.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

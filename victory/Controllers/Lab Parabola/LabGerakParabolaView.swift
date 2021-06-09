@@ -57,5 +57,6 @@ class LabGerakParabolaView: UIView {
         
         // Register Custom Cells
         variableTableView.register(UINib(nibName: "LabVariableHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "VarHeader")
+        variableTableView.register(UINib(nibName: "VariabelCell", bundle: nil), forCellReuseIdentifier: "VariableSliderCell")
     }
 }
