@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerak Parabola</title>
+    <link rel="stylesheet" href="../../../Stylesheet/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h1>Materi Pembelajaran</h1>
+    <p>Gerak parabola adalah gerak suatu benda dengan lintasan dua dimensi dan salah satu dimensinya membentuk sudut pada salah satu koordinat kartesius.</p>
+    <img src="Images/PrinsipGP.png" alt="Gerak Parabola">
+    <h3>Gerak Parabola pada sumbu x</h3>
+    <ul>
+        <li>Benda mengalami gerak lurus beraturan (GLB)</li>
+        <li>Kecepatan gerak benda konstan di setiap titik pada lintasan parabola</li>
+    </ul>
+    <h3>Gerak Parabola pada sumbu y</h3>
+    <ul>
+        <li>Benda mengalami gerak lurus berubah beraturan (GLBB)</li>
+        <li>Kecepatan gerak benda berubah terhadap waktu secara beraturan di setiap titik pada lintasan parabola</li>
+    </ul>
+    <h3>Asumsi dalam Gerak Parabola</h3>
+    <ul>
+        <li>Percepatan gravitasi memiliki  nilai yang tetap (g = 9,8 m/s<sup>2</sup> atau g = 10 m/s<sup>2</sup>)</li>
+        <li>Pengaruh hambatan udara (gesekan udara) diabaikan</li>
+        <li>Rotasi bumi tidak memengaruhi gerakan</li>
+    </ul>
+    <h3>Komponen Kecepatan Awal dalam Gerak Parabola</h3>
+    <p>Sebuah benda yang ditembakkan (proyektil) dengan sudut elevasi  dan kecepatan awal v0 akan bergerak dengan lintasan berbentuk parabola yang disebabkan oleh adanya percepatan gravitasi g.</p>
+    <img src="Images/KomponenKecepatan.png" alt="Komponen Kecepatan Gerak Parabola">
+    <div id="formulaBox">
+        <p>Komponen kecepatan saat pada <b>sumbu x</b></p>
+        <p><i>v<sub>0x</sub> = v<sub>0</sub> cos&theta;</i></p>
+    </div>
+    <div id="formulaBox">
+        <p>Komponen kecepatan saat pada <b>sumbu y</b></p>
+        <p><i>v<sub>0y</sub> = v<sub>0</sub> sin&theta;</i></p>
+    </div>
+    <h3>Komponen kecepatan proyektil setiap saat tertentu dalam gerak parabola</h3>
+    <p>Komponen kecepatan ini berlaku apabila diasumsikan tidak ada gesekan udara dengan proyektil</p>
+    <div id="formulaBox">
+        <p>Kecepatan proyektil setiap saat terhadap <b>sumbu x</b></p>
+        <p><i>v<sub>x</sub> = v<sub>0</sub> cos&theta;</i></p>
+    </div>
+    <div id="formulaBox">
+        <p>Kecepatan proyektil pada waktu t terhadap <b>sumbu y</b></p>
+        <div>
+            <p><i>v<sub>y</sub> = v<sub>0y</sub> - gt</i></p>
+            <p><i>v<sub>y</sub> = v<sub>0</sub> sin&theta; - gt</i></p>
+        </div>
+    </div>
+    <h3>Komponen Jarak Tempuh dan Ketinggian dalam Gerak Parabola</h3>
+    <img src="Images/KomponenJarak.png" alt="Jarak tempuh gerak parabola">
+    <div id="formulaBox">
+        <p>Jarak yang ditempuh oleh proyektil pada waktu t terhadap <b>sumbu x</b></p>
+        <div>
+            <p><i>x = v<sub>x</sub> t</i></p>
+            <p><i>x = v<sub>0</sub> cos&theta; t</i></p>
+        </div>
+    </div>
+    <div id="formulaBox">
+        <p>Ketinggian yang dicapai oleh proyektil pada waktu t terhadap <b>sumbu y</b></p>
+        <!-- Yang ini akan di reconsider cara nya untuk equation pembagiannya -->
+        <div>
+            <i>
+            <div class="formulae">
+                <p>y = v<sub>0y</sub> t -&nbsp;</p>
+                <table>
+                    <tr><td>1</td></tr>
+                    <tr><td>2</td></tr>
+                </table>
+                <p>&nbsp;gt<sup>2</sup></p>
+            </div>
+            <div class="formulae">
+                <p>y = v<sub>0</sub> sin&theta; t -&nbsp;</p>
+                <table>
+                    <tr><td>1</td></tr>
+                    <tr><td>2</td></tr>
+                </table>
+                <p>&nbsp;gt<sup>2</sup></p>
+            </div>
+            </i>
+        </div>
+    </div>
+    <h3>Komponen Jarak Maksimum dalam Gerak Parabola</h3>
+    <img src="Images/JarakMax.png" alt="Jarak Maksimum Gerak Parabola">
+    <p>Jarak maksimum adalah jarak yang ditempuh proyektil dari awal bergerak hingga berhenti bergerak. Pada saat proyektil mencapai jarak tempuh maksimum <i>(x<sub>maks</sub>)</i> maka ketinggiannya akan minimum (y = 0). Maka persamaan jarak tempuh terhadap sumbu y menjadi:</p>
+    <div id="formulaBox">
+        <p><b>Waktu</b> untuk mencapai jarak maksimum <i>(t<sub>xmaks</sub>)</i></p>
+        <div>
+            <i>
+            <div class="formulae">
+                <p>0 = v<sub>0</sub> sin&theta; t -&nbsp;</p>
+                <table>
+                    <tr><td>1</td></tr>
+                    <tr><td>2</td></tr>
+                </table>
+                <p>&nbsp;gt<sup>2</sup></p>
+            </div>
+            <div class="formulae">
+                <p>t<sub>xmaks</sub> =&nbsp;</p>
+                <table>
+                    <tr><td>2v<sub>0</sub> sin&theta;</td></tr>
+                    <tr><td>g</td></tr>
+                </table>
+            </div>
+            </i>
+        </div>
+    </div>
+    <p>Bila persamaan waktu di atas disubstitusikan ke dalam persamaan jarak terhadap sumbu x, maka diperoleh:</p>
+    <div id="formulaBox">
+        <p>Jarak maksimum <i>(x<sub>maks</sub>)</i></p>
+        <div>
+            <i>
+                <div class="formulae">
+                    <p><i>x = v<sub>0</sub> cos&theta; t</i></p>
+                </div>
+                <div class="formulae">
+                    <p><i>x = v<sub>0</sub> cos&theta; (</i></p>
+                    <table>
+                        <tr><td>2v<sub>0</sub> sin&theta;</td></tr>
+                        <tr><td>g</td></tr>
+                    </table>
+                    <p>) =&nbsp;</p>
+                    <table>
+                        <tr><td>2v<sub>0</sub><sup>2</sup> sin&theta; cos&theta;</td></tr>
+                        <tr><td>g</td></tr>
+                    </table>
+                </div>
+                <div class="formulae">
+                    <p>x<sub>maks</sub> =&nbsp;</p>
+                    <table>
+                        <tr><td>v<sub>0</sub><sup>2</sup></td></tr>
+                        <tr><td>g</td></tr>
+                    </table>
+                    <p>&nbsp;sin 2&theta;</p>
+                </div>
+            </i>
+        </div>
+    </div>
+    <h3>Komponen Ketinggian Maksimum dalam Gerak Parabola</h3>
+    <img src="Images/TinggiMax.png" alt="">
+    <p>Tinggi maksimum adalah posisi benda pada titik tertinggi terhadap sumbu y. Komponen kecepatan sesaat proyektil terhadap sumbu y mencapai nilai minimum (v<sub>y</sub>=0) saat tinggi proyektil mencapai nilai maksimum. Sehingga dapat dihitung waktu yang dibutuhkan oleh proyektil untuk mencapai ketinggian dan jarak maksimum adalah:</p>
+    <div id="formulaBox">
+        <p><b>Waktu</b> yang dibutuhkan untuk mencapai <b>tinggi maksimum</b> <i>(t<sub>ymaks</sub>)</i></p>
+        <div>
+            <i>
+                <p>v<sub>y</sub> = v<sub>0</sub> sin&theta; - gt</p>
+                <p>0 = v<sub>0</sub> sin&theta; - gt<sub>ymaks</sub></p>             
+                <div class="formulae">
+                    <p>t<sub>ymaks</sub> =&nbsp;</p>
+                    <table>
+                        <tr><td>v<sub>0</sub> sin&theta;</td></tr>
+                        <tr><td>g</td></tr>
+                    </table>
+                </div>   
+            </i>
+        </div>
+    </div>
+    <div id="formulaBox">
+        <p><b>Waktu</b> yang dibutuhkan untuk mencapai <b>jarak maksimum</b> <i>(t<sub>xmaks</sub>)</i></p>
+        <div>
+            <i>
+                <p>t<sub>xmaks</sub> = 2t<sub>ymaks</sub></p>
+            </i>
+        </div>
+    </div>
+    <p>Kemudian, dari rumus waktu tersebut, kita dapat mencari ketinggian maksimum proyektil dengan cara mensubstitusikan variabel t<sub>ymaks</sub> pada persamaan jarak pada sumbu y, sehingga:</p>
+    <div id="formulaBox">
+        <p>Tinggi maksimum <i>(y<sub>maks</sub>)</i></p>
+        <div>
+            <i>
+                <div class="formulae">
+                    <p>y = v<sub>0</sub> sin&theta; t -&nbsp;</p>
+                    <table>
+                        <tr><td>1</td></tr>
+                        <tr><td>2</td></tr>
+                    </table>
+                    <p>&nbsp;gt<sup>2</sup></p>
+                </div>
+                <div class="formulae">
+                    <p>y = v<sub>0</sub> sin&theta; (</p>
+                    <table>
+                        <tr><td>v<sub>0</sub> sin&theta;</td></tr>
+                        <tr><td>g</td></tr>
+                    </table>
+                    <p>) -&nbsp;</p>
+                    <table>
+                        <tr><td>1</td></tr>
+                        <tr><td>2</td></tr>
+                    </table>
+                    <p>&nbsp;g
+                        (</p>
+                    <table>
+                        <tr><td>v<sub>0</sub> sin&theta;</td></tr>
+                        <tr><td>g</td></tr>
+                    </table>
+                    <p>
+                        )<sup>2</sup></p>
+                </div>
+                <div class="formulae">
+                    <p>y<sub>maks</sub> =&nbsp;</p>
+                    <table>
+                        <tr><td>v<sub>0</sub><sup>2</sup> sin<sup>2</sup>&theta;</td></tr>
+                        <tr><td>2g</td></tr>
+                    </table>
+                </div>
+            </i>
+        </div>
+    </div>
+</body>
+</html>

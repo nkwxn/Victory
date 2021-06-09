@@ -1,0 +1,75 @@
+body {
+    color: #222;
+    background: #fff;
+    font: 100% system-ui;
+    margin: auto;
+    padding: 0 24pt;
+    max-width: 600pt;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+  
+img {
+    max-width: 500pt;
+    height: auto;
+    object-fit: fill;
+    padding: 0 24pt;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formulaBox {
+    border-radius: 14pt;
+    background-color: rgb(245, 245, 247);
+    margin: 8pt 0;
+    padding: 4pt 18pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#formulaBox div {
+    align-items: right;
+}
+
+#formulaBox div p {
+    text-align: right;
+    margin: 4pt 0;
+}
+
+.formulae {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.formulae p {
+    display: inline-block;
+    height: 100%;
+}
+
+.formulae table {
+    border-collapse: collapse;
+    border-style: hidden;
+    padding: 0 4pt;
+}
+
+.formulae table td, .formulae table th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+    body {
+      color: #eee;
+      background: #000;
+    }
+}
+*/
