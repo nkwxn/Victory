@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
+		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
@@ -71,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3099E73C2670D08600B44701 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3099E73D2670D0B600B44701 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3099E73D2670D0B600B44701 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3099E73E2670D0C000B44701 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D583289926709111007753E9 /* Main Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,10 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				D5983E242665D6AD00C199EA /* Assets.xcassets */,
+				3099E7202670C63200B44701 /* Colors.xcassets */,
 				D5B0D61026678D150027AEF2 /* Supporting Files */,
 				D5B0D60D26678D050027AEF2 /* Models */,
 				D5B0D60E26678D0B0027AEF2 /* Views */,
 				D5B0D60F26678D0F0027AEF2 /* Controllers */,
+				3099E73C2670D08600B44701 /* Helpers */,
 			);
 			path = victory;
 			sourceTree = "<group>";
@@ -279,6 +301,7 @@
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
 				D58328B52670E7F1007753E9 /* VariabelCell.xib in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
+				3099E7212670C63200B44701 /* Colors.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
 			);
@@ -453,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				INFOPLIST_FILE = "victory/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,6 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				INFOPLIST_FILE = "victory/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
