@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
 		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
+		30B8DE612670E005002DEC0C /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8DE5F2670E005002DEC0C /* TimelineTableViewCell.swift */; };
+		30B8DE622670E005002DEC0C /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30B8DE602670E005002DEC0C /* TimelineTableViewCell.xib */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		30B8DE5F2670E005002DEC0C /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		30B8DE602670E005002DEC0C /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
@@ -75,6 +79,22 @@
 				3099E73E2670D0C000B44701 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		30B8DE5D2670DFE8002DEC0C /* XIB Pralab */ = {
+			isa = PBXGroup;
+			children = (
+				30B8DE602670E005002DEC0C /* TimelineTableViewCell.xib */,
+			);
+			path = "XIB Pralab";
+			sourceTree = "<group>";
+		};
+		30B8DE5E2670DFF3002DEC0C /* PraLab */ = {
+			isa = PBXGroup;
+			children = (
+				30B8DE5F2670E005002DEC0C /* TimelineTableViewCell.swift */,
+			);
+			path = PraLab;
 			sourceTree = "<group>";
 		};
 		D583289926709111007753E9 /* Main Appearance */ = {
@@ -147,6 +167,7 @@
 		D5B0D60E26678D0B0027AEF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30B8DE5D2670DFE8002DEC0C /* XIB Pralab */,
 				D540E8FC266F6E9600FACF72 /* WebKitView */,
 				D583289926709111007753E9 /* Main Appearance */,
 				D583289F2670935D007753E9 /* XIB Container Praktikum */,
@@ -159,6 +180,7 @@
 		D5B0D60F26678D0F0027AEF2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				30B8DE5E2670DFF3002DEC0C /* PraLab */,
 				D583289A26709167007753E9 /* Main Appearance */,
 				D58328A626709527007753E9 /* XIBTryoutViewController.swift */,
 			);
@@ -239,6 +261,7 @@
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
 				3099E7212670C63200B44701 /* Colors.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
+				30B8DE622670E005002DEC0C /* TimelineTableViewCell.xib in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +276,7 @@
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
 				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
+				30B8DE612670E005002DEC0C /* TimelineTableViewCell.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
