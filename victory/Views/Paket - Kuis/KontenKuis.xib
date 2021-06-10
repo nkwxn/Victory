@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="KontenKuisView" customModule="victory" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="1194" height="707"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -100,6 +100,16 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="jawabanAButton" destination="t83-Mt-Q1m" id="5sM-69-gYu"/>
+                <outlet property="jawabanBButton" destination="NOb-uW-G7E" id="OlH-nj-4sJ"/>
+                <outlet property="jawabanCButton" destination="CT2-Lr-qkC" id="XGK-dS-Qqm"/>
+                <outlet property="jawabanDButton" destination="4qk-Dw-fwR" id="A59-Mw-WKm"/>
+                <outlet property="jawabanTepatLabel" destination="d5o-jN-6T2" id="obx-Mx-IEq"/>
+                <outlet property="nomorKuisLabel" destination="ibL-lz-pMM" id="jpU-fs-F6g"/>
+                <outlet property="pembahasanLabel" destination="nX3-gc-sDr" id="pLs-Jh-cXU"/>
+                <outlet property="pertanyaanKuisLabel" destination="6O0-2y-b4O" id="Ecy-jV-ksK"/>
+            </connections>
             <point key="canvasLocation" x="-23.115577889447238" y="145.68345323741008"/>
         </view>
     </objects>

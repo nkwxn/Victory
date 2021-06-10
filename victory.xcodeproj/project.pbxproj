@@ -10,6 +10,8 @@
 		086E6CE22671CDDA00F65CDC /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086E6CE12671CDDA00F65CDC /* OnboardingView.xib */; };
 		086E6CE52671D2BF00F65CDC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6CE42671D2BF00F65CDC /* OnboardingView.swift */; };
 		086E6CE72671D36E00F65CDC /* KontenKuis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086E6CE62671D36E00F65CDC /* KontenKuis.xib */; };
+		0890E8932671DD50000A43F2 /* KontenKuisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890E8922671DD50000A43F2 /* KontenKuisView.swift */; };
+		0890E8962671DE43000A43F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890E8952671DE43000A43F2 /* Constants.swift */; };
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
 		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
@@ -34,6 +36,8 @@
 		086E6CE12671CDDA00F65CDC /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		086E6CE42671D2BF00F65CDC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		086E6CE62671D36E00F65CDC /* KontenKuis.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KontenKuis.xib; sourceTree = "<group>"; };
+		0890E8922671DD50000A43F2 /* KontenKuisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontenKuisView.swift; sourceTree = "<group>"; };
+		0890E8952671DE43000A43F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
@@ -71,22 +75,25 @@
 			isa = PBXGroup;
 			children = (
 				086E6CE12671CDDA00F65CDC /* OnboardingView.xib */,
+				086E6CE42671D2BF00F65CDC /* OnboardingView.swift */,
 				086E6CE62671D36E00F65CDC /* KontenKuis.xib */,
+				0890E8922671DD50000A43F2 /* KontenKuisView.swift */,
 			);
 			path = "Paket - Kuis";
 			sourceTree = "<group>";
 		};
-		086E6CE32671D28F00F65CDC /* Paket - Kuis */ = {
+		0890E8942671DDF9000A43F2 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				086E6CE42671D2BF00F65CDC /* OnboardingView.swift */,
+				0890E8952671DE43000A43F2 /* Constants.swift */,
 			);
-			path = "Paket - Kuis";
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		3099E73C2670D08600B44701 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0890E8942671DDF9000A43F2 /* Constants */,
 				3099E73D2670D0B600B44701 /* Extensions */,
 			);
 			path = Helpers;
@@ -183,7 +190,6 @@
 		D5B0D60F26678D0F0027AEF2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				086E6CE32671D28F00F65CDC /* Paket - Kuis */,
 				D583289A26709167007753E9 /* Main Appearance */,
 				D58328A626709527007753E9 /* XIBTryoutViewController.swift */,
 			);
@@ -280,9 +286,11 @@
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
 				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
+				0890E8932671DD50000A43F2 /* KontenKuisView.swift in Sources */,
 				086E6CE52671D2BF00F65CDC /* OnboardingView.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
+				0890E8962671DE43000A43F2 /* Constants.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
