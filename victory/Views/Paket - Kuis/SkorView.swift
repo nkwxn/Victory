@@ -8,7 +8,11 @@
 import UIKit
 
 class SkorView: UIView {
-
+    @IBAction func kembaliKeKuisButton(_ sender: Any) {
+    }
+    
+    @IBAction func keluarPraktikumButton(_ sender: Any) {
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
