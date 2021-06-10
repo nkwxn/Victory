@@ -85,16 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				308E6F9926712AF600D6A45D /* TimelineView.xib */,
-			);
-			path = "XIB Pralab";
-			sourceTree = "<group>";
-		};
-		30B8DE5E2670DFF3002DEC0C /* PraLab */ = {
-			isa = PBXGroup;
-			children = (
 				30B8DE5F2670E005002DEC0C /* TimelineView.swift */,
 			);
-			path = PraLab;
+			path = "XIB Pralab";
 			sourceTree = "<group>";
 		};
 		D583289926709111007753E9 /* Main Appearance */ = {
@@ -180,7 +173,6 @@
 		D5B0D60F26678D0F0027AEF2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				30B8DE5E2670DFF3002DEC0C /* PraLab */,
 				D583289A26709167007753E9 /* Main Appearance */,
 				D58328A626709527007753E9 /* XIBTryoutViewController.swift */,
 			);

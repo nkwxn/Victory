@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tryout View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="XIBTryoutViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yv8-Sa-J7S">
+                                <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
+                                <items>
+                                    <navigationItem title="Title" id="SAl-Ih-91V"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWO-jy-yMd" customClass="TimelineView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="1194" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="84W-46-Win"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xWO-jy-yMd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Bv6-g1-0M7"/>
+                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ehj-Yb-b09"/>
+                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PZW-Gb-erK"/>
+                            <constraint firstItem="xWO-jy-yMd" firstAttribute="top" secondItem="yv8-Sa-J7S" secondAttribute="bottom" id="bIi-Qj-Tvl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xWO-jy-yMd" secondAttribute="trailing" id="rr1-e7-RDE"/>
+                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xEW-pL-qR0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="xWO-jy-yMd" id="Tv7-qN-bLr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="117"/>
+            <point key="canvasLocation" x="131.65829145728642" y="116.54676258992806"/>
         </scene>
     </scenes>
     <resources>

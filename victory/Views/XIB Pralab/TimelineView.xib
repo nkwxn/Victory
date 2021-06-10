@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,10 +14,6 @@
             <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUh-ux-AQG">
-                    <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lz4-s7-WBP" userLabel="Lab Background" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
                     <rect key="frame" x="387" y="6" width="420" height="32"/>
                     <subviews>
@@ -156,6 +151,12 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="14"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKA-rI-1Ju" userLabel="Separator 1" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
@@ -232,45 +233,37 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-HG-m9o" userLabel="Gray Separator">
-                    <rect key="frame" x="0.0" y="50" width="1194" height="0.0"/>
+                    <rect key="frame" x="0.0" y="49.5" width="1194" height="0.5"/>
                     <color key="backgroundColor" name="vc_separator"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1194" id="53y-hK-m4t"/>
-                        <constraint firstAttribute="height" id="s0d-JY-BCo"/>
+                        <constraint firstAttribute="height" constant="0.5" id="R7G-dg-kuY"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" name="vc_nav_bar"/>
             <constraints>
-                <constraint firstItem="JUh-ux-AQG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2Ce-zS-Vfl"/>
                 <constraint firstItem="S8b-XS-Kqb" firstAttribute="leading" secondItem="Lz4-s7-WBP" secondAttribute="trailing" constant="60" id="8WB-hC-vzF"/>
-                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="ySc-bH-N6N" secondAttribute="bottom" constant="12" id="9td-VW-NQW"/>
                 <constraint firstItem="Lz4-s7-WBP" firstAttribute="leading" secondItem="ySc-bH-N6N" secondAttribute="trailing" constant="60" id="DDg-FC-rLK"/>
                 <constraint firstItem="5dA-HG-m9o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="G2f-UJ-BX1"/>
-                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="JUh-ux-AQG" secondAttribute="bottom" id="GdJ-fJ-zSf"/>
+                <constraint firstAttribute="bottom" secondItem="sgU-X8-axC" secondAttribute="bottom" constant="26" id="Hwr-ax-U70"/>
                 <constraint firstItem="sgU-X8-axC" firstAttribute="leading" secondItem="Lz4-s7-WBP" secondAttribute="trailing" constant="10" id="Ikw-v7-mxG"/>
-                <constraint firstItem="JUh-ux-AQG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="KmK-FQ-BSm"/>
                 <constraint firstItem="ySc-bH-N6N" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="L1Z-mH-fB5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Lz4-s7-WBP" secondAttribute="bottom" constant="12" id="N3r-GR-8AF"/>
                 <constraint firstItem="vKA-rI-1Ju" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="22" id="Qb1-gO-QWb"/>
-                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="sgU-X8-axC" secondAttribute="bottom" constant="26" id="S2t-jN-DRi"/>
+                <constraint firstAttribute="bottom" secondItem="vKA-rI-1Ju" secondAttribute="bottom" constant="26" id="age-bs-9gn"/>
                 <constraint firstItem="vKA-rI-1Ju" firstAttribute="leading" secondItem="ySc-bH-N6N" secondAttribute="trailing" constant="10" id="byw-mg-eeF"/>
                 <constraint firstItem="sgU-X8-axC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="22" id="c6r-wQ-Mv6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5dA-HG-m9o" secondAttribute="bottom" id="cUo-DD-jtI"/>
-                <constraint firstItem="JUh-ux-AQG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="cw3-XW-5uu"/>
                 <constraint firstItem="Lz4-s7-WBP" firstAttribute="leading" secondItem="vKA-rI-1Ju" secondAttribute="trailing" constant="10" id="g1I-1A-DeG"/>
                 <constraint firstItem="S8b-XS-Kqb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="isf-Iq-WTU"/>
-                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="S8b-XS-Kqb" secondAttribute="bottom" constant="12" id="k6n-j7-Vsg"/>
-                <constraint firstItem="5dA-HG-m9o" firstAttribute="top" secondItem="vKA-rI-1Ju" secondAttribute="bottom" constant="26" id="m97-Uf-bxm"/>
                 <constraint firstItem="S8b-XS-Kqb" firstAttribute="leading" secondItem="sgU-X8-axC" secondAttribute="trailing" constant="10" id="n6H-O0-R8p"/>
                 <constraint firstItem="Lz4-s7-WBP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="o8F-FE-RjC"/>
                 <constraint firstItem="Lz4-s7-WBP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zXi-fu-tpm"/>
             </constraints>
-            <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="contentView" destination="JUh-ux-AQG" id="Kgb-Vp-l3h"/>
                 <outlet property="kuisBtn" destination="ZhJ-Td-BCu" id="tq9-wi-tiT"/>
                 <outlet property="kuisPill" destination="S8b-XS-Kqb" id="vtX-Jl-g39"/>
                 <outlet property="labBg" destination="Lz4-s7-WBP" id="ZUt-Sq-c3T"/>
@@ -287,7 +280,7 @@
                 <outlet property="separatorSatu" destination="vKA-rI-1Ju" id="5J7-y3-fQs"/>
                 <outlet property="separatorTiga" destination="Rhh-xA-uvB" id="xNB-Qs-IYn"/>
             </connections>
-            <point key="canvasLocation" x="138.69346733668343" y="145.32374100719426"/>
+            <point key="canvasLocation" x="457" y="132"/>
         </view>
     </objects>
     <resources>
@@ -308,8 +301,5 @@
         <namedColor name="vc_separator">
             <color red="0.68199998140335083" green="0.68199998140335083" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
