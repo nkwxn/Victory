@@ -3,8 +3,8 @@
     <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,27 +24,38 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhw-sh-bQn">
-                                <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zv5-i6-7cv" customClass="TimelineView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="1194" height="50"/>
+                                <color key="backgroundColor" name="vc_side_menu"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="1194" id="glC-ou-Y3L"/>
-                                    <constraint firstAttribute="height" constant="50" id="vhg-f3-TOW"/>
+                                    <constraint firstAttribute="height" constant="50" id="CLG-Pq-SW8"/>
                                 </constraints>
-                            </containerView>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7d-AV-asA" customClass="OnBoardingView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="277" y="183" width="640" height="468"/>
+                                <color key="backgroundColor" name="vc_side_menu"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="468" id="4HQ-pd-yGw"/>
+                                    <constraint firstAttribute="width" constant="640" id="MKC-av-jPV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="vc_nav_bar"/>
                         <constraints>
                             <constraint firstItem="yv8-Sa-J7S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="4XG-S1-msp"/>
-                            <constraint firstItem="mhw-sh-bQn" firstAttribute="top" secondItem="yv8-Sa-J7S" secondAttribute="bottom" id="eac-Jv-AbY"/>
-                            <constraint firstItem="mhw-sh-bQn" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="f6d-GH-rde"/>
-                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iyj-U8-KiC"/>
-                            <constraint firstItem="mhw-sh-bQn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qe8-zw-ser"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zv5-i6-7cv" secondAttribute="trailing" id="9wH-pL-ocX"/>
+                            <constraint firstItem="R7d-AV-asA" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="I97-3S-b21"/>
+                            <constraint firstItem="Zv5-i6-7cv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MHU-Q8-NGv"/>
+                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VfS-Nl-s6D"/>
+                            <constraint firstItem="R7d-AV-asA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="idX-Ah-iw3"/>
                             <constraint firstItem="yv8-Sa-J7S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rvR-bQ-ZxO"/>
+                            <constraint firstItem="Zv5-i6-7cv" firstAttribute="top" secondItem="yv8-Sa-J7S" secondAttribute="bottom" id="uwH-gW-u7b"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="containerView" destination="mhw-sh-bQn" id="hlg-jL-vpD"/>
+                        <outlet property="containerView" destination="Zv5-i6-7cv" id="CMY-dF-fNX"/>
+                        <outlet property="onBoardingView" destination="R7d-AV-asA" id="Yjc-qq-5aZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -54,8 +65,11 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="vc_nav_bar">
+            <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="vc_side_menu">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

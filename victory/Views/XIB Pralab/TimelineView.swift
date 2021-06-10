@@ -15,11 +15,11 @@ class TimelineView: UIView {
     @IBOutlet weak var labTigaBtn: UIButton!
     @IBOutlet weak var kuisBtn: UIButton!
     
-    @IBOutlet weak var materiPill: UIView!
-    @IBOutlet weak var labSatuPill: UIView!
-    @IBOutlet weak var labDuaPill: UIView!
-    @IBOutlet weak var labTigaPill: UIView!
-    @IBOutlet weak var kuisPill: UIView!
+    @IBOutlet weak var materiPill: RoundCornersUIView!
+    @IBOutlet weak var labSatuPill: RoundCornersUIView!
+    @IBOutlet weak var labDuaPill: RoundCornersUIView!
+    @IBOutlet weak var labTigaPill: RoundCornersUIView!
+    @IBOutlet weak var kuisPill: RoundCornersUIView!
     
     @IBOutlet weak var labBg: UIView!
     @IBOutlet weak var separatorSatu: UIView!
@@ -27,23 +27,22 @@ class TimelineView: UIView {
     @IBOutlet weak var separatorTiga: UIView!
     @IBOutlet weak var separatorEmpat: UIView!
     
-    override init(frame: CGRect) {
+    @IBOutlet var contentView: TimelineView!
+    
+    override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
     }
     
-    func commonInit() {
-        let bundle = Bundle.init(for: TimelineView.self)
-        if let viewFromXIB = bundle.loadNibNamed("TimelineView", owner: self, options: nil),
-           let timelineView = viewFromXIB.first as? UIView {
-            timelineView.frame = self.bounds
-            timelineView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            addSubview(timelineView)
-        }
+    private func commonInit() {
+        Bundle.main.loadNibNamed("TimelineView", owner: self, options: nil)
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
-    
 }

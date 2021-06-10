@@ -9,13 +9,18 @@ import UIKit
 
 class XIBTryoutViewController: UIViewController {
     
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: TimelineView!
+    @IBOutlet weak var onBoardingView: OnBoardingView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tryoutView = TimelineView(frame: containerView.frame)
-        containerView.addSubview(tryoutView)
+        containerView.materiPill.layer.cornerRadius = 14
+        containerView.materiPill.backgroundColor = UIColor.black
+        
+        onBoardingView.layer.cornerRadius = 13
+        onBoardingView.layer.masksToBounds = true
+        onBoardingView.actionBtn.layer.cornerRadius = 8
         
     }
 

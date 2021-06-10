@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3031644D26720C660085E518 /* OnBoardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3031644C26720C660085E518 /* OnBoardingView.xib */; };
+		30316478267239480085E518 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30316477267239480085E518 /* OnBoardingView.swift */; };
 		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
 		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3031644C26720C660085E518 /* OnBoardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingView.xib; sourceTree = "<group>"; };
+		30316477267239480085E518 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			children = (
 				308E6F9926712AF600D6A45D /* TimelineView.xib */,
 				30B8DE5F2670E005002DEC0C /* TimelineView.swift */,
+				3031644C26720C660085E518 /* OnBoardingView.xib */,
+				30316477267239480085E518 /* OnBoardingView.swift */,
 			);
 			path = "XIB Pralab";
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
+				3031644D26720C660085E518 /* OnBoardingView.xib in Resources */,
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
 				308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */,
@@ -274,6 +281,7 @@
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
+				30316478267239480085E518 /* OnBoardingView.swift in Sources */,
 				3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);
