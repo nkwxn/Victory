@@ -14,29 +14,33 @@
             <rect key="frame" x="0.0" y="0.0" width="1194" height="707"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nomor kuis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibL-lz-pMM">
-                    <rect key="frame" x="280" y="86" width="181" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nomor kuis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibL-lz-pMM">
+                    <rect key="frame" x="280" y="43" width="634" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="634" id="01s-zt-hDA"/>
+                        <constraint firstAttribute="width" constant="634" id="5GC-AY-5vM"/>
+                        <constraint firstAttribute="height" constant="41" id="rPG-Sj-U18"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="wgQ-vh-f2V"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pertanyaan Kuis" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O0-2y-b4O">
-                    <rect key="frame" x="280" y="137" width="634" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pertanyaan Kuis" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O0-2y-b4O">
+                    <rect key="frame" x="280" y="105" width="634" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="634" id="3oY-Yo-pqh"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="634" id="4Ns-4q-Tb8"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="634" id="5vN-xr-xuy"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Cow-Tb-89g"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="cQ5-Hh-cnT"/>
+                        <constraint firstAttribute="height" constant="50" id="rhe-8M-S1n"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="sSr-sf-gXH"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NOb-uW-G7E">
-                    <rect key="frame" x="606" y="227" width="296" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.21083378790000001" green="0.47220683099999999" blue="0.96475356820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <color key="tintColor" red="0.21083378790000001" green="0.47220683099999999" blue="0.96475356820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="Jawaban B">
-                        <color key="titleColor" systemColor="systemBackgroundColor"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4qk-Dw-fwR">
                     <rect key="frame" x="606" y="293" width="296" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,10 +55,16 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.95692747830000002" green="0.95670551059999998" blue="0.96470826860000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="t83-Mt-Q1m">
-                    <rect key="frame" x="278" y="227" width="296" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="t83-Mt-Q1m">
+                    <rect key="frame" x="278" y="195" width="296" height="50"/>
                     <color key="backgroundColor" red="0.21083378790000001" green="0.47220683099999999" blue="0.96475356820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="2Kq-zx-XBT"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="4TR-D2-AgN"/>
+                        <constraint firstAttribute="width" constant="296" id="5wi-l8-mbE"/>
+                        <constraint firstAttribute="height" constant="50" id="Tpp-Gt-7Id"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="296" id="h6R-fb-cWI"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="tintColor" red="0.21083378790000001" green="0.47220683099999999" blue="0.96475356820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="Jawaban A">
@@ -86,17 +96,42 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMy-Iq-bol">
-                    <rect key="frame" x="0.0" y="47" width="1174" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilihlah satu jawaban yang paling tepat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMy-Iq-bol">
+                    <rect key="frame" x="0.0" y="0.0" width="1194" height="34"/>
                     <color key="backgroundColor" red="0.95692747830000002" green="0.95670551059999998" blue="0.96470826860000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="3wG-ZA-Xfe"/>
+                        <constraint firstAttribute="width" constant="1194" id="gYq-TN-Vrr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NOb-uW-G7E">
+                    <rect key="frame" x="606" y="194" width="296" height="50"/>
+                    <color key="backgroundColor" red="0.21083378790000001" green="0.47220683099999999" blue="0.96475356820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="KOL-pi-nlp"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ahJ-XP-Ecl"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="296" id="gqQ-Yg-Hfx"/>
+                        <constraint firstAttribute="width" constant="296" id="sTu-y1-lRp"/>
+                    </constraints>
+                    <color key="tintColor" red="0.21083378790000001" green="0.47220683099999999" blue="0.96475356820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Jawaban B">
+                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="RMy-Iq-bol" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="4JS-st-8AV"/>
+                <constraint firstItem="ibL-lz-pMM" firstAttribute="top" secondItem="RMy-Iq-bol" secondAttribute="bottom" constant="9" id="FVU-pl-sbd"/>
+                <constraint firstItem="RMy-Iq-bol" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PHv-cb-mqs"/>
+                <constraint firstItem="ibL-lz-pMM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cA6-Pc-T3s"/>
+                <constraint firstItem="6O0-2y-b4O" firstAttribute="top" secondItem="RMy-Iq-bol" secondAttribute="bottom" constant="71" id="hbE-Qc-IHv"/>
+                <constraint firstItem="6O0-2y-b4O" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nML-8u-nvd"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
