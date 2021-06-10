@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086E6CE22671CDDA00F65CDC /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086E6CE12671CDDA00F65CDC /* OnboardingView.xib */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		086E6CE12671CDDA00F65CDC /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		086E6CE02671CD8900F65CDC /* Paket - Kuis */ = {
+			isa = PBXGroup;
+			children = (
+				086E6CE12671CDDA00F65CDC /* OnboardingView.xib */,
+			);
+			path = "Paket - Kuis";
+			sourceTree = "<group>";
+		};
 		D583289926709111007753E9 /* Main Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		D5B0D60E26678D0B0027AEF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				086E6CE02671CD8900F65CDC /* Paket - Kuis */,
 				D540E8FC266F6E9600FACF72 /* WebKitView */,
 				D583289926709111007753E9 /* Main Appearance */,
 				D583289F2670935D007753E9 /* XIB Container Praktikum */,
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
+				086E6CE22671CDDA00F65CDC /* OnboardingView.xib in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,

@@ -41,8 +41,6 @@ enum Mapel: String {
             return UIImage(named: "ladybug")!
         case .matematika:
             return UIImage(named: "function")!
-        default:
-            return UIImage()
         }
     }
 }
@@ -84,4 +82,13 @@ struct AlatPraktikum{
     var namaAlat: String
     var deskripsiAlat: String
     var gambarAlat: UIImage
+}
+
+struct Kuis {
+    let nomor: String
+    let pertanyaan: String
+    let jawaban: [String]
+    let jawabanBenar: String
+    let jawabanTepat: String
+    let pembahasan: String
 }
