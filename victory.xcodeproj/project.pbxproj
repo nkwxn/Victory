@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3031644D26720C660085E518 /* OnBoardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3031644C26720C660085E518 /* OnBoardingView.xib */; };
 		30316478267239480085E518 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30316477267239480085E518 /* OnBoardingView.swift */; };
+		3031647C26724CD20085E518 /* PanduanLabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3031647B26724CD20085E518 /* PanduanLabView.xib */; };
+		3031647F26724CDF0085E518 /* PanduanLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031647E26724CDF0085E518 /* PanduanLabView.swift */; };
+		3031648326724E360085E518 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031648226724E360085E518 /* Constants.swift */; };
+		3031648A267256860085E518 /* PanduanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30316488267256860085E518 /* PanduanTableViewCell.swift */; };
+		3031648B267256860085E518 /* PanduanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30316489267256860085E518 /* PanduanTableViewCell.xib */; };
 		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
 		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
@@ -34,6 +39,11 @@
 /* Begin PBXFileReference section */
 		3031644C26720C660085E518 /* OnBoardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingView.xib; sourceTree = "<group>"; };
 		30316477267239480085E518 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		3031647B26724CD20085E518 /* PanduanLabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanduanLabView.xib; sourceTree = "<group>"; };
+		3031647E26724CDF0085E518 /* PanduanLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanduanLabView.swift; sourceTree = "<group>"; };
+		3031648226724E360085E518 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30316488267256860085E518 /* PanduanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanduanTableViewCell.swift; sourceTree = "<group>"; };
+		30316489267256860085E518 /* PanduanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanduanTableViewCell.xib; sourceTree = "<group>"; };
 		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -69,9 +79,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3031648126724E270085E518 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3031648226724E360085E518 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		3099E73C2670D08600B44701 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3031648126724E270085E518 /* Constants */,
 				3099E73D2670D0B600B44701 /* Extensions */,
 			);
 			path = Helpers;
@@ -92,6 +111,10 @@
 				30B8DE5F2670E005002DEC0C /* TimelineView.swift */,
 				3031644C26720C660085E518 /* OnBoardingView.xib */,
 				30316477267239480085E518 /* OnBoardingView.swift */,
+				3031647B26724CD20085E518 /* PanduanLabView.xib */,
+				3031647E26724CDF0085E518 /* PanduanLabView.swift */,
+				30316489267256860085E518 /* PanduanTableViewCell.xib */,
+				30316488267256860085E518 /* PanduanTableViewCell.swift */,
 			);
 			path = "XIB Pralab";
 			sourceTree = "<group>";
@@ -253,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
+				3031648B267256860085E518 /* PanduanTableViewCell.xib in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
+				3031647C26724CD20085E518 /* PanduanLabView.xib in Resources */,
 				3031644D26720C660085E518 /* OnBoardingView.xib in Resources */,
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
@@ -272,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3031648A267256860085E518 /* PanduanTableViewCell.swift in Sources */,
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
+				3031647F26724CDF0085E518 /* PanduanLabView.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
 				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
 				30B8DE612670E005002DEC0C /* TimelineView.swift in Sources */,
@@ -282,6 +309,7 @@
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
 				30316478267239480085E518 /* OnBoardingView.swift in Sources */,
+				3031648326724E360085E518 /* Constants.swift in Sources */,
 				3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);

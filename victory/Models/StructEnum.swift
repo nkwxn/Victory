@@ -78,8 +78,13 @@ struct TujuanPraktikum {
     // MARK: - INI NANTI DIDISKUIIN LAGI,PERLU PAKE ICON ATAU CUKUP DENGAN PENOMORAN AJA
 }
 
-struct AlatPraktikum{
+struct AlatPraktikum {
     var namaAlat: String
     var deskripsiAlat: String
     var gambarAlat: UIImage
+}
+
+struct Panduanlab {
+    var Langkah: [String]
+    
 }

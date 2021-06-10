@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,16 +40,26 @@
                                     <constraint firstAttribute="width" constant="640" id="MKC-av-jPV"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMJ-1K-IJX" customClass="PanduanLabView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="270" y="58" width="654" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="718" id="jHv-jG-1Vq"/>
+                                    <constraint firstAttribute="width" constant="654" id="oQ2-Du-Uzc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="vc_nav_bar"/>
                         <constraints>
                             <constraint firstItem="yv8-Sa-J7S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="4XG-S1-msp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zv5-i6-7cv" secondAttribute="trailing" id="9wH-pL-ocX"/>
+                            <constraint firstItem="JMJ-1K-IJX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="BYs-Fm-WUE"/>
                             <constraint firstItem="R7d-AV-asA" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="I97-3S-b21"/>
                             <constraint firstItem="Zv5-i6-7cv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MHU-Q8-NGv"/>
                             <constraint firstItem="yv8-Sa-J7S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VfS-Nl-s6D"/>
                             <constraint firstItem="R7d-AV-asA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="idX-Ah-iw3"/>
+                            <constraint firstItem="JMJ-1K-IJX" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="mpP-fI-y2d"/>
                             <constraint firstItem="yv8-Sa-J7S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rvR-bQ-ZxO"/>
                             <constraint firstItem="Zv5-i6-7cv" firstAttribute="top" secondItem="yv8-Sa-J7S" secondAttribute="bottom" id="uwH-gW-u7b"/>
                         </constraints>
@@ -56,6 +67,7 @@
                     <connections>
                         <outlet property="containerView" destination="Zv5-i6-7cv" id="CMY-dF-fNX"/>
                         <outlet property="onBoardingView" destination="R7d-AV-asA" id="Yjc-qq-5aZ"/>
+                        <outlet property="panduanLabView" destination="JMJ-1K-IJX" id="XYi-Pv-nmi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,5 +83,8 @@
         <namedColor name="vc_side_menu">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

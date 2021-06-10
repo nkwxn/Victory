@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PanduanLabView" customModule="victory" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Dgi-d1-GT0"/>
+                <outlet property="tableView" destination="LI7-um-yB3" id="5Ow-9Z-Uy0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="654" height="718"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjo-CT-u2Z">
+                    <rect key="frame" x="0.0" y="0.0" width="654" height="50"/>
+                    <items>
+                        <navigationItem title="Panduan Lab 1" id="WQB-oS-kvc">
+                            <barButtonItem key="rightBarButtonItem" title="Item" image="xmark" catalog="system" id="F6x-YI-e4v"/>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-um-yB3">
+                    <rect key="frame" x="0.0" y="75" width="654" height="619"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LI7-um-yB3" secondAttribute="bottom" constant="24" id="7Ha-YM-EkL"/>
+                <constraint firstItem="Qjo-CT-u2Z" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="H9t-Xa-jSG"/>
+                <constraint firstItem="Qjo-CT-u2Z" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Rxz-3n-Hn5"/>
+                <constraint firstItem="Qjo-CT-u2Z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SNk-cl-agi"/>
+                <constraint firstItem="LI7-um-yB3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TXr-qZ-oQF"/>
+                <constraint firstItem="LI7-um-yB3" firstAttribute="top" secondItem="Qjo-CT-u2Z" secondAttribute="bottom" constant="25" id="adK-TZ-CHo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LI7-um-yB3" secondAttribute="trailing" id="o6f-NZ-QU2"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="138.69346733668343" y="121.58273381294966"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
