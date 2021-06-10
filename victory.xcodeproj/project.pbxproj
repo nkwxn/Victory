@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		086E6CE22671CDDA00F65CDC /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086E6CE12671CDDA00F65CDC /* OnboardingView.xib */; };
+		086E6CE52671D2BF00F65CDC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6CE42671D2BF00F65CDC /* OnboardingView.swift */; };
+		086E6CE72671D36E00F65CDC /* KontenKuis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086E6CE62671D36E00F65CDC /* KontenKuis.xib */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		086E6CE12671CDDA00F65CDC /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
+		086E6CE42671D2BF00F65CDC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		086E6CE62671D36E00F65CDC /* KontenKuis.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KontenKuis.xib; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 			isa = PBXGroup;
 			children = (
 				086E6CE12671CDDA00F65CDC /* OnboardingView.xib */,
+				086E6CE62671D36E00F65CDC /* KontenKuis.xib */,
+			);
+			path = "Paket - Kuis";
+			sourceTree = "<group>";
+		};
+		086E6CE32671D28F00F65CDC /* Paket - Kuis */ = {
+			isa = PBXGroup;
+			children = (
+				086E6CE42671D2BF00F65CDC /* OnboardingView.swift */,
 			);
 			path = "Paket - Kuis";
 			sourceTree = "<group>";
@@ -148,6 +161,7 @@
 		D5B0D60F26678D0F0027AEF2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				086E6CE32671D28F00F65CDC /* Paket - Kuis */,
 				D583289A26709167007753E9 /* Main Appearance */,
 				D58328A626709527007753E9 /* XIBTryoutViewController.swift */,
 			);
@@ -229,6 +243,7 @@
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
+				086E6CE72671D36E00F65CDC /* KontenKuis.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +257,7 @@
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
 				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
+				086E6CE52671D2BF00F65CDC /* OnboardingView.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
