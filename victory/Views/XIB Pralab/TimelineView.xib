@@ -262,6 +262,8 @@
                 <constraint firstItem="Lz4-s7-WBP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="o8F-FE-RjC"/>
                 <constraint firstItem="Lz4-s7-WBP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zXi-fu-tpm"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="kuisBtn" destination="ZhJ-Td-BCu" id="tq9-wi-tiT"/>

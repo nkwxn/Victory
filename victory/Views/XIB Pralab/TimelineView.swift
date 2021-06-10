@@ -27,14 +27,6 @@ class TimelineView: UIView {
     @IBOutlet weak var separatorTiga: UIView!
     @IBOutlet weak var separatorEmpat: UIView!
     
-    @IBOutlet var timelineView: UIView!
-    
-    init(frame: CGRect, mode: String) {
-        super.init(frame: frame)
-        print(mode)
-        commonInit()
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -42,20 +34,16 @@ class TimelineView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-         fatalError("init(coder:) has not been implemented")
     }
     
-    private func commonInit() {
+    func commonInit() {
         let bundle = Bundle.init(for: TimelineView.self)
         if let viewFromXIB = bundle.loadNibNamed("TimelineView", owner: self, options: nil),
            let timelineView = viewFromXIB.first as? UIView {
-            addSubview(timelineView)
             timelineView.frame = self.bounds
             timelineView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            addSubview(timelineView)
         }
-        
-//        initTableView()
-        
     }
     
 }

@@ -16,6 +16,7 @@ class XIBTryoutViewController: UIViewController {
         
         let tryoutView = TimelineView(frame: containerView.frame)
         containerView.addSubview(tryoutView)
+        
     }
 
 }

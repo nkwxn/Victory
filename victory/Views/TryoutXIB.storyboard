@@ -19,30 +19,32 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yv8-Sa-J7S">
                                 <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
                                 <items>
-                                    <navigationItem title="Title" id="SAl-Ih-91V"/>
+                                    <navigationItem title="Gerak Parabola" id="SAl-Ih-91V">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="HC1-f1-8W0"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWO-jy-yMd" customClass="TimelineView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="1194" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhw-sh-bQn">
+                                <rect key="frame" x="0.0" y="0.0" width="1194" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="84W-46-Win"/>
+                                    <constraint firstAttribute="width" constant="1194" id="glC-ou-Y3L"/>
+                                    <constraint firstAttribute="height" constant="50" id="vhg-f3-TOW"/>
                                 </constraints>
-                            </view>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xWO-jy-yMd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Bv6-g1-0M7"/>
-                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ehj-Yb-b09"/>
-                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PZW-Gb-erK"/>
-                            <constraint firstItem="xWO-jy-yMd" firstAttribute="top" secondItem="yv8-Sa-J7S" secondAttribute="bottom" id="bIi-Qj-Tvl"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xWO-jy-yMd" secondAttribute="trailing" id="rr1-e7-RDE"/>
-                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xEW-pL-qR0"/>
+                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="4XG-S1-msp"/>
+                            <constraint firstItem="mhw-sh-bQn" firstAttribute="top" secondItem="yv8-Sa-J7S" secondAttribute="bottom" id="eac-Jv-AbY"/>
+                            <constraint firstItem="mhw-sh-bQn" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="f6d-GH-rde"/>
+                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iyj-U8-KiC"/>
+                            <constraint firstItem="mhw-sh-bQn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qe8-zw-ser"/>
+                            <constraint firstItem="yv8-Sa-J7S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rvR-bQ-ZxO"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="containerView" destination="xWO-jy-yMd" id="Tv7-qN-bLr"/>
+                        <outlet property="containerView" destination="mhw-sh-bQn" id="hlg-jL-vpD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -51,6 +53,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
