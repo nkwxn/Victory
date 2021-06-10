@@ -22,6 +22,12 @@ class LabGerakParabolaView: UIView {
     @IBOutlet weak var heightStatistik: NSLayoutConstraint!
     @IBOutlet weak var heightDisclaimer: NSLayoutConstraint!
     
+    // Label statistik freestyle
+    @IBOutlet weak var infoTotalJangkauan: UILabel!
+    @IBOutlet weak var waktuTempuh: UILabel!
+    @IBOutlet weak var infoTitilTertinggi: UILabel!
+    @IBOutlet weak var waktuTitikTertinggi: UILabel!
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -58,6 +64,13 @@ class LabGerakParabolaView: UIView {
     }
     
     func initViews() {
+        // Ngumpetin view sesuai dengan pilihan antara lab dan freestyle
+        if nomorLab != nil {
+            heightStatistik.constant = 0
+        } else {
+            heightDisclaimer.constant = 0
+        }
+        
         // TableView Delegate and DataSource
         variableTableView.dataSource = self
         variableTableView.delegate = self

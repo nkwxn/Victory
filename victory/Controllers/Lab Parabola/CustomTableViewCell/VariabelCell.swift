@@ -20,7 +20,9 @@ class VariabelCell: UITableViewCell {
             // Label and Images
             lblVarName.text = variableSetting?.rawValue
             imgVariable.image = variableSetting?.getImage()
-            lblVarAmount.text = "\(String(describing: variableSetting?.getDefaultValue())) \(variableSetting?.getUnit() ?? "")"
+            guard let defaultValue = variableSetting?.getDefaultValue(),
+                  let unitOfMeasurement = variableSetting?.getUnit() else { return }
+            lblVarAmount.text = "\(defaultValue) \(unitOfMeasurement)"
             
             // Slider values
             varSlider.minimumValue = (variableSetting?.getMinSlider())!
@@ -31,8 +33,8 @@ class VariabelCell: UITableViewCell {
     
     // Kasih variabel dan delegate untuk initialize yang lainnya
     @IBAction func sliderValueChanged(_ sender: UISlider) {
-        lblVarAmount.text = "\(String(describing: sender.value)) \(variableSetting?.getUnit() ?? "")"
-        delegate?.sendSliderValue(from: sender.value)
+        lblVarAmount.text = "\(sender.value.rounded()) \(variableSetting?.getUnit() ?? "")"
+        delegate?.sendSliderValue(from: sender.value.rounded())
     }
     
     override func awakeFromNib() {

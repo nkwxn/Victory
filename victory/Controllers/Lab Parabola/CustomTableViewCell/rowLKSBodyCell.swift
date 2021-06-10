@@ -13,7 +13,7 @@ class rowLKSBodyCell: UITableViewCell {
     @IBOutlet weak var tfYmax: UITextField!
     @IBOutlet weak var tfWaktuYMax: UITextField!
     
-    
+    // Data for the TableView Row and Delegate Setup
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +26,7 @@ class rowLKSBodyCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // If end edit, validate answer
     @IBAction func tfEndEdit(_ sender: UITextField) {
         
     }

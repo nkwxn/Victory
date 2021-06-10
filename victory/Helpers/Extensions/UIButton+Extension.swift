@@ -9,7 +9,7 @@ import UIKit
 
 extension UIButton {
  
-    func alignVerticalCenter(padding: CGFloat = 0.0) {
+    func alignVerticalCenter(padding: CGFloat = 4.0) {
         guard let imageSize = imageView?.frame.size, let titleText = titleLabel?.text, let titleFont = titleLabel?.font else {
             return
         }

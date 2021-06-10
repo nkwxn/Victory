@@ -7,12 +7,6 @@
 
 import UIKit
 
-class CustomClearTabl: UITableViewCell {
-    override class func awakeFromNib() {
-        
-    }
-}
-
 extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -99,19 +93,50 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
                     
                     return cell
                 } else {
-                    let cell = UITableViewCell()
-                    cell.imageView?.image = UIImage(named: "gravity")
-                    cell.textLabel?.text = "Gravitasi"
-                    cell.detailTextLabel?.text = "Bumi: 10m/s²"
-                    cell.accessoryType = .disclosureIndicator
+                    let cell = CustomClearTabl(image: UIImage(named: "gravity"), title: "Gravitasi", detail: "Bumi: 10m/s²", showAcc: true)
                     return cell
                 }
             default:
-                let cell = UITableViewCell()
-                cell.textLabel?.text = "Cell"
-                return cell
+                let cell: UITableViewCell?
+                switch indexPath.row {
+                case 0:
+                    cell = CustomClearTabl(image: UIImage(systemName: "stopwatch"), title: "Waktu", detail: "30 s", showAcc: false)
+                case 1:
+                    cell = CustomClearTabl(image: UIImage(systemName: "arrow.left.and.right.circle"), title: "Jarak (X(t))", detail: "100 m", showAcc: false)
+                case 2:
+                    cell = CustomClearTabl(image: UIImage(systemName: "arrow.up.and.down.circle"), title: "Waktu", detail: "0 m", showAcc: false)
+                case 3:
+                    cell = CustomClearTabl(image: UIImage(systemName: "speedometer"), title: "Kecepatan (v(t))", detail: "0 m/s", showAcc: false)
+                default:
+                    cell = UITableViewCell()
+                }
+                return cell!
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+}
+
+class CustomClearTabl: UITableViewCell {
+    init(image: UIImage?, title label: String, detail detailLabel: String, showAcc: Bool) {
+        super.init(style: .value1, reuseIdentifier: nil)
+        self.backgroundColor = .clear
+        self.imageView?.image = image
+        self.textLabel?.text = label
+        self.detailTextLabel?.text = detailLabel
+        self.accessoryType = showAcc ? .disclosureIndicator : .none
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String? = nil) {
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        print("Not init")
     }
 }
 
