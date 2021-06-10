@@ -31,14 +31,19 @@
                     </label>
                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Id-3x-oBe">
                         <rect key="frame" x="14" y="40" width="292" height="202"/>
+                        <connections>
+                            <action selector="sliderValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="YK4-vY-Rou"/>
+                        </connections>
                     </slider>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lDK-ep-Y25">
                         <rect key="frame" x="16" y="11" width="21" height="21"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="lDK-ep-Y25" secondAttribute="height" multiplier="1:1" id="HXW-8V-Kcl"/>
                         </constraints>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="tWC-Tp-FQZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="0iq-te-coq"/>
                     <constraint firstItem="VnN-Eu-XRe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Cnp-eA-4jR"/>
@@ -56,6 +61,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="imgVariable" destination="lDK-ep-Y25" id="Z74-A9-eDp"/>
                 <outlet property="lblVarAmount" destination="tWC-Tp-FQZ" id="9NV-KR-bab"/>
@@ -66,6 +72,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

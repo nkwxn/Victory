@@ -13,7 +13,27 @@ class VariabelCell: UITableViewCell {
     @IBOutlet weak var lblVarAmount: UILabel!
     @IBOutlet weak var varSlider: UISlider!
     
+    var delegate: VariableSliderDelegate?
+    
+    var variableSetting: SliderVariable? {
+        didSet {
+            // Label and Images
+            lblVarName.text = variableSetting?.rawValue
+            imgVariable.image = variableSetting?.getImage()
+            lblVarAmount.text = "\(String(describing: variableSetting?.getDefaultValue())) \(variableSetting?.getUnit() ?? "")"
+            
+            // Slider values
+            varSlider.minimumValue = (variableSetting?.getMinSlider())!
+            varSlider.maximumValue = (variableSetting?.getMaxSlider())!
+            varSlider.value = (variableSetting?.getDefaultValue())!
+        }
+    }
+    
     // Kasih variabel dan delegate untuk initialize yang lainnya
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        lblVarAmount.text = "\(String(describing: sender.value)) \(variableSetting?.getUnit() ?? "")"
+        delegate?.sendSliderValue(from: sender.value)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,4 +47,8 @@ class VariabelCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+protocol VariableSliderDelegate {
+    func sendSliderValue(from sliderValue: Float)
 }

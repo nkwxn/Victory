@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="KGk-i7-Jjw" customClass="rowLKSBodyCell" customModule="victory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="346" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FXY-gu-Dhk">
+                        <rect key="frame" x="20" y="11" width="306" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3P-Ik-kKK">
+                                <rect key="frame" x="0.0" y="12" width="69" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-oU-RXL">
+                                <rect key="frame" x="79" y="5" width="69" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tfEndEdit:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="cHo-Ae-JhC"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bt0-da-ndY">
+                                <rect key="frame" x="158" y="5" width="69" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tfEndEdit:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="dDS-gl-SlP"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hov-Hv-h09">
+                                <rect key="frame" x="237" y="5" width="69" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tfEndEdit:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="jln-zo-GM3"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="FXY-gu-Dhk" secondAttribute="trailing" id="84g-Ti-rAj"/>
+                    <constraint firstItem="FXY-gu-Dhk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="OET-lF-Mo4"/>
+                    <constraint firstItem="FXY-gu-Dhk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="UtM-N8-Vw4"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="FXY-gu-Dhk" secondAttribute="bottom" id="oIg-Ui-nNY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lblUnitOfTest" destination="f3P-Ik-kKK" id="G7I-CH-pn7"/>
+                <outlet property="tfWaktuYMax" destination="Hov-Hv-h09" id="asE-Al-BOb"/>
+                <outlet property="tfXmax" destination="Z2f-oU-RXL" id="8n4-Cr-CV6"/>
+                <outlet property="tfYmax" destination="Bt0-da-ndY" id="wMI-mZ-foL"/>
+            </connections>
+            <point key="canvasLocation" x="56.521739130434788" y="117.1875"/>
+        </tableViewCell>
+    </objects>
+</document>
