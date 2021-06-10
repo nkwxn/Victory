@@ -12,6 +12,10 @@ class PanduanLabView: UIView {
     @IBOutlet var contentView: PanduanLabView!
     @IBOutlet var tableView: UITableView!
     
+    @IBAction func onCloseButtonPressed(_ sender: Any) {
+    }
+    
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()

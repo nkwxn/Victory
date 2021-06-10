@@ -23,11 +23,15 @@
                     <rect key="frame" x="0.0" y="0.0" width="654" height="50"/>
                     <items>
                         <navigationItem title="Panduan Lab 1" id="WQB-oS-kvc">
-                            <barButtonItem key="rightBarButtonItem" title="Item" image="xmark" catalog="system" id="F6x-YI-e4v"/>
+                            <barButtonItem key="rightBarButtonItem" title="Item" image="xmark" catalog="system" id="F6x-YI-e4v">
+                                <connections>
+                                    <action selector="onCloseButtonPressed:" destination="-1" id="rDG-1R-uEa"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-um-yB3">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-um-yB3">
                     <rect key="frame" x="0.0" y="75" width="654" height="619"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>

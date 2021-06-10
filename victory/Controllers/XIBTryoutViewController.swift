@@ -24,6 +24,7 @@ class XIBTryoutViewController: UIViewController {
         onBoardingView.layer.masksToBounds = true
         onBoardingView.actionBtn.layer.cornerRadius = 8
         
+//        panduanLabView.isHidden = true
         setupPanduanLabView()
     }
 }
