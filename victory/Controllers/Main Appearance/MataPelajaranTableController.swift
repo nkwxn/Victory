@@ -12,7 +12,7 @@ class MataPelajaranTableController: UITableViewController {
     @IBOutlet weak var subjectListTableView: UITableView!
     
     let subjects: [Mapel] = [.fisika, .kimia, .biologi, .matematika]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,12 +39,13 @@ class MataPelajaranTableController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjectListIdentifier", for: indexPath)
-
+        
         cell.imageView?.image = subjects[indexPath.row].getImage()
         cell.textLabel?.text = subjects[indexPath.row].rawValue
 
         return cell
     }
+    
 
     /*
     // Override to support conditional editing of the table view.

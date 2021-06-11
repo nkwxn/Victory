@@ -52,6 +52,7 @@ struct Praktikum {
     var gambar: UIImage
     var kelas: Kelas
     var mataPelajaran: Mapel
+    var subtitleMateri: String
     var pertanyaanQuiz: [Question]
 }
 
