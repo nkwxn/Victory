@@ -47,9 +47,9 @@ class rowLKSBodyCell: UITableViewCell {
         case .massaProyektil:
             nilaiMassa = Double(angkaSoal)
         case .sudutLemparan:
-            sender.backgroundColor = UIColor(named: "vc_red_bg")
+            nilaiTeta = Double(angkaSoal)
         case .kecAwal:
-            sender.backgroundColor = UIColor(named: "vc_green_bg")
+            nilaiV0 = Double(angkaSoal)
         default:
             sender.backgroundColor = UIColor(named: "vc_green_bg")
         }
