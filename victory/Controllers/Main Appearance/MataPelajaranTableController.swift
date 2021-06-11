@@ -7,12 +7,13 @@
 
 import UIKit
 
+
 class MataPelajaranTableController: UITableViewController {
     
     @IBOutlet weak var subjectListTableView: UITableView!
     
     let subjects: [Mapel] = [.fisika, .kimia, .biologi, .matematika]
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +32,10 @@ class MataPelajaranTableController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor(named: "vc_background")
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -46,6 +51,10 @@ class MataPelajaranTableController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let userinfo : [String: Int] = ["indexpath":indexPath.row]
+        NotificationCenter.default.post(name: NSNotification.Name("menuupdate"), object: nil, userInfo: userinfo)
+    }
 
     /*
     // Override to support conditional editing of the table view.

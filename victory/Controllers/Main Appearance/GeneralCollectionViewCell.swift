@@ -9,6 +9,7 @@ import UIKit
 
 class GeneralCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var generalCollectionView: RoundCornersUIView!
     @IBOutlet weak var generalCollectionImageView: UIImageView!
     @IBOutlet weak var generalCollectionTitleLabel: UILabel!
     @IBOutlet weak var generalCollectionSubtitleLabel: UILabel!

@@ -3,36 +3,37 @@
     <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Fisika-->
+        <!--Semua Praktikum-->
         <scene sceneID="HAk-Vg-DX2">
             <objects>
                 <viewController id="PG9-na-59i" customClass="MateriViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV7-QI-PeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-Ye-Iny">
                                 <rect key="frame" x="0.0" y="50" width="873.5" height="784"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.98039144280000001" green="0.98033207649999998" blue="0.98431462049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lXP-t1-ung">
-                                    <size key="itemSize" width="254" height="224"/>
-                                    <size key="estimatedItemSize" width="254" height="224"/>
+                                    <size key="itemSize" width="254" height="228"/>
+                                    <size key="estimatedItemSize" width="254" height="228"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="v8b-d7-iT7">
-                                        <rect key="frame" x="0.0" y="0.0" width="254" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="228"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ai0-gx-WQe">
-                                            <rect key="frame" x="0.0" y="0.0" width="254" height="224"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="254" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -48,9 +49,10 @@
                             <constraint firstItem="zdd-Ye-Iny" firstAttribute="top" secondItem="UV7-QI-PeQ" secondAttribute="top" constant="50" id="rbA-xB-ngn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Fisika" id="OA1-Ao-POs"/>
+                    <navigationItem key="navigationItem" title="Semua Praktikum" id="OA1-Ao-POs"/>
                     <connections>
                         <outlet property="materiCollectionView" destination="zdd-Ye-Iny" id="Fd3-u9-ASF"/>
+                        <outlet property="materiTitleNavigationItem" destination="OA1-Ao-POs" id="suX-RN-RBE"/>
                         <segue destination="fIK-T7-WC0" kind="show" identifier="" id="oHg-mA-YsL"/>
                     </connections>
                 </viewController>
@@ -85,6 +87,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="nuO-vs-3uK">
                         <rect key="frame" x="0.0" y="0.0" width="420" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="sectionIndexBackgroundColor" name="vc_background"/>
                         <sections>
                             <tableViewSection id="ai3-Ah-OxX">
                                 <cells>
@@ -108,7 +111,7 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="vc_background"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="POw-Ze-OA6">
                                         <rect key="frame" x="116" y="61.5" width="288" height="43.5"/>
@@ -130,6 +133,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94905394320000003" green="0.94874149559999998" blue="0.96863073109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DCm-re-pY7">
                                         <rect key="frame" x="116" y="105" width="288" height="43.5"/>
@@ -151,6 +155,7 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94905394320000003" green="0.94874149559999998" blue="0.96863073109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oTi-vu-taq">
                                         <rect key="frame" x="116" y="148.5" width="288" height="44"/>
@@ -172,6 +177,7 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94905394320000003" green="0.94874149559999998" blue="0.96863073109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -263,6 +269,9 @@
         <image name="function" catalog="system" width="128" height="70"/>
         <image name="ladybug" catalog="system" width="128" height="128"/>
         <image name="thermometer.snowflake" catalog="system" width="119" height="128"/>
+        <namedColor name="vc_background">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
