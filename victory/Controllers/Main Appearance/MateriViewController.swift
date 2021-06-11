@@ -14,6 +14,7 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
     
     var praktikum = Constants.arrayOfPraktikum
     var selectedPraktikum: [Praktikum] = []
+    var firstLaunch = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
     
     @objc func getNotified(_ object: Notification) {
         selectedPraktikum = []
+        firstLaunch = false
         if let menu = object.userInfo?["indexpath"] as? Int {
             print(menu)
             switch menu {
@@ -36,10 +38,10 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
                 materiTitleNavigationItem.title = "Fisika"
                 for (index,materi) in praktikum.enumerated(){
                     if praktikum[index].mataPelajaran == .fisika{
-                        print(materi.nama)
-                        let indexPath = IndexPath(row: index, section: 0)
-                        print ([indexPath])
+                        _ = IndexPath(row: index, section: 0)
                         selectedPraktikum.append(materi)
+                        materiCollectionView.reloadData()
+                    }else{
                         materiCollectionView.reloadData()
                     }
                 }
@@ -47,10 +49,10 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
                 materiTitleNavigationItem.title = "Kimia"
                 for (index,materi) in praktikum.enumerated(){
                     if praktikum[index].mataPelajaran == .kimia{
-                        print(materi.nama)
-                        let indexPath = IndexPath(row: index, section: 0)
-                        print ([indexPath])
+                        _ = IndexPath(row: index, section: 0)
                         selectedPraktikum.append(materi)
+                        materiCollectionView.reloadData()
+                    }else{
                         materiCollectionView.reloadData()
                     }
                 }
@@ -58,10 +60,10 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
                 materiTitleNavigationItem.title = "Biologi"
                 for (index,materi) in praktikum.enumerated(){
                     if praktikum[index].mataPelajaran == .biologi{
-                        print(materi.nama)
-                        let indexPath = IndexPath(row: index, section: 0)
-                        print ([indexPath])
+                        _ = IndexPath(row: index, section: 0)
                         selectedPraktikum.append(materi)
+                        materiCollectionView.reloadData()
+                    }else{
                         materiCollectionView.reloadData()
                     }
                 }
@@ -69,10 +71,10 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
                 materiTitleNavigationItem.title = "Matematika"
                 for (index,materi) in praktikum.enumerated(){
                     if praktikum[index].mataPelajaran == .matematika{
-                        print(materi.nama)
-                        let indexPath = IndexPath(row: index, section: 0)
-                        print ([indexPath])
+                        _ = IndexPath(row: index, section: 0)
                         selectedPraktikum.append(materi)
+                        materiCollectionView.reloadData()
+                    }else{
                         materiCollectionView.reloadData()
                     }
                 }
@@ -80,12 +82,13 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
                 print("default")
             }
         }
- //       materiCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if selectedPraktikum.isEmpty{
+        if firstLaunch && selectedPraktikum.isEmpty{
             return praktikum.count
+        } else if selectedPraktikum.isEmpty{
+            return 1
         } else {
             return selectedPraktikum.count
         }
@@ -93,15 +96,21 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell", for: indexPath) as! GeneralCollectionViewCell
-        
-        if selectedPraktikum.isEmpty{
+        if firstLaunch && selectedPraktikum.isEmpty{
             cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
             cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
             cell.generalCollectionView.shadowRadius = 10.0
             cell.generalCollectionImageView.image = praktikum[indexPath.row].gambar
             cell.generalCollectionTitleLabel.text = praktikum[indexPath.row].nama
             cell.generalCollectionSubtitleLabel.text = praktikum[indexPath.row].subtitleMateri
-        }else{
+        } else if selectedPraktikum.isEmpty{
+            cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
+            cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
+            cell.generalCollectionView.shadowRadius = 10.0
+            cell.generalCollectionImageView.image = UIImage(systemName: "car")
+            cell.generalCollectionTitleLabel.text = "Belum ada Materi"
+            cell.generalCollectionSubtitleLabel.text = "Tunggu untuk itu"
+        } else{
             cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
             cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
             cell.generalCollectionView.shadowRadius = 10.0

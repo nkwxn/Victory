@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="PG9-na-59i" customClass="MateriViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV7-QI-PeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="873" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-Ye-Iny">
@@ -233,6 +233,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="biR-vx-FQO">
                         <rect key="frame" x="0.0" y="0.0" width="873.5" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="vc_nav_bar"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -271,6 +272,9 @@
         <image name="thermometer.snowflake" catalog="system" width="119" height="128"/>
         <namedColor name="vc_background">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="vc_nav_bar">
+            <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
