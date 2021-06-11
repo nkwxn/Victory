@@ -18,7 +18,10 @@ class VariabelCell: UITableViewCell {
     var variableSetting: SliderVariable? {
         didSet {
             // Label and Images
-            lblVarName.text = variableSetting?.rawValue
+            guard let variableName = variableSetting?.rawValue,
+                  let acronym = variableSetting?.getAcronym()
+            else { return }
+            lblVarName.text = "\(variableName) (\(acronym))"
             imgVariable.image = variableSetting?.getImage()
             guard let defaultValue = variableSetting?.getDefaultValue(),
                   let unitOfMeasurement = variableSetting?.getUnit() else { return }

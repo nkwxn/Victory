@@ -18,7 +18,11 @@ class rowLKSHeaderCell: UITableViewCell {
     
     var varLKS: SliderVariable? {
         didSet {
-            satuanVariabelLKS.text = "[\(varLKS?.getUnit() ?? "[m/s]")]"
+            guard let unit = varLKS?.getUnit(),
+                  let acronym = varLKS?.getAcronym()
+            else { return }
+            satuanVariabelLKS.text = "[\(unit)]"
+            variabelLKS.text = acronym
         }
     }
     

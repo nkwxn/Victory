@@ -57,28 +57,36 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
     
     // Cell tergantung section dan context
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sliderValues: [SliderVariable] = [.massaProyektil, .sudutLemparan, .kecAwal] // Determining the values shown
+        var staticVal = sliderValues // Determining the static values (non-editable)
+        
         if let nomorLab = nomorLab {
+            staticVal.remove(at: nomorLab)
             switch indexPath.section {
             case 0:
                 if indexPath.row < 2 {
+                    let valew = staticVal[indexPath.row]
                     // Show the TableViewCell for default things
-                    let cell = UITableViewCell()
-                    cell.textLabel?.text = "Cell"
+                    let cell = CustomClearTabl(image: valew.getImage(), title: "\(valew.rawValue) (\(valew.getAcronym()))", detail: "\(valew.getDefaultValue()) \(valew.getUnit())", showAcc: false)
                     return cell
                 } else {
                     // Show the custom cell with slider
                     let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as! VariabelCell
-                    cell.lblVarName.text = "Asdf \(indexPath.row)"
+                    cell.delegate = self
+                    cell.variableSetting = sliderValues[nomorLab]
                     return cell
                 }
             default:
                 if indexPath.row == 0 {
                     // Dequeue the LKS Header Table
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "LKSHeader", for: indexPath)
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "LKSHeader", for: indexPath) as! rowLKSHeaderCell
+                    cell.varLKS = sliderValues[nomorLab]
                     return cell
                 } else {
                     // Dequeue the LKS Worksheet
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "LKSContent", for: indexPath)
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "LKSContent", for: indexPath) as! rowLKSBodyCell
+                    cell.variableSetup = sliderValues[nomorLab]
+                    cell.angkaSoal = sliderValues[nomorLab].getLembarKerjaValues()[indexPath.row - 1]
                     return cell
                 }
             }
@@ -116,7 +124,20 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        if nomorLab == nil && indexPath == IndexPath(row: 4, section: 0) {
+            // Show the Popover (ipad) / modal (iphone) choosing gravity
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                // Show popover modal for the gravity choice
+                let gravityPOver = GravityPopoverViewController()
+                gravityPOver.modalPresentationStyle = .popover
+                
+                // Sisanya dah mabok gua wkwkw
+            } else if UIDevice.current.userInterfaceIdiom == .phone {
+                let gravityAlert = UIAlertController(title: "Gravitasi", message: "Pilihan planet:", preferredStyle: .actionSheet)
+            }
+        } else {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 }
 
@@ -125,6 +146,7 @@ class CustomClearTabl: UITableViewCell {
         super.init(style: .value1, reuseIdentifier: nil)
         self.backgroundColor = .clear
         self.imageView?.image = image
+        self.imageView?.tintColor = .black
         self.textLabel?.text = label
         self.detailTextLabel?.text = detailLabel
         self.accessoryType = showAcc ? .disclosureIndicator : .none

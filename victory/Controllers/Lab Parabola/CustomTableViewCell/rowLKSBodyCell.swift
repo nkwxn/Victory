@@ -14,21 +14,72 @@ class rowLKSBodyCell: UITableViewCell {
     @IBOutlet weak var tfWaktuYMax: UITextField!
     
     // Data for the TableView Row and Delegate Setup
+    var angkaSoal: Int? {
+        didSet {
+            guard let angkaSoal = angkaSoal else { return }
+            lblUnitOfTest.text = "\(angkaSoal)"
+        }
+    }
+    
+    var variableSetup: SliderVariable?
+    var delegate: rowLKSBodyDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     // If end edit, validate answer
     @IBAction func tfEndEdit(_ sender: UITextField) {
+        guard let angkaSoal = angkaSoal else { return }
         
+        // Validasikan segalanya sesuai dengan hitungan
+        var hasilXMax: Double
+        var hasilYMax: Double
+        var hasilTymax: Double
+        
+        var nilaiV0 = 100.0 // m/s
+        var nilaiTeta = 30.0 // deg
+        var nilaiMassa = 50.0 // kg
+        
+        // Count based on the variable setup
+        switch variableSetup {
+        case .massaProyektil:
+            nilaiMassa = Double(angkaSoal)
+        case .sudutLemparan:
+            sender.backgroundColor = UIColor(named: "vc_red_bg")
+        case .kecAwal:
+            sender.backgroundColor = UIColor(named: "vc_green_bg")
+        default:
+            sender.backgroundColor = UIColor(named: "vc_green_bg")
+        }
+        
+        hasilXMax = round(((nilaiV0 * nilaiV0)/10 * sin(2*(nilaiTeta * Double.pi / 180)))*1000)/1000
+        hasilYMax = round(((nilaiV0 * nilaiV0 * sin(nilaiTeta * Double.pi / 180) * sin(nilaiTeta * Double.pi / 180)) / (2*10))*1000)/1000
+        hasilTymax = round(((nilaiV0 * sin(nilaiTeta * Double.pi / 180)) / 10)*1000)/1000
+        
+        guard let textFieldValue = sender.text else { return }
+        
+        // Validate if true / false (Round into 3 decimal places)
+        var validation: Bool
+        switch sender {
+        case tfXmax:
+            validation = Double(textFieldValue) == hasilXMax
+        case tfYmax:
+            validation = Double(textFieldValue) == hasilYMax
+        case tfWaktuYMax:
+            validation = Double(textFieldValue) == hasilTymax
+        default:
+            validation = false
+        }
+        
+        sender.backgroundColor = validation ? UIColor(named: "vc_green_bg") : UIColor(named: "vc_red_bg")
+//        sender.layer.borderWidth = 1.0
+//        sender.layer.borderColor = validation ? UIColor(named: "vc_green_active")?.cgColor : UIColor(named: "vc_red_active")?.cgColor
+        
+        if textFieldValue == "" {
+            sender.backgroundColor = .systemBackground
+        }
     }
 }
 
@@ -37,5 +88,5 @@ extension rowLKSBodyCell: UITextFieldDelegate {
 }
 
 protocol rowLKSBodyDelegate {
-    func checkValue()
+    func getCorrectValidation()
 }

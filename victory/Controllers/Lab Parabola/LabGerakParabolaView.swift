@@ -36,8 +36,12 @@ class LabGerakParabolaView: UIView {
     }
     */
     
+    // Nomor lab sesuai dengan nomor soal (0-2) dan selesai / belum, sertakan delegate
     var nomorLab: Int?
     let variabelEdit: [SliderVariable] = [.sudutLemparan, .massaProyektil, .kecAwal, .ketAwal]
+    var done: Bool = false
+    var chosenPlanet: Planet = .earth
+    var delegate: LabGerakParabolaDelegate?
     
     init(frame: CGRect, noLab: Int? = nil) {
         super.init(frame: frame)
@@ -82,6 +86,7 @@ class LabGerakParabolaView: UIView {
         variableTableView.register(UINib(nibName: "rowLKSBodyCell", bundle: nil), forCellReuseIdentifier: "LKSContent")
         
         // Button Appearance
+        btnTampilkanMateri.alignVerticalCenter()
     }
 }
 
@@ -117,6 +122,19 @@ enum SliderVariable: String {
         }
     }
     
+    func getAcronym() -> String {
+        switch self {
+        case .sudutLemparan:
+            return "θ"
+        case .massaProyektil:
+            return "m"
+        case .kecAwal:
+            return "Vo"
+        case .ketAwal:
+            return "Ho"
+        }
+    }
+    
     func getUnit() -> String {
         switch self {
         case .sudutLemparan:
@@ -142,6 +160,7 @@ enum SliderVariable: String {
             return 0
         }
     }
+    
     func getMaxSlider() -> Float {
         switch self {
         case .sudutLemparan:
@@ -154,8 +173,21 @@ enum SliderVariable: String {
             return 20
         }
     }
+    
+    func getLembarKerjaValues() -> [Int] {
+        switch self {
+        case .sudutLemparan:
+            return [0, 30, 45, 60, 90]
+        case .massaProyektil:
+            return [1, 10, 50, 100, 200]
+        case .kecAwal:
+            return [25, 50, 75, 100, 125]
+        default:
+            return [Int]()
+        }
+    }
 }
 
 protocol LabGerakParabolaDelegate: AnyObject {
-    func showMaterial()
+    func presentView(_ view: UIView)
 }
