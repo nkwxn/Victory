@@ -14,6 +14,8 @@
 		3031648326724E360085E518 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031648226724E360085E518 /* Constants.swift */; };
 		3031648A267256860085E518 /* PanduanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30316488267256860085E518 /* PanduanTableViewCell.swift */; };
 		3031648B267256860085E518 /* PanduanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30316489267256860085E518 /* PanduanTableViewCell.xib */; };
+		303164AC26735B460085E518 /* MateriView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303164AB26735B460085E518 /* MateriView.xib */; };
+		303164AF26735B560085E518 /* MateriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303164AE26735B560085E518 /* MateriView.swift */; };
 		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
 		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
@@ -44,6 +46,8 @@
 		3031648226724E360085E518 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30316488267256860085E518 /* PanduanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanduanTableViewCell.swift; sourceTree = "<group>"; };
 		30316489267256860085E518 /* PanduanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanduanTableViewCell.xib; sourceTree = "<group>"; };
+		303164AB26735B460085E518 /* MateriView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateriView.xib; sourceTree = "<group>"; };
+		303164AE26735B560085E518 /* MateriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriView.swift; sourceTree = "<group>"; };
 		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				3031647E26724CDF0085E518 /* PanduanLabView.swift */,
 				30316489267256860085E518 /* PanduanTableViewCell.xib */,
 				30316488267256860085E518 /* PanduanTableViewCell.swift */,
+				303164AB26735B460085E518 /* MateriView.xib */,
+				303164AE26735B560085E518 /* MateriView.swift */,
 			);
 			path = "XIB Pralab";
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 				3031648B267256860085E518 /* PanduanTableViewCell.xib in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
+				303164AC26735B460085E518 /* MateriView.xib in Resources */,
 				3031647C26724CD20085E518 /* PanduanLabView.xib in Resources */,
 				3031644D26720C660085E518 /* OnBoardingView.xib in Resources */,
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
@@ -305,6 +312,7 @@
 				30B8DE612670E005002DEC0C /* TimelineView.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
+				303164AF26735B560085E518 /* MateriView.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
