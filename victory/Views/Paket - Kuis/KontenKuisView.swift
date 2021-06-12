@@ -8,9 +8,6 @@
 import UIKit
 
 class KontenKuisView: UIView {
-
-    weak var delegate: PopUpDelegate?
-    var jawabanList: [String] = []
     
     @IBOutlet var contentView: UIView!
     
@@ -33,7 +30,7 @@ class KontenKuisView: UIView {
     
     @IBAction func onPreviousButtonPressed(_ sender: UIButton) {
         changeCurrentNumber(by: -1)
-        updateToPembahasanUI(pilihJawaban: jawabanList[currentNumber-1])
+        setupToPembahasanUI(jawabanTerpilih: answerList[currentNumber - 1])
     }
     
     @IBAction func onNextButtonPressed(_ sender: UIButton) {
@@ -42,141 +39,22 @@ class KontenKuisView: UIView {
             delegate?.showSkorView()
         default:
             changeCurrentNumber(by: 1)
-            if currentNumber < jawabanList.count {
-                updateToPembahasanUI(pilihJawaban: jawabanList[currentNumber-1])
+            if currentNumber <= answerList.count {
+                setupToPembahasanUI(jawabanTerpilih: answerList[currentNumber - 1])
+            } else {
+                setupToDefaultUI()
             }
-            updateToDefaultUI()
         }
-        
     }
-    
-    func updateToPembahasanUI(pilihJawaban: String){
-        let jawabanBenar = Constants.pertanyaanArray[currentNumber - 1].jawabanBenar.prefix(1)
-        jawabanAButton.isEnabled = false
-        jawabanBButton.isEnabled = false
-        jawabanCButton.isEnabled = false
-        jawabanDButton.isEnabled = false
-      
-        ceklisImage.isHidden = false
-        jawabanTepatLabel.isHidden = false
-        pembahasanLabel.isHidden = false
-        currentPageLabel.text = "\(currentNumber) / \(Constants.pertanyaanArray.count)"
-
-        let kuis = Constants.pertanyaanArray[currentNumber - 1]
-        jawabanTepatLabel.text = kuis.jawabanTepat
-        pembahasanLabel.text = kuis.pembahasan
-        nomorKuisLabel.text = kuis.nomor
-        pertanyaanKuisLabel.text = kuis.pertanyaan
-        jawabanAButton.setTitle ( kuis.jawaban[0], for: .normal)
-        jawabanBButton.setTitle ( kuis.jawaban[1], for: .normal)
-        jawabanCButton.setTitle ( kuis.jawaban[2], for: .normal)
-        jawabanDButton.setTitle ( kuis.jawaban[3], for: .normal)
-        
-        jawabanAButton.backgroundColor = .systemBlue
-        jawabanBButton.backgroundColor = .systemBlue
-        jawabanCButton.backgroundColor = .systemBlue
-        jawabanDButton.backgroundColor = .systemBlue
-
-
-        if pilihJawaban == jawabanBenar {
-            ceklisImage.image = UIImage(systemName: "checkmark.circle")
-            ceklisImage.tintColor = .systemGreen
-            switch pilihJawaban{
-            case "A":
-                jawabanAButton.backgroundColor = .systemGreen
-            case "B":
-                jawabanBButton.backgroundColor = .systemGreen
-            case "C":
-                jawabanCButton.backgroundColor = .systemGreen
-            case "D":
-                jawabanDButton.backgroundColor = .systemGreen
-            default:
-                return
-            }
-        } else {
-            ceklisImage.image = UIImage(systemName: "xmark.circle")
-            ceklisImage.tintColor = .systemRed
-            switch pilihJawaban{
-            case "A":
-                jawabanAButton.backgroundColor = .systemRed
-            case "B":
-                jawabanBButton.backgroundColor = .systemRed
-            case "C":
-                jawabanCButton.backgroundColor = .systemRed
-            case "D":
-                jawabanDButton.backgroundColor = .systemRed
-            default:
-                return
-            }
-            
-            switch jawabanBenar{
-            case "A":
-                jawabanAButton.backgroundColor = .systemGreen
-            case "B":
-                jawabanBButton.backgroundColor = .systemGreen
-            case "C":
-                jawabanCButton.backgroundColor = .systemGreen
-            case "D":
-                jawabanDButton.backgroundColor = .systemGreen
-            default:
-                return
-            }
-        }
-
-        selanjutnyaButton.isEnabled = true
-        selanjutnyaButton.tintColor = UIColor.systemBlue
-        selanjutnyaLabel.textColor = UIColor.systemBlue
-        
-        if currentNumber == Constants.pertanyaanArray.count{
-            selanjutnyaButton.setImage(UIImage(systemName: "flag.circle.fill"), for: .normal)
-            selanjutnyaLabel.text = "Lihat Hasil"
-        }
-        if currentNumber == 1 {
-            sebelumnyaButton.isHidden = true
-            sebelumnyaLabel.isHidden = true
-        }
-        
-    }
-
     
     @IBAction func onOptionButtonsPress (_ sender: UIButton) {
         let pilihJawaban = sender.currentTitle!.prefix(1)
-        jawabanList.append(String(pilihJawaban))
-        updateToPembahasanUI(pilihJawaban: String(pilihJawaban))
-        
+        answerList.append(String(pilihJawaban))
+        setupToPembahasanUI(jawabanTerpilih: String(pilihJawaban))
     }
-    
-    private func changeCurrentNumber (by number: Int){
-        currentNumber += number
-    }
-    private func updateToDefaultUI() {
-        let kuis = Constants.pertanyaanArray[currentNumber - 1]
-        nomorKuisLabel.text = kuis.nomor
-        pertanyaanKuisLabel.text = kuis.pertanyaan
-        jawabanTepatLabel.isHidden = true
-        pembahasanLabel.isHidden = true
-        ceklisImage.isHidden = true
-        jawabanAButton.setTitle ( kuis.jawaban[0], for: .normal)
-        jawabanBButton.setTitle ( kuis.jawaban[1], for: .normal)
-        jawabanCButton.setTitle ( kuis.jawaban[2], for: .normal)
-        jawabanDButton.setTitle ( kuis.jawaban[3], for: .normal)
-        jawabanAButton.isEnabled = true
-        jawabanBButton.isEnabled = true
-        jawabanCButton.isEnabled = true
-        jawabanDButton.isEnabled = true
-        jawabanAButton.backgroundColor = .systemBlue
-        jawabanBButton.backgroundColor = .systemBlue
-        jawabanCButton.backgroundColor = .systemBlue
-        jawabanDButton.backgroundColor = .systemBlue
-        currentPageLabel.text = "\(currentNumber) / \(Constants.pertanyaanArray.count)"
-        
-        sebelumnyaButton.isHidden = false
-        sebelumnyaLabel.isHidden = false
-        selanjutnyaButton.isEnabled = false
-        selanjutnyaButton.tintColor = UIColor.systemGray
-        selanjutnyaLabel.textColor = UIColor.systemGray
-    }
-    
+    /*
+    // Init Functions
+    */
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
@@ -192,35 +70,190 @@ class KontenKuisView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        setupView()
-        
+        // initial Default View Config
+        setupToDefaultUI()
+    }
+    /*
+    // UIView Setup Child Functions
+    */
+    weak var delegate: PopUpDelegate?
+    var currentNumber = 1
+    var answerList: [String] = []
+    
+    private func changeCurrentNumber (by number: Int){
+        currentNumber += number
     }
     
-    var currentNumber = 1
+    private func disableOptionButtons() {
+        jawabanAButton.isEnabled = false
+        jawabanBButton.isEnabled = false
+        jawabanCButton.isEnabled = false
+        jawabanDButton.isEnabled = false
+    }
     
-    private func setupView() {
-        let kuis = Constants.pertanyaanArray[currentNumber - 1]
+    private func enableOptionButtons() {
+        jawabanAButton.isEnabled = true
+        jawabanBButton.isEnabled = true
+        jawabanCButton.isEnabled = true
+        jawabanDButton.isEnabled = true
+    }
     
+    private func setupKuisComponentText(kuis: Kuis, isPembahasan: Bool) {
+        nomorKuisLabel.text = kuis.nomor
+        pertanyaanKuisLabel.text = kuis.pertanyaan
+        
+        if isPembahasan {
+            jawabanTepatLabel.text = kuis.jawabanTepat
+            pembahasanLabel.text = kuis.pembahasan
+        }
+    }
+    
+    private func showPembahasanComponents() {
+        ceklisImage.isHidden = false
+        jawabanTepatLabel.isHidden = false
+        pembahasanLabel.isHidden = false
+    }
+    
+    private func hidePembahasanComponents() {
         ceklisImage.isHidden = true
         jawabanTepatLabel.isHidden = true
         pembahasanLabel.isHidden = true
+    }
+    
+    private func setupOptionBtnsText(kuis: Kuis) {
+        jawabanAButton.setTitle(kuis.jawaban[0], for: .normal)
+        jawabanBButton.setTitle(kuis.jawaban[1], for: .normal)
+        jawabanCButton.setTitle(kuis.jawaban[2], for: .normal)
+        jawabanDButton.setTitle(kuis.jawaban[3], for: .normal)
+    }
+    
+    private func resetOptionBtnsColor() {
+        jawabanAButton.backgroundColor = .systemBlue
+        jawabanBButton.backgroundColor = .systemBlue
+        jawabanCButton.backgroundColor = .systemBlue
+        jawabanDButton.backgroundColor = .systemBlue
+    }
+    
+    private func setupCheckListImgProperties(with imageName: String, color: UIColor) {
+        ceklisImage.image = UIImage(systemName: imageName)
+        ceklisImage.tintColor = color
+    }
+    
+    private func enableNextBtn() {
+        selanjutnyaButton.isEnabled = true
+        selanjutnyaButton.tintColor = UIColor.systemBlue
+        selanjutnyaLabel.textColor = UIColor.systemBlue
+    }
+    
+    private func disableNextBtn() {
+        selanjutnyaButton.isEnabled = false
+        selanjutnyaButton.tintColor = UIColor.systemGray
+        selanjutnyaLabel.textColor = UIColor.systemGray
+    }
+    
+    private func showPrevBtn() {
+        sebelumnyaButton.isHidden = false
+        sebelumnyaLabel.isHidden = false
+    }
+    
+    private func hidePrevBtn() {
         sebelumnyaLabel.isHidden = true
         sebelumnyaButton.isHidden = true
-        
-        nomorKuisLabel.text = kuis.nomor
-        pertanyaanKuisLabel.text = kuis.pertanyaan
-        jawabanAButton.setTitle ( kuis.jawaban[0], for: .normal)
-        jawabanBButton.setTitle ( kuis.jawaban[1], for: .normal)
-        jawabanCButton.setTitle ( kuis.jawaban[2], for: .normal)
-        jawabanDButton.setTitle ( kuis.jawaban[3], for: .normal)
-        
+    }
+    
+    private func setupToolBarUI(isPembahasan: Bool) {
         currentPageLabel.text = "\(currentNumber) / \(Constants.pertanyaanArray.count)"
         
-        selanjutnyaButton.tintColor = UIColor.gray
-        selanjutnyaButton.isEnabled = false
-        selanjutnyaLabel.textColor = UIColor.gray
+        if currentNumber == Constants.pertanyaanArray.count {
+            selanjutnyaButton.setImage(UIImage(systemName: "flag.circle.fill"), for: .normal)
+            selanjutnyaLabel.text = "Lihat Hasil"
+        } else {
+            selanjutnyaButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
+            selanjutnyaLabel.text = "Selanjutnya"
+        }
         
+        if isPembahasan {
+            enableNextBtn()
+        } else { disableNextBtn() }
+        
+        if currentNumber == 1 {
+            hidePrevBtn()
+        } else { showPrevBtn() }
     }
+    /*
+    // UIView Setup Main Functions: Pembahasan Kuis UI
+    */
+    private func setupToPembahasanUI(jawabanTerpilih: String) {
+        let jawabanBenar = Constants.pertanyaanArray[currentNumber - 1].jawabanBenar.prefix(1)
+        disableOptionButtons()
+        resetOptionBtnsColor()
+        showPembahasanComponents()
+        
+        let kuis = Constants.pertanyaanArray[currentNumber - 1]
+        setupKuisComponentText(kuis: kuis, isPembahasan: true)
+        setupOptionBtnsText(kuis: kuis)
+        setupToolBarUI(isPembahasan: true)
+        
+        // Change option buttons' colors according to the answer
+        if jawabanTerpilih == jawabanBenar {
+            setupCheckListImgProperties(with: "checkmark.circle", color: .systemGreen)
+            
+            switch jawabanTerpilih {
+            case "A":
+                jawabanAButton.backgroundColor = .systemGreen
+            case "B":
+                jawabanBButton.backgroundColor = .systemGreen
+            case "C":
+                jawabanCButton.backgroundColor = .systemGreen
+            case "D":
+                jawabanDButton.backgroundColor = .systemGreen
+            default:
+                return
+            }
+        } else {
+            setupCheckListImgProperties(with: "xmark.circle", color: .systemRed)
+
+            switch jawabanTerpilih {
+            case "A":
+                jawabanAButton.backgroundColor = .systemRed
+            case "B":
+                jawabanBButton.backgroundColor = .systemRed
+            case "C":
+                jawabanCButton.backgroundColor = .systemRed
+            case "D":
+                jawabanDButton.backgroundColor = .systemRed
+            default:
+                return
+            }
+            
+            switch jawabanBenar {
+            case "A":
+                jawabanAButton.backgroundColor = .systemGreen
+            case "B":
+                jawabanBButton.backgroundColor = .systemGreen
+            case "C":
+                jawabanCButton.backgroundColor = .systemGreen
+            case "D":
+                jawabanDButton.backgroundColor = .systemGreen
+            default:
+                return
+            }
+        }
+    }
+    /*
+    // UIView Setup Main Functions: Default Kuis UI
+    */
+    private func setupToDefaultUI() {
+        enableOptionButtons()
+        resetOptionBtnsColor()
+        hidePembahasanComponents()
+        
+        let kuis = Constants.pertanyaanArray[currentNumber - 1]
+        setupKuisComponentText(kuis: kuis, isPembahasan: false)
+        setupOptionBtnsText(kuis: kuis)
+        setupToolBarUI(isPembahasan: false)
+    }
+    
 }
 
 
