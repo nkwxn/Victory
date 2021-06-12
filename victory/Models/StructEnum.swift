@@ -86,5 +86,27 @@ struct AlatPraktikum {
 
 struct Panduanlab {
     var Langkah: [String]
+}
+
+enum Step: String, CaseIterable {
+    case materi = "Materi"
+    case labOne = "Lab 1"
+    case labTwo = "Lab 2"
+    case labThree = "Lab 3"
+    case kuis = "Kuis"
     
+    func getIndex() -> Int {
+        switch self {
+        case .materi:
+            return 0
+        case .labOne:
+            return 1
+        case .labTwo:
+            return 2
+        case .labThree:
+            return 3
+        case .kuis:
+            return 4
+        }
+    }
 }

@@ -9,14 +9,14 @@ import UIKit
 
 class OnBoardingView: UIView {
 
-    @IBOutlet var contentView: OnBoardingView!
+    @IBOutlet var contentView: UIView!
     @IBOutlet weak var actionBtn: UIButton!
     
     @IBAction func onButtonPressed(_ sender: Any) {
         delegate?.moveToPanduanView()
     }
     
-    weak var delegate: PopUpDelegate?
+    weak var delegate: XIBTryoutViewControllerDelegate?
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -33,6 +33,12 @@ class OnBoardingView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        setupView()
+    }
+    
+    private func setupView() {
+        actionBtn.layer.cornerRadius = 8
     }
 
 }

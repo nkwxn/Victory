@@ -46,6 +46,9 @@
                                     <state key="normal" title=" Lab 1" image="2.circle.fill" catalog="system">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="onTimelineBtnPressed:" destination="-1" eventType="touchUpInside" id="Q4t-hA-T9H"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="vc_blue_active"/>
@@ -73,6 +76,9 @@
                                     <state key="normal" title=" Lab 2" image="3.circle.fill" catalog="system">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="onTimelineBtnPressed:" destination="-1" eventType="touchUpInside" id="JGW-aa-0Vr"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="vc_blue_active"/>
@@ -126,6 +132,9 @@
                                     <state key="normal" title=" Lab 3" image="4.circle.fill" catalog="system">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="onTimelineBtnPressed:" destination="-1" eventType="touchUpInside" id="V2c-XS-eQ3"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="vc_blue_active"/>
@@ -210,6 +219,9 @@
                             <state key="normal" title=" Materi" image="1.circle.fill" catalog="system">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="onTimelineBtnPressed:" destination="-1" eventType="touchUpInside" id="blQ-4F-6LK"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" name="vc_blue_active"/>
@@ -238,6 +250,9 @@
                             <state key="normal" title=" Kuis" image="5.circle.fill" catalog="system">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="onTimelineBtnPressed:" destination="-1" eventType="touchUpInside" id="kX6-WA-Vkf"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" name="vc_blue_active"/>

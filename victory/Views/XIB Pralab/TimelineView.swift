@@ -9,6 +9,10 @@ import UIKit
 
 class TimelineView: UIView {
     
+    weak var delegate: XIBTryoutViewControllerDelegate?
+    
+    @IBOutlet var contentView: UIView!
+    
     @IBOutlet weak var materiBtn: UIButton!
     @IBOutlet weak var labSatuBtn: UIButton!
     @IBOutlet weak var labDuaBtn: UIButton!
@@ -27,7 +31,20 @@ class TimelineView: UIView {
     @IBOutlet weak var separatorTiga: UIView!
     @IBOutlet weak var separatorEmpat: UIView!
     
-    @IBOutlet var contentView: TimelineView!
+    @IBAction func onTimelineBtnPressed(_ sender: UIButton) {
+        let title = sender.titleLabel!.text!
+        let start = title.index(title.startIndex, offsetBy: 1)
+        let end = title.index(title.endIndex, offsetBy: -1)
+        let substring = title[start...end]
+        let step = Step(rawValue: "\(substring)")
+        
+        changeTimelineColor(step: step!)
+        delegate?.changeStep(to: step!)
+    }
+    
+    var separatorList: [UIView] = []
+    var pillList: [RoundCornersUIView] = []
+    var buttonList: [UIButton] = []
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -44,5 +61,61 @@ class TimelineView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        separatorList = [separatorSatu, separatorDua, separatorTiga, separatorEmpat]
+        pillList = [materiPill, labSatuPill, labDuaPill, labTigaPill, kuisPill]
+        buttonList = [materiBtn, labSatuBtn, labDuaBtn, labTigaBtn, kuisBtn]
+        
+        setupInitialView()
+        
     }
+    
+    private func changeTimelineColor(step: Step) {
+        setupTimelineComponent(step: step, isActive: true, isLocked: false)
+        
+        switch step {
+        case .materi:
+            return
+        case .labOne:
+            labSatuPill.backgroundColor = UIColor.black
+        case .labTwo:
+            labDuaPill.backgroundColor = UIColor.black
+        case .labThree:
+            labTigaPill.backgroundColor = UIColor.black
+        case .kuis:
+            kuisPill.backgroundColor = UIColor.black
+        }
+    }
+    
+    private func setupInitialView() {
+        setupTimelineComponent(step: .materi, isActive: true, isLocked: false)
+        setupTimelineComponent(step: .labOne, isActive: false, isLocked: true)
+        setupTimelineComponent(step: .labTwo, isActive: false, isLocked: true)
+        setupTimelineComponent(step: .labThree, isActive: false, isLocked: true)
+        setupTimelineComponent(step: .kuis, isActive: false, isLocked: true)
+    }
+    
+    private func setupTimelineComponent(step: Step, isActive: Bool, isLocked: Bool) {
+        let index = step.getIndex()
+        if isActive == true {
+            pillList[index].backgroundColor = UIColor.black
+            buttonList[index].titleLabel?.textColor = UIColor.white
+            buttonList[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+            
+            switch step {
+            case .materi:
+                return
+            default:
+                separatorList[index - 1].backgroundColor = UIColor.black
+            }
+            
+        } else { // isActive false
+            if isLocked == false {
+                
+            } else { // isLocked true
+                
+            }
+        }
+    }
+    
 }

@@ -7,14 +7,15 @@
 
 import UIKit
 
-protocol PopUpDelegate: class {
+protocol XIBTryoutViewControllerDelegate: class {
     func moveToPanduanView()
     func closePanduanView()
+    func changeStep(to step: Step)
 }
 
-class XIBTryoutViewController: UIViewController, PopUpDelegate {
+class XIBTryoutViewController: UIViewController, XIBTryoutViewControllerDelegate {
     
-    @IBOutlet weak var containerView: TimelineView!
+    @IBOutlet weak var timelineView: TimelineView!
     @IBOutlet weak var onBoardingView: OnBoardingView!
     @IBOutlet weak var panduanLabView: PanduanLabView!
     @IBOutlet weak var dimOverlayView: DimOverlayView!
@@ -40,19 +41,63 @@ class XIBTryoutViewController: UIViewController, PopUpDelegate {
         dimOverlayView.isHidden = true
         onBoardingView.isHidden  = true
     }
-    
-    //Delegate Function
+    /*
+    // Delegate Functions
+    */
+    var currentStep: Step = .materi
+    var stepList: [Int] = []
+    /*
+    // Delegate Functions
+    */
     func moveToPanduanView() {
         closeOnBoardingView()
         showPanduanView()
     }
     
-    //Delegate Function
     func closePanduanView() {
         panduanLabView.isHidden = true
         dimOverlayView.isHidden = true
     }
     
+    func changeStep(to step: Step) {
+        switch step {
+        case .materi:
+            print(step.rawValue)
+        case .labOne:
+            print(step.rawValue)
+        case .labTwo:
+            print(step.rawValue)
+        case .labThree:
+            print(step.rawValue)
+        case .kuis:
+            print(step.rawValue)
+        }
+    }
+    /*
+    // Setup Views Functions
+    */
+    func setupOnboardingView() {
+        onBoardingView.delegate = self
+        onBoardingView.layer.cornerRadius = 13
+        onBoardingView.layer.masksToBounds = true
+    }
+    
+    func setupDimOverlayView() {
+        dimOverlayView.alpha = 0.6
+    }
+    
+    func setupPanduanLabView() {
+        panduanLabView.delegate = self
+        panduanLabView.layer.cornerRadius = 13
+        panduanLabView.layer.masksToBounds = true
+    }
+    
+    func setupTimelineView() {
+        timelineView.delegate = self
+    }
+    /*
+    // Pop-up Related Functions
+    */
     func closeOnBoardingView() {
         onBoardingView.isHidden = true
         dimOverlayView.isHidden = true
@@ -66,54 +111,5 @@ class XIBTryoutViewController: UIViewController, PopUpDelegate {
     func showPanduanView(){
         panduanLabView.isHidden = false
         dimOverlayView.isHidden = false
-    }
-    
-    func setupTimelineView() {
-        containerView.materiPill.layer.cornerRadius = 14
-        containerView.materiPill.backgroundColor = UIColor.black
-    }
-    
-    func setupOnboardingView() {
-        onBoardingView.delegate = self
-        onBoardingView.layer.cornerRadius = 13
-        onBoardingView.layer.masksToBounds = true
-        onBoardingView.actionBtn.layer.cornerRadius = 8
-    }
-    
-    func setupDimOverlayView() {
-        dimOverlayView.alpha = 0.6
-    }
-}
-
-extension XIBTryoutViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func setupPanduanLabView() {
-        panduanLabView.delegate = self
-        panduanLabView.layer.cornerRadius = 13
-        panduanLabView.layer.masksToBounds = true
-        panduanLabView.tableView.delegate = self
-        panduanLabView.tableView.dataSource = self
-        
-        panduanLabView.tableView.register(UINib(nibName: "PanduanTableViewCell", bundle: nil), forCellReuseIdentifier: "PanduanTableViewCell")
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Constants.panduanLabs[0].Langkah.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PanduanTableViewCell", for: indexPath) as! PanduanTableViewCell
-        
-        cell.panduanLbl.text = Constants.panduanLabs[0].Langkah[indexPath.row]
-        
-        switch indexPath.row {
-        case 0:
-            cell.panduanImageView.image = UIImage(systemName: "person.crop.circle.badge.checkmark")
-        default:
-            cell.panduanImageView.image = UIImage(systemName: "\(indexPath.row).circle")
-        }
-        
-        return cell
-        
     }
 }

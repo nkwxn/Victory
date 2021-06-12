@@ -91,10 +91,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="containerView" destination="Zv5-i6-7cv" id="CMY-dF-fNX"/>
                         <outlet property="dimOverlayView" destination="2cn-uI-WGe" id="tQD-tW-IYP"/>
                         <outlet property="onBoardingView" destination="R7d-AV-asA" id="Yjc-qq-5aZ"/>
                         <outlet property="panduanLabView" destination="JMJ-1K-IJX" id="XYi-Pv-nmi"/>
+                        <outlet property="timelineView" destination="Zv5-i6-7cv" id="CMY-dF-fNX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

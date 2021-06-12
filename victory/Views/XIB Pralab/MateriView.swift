@@ -6,15 +6,11 @@
 //
 
 import UIKit
+import WebKit
 
 class MateriView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var WebView: WKWebView!
 
 }
