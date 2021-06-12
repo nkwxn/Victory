@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		086E6CE22671CDDA00F65CDC /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086E6CE12671CDDA00F65CDC /* OnboardingView.xib */; };
 		086E6CE52671D2BF00F65CDC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6CE42671D2BF00F65CDC /* OnboardingView.swift */; };
-		086E6CE72671D36E00F65CDC /* KontenKuis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086E6CE62671D36E00F65CDC /* KontenKuis.xib */; };
+		086E6CE72671D36E00F65CDC /* KontenKuisView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086E6CE62671D36E00F65CDC /* KontenKuisView.xib */; };
 		0890E8932671DD50000A43F2 /* KontenKuisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890E8922671DD50000A43F2 /* KontenKuisView.swift */; };
 		0890E8962671DE43000A43F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890E8952671DE43000A43F2 /* Constants.swift */; };
 		0890E89A2671E1EC000A43F2 /* SkorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0890E8992671E1EC000A43F2 /* SkorView.xib */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		086E6CE12671CDDA00F65CDC /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		086E6CE42671D2BF00F65CDC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		086E6CE62671D36E00F65CDC /* KontenKuis.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KontenKuis.xib; sourceTree = "<group>"; };
+		086E6CE62671D36E00F65CDC /* KontenKuisView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KontenKuisView.xib; sourceTree = "<group>"; };
 		0890E8922671DD50000A43F2 /* KontenKuisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontenKuisView.swift; sourceTree = "<group>"; };
 		0890E8952671DE43000A43F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0890E8992671E1EC000A43F2 /* SkorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkorView.xib; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			children = (
 				086E6CE12671CDDA00F65CDC /* OnboardingView.xib */,
 				086E6CE42671D2BF00F65CDC /* OnboardingView.swift */,
-				086E6CE62671D36E00F65CDC /* KontenKuis.xib */,
+				086E6CE62671D36E00F65CDC /* KontenKuisView.xib */,
 				0890E8922671DD50000A43F2 /* KontenKuisView.swift */,
 				0890E8992671E1EC000A43F2 /* SkorView.xib */,
 				0890E89B2671E20D000A43F2 /* SkorView.swift */,
@@ -279,7 +279,7 @@
 				3099E7212670C63200B44701 /* Colors.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
-				086E6CE72671D36E00F65CDC /* KontenKuis.xib in Resources */,
+				086E6CE72671D36E00F65CDC /* KontenKuisView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

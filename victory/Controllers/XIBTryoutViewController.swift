@@ -7,23 +7,22 @@
 
 import UIKit
 
-class XIBTryoutViewController: UIViewController {
+protocol PopUpDelegate: AnyObject {
+    func showSkorView()
+}
 
+class XIBTryoutViewController: UIViewController, PopUpDelegate {
+    
+    @IBOutlet weak var kontenKuisView: KontenKuisView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        kontenKuisView.delegate = self
+    
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showSkorView() {
+        print ("yey")
     }
-    */
-
+    
 }

@@ -41,8 +41,6 @@ enum Mapel: String {
             return UIImage(systemName: "ladybug")!
         case .matematika:
             return UIImage(systemName: "function")!
-        default:
-            return UIImage()
         }
     }
 }
