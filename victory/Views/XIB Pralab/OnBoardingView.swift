@@ -12,6 +12,12 @@ class OnBoardingView: UIView {
     @IBOutlet var contentView: OnBoardingView!
     @IBOutlet weak var actionBtn: UIButton!
     
+    @IBAction func onButtonPressed(_ sender: Any) {
+        delegate?.moveToPanduanView()
+    }
+    
+    weak var delegate: PopUpDelegate?
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
@@ -27,9 +33,6 @@ class OnBoardingView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
-    
-    @IBAction func onButtonPressed(_ sender: Any) {
     }
 
 }

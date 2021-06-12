@@ -32,13 +32,23 @@
                                     <constraint firstAttribute="height" constant="50" id="CLG-Pq-SW8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7d-AV-asA" customClass="OnBoardingView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="277" y="183" width="640" height="468"/>
-                                <color key="backgroundColor" name="vc_side_menu"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="468" id="4HQ-pd-yGw"/>
-                                    <constraint firstAttribute="width" constant="640" id="MKC-av-jPV"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBM-HJ-PGT">
+                                <rect key="frame" x="546" y="400" width="102" height="30"/>
+                                <state key="normal" title="Show Panduan"/>
+                                <connections>
+                                    <action selector="onPanduanBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dFj-bF-e0K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wh-9V-ovG">
+                                <rect key="frame" x="533.5" y="484" width="127" height="30"/>
+                                <state key="normal" title="Show On Boarding"/>
+                                <connections>
+                                    <action selector="onOBButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="t16-aT-4qo"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cn-uI-WGe" customClass="DimOverlayView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMJ-1K-IJX" customClass="PanduanLabView" customModule="victory" customModuleProvider="target">
                                 <rect key="frame" x="270" y="58" width="654" height="718"/>
@@ -46,6 +56,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="718" id="jHv-jG-1Vq"/>
                                     <constraint firstAttribute="width" constant="654" id="oQ2-Du-Uzc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7d-AV-asA" customClass="OnBoardingView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="277" y="183" width="640" height="468"/>
+                                <color key="backgroundColor" name="vc_side_menu"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="468" id="4HQ-pd-yGw"/>
+                                    <constraint firstAttribute="width" constant="640" id="MKC-av-jPV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -56,16 +74,25 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zv5-i6-7cv" secondAttribute="trailing" id="9wH-pL-ocX"/>
                             <constraint firstItem="JMJ-1K-IJX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="BYs-Fm-WUE"/>
                             <constraint firstItem="R7d-AV-asA" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="I97-3S-b21"/>
+                            <constraint firstItem="8Wh-9V-ovG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Kxq-1g-4z9"/>
                             <constraint firstItem="Zv5-i6-7cv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MHU-Q8-NGv"/>
                             <constraint firstItem="yv8-Sa-J7S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VfS-Nl-s6D"/>
+                            <constraint firstAttribute="bottom" secondItem="2cn-uI-WGe" secondAttribute="bottom" id="YpF-mc-WDu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="8Wh-9V-ovG" secondAttribute="bottom" constant="300" id="dAY-JC-2wa"/>
+                            <constraint firstItem="LBM-HJ-PGT" firstAttribute="top" secondItem="Zv5-i6-7cv" secondAttribute="bottom" constant="300" id="hw4-pG-ctW"/>
+                            <constraint firstItem="2cn-uI-WGe" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="i32-qB-e8f"/>
+                            <constraint firstItem="LBM-HJ-PGT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="iOI-5n-gZ9"/>
                             <constraint firstItem="R7d-AV-asA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="idX-Ah-iw3"/>
                             <constraint firstItem="JMJ-1K-IJX" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="mpP-fI-y2d"/>
+                            <constraint firstItem="2cn-uI-WGe" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="pDu-ta-DSG"/>
                             <constraint firstItem="yv8-Sa-J7S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rvR-bQ-ZxO"/>
                             <constraint firstItem="Zv5-i6-7cv" firstAttribute="top" secondItem="yv8-Sa-J7S" secondAttribute="bottom" id="uwH-gW-u7b"/>
+                            <constraint firstAttribute="trailing" secondItem="2cn-uI-WGe" secondAttribute="trailing" id="wCF-N0-994"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="Zv5-i6-7cv" id="CMY-dF-fNX"/>
+                        <outlet property="dimOverlayView" destination="2cn-uI-WGe" id="tQD-tW-IYP"/>
                         <outlet property="onBoardingView" destination="R7d-AV-asA" id="Yjc-qq-5aZ"/>
                         <outlet property="panduanLabView" destination="JMJ-1K-IJX" id="XYi-Pv-nmi"/>
                     </connections>

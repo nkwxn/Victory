@@ -1,22 +1,16 @@
 //
-//  PanduanLab.swift
+//  DimOverlayView.swift
 //  victory
 //
-//  Created by Wuri Dita on 10/06/21.
+//  Created by Wuri Dita on 12/06/21.
 //
 
 import UIKit
 
-class PanduanLabView: UIView {
+class DimOverlayView: UIView {
     
-    @IBOutlet var contentView: PanduanLabView!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var contentView: UIView!
     
-    @IBAction func onCloseButtonPressed(_ sender: Any) {
-        delegate?.closePanduanView()
-    }
-    
-    weak var delegate: PopUpDelegate?
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -29,10 +23,10 @@ class PanduanLabView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("PanduanLabView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("DimOverlayView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
-    
+
 }
