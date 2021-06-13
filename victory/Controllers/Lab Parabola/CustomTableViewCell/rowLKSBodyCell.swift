@@ -27,10 +27,22 @@ class rowLKSBodyCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        tfXmax.delegate = self
+        tfYmax.delegate = self
+        tfWaktuYMax.delegate = self
     }
     
     // If end edit, validate answer
     @IBAction func tfEndEdit(_ sender: UITextField) {
+    }
+}
+
+extension rowLKSBodyCell: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
         guard let angkaSoal = angkaSoal else { return }
         
         // Validasikan segalanya sesuai dengan hitungan
@@ -51,18 +63,18 @@ class rowLKSBodyCell: UITableViewCell {
         case .kecAwal:
             nilaiV0 = Double(angkaSoal)
         default:
-            sender.backgroundColor = UIColor(named: "vc_green_bg")
+            textField.backgroundColor = UIColor(named: "vc_green_bg")
         }
         
         hasilXMax = round(((nilaiV0 * nilaiV0)/10 * sin(2*(nilaiTeta * Double.pi / 180)))*1000)/1000
         hasilYMax = round(((nilaiV0 * nilaiV0 * sin(nilaiTeta * Double.pi / 180) * sin(nilaiTeta * Double.pi / 180)) / (2*10))*1000)/1000
         hasilTymax = round(((nilaiV0 * sin(nilaiTeta * Double.pi / 180)) / 10)*1000)/1000
         
-        guard let textFieldValue = sender.text else { return }
+        guard let textFieldValue = textField.text else { return }
         
         // Validate if true / false (Round into 3 decimal places)
         var validation: Bool
-        switch sender {
+        switch textField {
         case tfXmax:
             validation = Double(textFieldValue) == hasilXMax
         case tfYmax:
@@ -73,18 +85,14 @@ class rowLKSBodyCell: UITableViewCell {
             validation = false
         }
         
-        sender.backgroundColor = validation ? UIColor(named: "vc_green_bg") : UIColor(named: "vc_red_bg")
+        textField.backgroundColor = validation ? UIColor(named: "vc_green_bg") : UIColor(named: "vc_red_bg")
 //        sender.layer.borderWidth = 1.0
 //        sender.layer.borderColor = validation ? UIColor(named: "vc_green_active")?.cgColor : UIColor(named: "vc_red_active")?.cgColor
         
         if textFieldValue == "" {
-            sender.backgroundColor = .systemBackground
+            textField.backgroundColor = .systemBackground
         }
     }
-}
-
-extension rowLKSBodyCell: UITextFieldDelegate {
-    
 }
 
 protocol rowLKSBodyDelegate {

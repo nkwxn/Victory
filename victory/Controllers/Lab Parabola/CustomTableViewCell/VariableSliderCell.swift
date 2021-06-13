@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VariabelCell: UITableViewCell {
+class VariableSliderCell: UITableViewCell {
     @IBOutlet weak var lblVarName: UILabel!
     @IBOutlet weak var imgVariable: UIImageView!
     @IBOutlet weak var lblVarAmount: UILabel!
@@ -37,7 +37,7 @@ class VariabelCell: UITableViewCell {
     // Kasih variabel dan delegate untuk initialize yang lainnya
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         lblVarAmount.text = "\(sender.value.rounded()) \(variableSetting?.getUnit() ?? "")"
-        delegate?.sendSliderValue(from: sender.value.rounded())
+        delegate?.sendSliderValue(from: sender.value.rounded(), withUnit: variableSetting)
     }
     
     override func awakeFromNib() {
@@ -55,5 +55,5 @@ class VariabelCell: UITableViewCell {
 }
 
 protocol VariableSliderDelegate {
-    func sendSliderValue(from sliderValue: Float)
+    func sendSliderValue(from sliderValue: Float, withUnit: SliderVariable?)
 }

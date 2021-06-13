@@ -13,7 +13,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
         return 2
     }
     
-    // Isi headerview tergantung context
+    // MARK: - Cell Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "VarHeader") as! LabVariableHeaderView
         
@@ -27,6 +27,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
             if nomorLab != nil {
                 headerView.lblHeaderTitle.text = "Lembar Kerja"
                 headerView.btnHeader.setTitle("Lihat Panduan", for: .normal)
+                headerView.delegate = self
             } else {
                 headerView.lblHeaderTitle.text = "Posisi"
                 headerView.btnHeader.setTitle("", for: .normal)
@@ -36,7 +37,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
         return headerView
     }
     
-    // Jumlah tergantung section dan context
+    // MARK: - Jumlah Cell sesuai dengan context praktikum (tanpa dan dengan lks)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if nomorLab != nil {
             switch section {
@@ -55,7 +56,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    // Cell tergantung section dan context
+    // MARK: - Tampilan Cell untuk setiap rows nya
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sliderValues: [SliderVariable] = [.massaProyektil, .sudutLemparan, .kecAwal] // Determining the values shown
         var staticVal = sliderValues // Determining the static values (non-editable)
@@ -71,7 +72,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
                     return cell
                 } else {
                     // Show the custom cell with slider
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as! VariabelCell
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as! VariableSliderCell
                     cell.delegate = self
                     cell.variableSetting = sliderValues[nomorLab]
                     return cell
@@ -95,7 +96,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
             case 0:
                 if indexPath.row < 4 {
                     let editor = variabelEdit[indexPath.row]
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as! VariabelCell
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as! VariableSliderCell
                     cell.variableSetting = editor
                     cell.delegate = self
                     
@@ -123,6 +124,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    // MARK: - Row Selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if nomorLab == nil && indexPath == IndexPath(row: 4, section: 0) {
             // Show the Popover (ipad) / modal (iphone) choosing gravity
@@ -131,16 +133,24 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
                 let gravityPOver = GravityPopoverViewController()
                 gravityPOver.modalPresentationStyle = .popover
                 
-                // Sisanya dah mabok gua wkwkw
             } else if UIDevice.current.userInterfaceIdiom == .phone {
                 let gravityAlert = UIAlertController(title: "Gravitasi", message: "Pilihan planet:", preferredStyle: .actionSheet)
             }
+            // Sisanya isi coding untuk menampilkan action sheet / popover
         } else {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }
 
+// MARK: - Delegate jika tombol pada header disentuh (should open popover)
+extension LabGerakParabolaView: VariableHeaderDelegate {
+    func actionForButton() {
+        print("Should open popover")
+    }
+}
+
+// MARK: - Custom Class untuk Clear TableView
 class CustomClearTabl: UITableViewCell {
     init(image: UIImage?, title label: String, detail detailLabel: String, showAcc: Bool) {
         super.init(style: .value1, reuseIdentifier: nil)
@@ -162,8 +172,10 @@ class CustomClearTabl: UITableViewCell {
     }
 }
 
+// MARK: - Delegate untuk perubahan value pada slider (GUNAKAN UNTUK MEMANIPULASI PHYSICS BODY PADA SKSCENE!)
 extension LabGerakParabolaView: VariableSliderDelegate {
-    func sendSliderValue(from sliderValue: Float) {
-        print(sliderValue)
+    func sendSliderValue(from sliderValue: Float, withUnit: SliderVariable?) {
+        guard let unit = withUnit?.getUnit() else { return }
+        print("\(sliderValue) \(unit)")
     }
 }

@@ -87,6 +87,32 @@ class LabGerakParabolaView: UIView {
         
         // Button Appearance
         btnTampilkanMateri.alignVerticalCenter()
+        btnResetVariabel.alignVerticalCenter()
+        btnLuncurkan.alignVerticalCenter()
+        
+        // Hide on different mode
+        if nomorLab != nil {
+            btnTampilkanMateri.isHidden = true
+            btnResetVariabel.setTitle("Reset Tampilan", for: .normal)
+        }
+        
+    }
+    
+    @IBAction func sliderPosisiValueChanged(_ sender: UISlider) {
+        print(sender.value)
+    }
+    
+    @IBAction func btnPressed(_ sender: UIButton) {
+        switch sender {
+        case btnTampilkanMateri:
+            print("Should show modal to materi")
+        case btnResetVariabel:
+            print("Should reset appearance / all variables on the side")
+        case btnLuncurkan:
+            print("Should launch projectile (Manipulate SKScene Actions)")
+        default:
+            print("Button not identified")
+        }
     }
 }
 
@@ -188,6 +214,7 @@ enum SliderVariable: String {
     }
 }
 
+// Gerak Parabola Delegate
 protocol LabGerakParabolaDelegate: AnyObject {
     func presentView(_ view: UIView)
 }
