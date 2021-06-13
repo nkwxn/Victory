@@ -8,17 +8,49 @@
 import UIKit
 
 class SkorView: UIView {
-    @IBAction func kembaliKeKuisButton(_ sender: Any) {
+
+    weak var delegate: PopUpDelegate?
+    
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var scoreLbl: UILabel!
+    @IBOutlet weak var benarLbl: UILabel!
+    @IBOutlet weak var salahLbl: UILabel!
+    @IBOutlet weak var kembaliBtn: UIButton!
+    @IBOutlet weak var keluarPraktikumBtn: UIButton!
+    
+    
+    @IBAction func onKembaliBtnPressed(_ sender: UIButton) {
+        delegate?.closeSkorView()
     }
     
-    @IBAction func keluarPraktikumButton(_ sender: Any) {
+    @IBAction func onKeluarPraktikumBtnPressed(_ sender: UIButton) {
     }
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
+    // Init Functions
     */
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        commonInit()
+    }
+        
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+        
+    private func commonInit() {
+        Bundle.main.loadNibNamed("SkorView", owner: self, options: nil)
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        setUpView()
+    
+    }
+    func setUpView() {
+        kembaliBtn.layer.cornerRadius = 8
+        keluarPraktikumBtn.layer.cornerRadius = 8
+    }
+  
 
 }

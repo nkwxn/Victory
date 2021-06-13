@@ -36,7 +36,7 @@ class KontenKuisView: UIView {
     @IBAction func onNextButtonPressed(_ sender: UIButton) {
         switch currentNumber {
         case 5:
-            delegate?.showSkorView()
+            delegate?.showSkorView(totalCorrectAnswer: totalCorrectAnswer, totalSoalKuis: totalSoalKuis)
         default:
             changeCurrentNumber(by: 1)
             if currentNumber <= answerList.count {
@@ -81,6 +81,8 @@ class KontenKuisView: UIView {
     weak var delegate: PopUpDelegate?
     var currentNumber = 1
     var answerList: [String] = []
+    var totalCorrectAnswer = 0
+    var totalSoalKuis = Constants.pertanyaanArray.count
     var buttonJawabanList: [UIButton] = []
     
     private func changeCurrentNumber (by number: Int){
@@ -130,6 +132,7 @@ class KontenKuisView: UIView {
     private func resetOptionBtnsColor() {
         for button in buttonJawabanList {
             button.backgroundColor = .systemBlue
+            button.layer.cornerRadius = 8
         }
     }
     
@@ -161,9 +164,9 @@ class KontenKuisView: UIView {
     }
     
     private func setupToolBarUI(isPembahasan: Bool) {
-        currentPageLabel.text = "\(currentNumber) / \(Constants.pertanyaanArray.count)"
+        currentPageLabel.text = "\(currentNumber) / \(totalSoalKuis)"
         
-        if currentNumber == Constants.pertanyaanArray.count {
+        if currentNumber == totalSoalKuis{
             selanjutnyaButton.setImage(UIImage(systemName: "flag.circle.fill"), for: .normal)
             selanjutnyaLabel.text = "Lihat Hasil"
         } else {
@@ -203,7 +206,7 @@ class KontenKuisView: UIView {
         if jawabanTerpilih == jawabanBenar {
             setupCheckListImgProperties(with: "checkmark.circle", color: .systemGreen)
             buttonJawabanList[indexTerpilih].backgroundColor = .systemGreen
-            
+            totalCorrectAnswer += 1
         } else {
             setupCheckListImgProperties(with: "xmark.circle", color: .systemRed)
             buttonJawabanList[indexTerpilih].backgroundColor = .systemRed

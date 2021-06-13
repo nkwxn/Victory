@@ -8,9 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingView" customModule="victory" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="xNZ-fH-iGA"/>
+                <outlet property="mulaiBtn" destination="grh-hU-VGQ" id="GZP-vi-KOK"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OnboardingView" customModule="victory" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="1194" height="707"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -22,23 +27,25 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kuis Uji Pemahaman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR9-at-uA6">
-                    <rect key="frame" x="372" y="330" width="450.5" height="57.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                    <rect key="frame" x="378" y="330" width="438.5" height="57.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grh-hU-VGQ">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grh-hU-VGQ">
                     <rect key="frame" x="465" y="485" width="264" height="50"/>
                     <color key="backgroundColor" red="0.21083378790000001" green="0.47220683099999999" blue="0.96475356820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="264" id="goc-ZP-40Y"/>
                         <constraint firstAttribute="height" constant="50" id="jR2-0r-lS5"/>
                     </constraints>
-                    <state key="normal" title="Mulai">
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="tintColor" red="0.95692747830000002" green="0.95670551059999998" blue="0.96470826860000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title=" Mulai" image="arrow.right.circle" catalog="system">
                         <color key="titleColor" red="0.95692747830000002" green="0.95670551059999998" blue="0.96470826860000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
-                        <action selector="onButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gag-Pu-8iu"/>
+                        <action selector="onMulaiBtnPressed:" destination="-1" eventType="touchUpInside" id="0f9-nD-Crw"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kuis terdiri dari 5  soal pilihan ganda. Kamu diminta memilih satu jawaban yang paling tepat dari empat pilihan yang tersedia." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftC-VR-5pc">
@@ -67,10 +74,11 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="20" y="109"/>
+            <point key="canvasLocation" x="19.424460431654676" y="108.79396984924624"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
