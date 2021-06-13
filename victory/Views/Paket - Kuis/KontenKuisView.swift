@@ -71,6 +71,8 @@ class KontenKuisView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         // initial Default View Config
+        
+        buttonJawabanList = [jawabanAButton, jawabanBButton, jawabanCButton, jawabanDButton]
         setupToDefaultUI()
     }
     /*
@@ -79,23 +81,22 @@ class KontenKuisView: UIView {
     weak var delegate: PopUpDelegate?
     var currentNumber = 1
     var answerList: [String] = []
+    var buttonJawabanList: [UIButton] = []
     
     private func changeCurrentNumber (by number: Int){
         currentNumber += number
     }
     
     private func disableOptionButtons() {
-        jawabanAButton.isEnabled = false
-        jawabanBButton.isEnabled = false
-        jawabanCButton.isEnabled = false
-        jawabanDButton.isEnabled = false
+        for button in buttonJawabanList {
+            button.isEnabled = false
+        }
     }
     
     private func enableOptionButtons() {
-        jawabanAButton.isEnabled = true
-        jawabanBButton.isEnabled = true
-        jawabanCButton.isEnabled = true
-        jawabanDButton.isEnabled = true
+        for button in buttonJawabanList {
+            button.isEnabled = true
+        }
     }
     
     private func setupKuisComponentText(kuis: Kuis, isPembahasan: Bool) {
@@ -121,17 +122,15 @@ class KontenKuisView: UIView {
     }
     
     private func setupOptionBtnsText(kuis: Kuis) {
-        jawabanAButton.setTitle(kuis.jawaban[0], for: .normal)
-        jawabanBButton.setTitle(kuis.jawaban[1], for: .normal)
-        jawabanCButton.setTitle(kuis.jawaban[2], for: .normal)
-        jawabanDButton.setTitle(kuis.jawaban[3], for: .normal)
+        for (index, button) in buttonJawabanList.enumerated() {
+            button.setTitle(kuis.jawaban[index], for: .normal)
+        }
     }
     
     private func resetOptionBtnsColor() {
-        jawabanAButton.backgroundColor = .systemBlue
-        jawabanBButton.backgroundColor = .systemBlue
-        jawabanCButton.backgroundColor = .systemBlue
-        jawabanDButton.backgroundColor = .systemBlue
+        for button in buttonJawabanList {
+            button.backgroundColor = .systemBlue
+        }
     }
     
     private func setupCheckListImgProperties(with imageName: String, color: UIColor) {
@@ -194,50 +193,21 @@ class KontenKuisView: UIView {
         setupOptionBtnsText(kuis: kuis)
         setupToolBarUI(isPembahasan: true)
         
+        let valueTerpilih = JawabanKuis(rawValue: jawabanTerpilih)
+        let indexTerpilih = valueTerpilih!.getIndex()
+        
+        let valueBenar = JawabanKuis(rawValue: String(jawabanBenar))
+        let indexBenar = valueBenar!.getIndex()
+        
         // Change option buttons' colors according to the answer
         if jawabanTerpilih == jawabanBenar {
             setupCheckListImgProperties(with: "checkmark.circle", color: .systemGreen)
+            buttonJawabanList[indexTerpilih].backgroundColor = .systemGreen
             
-            switch jawabanTerpilih {
-            case "A":
-                jawabanAButton.backgroundColor = .systemGreen
-            case "B":
-                jawabanBButton.backgroundColor = .systemGreen
-            case "C":
-                jawabanCButton.backgroundColor = .systemGreen
-            case "D":
-                jawabanDButton.backgroundColor = .systemGreen
-            default:
-                return
-            }
         } else {
             setupCheckListImgProperties(with: "xmark.circle", color: .systemRed)
-
-            switch jawabanTerpilih {
-            case "A":
-                jawabanAButton.backgroundColor = .systemRed
-            case "B":
-                jawabanBButton.backgroundColor = .systemRed
-            case "C":
-                jawabanCButton.backgroundColor = .systemRed
-            case "D":
-                jawabanDButton.backgroundColor = .systemRed
-            default:
-                return
-            }
-            
-            switch jawabanBenar {
-            case "A":
-                jawabanAButton.backgroundColor = .systemGreen
-            case "B":
-                jawabanBButton.backgroundColor = .systemGreen
-            case "C":
-                jawabanCButton.backgroundColor = .systemGreen
-            case "D":
-                jawabanDButton.backgroundColor = .systemGreen
-            default:
-                return
-            }
+            buttonJawabanList[indexTerpilih].backgroundColor = .systemRed
+            buttonJawabanList[indexBenar].backgroundColor = .systemGreen
         }
     }
     /*

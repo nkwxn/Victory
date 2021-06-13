@@ -92,3 +92,23 @@ struct Kuis {
     let jawabanTepat: String
     let pembahasan: String
 }
+
+enum JawabanKuis: String {
+    case a = "A"
+    case b = "B"
+    case c = "C"
+    case d = "D"
+    
+    func getIndex() -> Int {
+        switch self {
+        case .a:
+            return 0
+        case .b:
+            return 1
+        case .c:
+            return 2
+        case .d:
+            return 3
+        }
+    }
+}
