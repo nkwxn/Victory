@@ -155,22 +155,12 @@ class TimelineView: UIView {
         separatorList[index - 1].backgroundColor = UIColor(named: "vc_blue_text_lock")
     }
     
-    func setupBtnImage(for step: Step, isActive: Bool, isDone: Bool) {
+    func setupBtnImageToDone(for step: Step, isActive: Bool) {
         let index = step.getIndex()
         
         if isActive {
-            if isDone {
-                buttonList[index].setImage(step.getImageDoneActive(), for: .normal)
-            } else {
-                buttonList[index].setImage(step.getImageActive(), for: .normal)
-            }
-        } else {
-            if isDone {
-                buttonList[index].setImage(step.getImageDoneNormal(), for: .normal)
-            } else {
-                buttonList[index].setImage(step.getImageNormal(), for: .normal)
-            }
-        }
+            buttonList[index].setImage(step.getImageDoneActive(), for: .normal)
+        } else { buttonList[index].setImage(step.getImageDoneNormal(), for: .normal) }
     }
     
 }

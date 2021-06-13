@@ -72,12 +72,12 @@ class XIBTryoutViewController: UIViewController, XIBTryoutViewControllerDelegate
             timelineView.setupTimelineComponentStage(step: unlockStep, isActive: false, isLocked: false)
         }
         for doneStep in stepDoneList {
-            timelineView.setupBtnImage(for: doneStep, isActive: false, isDone: true)
+            timelineView.setupBtnImageToDone(for: doneStep, isActive: false)
         }
         
         timelineView.setupTimelineComponentStage(step: currentStep, isActive: true, isLocked: false)
         if stepDoneList.contains(currentStep) {
-            timelineView.setupBtnImage(for: currentStep, isActive: true, isDone: true)
+            timelineView.setupBtnImageToDone(for: currentStep, isActive: true)
         }
     }
     /*
