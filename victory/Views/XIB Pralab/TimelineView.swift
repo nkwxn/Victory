@@ -130,7 +130,7 @@ class TimelineView: UIView {
         pillList[index].layer.cornerRadius = 14
         
         buttonList[index].isEnabled = true
-        buttonList[index].setImage(step.getImageDefault(), for: .normal)
+        buttonList[index].setImage(step.getImageNormal(), for: .normal)
         buttonList[index].tintColor = UIColor(named: "vc_blue_active")
         buttonList[index].setTitleColor(UIColor(named: "vc_blue_active"), for: .normal)
         buttonList[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)

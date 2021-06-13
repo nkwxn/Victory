@@ -125,7 +125,7 @@ enum Step: String, CaseIterable {
         }
     }
     
-    func getImageDefault() -> UIImage {
+    func getImageNormal() -> UIImage {
         switch self {
         case .materi:
             return UIImage(systemName: "1.circle")!
