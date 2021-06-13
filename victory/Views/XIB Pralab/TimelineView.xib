@@ -21,7 +21,7 @@
                 <outlet property="labTigaBtn" destination="wE4-Zr-0AB" id="tp5-gI-HQ7"/>
                 <outlet property="labTigaPill" destination="8pe-99-AE7" id="f7n-ZP-W4m"/>
                 <outlet property="materiBtn" destination="g2Z-hT-q7L" id="qpk-hs-gP0"/>
-                <outlet property="materiPill" destination="g2Z-hT-q7L" id="56d-Tj-h87"/>
+                <outlet property="materiPill" destination="ySc-bH-N6N" id="b3P-Ts-YH6"/>
                 <outlet property="separatorDua" destination="pNZ-AC-5fy" id="zbD-lg-J5D"/>
                 <outlet property="separatorEmpat" destination="sgU-X8-axC" id="1aR-oJ-RSf"/>
                 <outlet property="separatorSatu" destination="vKA-rI-1Ju" id="cew-Er-gv4"/>

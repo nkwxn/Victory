@@ -25,8 +25,13 @@ class XIBTryoutViewController: UIViewController, XIBTryoutViewControllerDelegate
         showOnBoardingView()
     }
     
-    @IBAction func onPanduanBtnPressed(_ sender: Any) {
-        showPanduanView()
+    @IBAction func onFinishMateriBtnPressed(_ sender: Any) {
+        stepList.append(.labOne)
+        stepList.append(.labTwo)
+        stepList.append(.labThree)
+//        stepList.append(.kuis)
+        
+        changeStep(to: .labOne)
     }
     
     override func viewDidLoad() {
@@ -42,10 +47,10 @@ class XIBTryoutViewController: UIViewController, XIBTryoutViewControllerDelegate
         onBoardingView.isHidden  = true
     }
     /*
-    // Delegate Functions
+    // Variables
     */
     var currentStep: Step = .materi
-    var stepList: [Int] = []
+    var stepList: [Step] = [.materi]
     /*
     // Delegate Functions
     */
@@ -60,21 +65,15 @@ class XIBTryoutViewController: UIViewController, XIBTryoutViewControllerDelegate
     }
     
     func changeStep(to step: Step) {
-        switch step {
-        case .materi:
-            print(step.rawValue)
-        case .labOne:
-            print(step.rawValue)
-        case .labTwo:
-            print(step.rawValue)
-        case .labThree:
-            print(step.rawValue)
-        case .kuis:
-            print(step.rawValue)
+        currentStep = step
+        for unlockStep in stepList {
+            timelineView.setupTimelineComponentStage(step: unlockStep, isActive: false, isLocked: false)
         }
+        print(currentStep)
+        timelineView.setupTimelineComponentStage(step: currentStep, isActive: true, isLocked: false)
     }
     /*
-    // Setup Views Functions
+    // Setup View Functions
     */
     func setupOnboardingView() {
         onBoardingView.delegate = self

@@ -33,10 +33,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBM-HJ-PGT">
-                                <rect key="frame" x="546" y="400" width="102" height="30"/>
-                                <state key="normal" title="Show Panduan"/>
+                                <rect key="frame" x="553" y="400" width="88" height="30"/>
+                                <state key="normal" title="Finish Materi"/>
                                 <connections>
-                                    <action selector="onPanduanBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dFj-bF-e0K"/>
+                                    <action selector="onFinishMateriBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dFj-bF-e0K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wh-9V-ovG">

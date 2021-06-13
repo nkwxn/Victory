@@ -109,4 +109,40 @@ enum Step: String, CaseIterable {
             return 4
         }
     }
+    
+    func getImageActive() -> UIImage {
+        switch self {
+        case .materi:
+            return UIImage(systemName: "1.circle.fill")!
+        case .labOne:
+            return UIImage(systemName: "2.circle.fill")!
+        case .labTwo:
+            return UIImage(systemName: "3.circle.fill")!
+        case .labThree:
+            return UIImage(systemName: "4.circle.fill")!
+        case .kuis:
+            return UIImage(systemName: "5.circle.fill")!
+        }
+    }
+    
+    func getImageDefault() -> UIImage {
+        switch self {
+        case .materi:
+            return UIImage(systemName: "1.circle")!
+        case .labOne:
+            return UIImage(systemName: "2.circle")!
+        case .labTwo:
+            return UIImage(systemName: "3.circle")!
+        case .labThree:
+            return UIImage(systemName: "4.circle")!
+        case .kuis:
+            return UIImage(systemName: "5.circle")!
+        }
+    }
+    
+    func getImageLock() -> UIImage {
+        return UIImage(systemName: "lock.circle")!
+    }
+    
+    
 }

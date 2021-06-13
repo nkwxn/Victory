@@ -37,15 +37,18 @@ class TimelineView: UIView {
         let end = title.index(title.endIndex, offsetBy: -1)
         let substring = title[start...end]
         let step = Step(rawValue: "\(substring)")
-        
-        changeTimelineColor(step: step!)
+
         delegate?.changeStep(to: step!)
     }
-    
+    /*
+    // Variables
+    */
     var separatorList: [UIView] = []
     var pillList: [RoundCornersUIView] = []
     var buttonList: [UIButton] = []
-    
+    /*
+    // Init Functions
+    */
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
@@ -67,55 +70,89 @@ class TimelineView: UIView {
         buttonList = [materiBtn, labSatuBtn, labDuaBtn, labTigaBtn, kuisBtn]
         
         setupInitialView()
-        
+    }
+    /*
+    // Setup View Functions
+    */
+    private func setupInitialView() {
+        setupTimelineComponentStage(step: .materi, isActive: true, isLocked: false)
+        setupTimelineComponentStage(step: .labOne, isActive: false, isLocked: true)
+        setupTimelineComponentStage(step: .labTwo, isActive: false, isLocked: true)
+        setupTimelineComponentStage(step: .labThree, isActive: false, isLocked: true)
+        setupTimelineComponentStage(step: .kuis, isActive: false, isLocked: true)
     }
     
-    private func changeTimelineColor(step: Step) {
-        setupTimelineComponent(step: step, isActive: true, isLocked: false)
+    func setupTimelineComponentStage(step: Step, isActive: Bool, isLocked: Bool) {
+        if isActive == true {
+            print("\(step.rawValue) ACTIVE")
+            setupToActiveStage(for: step)
+        } else {
+            if isLocked == false {
+                print("\(step.rawValue) DEFAULT")
+                setupToNormalStage(for: step)
+            } else { setupToLockStage(for: step) }
+        }
+    }
+    
+    func setupToActiveStage(for step: Step) {
+        let index = step.getIndex()
+        pillList[index].backgroundColor = UIColor(named: "vc_blue_active")
+        pillList[index].layer.cornerRadius = 14
+        
+        buttonList[index].isEnabled = true
+        buttonList[index].setImage(step.getImageActive(), for: .normal)
+        buttonList[index].tintColor = UIColor.white
+        buttonList[index].setTitleColor(UIColor.white, for: .normal)
+        buttonList[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         
         switch step {
-        case .materi:
-            return
         case .labOne:
-            labSatuPill.backgroundColor = UIColor.black
-        case .labTwo:
-            labDuaPill.backgroundColor = UIColor.black
-        case .labThree:
-            labTigaPill.backgroundColor = UIColor.black
+            labBg.backgroundColor = UIColor(named: "vc_blue_bg")
+            separatorList[index - 1].backgroundColor = UIColor(named: "vc_blue_active")
+            separatorList[index].backgroundColor = UIColor(named: "vc_blue_active")
+            separatorList[index + 1].backgroundColor = UIColor(named: "vc_blue_active")
         case .kuis:
-            kuisPill.backgroundColor = UIColor.black
+            separatorList[index - 1].backgroundColor = UIColor(named: "vc_blue_active")
+        default:
+            return
         }
     }
     
-    private func setupInitialView() {
-        setupTimelineComponent(step: .materi, isActive: true, isLocked: false)
-        setupTimelineComponent(step: .labOne, isActive: false, isLocked: true)
-        setupTimelineComponent(step: .labTwo, isActive: false, isLocked: true)
-        setupTimelineComponent(step: .labThree, isActive: false, isLocked: true)
-        setupTimelineComponent(step: .kuis, isActive: false, isLocked: true)
-    }
-    
-    private func setupTimelineComponent(step: Step, isActive: Bool, isLocked: Bool) {
+    func setupToNormalStage(for step: Step) {
         let index = step.getIndex()
-        if isActive == true {
-            pillList[index].backgroundColor = UIColor.black
-            buttonList[index].titleLabel?.textColor = UIColor.white
-            buttonList[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-            
-            switch step {
-            case .materi:
-                return
-            default:
-                separatorList[index - 1].backgroundColor = UIColor.black
-            }
-            
-        } else { // isActive false
-            if isLocked == false {
-                
-            } else { // isLocked true
-                
-            }
+        switch step {
+        case .kuis, .materi:
+            pillList[index].backgroundColor =  UIColor(named: "vc_blue_bg")
+        default:
+            pillList[index].backgroundColor = UIColor.clear
+            labBg.backgroundColor = UIColor(named: "vc_blue_bg")
         }
+        pillList[index].layer.cornerRadius = 14
+        
+        buttonList[index].isEnabled = true
+        buttonList[index].setImage(step.getImageDefault(), for: .normal)
+        buttonList[index].tintColor = UIColor(named: "vc_blue_active")
+        buttonList[index].setTitleColor(UIColor(named: "vc_blue_active"), for: .normal)
+        buttonList[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+    }
+    
+    func setupToLockStage(for step: Step) {
+        let index = step.getIndex()
+        switch step {
+        case .kuis:
+            pillList[index].backgroundColor = UIColor(named: "vc_blue_bg_lock")
+        default:
+            pillList[index].backgroundColor = UIColor.clear
+            labBg.backgroundColor = UIColor(named: "vc_blue_bg_lock")
+        }
+        pillList[index].layer.cornerRadius = 14
+        buttonList[index].isEnabled = false
+        buttonList[index].setImage(step.getImageLock(), for: .normal)
+        buttonList[index].tintColor = UIColor(named: "vc_blue_text_lock")
+        buttonList[index].setTitleColor(UIColor(named: "vc_blue_text_lock"), for: .normal)
+        buttonList[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        
+        separatorList[index - 1].backgroundColor = UIColor(named: "vc_blue_text_lock")
     }
     
 }
