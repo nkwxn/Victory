@@ -83,14 +83,14 @@ class TimelineView: UIView {
     }
     
     func setupTimelineComponentStage(step: Step, isActive: Bool, isLocked: Bool) {
-        if isActive == true {
+        if isActive {
             print("\(step.rawValue) ACTIVE")
             setupToActiveStage(for: step)
         } else {
-            if isLocked == false {
+            if isLocked {
                 print("\(step.rawValue) DEFAULT")
-                setupToNormalStage(for: step)
-            } else { setupToLockStage(for: step) }
+                setupToLockStage(for: step)
+            } else { setupToNormalStage(for: step) }
         }
     }
     
@@ -153,6 +153,24 @@ class TimelineView: UIView {
         buttonList[index].titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         
         separatorList[index - 1].backgroundColor = UIColor(named: "vc_blue_text_lock")
+    }
+    
+    func setupBtnImage(for step: Step, isActive: Bool, isDone: Bool) {
+        let index = step.getIndex()
+        
+        if isActive {
+            if isDone {
+                buttonList[index].setImage(step.getImageDoneActive(), for: .normal)
+            } else {
+                buttonList[index].setImage(step.getImageActive(), for: .normal)
+            }
+        } else {
+            if isDone {
+                buttonList[index].setImage(step.getImageDoneNormal(), for: .normal)
+            } else {
+                buttonList[index].setImage(step.getImageNormal(), for: .normal)
+            }
+        }
     }
     
 }

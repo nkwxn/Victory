@@ -26,11 +26,12 @@ class XIBTryoutViewController: UIViewController, XIBTryoutViewControllerDelegate
     }
     
     @IBAction func onFinishMateriBtnPressed(_ sender: Any) {
-        stepList.append(.labOne)
-        stepList.append(.labTwo)
-        stepList.append(.labThree)
+        stepUnlockList.append(.labOne)
+        stepUnlockList.append(.labTwo)
+        stepUnlockList.append(.labThree)
 //        stepList.append(.kuis)
         
+        stepDoneList.append(.materi)
         changeStep(to: .labOne)
     }
     
@@ -50,7 +51,8 @@ class XIBTryoutViewController: UIViewController, XIBTryoutViewControllerDelegate
     // Variables
     */
     var currentStep: Step = .materi
-    var stepList: [Step] = [.materi]
+    var stepUnlockList: [Step] = [.materi]
+    var stepDoneList: [Step] = []
     /*
     // Delegate Functions
     */
@@ -66,11 +68,17 @@ class XIBTryoutViewController: UIViewController, XIBTryoutViewControllerDelegate
     
     func changeStep(to step: Step) {
         currentStep = step
-        for unlockStep in stepList {
+        for unlockStep in stepUnlockList {
             timelineView.setupTimelineComponentStage(step: unlockStep, isActive: false, isLocked: false)
         }
-        print(currentStep)
+        for doneStep in stepDoneList {
+            timelineView.setupBtnImage(for: doneStep, isActive: false, isDone: true)
+        }
+        
         timelineView.setupTimelineComponentStage(step: currentStep, isActive: true, isLocked: false)
+        if stepDoneList.contains(currentStep) {
+            timelineView.setupBtnImage(for: currentStep, isActive: true, isDone: true)
+        }
     }
     /*
     // Setup View Functions

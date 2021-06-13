@@ -144,5 +144,13 @@ enum Step: String, CaseIterable {
         return UIImage(systemName: "lock.circle")!
     }
     
+    func getImageDoneNormal() -> UIImage {
+        return UIImage(systemName: "checkmark.circle")!
+    }
+    
+    func getImageDoneActive() -> UIImage {
+        return UIImage(systemName: "checkmark.circle.fill")!
+    }
+    
     
 }
