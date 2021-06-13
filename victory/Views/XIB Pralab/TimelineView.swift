@@ -88,9 +88,11 @@ class TimelineView: UIView {
             setupToActiveStage(for: step)
         } else {
             if isLocked {
-                print("\(step.rawValue) DEFAULT")
+                print("\(step.rawValue) LOCK")
                 setupToLockStage(for: step)
-            } else { setupToNormalStage(for: step) }
+            } else { setupToNormalStage(for: step)
+                print("\(step.rawValue) DEFAULT")
+            }
         }
     }
     
@@ -146,6 +148,7 @@ class TimelineView: UIView {
             labBg.backgroundColor = UIColor(named: "vc_blue_bg_lock")
         }
         pillList[index].layer.cornerRadius = 14
+        
         buttonList[index].isEnabled = false
         buttonList[index].setImage(step.getImageLock(), for: .normal)
         buttonList[index].tintColor = UIColor(named: "vc_blue_text_lock")
