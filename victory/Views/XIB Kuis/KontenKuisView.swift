@@ -25,26 +25,26 @@ class KontenKuisView: UIView {
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func onPreviousButtonPressed(_ sender: UIButton) {
         changeCurrentNumber(by: -1)
-        setupToPembahasanUI(selectedAnswer: answerList[currentNumber - 1])
+        setupToPembahasanUI()
     }
     @IBAction func onNextButtonPressed(_ sender: UIButton) {
         switch currentNumber {
         case 5:
-            delegate?.showSkorView(totalCorrect: totalCorrectAnswer, totalQuiz: totalQuiz)
+            delegate?.showSkorView()
         default:
             changeCurrentNumber(by: 1)
-            if currentNumber <= answerList.count {
-                setupToPembahasanUI(selectedAnswer: answerList[currentNumber - 1])
-            } else {
-                setupToDefaultUI()
-            }
+            (currentNumber <= answerList.count ?
+                setupToPembahasanUI() : setupToDefaultUI())
         }
     }
     @IBAction func onOptionButtonsPress (_ sender: UIButton) {
+        let quiz = Constants.QuestionList[currentNumber - 1]
         let selectedAnswer = sender.currentTitle!.prefix(1)
         let selectedAnswerKey = QuizOption(rawValue: String(selectedAnswer))
         answerList.append(selectedAnswerKey!)
-        setupToPembahasanUI(selectedAnswer: selectedAnswerKey!)
+        let isCorrect = (quiz.checkAnswer(selectedAnswer: selectedAnswerKey!))
+        quiz.changeIsCorrect(isCorrect: isCorrect)
+        setupToPembahasanUI()
     }
     /*
     // Variables
@@ -52,8 +52,7 @@ class KontenKuisView: UIView {
     weak var delegate: PraktikumBerpanduanViewControllerDelegate?
     var currentNumber = 1
     var answerList: [QuizOption] = []
-    var totalCorrectAnswer = 0
-    var totalQuiz = Constants.pertanyaanArray.count
+    var totalQuiz = Constants.QuestionList.count
     var optionButtonList: [UIButton] = []
     /*
     // Init Functions
@@ -91,11 +90,11 @@ class KontenKuisView: UIView {
             button.isEnabled = true
         }
     }
-    private func setupQuizComponentsText(quiz: Quiz, isPembahasan: Bool) {
+    private func setupQuizComponentsText(quiz: Question, isPembahasan: Bool) {
         quizNumberLabel.text = quiz.questionNumber
         quizQuestionLabel.text = quiz.question
         if isPembahasan {
-            correctAnswerLabel.text = quiz.correctAnswer
+            correctAnswerLabel.text = quiz.options[quiz.correctAnswerKey.getIndex()]
             explanationLabel.text = quiz.explaination
         }
     }
@@ -109,9 +108,9 @@ class KontenKuisView: UIView {
         correctAnswerLabel.isHidden = true
         explanationLabel.isHidden = true
     }
-    private func setupOptionBtnsText(quiz: Quiz) {
+    private func setupOptionBtnsText(quiz: Question) {
         for (index, button) in optionButtonList.enumerated() {
-            button.setTitle(quiz.answer[index], for: .normal)
+            button.setTitle(quiz.options[index], for: .normal)
         }
     }
     private func resetOptionBtnsColor() {
@@ -157,8 +156,9 @@ class KontenKuisView: UIView {
     /*
     // UIView Setup Main Functions: Pembahasan Kuis UI
     */
-    private func setupToPembahasanUI(selectedAnswer: QuizOption) {
-        let quiz = Constants.pertanyaanArray[currentNumber - 1]
+    private func setupToPembahasanUI() {
+        let selectedAnswer = answerList[currentNumber - 1]
+        let quiz = Constants.QuestionList[currentNumber - 1]
         let correctAnswer = quiz.correctAnswerKey
         disableOptionButtons()
         resetOptionBtnsColor()
@@ -170,10 +170,9 @@ class KontenKuisView: UIView {
         let selectedAnswerIndex = selectedAnswer.getIndex()
         let correctAnswerIndex = correctAnswer.getIndex()
         // Change option buttons' colors according to the answer
-        if quiz.checkAnswer(selectedAnswer: selectedAnswer) {
+        if quiz.isCorrect == true {
             setupChecklistImgProperties(with: "checkmark.circle", color: .systemGreen)
             optionButtonList[selectedAnswerIndex].backgroundColor = .systemGreen
-            totalCorrectAnswer += 1
         } else {
             setupChecklistImgProperties(with: "xmark.circle", color: .systemRed)
             optionButtonList[selectedAnswerIndex].backgroundColor = .systemRed
@@ -184,12 +183,21 @@ class KontenKuisView: UIView {
     // UIView Setup Main Functions: Default Kuis UI
     */
     private func setupToDefaultUI() {
-        let quiz = Constants.pertanyaanArray[currentNumber - 1]
+        let quiz = Constants.QuestionList[currentNumber - 1]
         enableOptionButtons()
         resetOptionBtnsColor()
         hideExplanationComponents()
         setupQuizComponentsText(quiz: quiz, isPembahasan: false)
         setupOptionBtnsText(quiz: quiz)
         setupToolBarUI(isPembahasan: false)
+    }
+    /*
+    // UIView Setup Main Functions: Last Visited Number UI
+    */
+    func setupToLastVisitedNumberUI() {
+        // To - Do to show on which number of kuis is last visited,
+            // back to it when kuis is selected again on timeline
+        (currentNumber <= answerList.count ?
+            setupToPembahasanUI() : setupToDefaultUI())
     }
 }

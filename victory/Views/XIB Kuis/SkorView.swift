@@ -44,7 +44,12 @@ class SkorView: UIView {
         kembaliBtn.layer.cornerRadius = 8
         keluarPraktikumBtn.layer.cornerRadius = 8
     }
-    func setupResultView(for totalCorrect: Int, totalQuiz: Int) {
+    func setupResultView() {
+        var totalCorrect = 0
+        let totalQuiz = Constants.QuestionList.count
+        for quiz in Constants.QuestionList {
+            totalCorrect += (quiz.isCorrect! ? 1 : 0)
+        }
         benarLbl.text = "\(totalCorrect)/\(totalQuiz)"
         salahLbl.text = "\(totalQuiz - totalCorrect)/\(totalQuiz)"
         scoreLbl.text = "\(totalCorrect * 20)/\(totalQuiz * 20)"

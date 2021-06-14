@@ -18,7 +18,7 @@ protocol PraktikumBerpanduanViewControllerDelegate: class {
     // Protocol for Kuis View
     */
     func startKuisView()
-    func showSkorView(totalCorrect: Int, totalQuiz: Int)
+    func showSkorView()
     func closeSkorView()
     /*
     // Protocol for Lab View
@@ -44,19 +44,19 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     @IBAction func onFinishLabBtnPressed(_ sender: UIButton) {
         // Simulation when all step Lab done
-        stepUnlockList.append(.kuis)
         stepDoneList.append(.labOne)
         stepDoneList.append(.labTwo)
         stepDoneList.append(.labThree)
+        stepUnlockList.append(.kuis)
         changeStep(to: .kuis)
         showOnBoardingKuisView()
     }
     @IBAction func onFinishMateriBtnPressed(_ sender: UIButton) {
         // Simulation when step Materi done
+        stepDoneList.append(.materi)
         stepUnlockList.append(.labOne)
         stepUnlockList.append(.labTwo)
         stepUnlockList.append(.labThree)
-        stepDoneList.append(.materi)
         finishMateriBtn.isHidden = true
         finishLabBtn.isHidden = false
         changeStep(to: .labOne)
@@ -108,17 +108,24 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     func changeView(for view: Step) {
         // To - Do change view (show - hidden) based on selected timeline's step
+        // when back to quiz use following func
+        switch view {
+        case .kuis:
+            quizView.setupToLastVisitedNumberUI()
+        default:
+            return
+        }
     }
     func startKuisView() {
         onBoardingKuisView.isHidden = true
         quizView.isHidden = false
     }
-    func showSkorView(totalCorrect: Int, totalQuiz: Int) {
+    func showSkorView() {
         stepDoneList.append(.kuis)
         changeStep(to: .kuis)
         dimOverlayView.isHidden = false
         scoreView.isHidden = false
-        scoreView.setupResultView(for: totalCorrect, totalQuiz: totalQuiz)
+        scoreView.setupResultView()
     }
     func closeSkorView() {
         dimOverlayView.isHidden = true
@@ -166,6 +173,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         dimOverlayView.isHidden = false
     }
     func showPanduanView() {
+        // To - Do configure panduan contents, different on Lab1,2,3
         panduanLabView.isHidden = false
         dimOverlayView.isHidden = false
     }
