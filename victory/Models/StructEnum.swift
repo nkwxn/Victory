@@ -56,21 +56,7 @@ struct Praktikum {
     var mataPelajaran: Mapel
     var pertanyaanQuiz: [Question]
 }
-// struct Question {
-//    let text: String
-//    // Multiple choice questions have multiple answers, an Array of Strings would work for our quiz data.
-//    let answers: [String]
-//    // Look at the data in the quiz array, there is a seperate string that is the correctAnswer.
-//    let rightAnswer: String
-//    let pembahasan: String
-//    // The initialiser needs to be updated to match the new multiple choice quiz data.
-//    init(question: String, answer: [String], correctAnswer: String, solusi: String?) {
-//        text = question
-//        answers = answer
-//        rightAnswer = correctAnswer
-//        pembahasan = solusi ?? "belum ada"
-//    }
-// }
+
 struct TujuanPraktikum {
     var textTujuan: String
     var iconTujuan: UIImage
@@ -150,7 +136,7 @@ enum Step: String, CaseIterable {
 }
 
 class Question {
-    let questionNumber: String
+    let questionNumber: Int
     let question: String
     let options: [String]
     let correctAnswerKey: QuizOption
@@ -159,19 +145,13 @@ class Question {
     /*
     // Init Functions
     */
-    init(questionNumber: String, question: String, answer: [String],
+    init(questionNumber: Int, question: String, options: [String],
          correctAnswerKey: QuizOption, explaination: String) {
         self.questionNumber = questionNumber
         self.question = question
-        self.options = answer
+        self.options = options
         self.correctAnswerKey = correctAnswerKey
         self.explaination = explaination
-    }
-    /*
-    // class Functions
-    */
-    func checkAnswer(selectedAnswer: QuizOption) -> Bool {
-        return (correctAnswerKey == selectedAnswer ? true : false)
     }
     func changeIsCorrect(isCorrect: Bool) {
         self.isCorrect = isCorrect

@@ -18,7 +18,7 @@ protocol PraktikumBerpanduanViewControllerDelegate: class {
     // Protocol for Kuis View
     */
     func startKuisView()
-    func showSkorView()
+    func showSkorView(quizBrain: QuizBrain)
     func closeSkorView()
     /*
     // Protocol for Lab View
@@ -120,12 +120,12 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         onBoardingKuisView.isHidden = true
         quizView.isHidden = false
     }
-    func showSkorView() {
+    func showSkorView(quizBrain: QuizBrain) {
         stepDoneList.append(.kuis)
         changeStep(to: .kuis)
         dimOverlayView.isHidden = false
         scoreView.isHidden = false
-        scoreView.setupResultView()
+        scoreView.setupResultView(quizBrain: quizBrain)
     }
     func closeSkorView() {
         dimOverlayView.isHidden = true

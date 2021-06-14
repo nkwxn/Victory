@@ -24,25 +24,25 @@ class KontenKuisView: UIView {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func onPreviousButtonPressed(_ sender: UIButton) {
-        changeCurrentNumber(by: -1)
+        quizBrain.setQuestionNumber(by: -1)
         setupToPembahasanUI()
     }
     @IBAction func onNextButtonPressed(_ sender: UIButton) {
-        switch currentNumber {
+        switch quizBrain.questionNumber {
         case 5:
-            delegate?.showSkorView()
+            delegate?.showSkorView(quizBrain: quizBrain)
         default:
-            changeCurrentNumber(by: 1)
-            (currentNumber <= answerList.count ?
+            quizBrain.setQuestionNumber(by: 1)
+            ((quizBrain.questionNumber) <= (quizBrain.getTotalAnsweredQuestion()) ?
                 setupToPembahasanUI() : setupToDefaultUI())
         }
     }
     @IBAction func onOptionButtonsPress (_ sender: UIButton) {
-        let quiz = Constants.QuestionList[currentNumber - 1]
+        let quiz = quizBrain.getQuiz()
         let selectedAnswer = sender.currentTitle!.prefix(1)
         let selectedAnswerKey = QuizOption(rawValue: String(selectedAnswer))
-        answerList.append(selectedAnswerKey!)
-        let isCorrect = (quiz.checkAnswer(selectedAnswer: selectedAnswerKey!))
+        quizBrain.answerList.append(selectedAnswerKey!)
+        let isCorrect = (quizBrain.checkAnswer(selectedAnswer: selectedAnswerKey!))
         quiz.changeIsCorrect(isCorrect: isCorrect)
         setupToPembahasanUI()
     }
@@ -50,9 +50,7 @@ class KontenKuisView: UIView {
     // Variables
     */
     weak var delegate: PraktikumBerpanduanViewControllerDelegate?
-    var currentNumber = 1
-    var answerList: [QuizOption] = []
-    var totalQuiz = Constants.QuestionList.count
+    var quizBrain = QuizBrain()
     var optionButtonList: [UIButton] = []
     /*
     // Init Functions
@@ -77,9 +75,6 @@ class KontenKuisView: UIView {
     /*
     // UIView Setup Functions
     */
-    private func changeCurrentNumber(by number: Int) {
-        currentNumber += number
-    }
     private func disableOptionButtons() {
         for button in optionButtonList {
             button.isEnabled = false
@@ -90,12 +85,12 @@ class KontenKuisView: UIView {
             button.isEnabled = true
         }
     }
-    private func setupQuizComponentsText(quiz: Question, isPembahasan: Bool) {
-        quizNumberLabel.text = quiz.questionNumber
-        quizQuestionLabel.text = quiz.question
+    private func setupQuizComponentsText(isPembahasan: Bool) {
+        quizNumberLabel.text = "Number \(String(describing: quizBrain.questionNumber))"
+        quizQuestionLabel.text = quizBrain.getQuestionText()
         if isPembahasan {
-            correctAnswerLabel.text = quiz.options[quiz.correctAnswerKey.getIndex()]
-            explanationLabel.text = quiz.explaination
+            correctAnswerLabel.text = quizBrain.getCorrectAnswer()
+            explanationLabel.text = quizBrain.getExplanation()
         }
     }
     private func showExplanationComponents() {
@@ -108,9 +103,9 @@ class KontenKuisView: UIView {
         correctAnswerLabel.isHidden = true
         explanationLabel.isHidden = true
     }
-    private func setupOptionBtnsText(quiz: Question) {
+    private func setupOptionBtnsText() {
         for (index, button) in optionButtonList.enumerated() {
-            button.setTitle(quiz.options[index], for: .normal)
+            button.setTitle(quizBrain.getOptions()[index], for: .normal)
         }
     }
     private func resetOptionBtnsColor() {
@@ -142,7 +137,9 @@ class KontenKuisView: UIView {
         previousButton.isHidden = true
     }
     private func setupToolBarUI(isPembahasan: Bool) {
-        currentPageLabel.text = "\(currentNumber) / \(totalQuiz)"
+        let currentNumber = quizBrain.questionNumber
+        let totalQuiz = quizBrain.getTotalQuestion()
+        currentPageLabel.text = "\(String(describing: currentNumber)) / \(String(describing: totalQuiz))"
         if currentNumber == totalQuiz {
             nextButton.setImage(UIImage(systemName: "flag.circle.fill"), for: .normal)
             nextLabel.text = "Selesai"
@@ -157,14 +154,14 @@ class KontenKuisView: UIView {
     // UIView Setup Main Functions: Pembahasan Kuis UI
     */
     private func setupToPembahasanUI() {
-        let selectedAnswer = answerList[currentNumber - 1]
-        let quiz = Constants.QuestionList[currentNumber - 1]
-        let correctAnswer = quiz.correctAnswerKey
+        let selectedAnswer = quizBrain.getAnswer()
+        let quiz = quizBrain.getQuiz()
+        let correctAnswer = quizBrain.getCorrectAnswerKey()
         disableOptionButtons()
         resetOptionBtnsColor()
         showExplanationComponents()
-        setupQuizComponentsText(quiz: quiz, isPembahasan: true)
-        setupOptionBtnsText(quiz: quiz)
+        setupQuizComponentsText(isPembahasan: true)
+        setupOptionBtnsText()
         setupToolBarUI(isPembahasan: true)
         // Get index of selected and correct answer
         let selectedAnswerIndex = selectedAnswer.getIndex()
@@ -183,21 +180,18 @@ class KontenKuisView: UIView {
     // UIView Setup Main Functions: Default Kuis UI
     */
     private func setupToDefaultUI() {
-        let quiz = Constants.QuestionList[currentNumber - 1]
         enableOptionButtons()
         resetOptionBtnsColor()
         hideExplanationComponents()
-        setupQuizComponentsText(quiz: quiz, isPembahasan: false)
-        setupOptionBtnsText(quiz: quiz)
+        setupQuizComponentsText(isPembahasan: false)
+        setupOptionBtnsText()
         setupToolBarUI(isPembahasan: false)
     }
     /*
     // UIView Setup Main Functions: Last Visited Number UI
     */
     func setupToLastVisitedNumberUI() {
-        // To - Do to show on which number of kuis is last visited,
-            // back to it when kuis is selected again on timeline
-        (currentNumber <= answerList.count ?
+        ((quizBrain.questionNumber) <= (quizBrain.getTotalAnsweredQuestion()) ?
             setupToPembahasanUI() : setupToDefaultUI())
     }
 }
