@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-Ye-Iny">
-                                <rect key="frame" x="32" y="162" width="810" height="784"/>
+                                <rect key="frame" x="32" y="162" width="810" height="652"/>
                                 <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lXP-t1-ung">
                                     <size key="itemSize" width="254" height="228"/>
@@ -45,7 +45,7 @@
                         <constraints>
                             <constraint firstItem="zdd-Ye-Iny" firstAttribute="leading" secondItem="UV7-QI-PeQ" secondAttribute="leading" constant="32" id="NFM-z4-x0F"/>
                             <constraint firstAttribute="trailing" secondItem="zdd-Ye-Iny" secondAttribute="trailing" constant="31.5" id="QIm-cq-wRr"/>
-                            <constraint firstAttribute="bottom" secondItem="zdd-Ye-Iny" secondAttribute="bottom" constant="-112" id="lAH-tF-sj8"/>
+                            <constraint firstAttribute="bottom" secondItem="zdd-Ye-Iny" secondAttribute="bottom" constant="20" id="lAH-tF-sj8"/>
                             <constraint firstItem="zdd-Ye-Iny" firstAttribute="top" secondItem="UV7-QI-PeQ" secondAttribute="top" constant="162" id="rbA-xB-ngn"/>
                         </constraints>
                     </view>
