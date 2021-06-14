@@ -54,7 +54,7 @@ struct Praktikum {
     var gambar: UIImage
     var kelas: Kelas
     var mataPelajaran: Mapel
-    var pertanyaanQuiz: [Question]
+    var pertanyaanQuiz: [Quiz]
 }
 
 struct TujuanPraktikum {
@@ -135,7 +135,7 @@ enum Step: String, CaseIterable {
     }
 }
 
-class Question {
+class Quiz {
     let questionNumber: Int
     let question: String
     let options: [String]
