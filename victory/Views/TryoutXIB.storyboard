@@ -1,78 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
     </dependencies>
     <scenes>
         <!--Tryout View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="XIBTryoutViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1e4-cs-qGl" customClass="OnboardingView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113" width="1180" height="707"/>
-                                <color key="backgroundColor" name="vc_side_menu"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="707" id="dBH-VU-H6D"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtZ-fV-XF2" customClass="KontenKuisView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113" width="1180" height="707"/>
-                                <color key="backgroundColor" name="vc_side_menu"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="707" id="LT0-Mx-Qsl"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSL-iC-Euf" customClass="SkorView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="270" y="147" width="640" height="526"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="526" id="gb6-Ht-Yjj"/>
-                                    <constraint firstAttribute="width" constant="640" id="xnd-3X-D9s"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rtZ-fV-XF2" secondAttribute="trailing" id="CdC-fs-HDC"/>
-                            <constraint firstItem="RSL-iC-Euf" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Elz-5T-IIU"/>
-                            <constraint firstItem="rtZ-fV-XF2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PiC-kn-lgs"/>
-                            <constraint firstAttribute="bottom" secondItem="1e4-cs-qGl" secondAttribute="bottom" id="Zug-Wf-jhp"/>
-                            <constraint firstAttribute="bottom" secondItem="rtZ-fV-XF2" secondAttribute="bottom" id="ihI-FX-7de"/>
-                            <constraint firstItem="1e4-cs-qGl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jSo-T1-RdD"/>
-                            <constraint firstItem="RSL-iC-Euf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nJ2-T9-rDV"/>
-                            <constraint firstItem="1e4-cs-qGl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wuS-Ht-uAA"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="kontenKuisView" destination="rtZ-fV-XF2" id="fqJ-b8-O40"/>
-                        <outlet property="onboardingView" destination="1e4-cs-qGl" id="Gja-yY-J3J"/>
-                        <outlet property="skorView" destination="RSL-iC-Euf" id="t6X-f1-f2P"/>
-                    </connections>
-                </viewController>
+                <viewController id="Y6W-OH-hqX" customClass="XIBTryoutViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.69491525423729" y="116.34146341463415"/>
         </scene>
     </scenes>
-    <resources>
-        <namedColor name="vc_side_menu">
-            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

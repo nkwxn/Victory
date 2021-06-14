@@ -9,7 +9,7 @@ import UIKit
 
 class SkorView: UIView {
 
-    weak var delegate: PopUpDelegate?
+    weak var delegate: KuisViewControllerDelegate?
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var scoreLbl: UILabel!

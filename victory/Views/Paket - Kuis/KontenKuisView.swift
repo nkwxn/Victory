@@ -78,7 +78,7 @@ class KontenKuisView: UIView {
     /*
     // UIView Setup Child Functions
     */
-    weak var delegate: PopUpDelegate?
+    weak var delegate: KuisViewControllerDelegate?
     var currentNumber = 1
     var answerList: [String] = []
     var totalCorrectAnswer = 0

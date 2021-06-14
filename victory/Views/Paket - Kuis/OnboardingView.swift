@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingView: UIView {
     
-    weak var delegate: PopUpDelegate?
+    weak var delegate: KuisViewControllerDelegate?
 
     @IBOutlet var contentView: OnboardingView!
     @IBOutlet weak var mulaiBtn: UIButton!
