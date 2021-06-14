@@ -19,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-Ye-Iny">
-                                <rect key="frame" x="0.0" y="50" width="873.5" height="784"/>
-                                <color key="backgroundColor" red="0.98039144280000001" green="0.98033207649999998" blue="0.98431462049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="32" y="162" width="810" height="784"/>
+                                <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lXP-t1-ung">
                                     <size key="itemSize" width="254" height="228"/>
                                     <size key="estimatedItemSize" width="254" height="228"/>
@@ -41,12 +41,12 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K89-Rz-LbC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zdd-Ye-Iny" firstAttribute="leading" secondItem="UV7-QI-PeQ" secondAttribute="leading" id="NFM-z4-x0F"/>
-                            <constraint firstAttribute="trailing" secondItem="zdd-Ye-Iny" secondAttribute="trailing" id="QIm-cq-wRr"/>
-                            <constraint firstAttribute="bottom" secondItem="zdd-Ye-Iny" secondAttribute="bottom" id="lAH-tF-sj8"/>
-                            <constraint firstItem="zdd-Ye-Iny" firstAttribute="top" secondItem="UV7-QI-PeQ" secondAttribute="top" constant="50" id="rbA-xB-ngn"/>
+                            <constraint firstItem="zdd-Ye-Iny" firstAttribute="leading" secondItem="UV7-QI-PeQ" secondAttribute="leading" constant="32" id="NFM-z4-x0F"/>
+                            <constraint firstAttribute="trailing" secondItem="zdd-Ye-Iny" secondAttribute="trailing" constant="31.5" id="QIm-cq-wRr"/>
+                            <constraint firstAttribute="bottom" secondItem="zdd-Ye-Iny" secondAttribute="bottom" constant="-112" id="lAH-tF-sj8"/>
+                            <constraint firstItem="zdd-Ye-Iny" firstAttribute="top" secondItem="UV7-QI-PeQ" secondAttribute="top" constant="162" id="rbA-xB-ngn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Semua Praktikum" id="OA1-Ao-POs"/>
@@ -99,14 +99,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bz4-uH-wWF">
-                                                    <rect key="frame" x="51.5" y="0.0" width="220.5" height="43.5"/>
+                                                    <rect key="frame" x="52.5" y="0.0" width="219.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="thermometer.snowflake" catalog="system" id="3Qv-hN-aiy">
-                                                    <rect key="frame" x="16.25" y="11" width="20" height="21.5"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="book" catalog="system" id="3Qv-hN-aiy">
+                                                    <rect key="frame" x="15" y="12.5" width="22.5" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -120,7 +120,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="drop.triangle" catalog="system" id="q1E-DP-k4D">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="thermometer.snowlake" catalog="system" id="q1E-DP-k4D">
                                                     <rect key="frame" x="16.5" y="11" width="20" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -149,7 +149,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="ladybug" catalog="system" id="28i-tU-TuM">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="drop.triangle" catalog="system" id="28i-tU-TuM">
                                                     <rect key="frame" x="16.5" y="11" width="20" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -171,7 +171,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="function" catalog="system" id="yBg-iA-wZb">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="ladybug" catalog="system" id="yBg-iA-wZb">
+                                                    <rect key="frame" x="16.5" y="10.5" width="20" height="21.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94905394320000003" green="0.94874149559999998" blue="0.96863073109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nRj-5F-22h">
+                                        <rect key="frame" x="116" y="192.5" width="288" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nRj-5F-22h" id="dvM-9o-svK">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h6m-F8-f7C">
+                                                    <rect key="frame" x="51.5" y="-0.5" width="220.5" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="function" catalog="system" id="0hs-3r-JV0">
                                                     <rect key="frame" x="16.5" y="10.5" width="20" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -266,10 +288,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="102"/>
         <image name="drop.triangle" catalog="system" width="128" height="112"/>
         <image name="function" catalog="system" width="128" height="70"/>
         <image name="ladybug" catalog="system" width="128" height="128"/>
-        <image name="thermometer.snowflake" catalog="system" width="119" height="128"/>
+        <image name="thermometer.snowlake" catalog="system" width="119" height="128"/>
         <namedColor name="vc_background">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

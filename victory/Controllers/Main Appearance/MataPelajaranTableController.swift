@@ -39,15 +39,20 @@ class MataPelajaranTableController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return subjects.count
+        return subjects.count+1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjectListIdentifier", for: indexPath)
         
-        cell.imageView?.image = subjects[indexPath.row].getImage()
-        cell.textLabel?.text = subjects[indexPath.row].rawValue
-
+        if indexPath.row == 0{
+            cell.imageView?.image = UIImage(systemName: "book")
+            cell.textLabel?.text = "Semua Praktikum"
+        }else{
+            cell.imageView?.image = subjects[indexPath.row-1].getImage()
+            cell.textLabel?.text = subjects[indexPath.row-1].rawValue
+        }
+        
         return cell
     }
     

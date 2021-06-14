@@ -14,7 +14,7 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
     
     var praktikum = Constants.arrayOfPraktikum
     var selectedPraktikum: [Praktikum] = []
-    var firstLaunch = true
+    var showAll = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,62 +30,44 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
     
     @objc func getNotified(_ object: Notification) {
         selectedPraktikum = []
-        firstLaunch = false
+        showAll = false
         if let menu = object.userInfo?["indexpath"] as? Int {
             print(menu)
             switch menu {
             case 0:
-                materiTitleNavigationItem.title = "Fisika"
-                for (index,materi) in praktikum.enumerated(){
-                    if praktikum[index].mataPelajaran == .fisika{
-                        _ = IndexPath(row: index, section: 0)
-                        selectedPraktikum.append(materi)
-                        materiCollectionView.reloadData()
-                    }else{
-                        materiCollectionView.reloadData()
-                    }
-                }
+                showAll = true
+                materiTitleNavigationItem.title = "Semua Praktikum"
+                materiCollectionView.reloadData()
             case 1:
-                materiTitleNavigationItem.title = "Kimia"
-                for (index,materi) in praktikum.enumerated(){
-                    if praktikum[index].mataPelajaran == .kimia{
-                        _ = IndexPath(row: index, section: 0)
-                        selectedPraktikum.append(materi)
-                        materiCollectionView.reloadData()
-                    }else{
-                        materiCollectionView.reloadData()
-                    }
-                }
+                filterMateri(mapel: .fisika)
             case 2:
-                materiTitleNavigationItem.title = "Biologi"
-                for (index,materi) in praktikum.enumerated(){
-                    if praktikum[index].mataPelajaran == .biologi{
-                        _ = IndexPath(row: index, section: 0)
-                        selectedPraktikum.append(materi)
-                        materiCollectionView.reloadData()
-                    }else{
-                        materiCollectionView.reloadData()
-                    }
-                }
+                filterMateri(mapel: .kimia)
             case 3:
-                materiTitleNavigationItem.title = "Matematika"
-                for (index,materi) in praktikum.enumerated(){
-                    if praktikum[index].mataPelajaran == .matematika{
-                        _ = IndexPath(row: index, section: 0)
-                        selectedPraktikum.append(materi)
-                        materiCollectionView.reloadData()
-                    }else{
-                        materiCollectionView.reloadData()
-                    }
-                }
+                filterMateri(mapel: .biologi)
+            case 4:
+                filterMateri(mapel: .matematika)
             default:
                 print("default")
             }
         }
     }
     
+    func filterMateri(mapel: Mapel){
+        showAll = false
+        materiTitleNavigationItem.title = mapel.rawValue
+        for (index,materi) in praktikum.enumerated(){
+            if praktikum[index].mataPelajaran == mapel{
+                _ = IndexPath(row: index, section: 0)
+                selectedPraktikum.append(materi)
+                materiCollectionView.reloadData()
+            }else{
+                materiCollectionView.reloadData()
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if firstLaunch && selectedPraktikum.isEmpty{
+        if showAll && selectedPraktikum.isEmpty{
             return praktikum.count
         } else if selectedPraktikum.isEmpty{
             return 1
@@ -96,7 +78,7 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell", for: indexPath) as! GeneralCollectionViewCell
-        if firstLaunch && selectedPraktikum.isEmpty{
+        if showAll && selectedPraktikum.isEmpty{
             cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
             cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
             cell.generalCollectionView.shadowRadius = 10.0
