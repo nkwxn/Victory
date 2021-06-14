@@ -84,7 +84,7 @@ class KontenKuisView: UIView {
         }
     }
     private func setupQuizComponentsText(isPembahasan: Bool) {
-        quizNumberLabel.text = "Number \(String(describing: quizBrain.questionNumber))"
+        quizNumberLabel.text = "Nomor \(String(describing: quizBrain.questionNumber))"
         quizQuestionLabel.text = quizBrain.getQuestionText()
         if isPembahasan {
             correctAnswerLabel.text = quizBrain.getCorrectAnswer()
