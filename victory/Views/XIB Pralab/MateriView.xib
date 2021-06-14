@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MateriView" customModule="victory" customModuleProvider="target">
             <connections>
-                <outlet property="WebView" destination="FfH-9s-ogQ" id="JuW-7U-wM4"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Ced-EH-Mn3"/>
+                <outlet property="webView" destination="FfH-9s-ogQ" id="oOO-UI-Qwa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

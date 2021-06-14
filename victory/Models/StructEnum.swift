@@ -12,7 +12,9 @@ enum Kelas: Int {
     case k10 = 10
     case k11 = 11
     case k12 = 12
-    
+    /*
+    // enum Functions
+    */
     func getImage() -> UIImage {
         switch self {
         case .k10:
@@ -30,7 +32,9 @@ enum Mapel: String {
     case kimia = "Kimia"
     case biologi = "Biologi"
     case matematika = "Matematika"
-    
+    /*
+    // enum Functions
+    */
     func getImage() -> UIImage {
         switch self {
         case .fisika:
@@ -55,18 +59,15 @@ struct Praktikum {
 
 struct Question {
     let text: String
-    
-    //Multiple choice questions have multiple answers, an Array of Strings would work for our quiz data.
+    // Multiple choice questions have multiple answers, an Array of Strings would work for our quiz data.
     let answers: [String]
-    //Look at the data in the quiz array, there is a seperate string that is the correctAnswer.
+    // Look at the data in the quiz array, there is a seperate string that is the correctAnswer.
     let rightAnswer: String
-    
     let pembahasan: String
-    
-    //The initialiser needs to be updated to match the new multiple choice quiz data.
-    init(q: String, a: [String], correctAnswer: String, solusi: String?) {
-        text = q
-        answers = a
+    // The initialiser needs to be updated to match the new multiple choice quiz data.
+    init(question: String, answer: [String], correctAnswer: String, solusi: String?) {
+        text = question
+        answers = answer
         rightAnswer = correctAnswer
         pembahasan = solusi ?? "belum ada"
     }
@@ -85,7 +86,7 @@ struct AlatPraktikum {
 }
 
 struct Panduanlab {
-    var Langkah: [String]
+    var langkah: [String]
 }
 
 enum Step: String, CaseIterable {
@@ -94,7 +95,9 @@ enum Step: String, CaseIterable {
     case labTwo = "Lab 2"
     case labThree = "Lab 3"
     case kuis = "Kuis"
-    
+    /*
+    // enum Functions
+    */
     func getIndex() -> Int {
         switch self {
         case .materi:
@@ -109,7 +112,6 @@ enum Step: String, CaseIterable {
             return 4
         }
     }
-    
     func getImageActive() -> UIImage {
         switch self {
         case .materi:
@@ -124,7 +126,6 @@ enum Step: String, CaseIterable {
             return UIImage(systemName: "5.circle.fill")!
         }
     }
-    
     func getImageNormal() -> UIImage {
         switch self {
         case .materi:
@@ -139,18 +140,50 @@ enum Step: String, CaseIterable {
             return UIImage(systemName: "5.circle")!
         }
     }
-    
     func getImageLock() -> UIImage {
         return UIImage(systemName: "lock.circle")!
     }
-    
     func getImageDoneNormal() -> UIImage {
         return UIImage(systemName: "checkmark.circle")!
     }
-    
     func getImageDoneActive() -> UIImage {
         return UIImage(systemName: "checkmark.circle.fill")!
     }
-    
-    
+}
+
+struct Quiz {
+    let questionNumber: String
+    let question: String
+    let answer: [String]
+    let correctAnswer: String
+    let correctAnswerKey: QuizOption
+    let explaination: String
+    /*
+    // enum Functions
+    */
+    func checkAnswer(selectedAnswer: QuizOption) -> Bool {
+        (correctAnswerKey == selectedAnswer ? true : false)
+    }
+}
+
+enum QuizOption: String {
+    case optionA = "A"
+    case optionB = "B"
+    case optionC = "C"
+    case optionD = "D"
+    /*
+    // enum Functions
+    */
+    func getIndex() -> Int {
+        switch self {
+        case .optionA:
+            return 0
+        case .optionB:
+            return 1
+        case .optionC:
+            return 2
+        case .optionD:
+            return 3
+        }
+    }
 }
