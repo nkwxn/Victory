@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +14,7 @@
             <objects>
                 <viewController id="PG9-na-59i" customClass="MateriViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV7-QI-PeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-Ye-Iny">
@@ -24,13 +23,13 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lXP-t1-ung">
                                     <size key="itemSize" width="254" height="228"/>
                                     <size key="estimatedItemSize" width="254" height="228"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="v8b-d7-iT7">
-                                        <rect key="frame" x="0.0" y="0.0" width="254" height="228"/>
+                                        <rect key="frame" x="0.0" y="50" width="254" height="228"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ai0-gx-WQe">
                                             <rect key="frame" x="0.0" y="0.0" width="254" height="228"/>
@@ -38,6 +37,11 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MateriCollectionVIewHeader" id="Xj1-gS-rha" customClass="SearchCollectionReusableView" customModule="victory" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K89-Rz-LbC"/>
@@ -53,7 +57,7 @@
                     <connections>
                         <outlet property="materiCollectionView" destination="zdd-Ye-Iny" id="Fd3-u9-ASF"/>
                         <outlet property="materiTitleNavigationItem" destination="OA1-Ao-POs" id="suX-RN-RBE"/>
-                        <segue destination="fIK-T7-WC0" kind="show" identifier="" id="oHg-mA-YsL"/>
+                        <segue destination="fIK-T7-WC0" kind="show" identifier="moveToMediaPraktikum" id="oHg-mA-YsL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpx-d5-7jb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -65,20 +69,50 @@
             <objects>
                 <viewController id="fIK-T7-WC0" customClass="MediaViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oE6-yn-rh1">
-                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="guv-ve-0gt">
+                                <rect key="frame" x="32" y="162" width="809.5" height="652"/>
+                                <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KKs-MF-zJY">
+                                    <size key="itemSize" width="254" height="224"/>
+                                    <size key="estimatedItemSize" width="254" height="224"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EhJ-nX-97k">
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kZ7-fW-AMo">
+                                            <rect key="frame" x="0.0" y="0.0" width="254" height="224"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XBw-d9-GHU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="guv-ve-0gt" firstAttribute="top" secondItem="XBw-d9-GHU" secondAttribute="top" constant="60" id="1JG-1I-fXD"/>
+                            <constraint firstItem="XBw-d9-GHU" firstAttribute="trailing" secondItem="guv-ve-0gt" secondAttribute="trailing" constant="32" id="4gr-92-kly"/>
+                            <constraint firstItem="guv-ve-0gt" firstAttribute="centerX" secondItem="oE6-yn-rh1" secondAttribute="centerX" id="Se3-Zt-g6F"/>
+                            <constraint firstItem="guv-ve-0gt" firstAttribute="bottom" secondItem="XBw-d9-GHU" secondAttribute="bottom" id="jxD-on-43H"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pi3-8A-BHi"/>
                     <connections>
+                        <outlet property="mediaCollectionView" destination="guv-ve-0gt" id="ikt-i4-Qtd"/>
                         <segue destination="RX9-no-1sv" kind="show" id="eFl-Sd-6V6"/>
                         <segue destination="84k-bT-Pmf" kind="show" id="uun-y1-GJA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmw-wU-VIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="440"/>
+            <point key="canvasLocation" x="1907.537688442211" y="439.56834532374103"/>
         </scene>
         <!--Eksperimen-->
         <scene sceneID="1Xm-as-d5Y">
@@ -299,8 +333,5 @@
         <namedColor name="vc_nav_bar">
             <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

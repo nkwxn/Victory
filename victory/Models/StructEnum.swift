@@ -75,6 +75,11 @@ struct Question {
     }
 }
 
+struct MediaPraktikum {
+    var namaMedia: String
+    var gambarMedia: UIImage
+}
+
 struct TujuanPraktikum {
     var textTujuan: String
     var iconTujuan: UIImage

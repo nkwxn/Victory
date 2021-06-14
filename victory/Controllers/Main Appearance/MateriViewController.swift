@@ -7,14 +7,18 @@
 
 import UIKit
 
-class MateriViewController: UIViewController, UICollectionViewDataSource {
+class MateriViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var materiCollectionView: UICollectionView!
     @IBOutlet weak var materiTitleNavigationItem: UINavigationItem!
     
     var praktikum = Constants.arrayOfPraktikum
-    var selectedPraktikum: [Praktikum] = []
+    var filteredPraktikum: [Praktikum] = []
     var showAll = true
+    
+    var emptyStateImage = UIImage(systemName: "car")
+    var emptyStateTitle = "Belum ada materi"
+    var emptyStateSubtitle = "Nantikan materinya"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,7 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(getNotified(_:)), name: NSNotification.Name("menuupdate"), object: nil)
         
         materiCollectionView.dataSource = self
+        materiCollectionView.delegate = self
 
         let nib = UINib(nibName: "\(GeneralCollectionViewCell.self)", bundle: nil)
         self.materiCollectionView.register(nib, forCellWithReuseIdentifier: "generalCollectionCell")
@@ -29,8 +34,7 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
     }
     
     @objc func getNotified(_ object: Notification) {
-        selectedPraktikum = []
-        showAll = false
+        filteredPraktikum = []
         if let menu = object.userInfo?["indexpath"] as? Int {
             print(menu)
             switch menu {
@@ -52,65 +56,73 @@ class MateriViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
-    func filterMateri(mapel: Mapel){
+    func filterMateri(mapel: Mapel) {
         showAll = false
         materiTitleNavigationItem.title = mapel.rawValue
-        for (index,materi) in praktikum.enumerated(){
-            if praktikum[index].mataPelajaran == mapel{
-                _ = IndexPath(row: index, section: 0)
-                selectedPraktikum.append(materi)
-                materiCollectionView.reloadData()
-            }else{
-                materiCollectionView.reloadData()
+        for (index,materi) in praktikum.enumerated() {
+            //HASHMAP
+            if praktikum[index].mataPelajaran == mapel {
+                filteredPraktikum.append(materi)
             }
+            materiCollectionView.reloadData()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if showAll && selectedPraktikum.isEmpty{
+        if showAll && filteredPraktikum.isEmpty {
             return praktikum.count
-        } else if selectedPraktikum.isEmpty{
+        } else if filteredPraktikum.isEmpty {
             return 1
         } else {
-            return selectedPraktikum.count
+            return filteredPraktikum.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell", for: indexPath) as! GeneralCollectionViewCell
-        if showAll && selectedPraktikum.isEmpty{
+        
+        if showAll && filteredPraktikum.isEmpty {
             cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
             cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
             cell.generalCollectionView.shadowRadius = 10.0
             cell.generalCollectionImageView.image = praktikum[indexPath.row].gambar
             cell.generalCollectionTitleLabel.text = praktikum[indexPath.row].nama
             cell.generalCollectionSubtitleLabel.text = praktikum[indexPath.row].subtitleMateri
-        } else if selectedPraktikum.isEmpty{
+        } else if filteredPraktikum.isEmpty {
             cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
             cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
             cell.generalCollectionView.shadowRadius = 10.0
-            cell.generalCollectionImageView.image = UIImage(systemName: "car")
-            cell.generalCollectionTitleLabel.text = "Belum ada Materi"
-            cell.generalCollectionSubtitleLabel.text = "Tunggu untuk itu"
-        } else{
+            cell.generalCollectionImageView.image = emptyStateImage
+            cell.generalCollectionTitleLabel.text = emptyStateTitle
+            cell.generalCollectionSubtitleLabel.text = emptyStateSubtitle
+        } else {
             cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
             cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
             cell.generalCollectionView.shadowRadius = 10.0
-            cell.generalCollectionImageView.image = selectedPraktikum[indexPath.row].gambar
-            cell.generalCollectionTitleLabel.text = selectedPraktikum[indexPath.row].nama
-            cell.generalCollectionSubtitleLabel.text = selectedPraktikum[indexPath.row].subtitleMateri
+            cell.generalCollectionImageView.image = filteredPraktikum[indexPath.row].gambar
+            cell.generalCollectionTitleLabel.text = filteredPraktikum[indexPath.row].nama
+            cell.generalCollectionSubtitleLabel.text = filteredPraktikum[indexPath.row].subtitleMateri
         }
+        
         return cell
     }
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !filteredPraktikum.isEmpty || showAll {
+            performSegue(withIdentifier: "moveToMediaPraktikum", sender: self)
+        }
+    }
+    
+   
 
 }

@@ -45,10 +45,10 @@ class MataPelajaranTableController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjectListIdentifier", for: indexPath)
         
-        if indexPath.row == 0{
+        if indexPath.row == 0 {
             cell.imageView?.image = UIImage(systemName: "book")
             cell.textLabel?.text = "Semua Praktikum"
-        }else{
+        } else {
             cell.imageView?.image = subjects[indexPath.row-1].getImage()
             cell.textLabel?.text = subjects[indexPath.row-1].rawValue
         }
