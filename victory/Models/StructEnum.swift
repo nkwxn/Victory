@@ -141,7 +141,6 @@ class Quiz {
     let options: [String]
     let correctAnswerKey: QuizOption
     let explaination: String
-    var isCorrect: Bool?
     /*
     // Init Functions
     */
@@ -152,9 +151,6 @@ class Quiz {
         self.options = options
         self.correctAnswerKey = correctAnswerKey
         self.explaination = explaination
-    }
-    func changeIsCorrect(isCorrect: Bool) {
-        self.isCorrect = isCorrect
     }
 }
 

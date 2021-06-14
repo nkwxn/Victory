@@ -10,6 +10,7 @@ import UIKit
 
 class QuizBrain {
     var questionNumber: Int
+    var totalCorrect = 0
     var answerList: [QuizOption] = []
     let quizList = [
         Quiz(questionNumber: 1, question: "Dari praktikum yang kamu lakukan, apa pengaruh massa terhadap ketinggian proyektil?", options: ["A. Semakin besar massa, maka tinggi maksimum proyektil juga akan semakin besar, dan sebaliknya", "B. Semakin besar massa, maka tinggi maksimum proyektil juga akan semakin kecil, dan sebaliknya", "C. Semakin kecil massa, maka tinggi maksimum proyektil juga akan semakin besar, dan sebaliknya", "D. Massa tidak berpengaruh pada ketinggian maksimum proyektil"], correctAnswerKey: .optionD, explaination: "Sesuai dengan persamaan: y = v0 sin Θ - 1/2gt^2 sehingga dapat disimpulkan bahwa massa tidak berpengaruh pada ketinggian proyektil."),
@@ -45,13 +46,6 @@ class QuizBrain {
     }
     func getOptions() -> [String] {
         return quizList[questionNumber - 1].options
-    }
-    func getTotalCorrect() -> Int {
-        var totalCorrect = 0
-        for quiz in quizList {
-            totalCorrect += (quiz.isCorrect! ? 1 : 0)
-        }
-        return totalCorrect
     }
     func getAnswer() -> QuizOption {
         return answerList[questionNumber - 1]

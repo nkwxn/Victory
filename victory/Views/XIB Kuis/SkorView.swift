@@ -45,7 +45,7 @@ class SkorView: UIView {
         keluarPraktikumBtn.layer.cornerRadius = 8
     }
     func setupResultView(quizBrain: QuizBrain) {
-        let totalCorrect = quizBrain.getTotalCorrect()
+        let totalCorrect = quizBrain.totalCorrect
         let totalQuiz = quizBrain.getTotalQuestion()
         benarLbl.text = "\(String(describing: totalCorrect))/\(String(describing: totalQuiz))"
         salahLbl.text = "\(totalQuiz - totalCorrect)/\(String(describing: totalQuiz))"

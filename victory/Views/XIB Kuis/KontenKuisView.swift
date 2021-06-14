@@ -38,12 +38,10 @@ class KontenKuisView: UIView {
         }
     }
     @IBAction func onOptionButtonsPress (_ sender: UIButton) {
-        let quiz = quizBrain.getQuiz()
         let selectedAnswer = sender.currentTitle!.prefix(1)
         let selectedAnswerKey = QuizOption(rawValue: String(selectedAnswer))
         quizBrain.answerList.append(selectedAnswerKey!)
-        let isCorrect = (quizBrain.checkAnswer(selectedAnswer: selectedAnswerKey!))
-        quiz.changeIsCorrect(isCorrect: isCorrect)
+        quizBrain.totalCorrect += (quizBrain.checkAnswer(selectedAnswer: selectedAnswerKey!) ? 1 : 0)
         setupToPembahasanUI()
     }
     /*
@@ -155,7 +153,6 @@ class KontenKuisView: UIView {
     */
     private func setupToPembahasanUI() {
         let selectedAnswer = quizBrain.getAnswer()
-        let quiz = quizBrain.getQuiz()
         let correctAnswer = quizBrain.getCorrectAnswerKey()
         disableOptionButtons()
         resetOptionBtnsColor()
@@ -167,7 +164,7 @@ class KontenKuisView: UIView {
         let selectedAnswerIndex = selectedAnswer.getIndex()
         let correctAnswerIndex = correctAnswer.getIndex()
         // Change option buttons' colors according to the answer
-        if quiz.isCorrect == true {
+        if quizBrain.checkAnswer(selectedAnswer: selectedAnswer) {
             setupChecklistImgProperties(with: "checkmark.circle", color: .systemGreen)
             optionButtonList[selectedAnswerIndex].backgroundColor = .systemGreen
         } else {
