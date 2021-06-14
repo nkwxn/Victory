@@ -40,7 +40,17 @@ class LabGerakParabolaView: UIView {
     var nomorLab: Int?
     let variabelEdit: [SliderVariable] = [.sudutLemparan, .massaProyektil, .kecAwal, .ketAwal]
     var done: Bool = false
-    var chosenPlanet: Planet = .earth
+    var chosenPlanet: Planet = .earth {
+        didSet {
+            // Change the content of Planet Cell
+            let pathToPlanet = IndexPath(row: 4, section: 0)
+            if nomorLab == nil {
+                if let cellMoon = variableTableView.cellForRow(at: pathToPlanet) {
+                    cellMoon.detailTextLabel?.text = "\(chosenPlanet.rawValue): \(chosenPlanet.getGravityValue()) m/s²"
+                }
+            }
+        }
+    }
     var delegate: LabGerakParabolaDelegate?
     
     init(frame: CGRect, noLab: Int? = nil) {
@@ -108,6 +118,23 @@ class LabGerakParabolaView: UIView {
             print("Should show modal to materi")
         case btnResetVariabel:
             print("Should reset appearance / all variables on the side")
+            if nomorLab == nil {
+                // Reset seluruhnya yang ada di sebelah kiri
+                chosenPlanet = .earth
+                guard let cellAngle = variableTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? VariableSliderCell,
+                      let cellMass = variableTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? VariableSliderCell,
+                      let cellVelocity = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? VariableSliderCell,
+                      let cellHeight = variableTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? VariableSliderCell
+                else { return }
+                cellAngle.varSlider.value = (cellAngle.variableSetting?.getDefaultValue())!
+                cellMass.varSlider.value = (cellMass.variableSetting?.getDefaultValue())!
+                cellVelocity.varSlider.value = (cellVelocity.variableSetting?.getDefaultValue())!
+                cellHeight.varSlider.value = (cellHeight.variableSetting?.getDefaultValue())!
+            } else {
+                // Reset variabel di sebelah kiri (kecuali lks) + clear all projectiles
+                guard let editableVar = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? VariableSliderCell else { return }
+                editableVar.varSlider.value = (editableVar.variableSetting?.getDefaultValue())!
+            }
         case btnLuncurkan:
             print("Should launch projectile (Manipulate SKScene Actions)")
         default:
@@ -144,7 +171,7 @@ enum SliderVariable: String {
         case .kecAwal:
             return 100
         case .ketAwal:
-            return 10
+            return 0
         }
     }
     
@@ -216,5 +243,5 @@ enum SliderVariable: String {
 
 // Gerak Parabola Delegate
 protocol LabGerakParabolaDelegate: AnyObject {
-    func presentView(_ view: UIView)
+    func presentView(_ view: UIViewController, completion: (() -> Void)?)
 }

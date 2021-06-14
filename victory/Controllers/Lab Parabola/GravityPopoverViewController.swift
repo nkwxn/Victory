@@ -29,7 +29,10 @@ enum Planet: String {
 
 class GravityPopoverViewController: UITableViewController {
     let chosenPlanet: Planet? = nil
+    var parentTable: UITableView?
+    var parentIndexPath: IndexPath?
     let planets: [Planet] = [.earth, .moon, .mars, .jupiter]
+    var delegate: GravityPopoverDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +62,10 @@ class GravityPopoverViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Chosen planet: \(planets[indexPath.row])")
+        // Should dismiss
+        parentTable?.deselectRow(at: parentIndexPath!, animated: true)
+        self.delegate?.chooseGravity(chosenValue: self.planets[indexPath.row])
+        self.dismiss(animated: true)
     }
 
     /*
@@ -106,4 +113,8 @@ class GravityPopoverViewController: UITableViewController {
     }
     */
 
+}
+
+protocol GravityPopoverDelegate {
+    func chooseGravity(chosenValue planet: Planet)
 }

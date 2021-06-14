@@ -102,7 +102,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
                     
                     return cell
                 } else {
-                    let cell = CustomClearTabl(image: UIImage(named: "gravity"), title: "Gravitasi", detail: "Bumi: 10m/s²", showAcc: true)
+                    let cell = CustomClearTabl(image: UIImage(named: "gravity"), title: "Gravitasi", detail: "Bumi: 10.0 m/s²", showAcc: true)
                     return cell
                 }
             default:
@@ -111,11 +111,11 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
                 case 0:
                     cell = CustomClearTabl(image: UIImage(systemName: "stopwatch"), title: "Waktu", detail: "30 s", showAcc: false)
                 case 1:
-                    cell = CustomClearTabl(image: UIImage(systemName: "arrow.left.and.right.circle"), title: "Jarak (X(t))", detail: "100 m", showAcc: false)
+                    cell = CustomClearTabl(image: UIImage(systemName: "arrow.left.and.right.circle"), title: "Jarak (xₜ)", detail: "100 m", showAcc: false)
                 case 2:
-                    cell = CustomClearTabl(image: UIImage(systemName: "arrow.up.and.down.circle"), title: "Waktu", detail: "0 m", showAcc: false)
+                    cell = CustomClearTabl(image: UIImage(systemName: "arrow.up.and.down.circle"), title: "Tinggi (yₜ)", detail: "0 m", showAcc: false)
                 case 3:
-                    cell = CustomClearTabl(image: UIImage(systemName: "speedometer"), title: "Kecepatan (v(t))", detail: "0 m/s", showAcc: false)
+                    cell = CustomClearTabl(image: UIImage(systemName: "speedometer"), title: "Kecepatan (vₜ)", detail: "0 m/s", showAcc: false)
                 default:
                     cell = UITableViewCell()
                 }
@@ -130,23 +130,51 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
             // Show the Popover (ipad) / modal (iphone) choosing gravity
             if UIDevice.current.userInterfaceIdiom == .pad {
                 // Show popover modal for the gravity choice
-                let gravityPOver = GravityPopoverViewController()
-                gravityPOver.modalPresentationStyle = .popover
+                let gravityChoice = GravityPopoverViewController()
+                gravityChoice.parentTable = tableView
+                gravityChoice.parentIndexPath = indexPath
+                gravityChoice.delegate = self
+                gravityChoice.modalPresentationStyle = .popover
+                gravityChoice.preferredContentSize = CGSize(width: 200, height: 200)
+                let popover: UIPopoverPresentationController = gravityChoice.popoverPresentationController!
+                popover.sourceView = tableView.cellForRow(at: indexPath)
                 
+                // Sisanya isi coding untuk menampilkan action sheet / popover
+                delegate?.presentView(gravityChoice, completion: nil)
             } else if UIDevice.current.userInterfaceIdiom == .phone {
-                let gravityAlert = UIAlertController(title: "Gravitasi", message: "Pilihan planet:", preferredStyle: .actionSheet)
+                let gravityChoice = UIAlertController(title: "Gravitasi", message: "Pilihan planet:", preferredStyle: .actionSheet)
+                // TODO: Tambahkan AlertAction beserta actionnnya untuk memilih planet
+                
+                let planets: [Planet] = [.earth, .moon, .mars, .jupiter]
+                for p in planets {
+                    let planetAction = UIAlertAction(title: "\(p.rawValue): \(p.getGravityValue()) m/s²", style: .default) { _ in
+                        self.chosenPlanet = p
+                        tableView.deselectRow(at: indexPath, animated: true)
+                    }
+                    gravityChoice.addAction(planetAction)
+                }
+                
+                gravityChoice.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in tableView.deselectRow(at: indexPath, animated: true) })
+                
+                // Sisanya isi coding untuk menampilkan action sheet / popover
+                delegate?.presentView(gravityChoice, completion: nil)
             }
-            // Sisanya isi coding untuk menampilkan action sheet / popover
         } else {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }
 
-// MARK: - Delegate jika tombol pada header disentuh (should open popover)
-extension LabGerakParabolaView: VariableHeaderDelegate {
+// MARK: - Delegate jika tombol pada header disentuh (should open popover) dan untuk memilih gravitasi
+extension LabGerakParabolaView: VariableHeaderDelegate, GravityPopoverDelegate {
+    func chooseGravity(chosenValue planet: Planet) {
+        chosenPlanet = planet
+    }
+    
     func actionForButton() {
         print("Should open popover")
+        // Open popover for panduan if the button is on the right popover
+//        delegate?.presentView(<#T##view: UIViewController##UIViewController#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
 }
 
