@@ -16,7 +16,7 @@ class PanduanLabView: UIView {
         delegate?.closePanduanView()
     }
     
-    weak var delegate: XIBTryoutViewControllerDelegate?
+    weak var delegate: PraktikumBerpanduanViewControllerDelegate?
     
     override init(frame: CGRect){
         super.init(frame: frame)

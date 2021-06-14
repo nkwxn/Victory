@@ -16,6 +16,7 @@
 		3031648B267256860085E518 /* PanduanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30316489267256860085E518 /* PanduanTableViewCell.xib */; };
 		303164AC26735B460085E518 /* MateriView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303164AB26735B460085E518 /* MateriView.xib */; };
 		303164AF26735B560085E518 /* MateriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303164AE26735B560085E518 /* MateriView.swift */; };
+		3072ABDC2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */; };
 		307BEC9626748B7000948951 /* DimOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307BEC9526748B7000948951 /* DimOverlayView.xib */; };
 		307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BEC9826748C5E00948951 /* DimOverlayView.swift */; };
 		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
@@ -50,6 +51,7 @@
 		30316489267256860085E518 /* PanduanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanduanTableViewCell.xib; sourceTree = "<group>"; };
 		303164AB26735B460085E518 /* MateriView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateriView.xib; sourceTree = "<group>"; };
 		303164AE26735B560085E518 /* MateriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriView.swift; sourceTree = "<group>"; };
+		3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraktikumBerpanduanViewController.swift; sourceTree = "<group>"; };
 		307BEC9526748B7000948951 /* DimOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimOverlayView.xib; sourceTree = "<group>"; };
 		307BEC9826748C5E00948951 /* DimOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimOverlayView.swift; sourceTree = "<group>"; };
 		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				D583289A26709167007753E9 /* Main Appearance */,
 				D58328A626709527007753E9 /* XIBTryoutViewController.swift */,
+				3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
 				30316478267239480085E518 /* OnBoardingView.swift in Sources */,
 				3031648326724E360085E518 /* Constants.swift in Sources */,
+				3072ABDC2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift in Sources */,
 				3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);

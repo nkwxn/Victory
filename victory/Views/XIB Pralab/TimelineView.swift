@@ -9,7 +9,7 @@ import UIKit
 
 class TimelineView: UIView {
     
-    weak var delegate: XIBTryoutViewControllerDelegate?
+    weak var delegate: PraktikumBerpanduanViewControllerDelegate?
     
     @IBOutlet var contentView: UIView!
     
