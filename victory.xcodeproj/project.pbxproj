@@ -32,14 +32,14 @@
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D515DCC92678BCA600AAD6D2 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */; };
-		D515DCCA2678BCA600AAD6D2 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC42678BCA600AAD6D2 /* MediaViewController.swift */; };
-		D515DCCB2678BCA600AAD6D2 /* MateriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC52678BCA600AAD6D2 /* MateriViewController.swift */; };
-		D515DCCC2678BCA600AAD6D2 /* MataPelajaranTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC62678BCA600AAD6D2 /* MataPelajaranTableController.swift */; };
 		D515DCCD2678BCA600AAD6D2 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */; };
 		D515DCCE2678BCA600AAD6D2 /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC82678BCA600AAD6D2 /* SearchCollectionReusableView.swift */; };
 		D515DCD02678BD0500AAD6D2 /* GeneralCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D515DCCF2678BD0500AAD6D2 /* GeneralCollectionViewCell.xib */; };
 		D515DCD22678BD1400AAD6D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D515DCD12678BD1400AAD6D2 /* Main.storyboard */; };
 		D515DCD42678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCD32678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift */; };
+		D5397E402678F643005909F6 /* MateriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5397E3F2678F643005909F6 /* MateriViewController.swift */; };
+		D5397E422678F6C9005909F6 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5397E412678F6C9005909F6 /* MediaViewController.swift */; };
+		D5397E442678F727005909F6 /* TabelEksperimenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5397E432678F727005909F6 /* TabelEksperimenController.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
 		D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A0267093FE007753E9 /* PraktikumBerpanduan.storyboard */; };
 		D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A22670943D007753E9 /* PraktikumTanpaPanduan.storyboard */; };
@@ -78,14 +78,14 @@
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
-		D515DCC42678BCA600AAD6D2 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MediaViewController.swift; path = "../../../../../../../../Downloads/Victory-paket-homepage/victory/Controllers/Main Appearance/MediaViewController.swift"; sourceTree = "<group>"; };
-		D515DCC52678BCA600AAD6D2 /* MateriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MateriViewController.swift; path = "../../../../../../../../Downloads/Victory-paket-homepage/victory/Controllers/Main Appearance/MateriViewController.swift"; sourceTree = "<group>"; };
-		D515DCC62678BCA600AAD6D2 /* MataPelajaranTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MataPelajaranTableController.swift; path = "../../../../../../../../Downloads/Victory-paket-homepage/victory/Controllers/Main Appearance/MataPelajaranTableController.swift"; sourceTree = "<group>"; };
 		D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
 		D515DCC82678BCA600AAD6D2 /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
 		D515DCCF2678BD0500AAD6D2 /* GeneralCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralCollectionViewCell.xib; sourceTree = "<group>"; };
 		D515DCD12678BD1400AAD6D2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D515DCD32678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraktikumTanpaPanduanViewController.swift; sourceTree = "<group>"; };
+		D5397E3F2678F643005909F6 /* MateriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriViewController.swift; sourceTree = "<group>"; };
+		D5397E412678F6C9005909F6 /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		D5397E432678F727005909F6 /* TabelEksperimenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabelEksperimenController.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
 		D58328A0267093FE007753E9 /* PraktikumBerpanduan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PraktikumBerpanduan.storyboard; sourceTree = "<group>"; };
 		D58328A22670943D007753E9 /* PraktikumTanpaPanduan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PraktikumTanpaPanduan.storyboard; sourceTree = "<group>"; };
@@ -182,10 +182,10 @@
 			children = (
 				D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */,
 				D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */,
-				D515DCC62678BCA600AAD6D2 /* MataPelajaranTableController.swift */,
-				D515DCC52678BCA600AAD6D2 /* MateriViewController.swift */,
-				D515DCC42678BCA600AAD6D2 /* MediaViewController.swift */,
 				D515DCC82678BCA600AAD6D2 /* SearchCollectionReusableView.swift */,
+				D5397E3F2678F643005909F6 /* MateriViewController.swift */,
+				D5397E412678F6C9005909F6 /* MediaViewController.swift */,
+				D5397E432678F727005909F6 /* TabelEksperimenController.swift */,
 			);
 			path = "Main Appearance";
 			sourceTree = "<group>";
@@ -385,6 +385,8 @@
 				D515DCD42678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift in Sources */,
 				30ACD4CB267725FF00C9F62E /* SkorView.swift in Sources */,
 				3031647F26724CDF0085E518 /* PanduanLabView.swift in Sources */,
+				D5397E422678F6C9005909F6 /* MediaViewController.swift in Sources */,
+				D5397E442678F727005909F6 /* TabelEksperimenController.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
 				307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */,
 				30ACD4C6267725FF00C9F62E /* KontenKuisView.swift in Sources */,
@@ -392,7 +394,6 @@
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D515DCC92678BCA600AAD6D2 /* CustomAlert.swift in Sources */,
 				303164AF26735B560085E518 /* MateriView.swift in Sources */,
-				D515DCCA2678BCA600AAD6D2 /* MediaViewController.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				30ACD4C9267725FF00C9F62E /* OnBoardingKuisView.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
@@ -402,8 +403,7 @@
 				3072ABDC2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift in Sources */,
 				D515DCCD2678BCA600AAD6D2 /* GeneralCollectionViewCell.swift in Sources */,
 				3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */,
-				D515DCCB2678BCA600AAD6D2 /* MateriViewController.swift in Sources */,
-				D515DCCC2678BCA600AAD6D2 /* MataPelajaranTableController.swift in Sources */,
+				D5397E402678F643005909F6 /* MateriViewController.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
