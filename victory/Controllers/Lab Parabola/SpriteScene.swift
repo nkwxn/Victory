@@ -38,8 +38,8 @@ class SpriteScene: SKScene {
     var xArray : [CGFloat] = []
     var yArray : [CGFloat] = []
     var kecAwalScene : Float = 15
-    var gravitasi : Float = 10
-    var sudutTembakScene : Double = 30
+    var gravitasiVektor : Float = -9.8
+    var sudutTembakScene : Double = 45
     var udaraDitembakCie = 0
     var indexBentol = 0
     var lineActive : Bool = true
@@ -60,114 +60,21 @@ class SpriteScene: SKScene {
     var jarakYMaxReal : Float = 0
     var jarakXRealtime : Float = 0
     var jarakYRealtime : Float = 0
+    var kecTotal : Float = 0
+    var kecepatanXReal : Float = 0
+    var kecepatanYreal : Float = 0
     
-    func getUdaraDitembakCie() -> Int {
-        return udaraDitembakCie
-    }
-    
-    func getPerpindahanXDalamPoin () -> Float {
-        return perpindahanXDalamPoin
-    }
-    
-    func getJarakXRealtime () -> Float {
-        return jarakXRealtime
-    }
-    
-    func getJarakYRealtime () -> Float {
-        return jarakYRealtime
-    }
-    func getJarakXMaxReal () -> Float {
-        return jarakXMaxReal
-    }
-    
-    func getWaktuRealtime () -> Float {
-        return waktuRealTime
-    }
-    
-    //    override func update(_ currentTime: TimeInterval) {
-    //            if currentTime - initialTime >= 1 {
-    //                print("jarak nya \(projectile.position.x - player.position.x), pada waktu \(Date())")
-    //
-    //            }
-    //    }
-    
-    //    override func didFinishUpdate() {
-    //        print("jarak nya \(projectile.position.x - player.position.x), pada waktu \(Date())")
-    //    }
-    
+    var initialX : CGFloat = 0
+    var initialY : CGFloat = 0
     
     override func didSimulatePhysics() {
-        
         super.didSimulatePhysics()
-        /*
-        if lineActive == true {
-            
-            //        guard let positionBuled = currentProjectile?.position else {return}
-            for projectile in projectileArray {
-                let buled = SKShapeNode(circleOfRadius: 5)
-                buled.fillColor = SKColor.blue
-                buled.position = projectile.position
-                guard indexBentol % 20 == 0 else {
-                    indexBentol += 1
-                    return
-                }
-                
-                if children.count > janganDihapusArray.count {
-                    addChild(buled)
-                    nodeArrayDeletable.append(buled)
-                }
-            }
-            indexBentol += 1
-        }
-        */
-        guard let posisiXProjectile = currentProjectile?.position.x else {return}
-        
-        let perpindahanX = Float(posisiXProjectile - player.position.x)
-        perpindahanXDalamPoin = perpindahanX / poinKeMeterDibagi
-        jarakXMaxEngine = Float(engineSK.xProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuEngine))
-        
-        // Jarak Maksimum
-        jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene,waktu: totalWaktuReal))
-        
-        // Ketinggian Maksimum
-        jarakYMaxReal = Float(engineSK.yProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: 0.5 * totalWaktuReal, gravitasi: gravitasi))
-        
-        var rasioXEngine = perpindahanX/jarakXMaxEngine
-        
-        if jarakXRealtime <= jarakXMaxReal {
-            jarakXRealtime = rasioXEngine * jarakXMaxReal
-            waktuRealTime = rasioXEngine * totalWaktuReal
-            
-            if rasioXEngine > 0.5 {
-                let bedanya = rasioXEngine - 0.5
-                rasioXEngine = 0.5 - bedanya
-            }
-            jarakYRealtime = 2 * rasioXEngine * jarakYMaxReal
-        }
-        
-        
-      
-        
-        //        if gameScene.jarakXRealtime < gameScene.jarakXMaxReal {
-        //            posisiXRealTime = gameScene.getJarakXRealtime()
-        //            posisiYRealTime = gameScene.getJarakYRealtime()
-        //        }
-        //
-        //        if gameScene.jarakXRealtime > gameScene.jarakXMaxReal + gameScene.jarakXMaxReal * 0.1 {
-        //            posisiXRealTime = gameScene.jarakXMaxReal
-        //            posisiYRealTime = 0
-        //        }
+        player.position = CGPoint(x: initialX, y: initialY)
     }
     
     override func didApplyConstraints() {
         super.didApplyConstraints()
         
-        
-        
-    }
-    
-    override func didFinishUpdate() {
-        super.didFinishUpdate()
         vectorY.removeFromParent()
         vectorX.removeFromParent()
         vectorX = SKShapeNode(rectOf: CGSize(width: currentProjectile?.physicsBody?.velocity.dx ?? 0, height: 20))
@@ -182,12 +89,79 @@ class SpriteScene: SKScene {
         vectorY.fillColor = SKColor.blue
         currentProjectile?.addChild(vectorX)
         currentProjectile?.addChild(vectorY)
+        player.zRotation = CGFloat(sudutTembakScene)/55
+        
+        
+        if lineActive == true {
+            
+            //        guard let positionBuled = currentProjectile?.position else {return}
+            for projectileSekarang in projectileArray {
+                if projectileSekarang.physicsBody?.velocity != nil && projectileSekarang.physicsBody?.velocity != .zero {
+                    let buled = SKShapeNode(circleOfRadius: 5)
+                    buled.fillColor = SKColor.blue
+                    buled.position = projectileSekarang.position
+                    guard indexBentol % 20 == 0 else {
+                        indexBentol += 1
+                        return
+                    }
+                    if children.count > janganDihapusArray.count  {
+                        if buled.position.y != CGFloat(0) {
+                            addChild(buled)
+                            nodeArrayDeletable.append(buled)
+                        }
+                    }
+                    
+                }
+            }
+            indexBentol += 1
+        }
+        
+        guard let posisiXProjectile = currentProjectile?.position.x else {return}
+        
+        let perpindahanX = Float(posisiXProjectile - initialX)
+        perpindahanXDalamPoin = perpindahanX / poinKeMeterDibagi
+        jarakXMaxEngine = Float(engineSK.xProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuEngine))
+        jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene,waktu: totalWaktuReal))
+        jarakYMaxReal = Float(engineSK.yProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: 0.5 * totalWaktuReal, gravitasi: gravitasiVektor))
+        
+        var rasioXEngine = perpindahanX/jarakXMaxEngine
+        
+        if jarakXRealtime <= jarakXMaxReal {
+            jarakXRealtime = rasioXEngine * jarakXMaxReal
+            waktuRealTime = rasioXEngine * totalWaktuReal
+            
+            kecepatanXReal = Float(engineSK.kecepatanXAwalReal(sudutTembak: sudutTembakScene, kecepatanAwal: kecAwalScene))
+            kecepatanYreal = Float(engineSK.kecepatanY(sudutTembak: sudutTembakScene, kecepatanAwal: kecAwalScene, waktu: waktuRealTime, gravitasi: gravitasiVektor))
+            
+            let kecepatanXKuadrat = pow(kecepatanXReal, 2)
+            let kecepatanYKuadrat = pow(kecepatanYreal,2)
+            kecTotal = pow(kecepatanXKuadrat + kecepatanYKuadrat, 0.5)
+            
+            if rasioXEngine > 0.5 {
+                let bedanya = rasioXEngine - 0.5
+                rasioXEngine = 0.5 - bedanya
+            }
+            jarakYRealtime = 2 * rasioXEngine * jarakYMaxReal
+        }
+
+//        player.size = CGSize(width: currentProjectile?.physicsBody?.velocity.dx ?? 100 , height: currentProjectile?.physicsBody?.velocity.dy ?? 100)
+    }
+    
+    
+    
+    override func didFinishUpdate() {
+        super.didFinishUpdate()
+       
     }
     
     override func didMove(to view: SKView) {
-        //        print(scene?.size.width)
-        //        print(scene?.size.height)
-        player.position = CGPoint(x: size.width * 0.01, y: size.height * 0.5)
+        physicsWorld.gravity = CGVector(dx: 0, dy: CGFloat(gravitasiVektor))
+        initialX = size.width * 0.1
+        initialY = size.height * 0.5
+        player.position = CGPoint(x: initialX, y: initialY)
+
+        
+//        player.anchorPoint = CGPoint(x: 0.0, y: 0.0)
         addChild(player)
         janganDihapusArray.append(player)
         
@@ -201,16 +175,11 @@ class SpriteScene: SKScene {
         
         projectileArray = [projectile,projectile1,projectile2,projectile3,projectile4, projectile5,projectile6, projectile7, projectile8,projectile9, projectile10]
         
-        for projectile in projectileArray {
-            projectile.position = player.position
-        }
-        
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 210, left: 0, bottom: 0, right: 0)))
         
-        totalWaktuEngine = engineSK.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasi )
+        totalWaktuEngine = engineSK.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor )
+        totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor)
         
-        totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasi)
-        print("\(totalWaktuReal) s")
         
         //        print("ini tinggi \(scene?.size.height), ini panjang \(scene?.size.width)")
         //        let leftWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 100, height: frame.height))
@@ -219,80 +188,21 @@ class SpriteScene: SKScene {
         //        leftWall.physicsBody!.isDynamic = false
         //        self.addChild(leftWall)
         
-        /*
-        
-        var tinggiM = 0
-        var lebarM = 0
-        for i in stride(from: 5, to: (scene?.size.width)!, by: CGFloat(poinKeMeterDibagi)) {
-            //            for j in stride(from: player.position.y, to: view.bounds.height, by: 10){
-            let udaraAnying = SKShapeNode(circleOfRadius: 5)
-            udaraAnying.fillColor = SKColor.red
-            udaraAnying.position = CGPoint(x: i, y: 200)
-            //                udaraAnying.physicsBody = SKPhysicsBody(circleOfRadius: 5)
-            //                udaraAnying.physicsBody?.categoryBitMask = PhysicsCategory.udaraAnying // 3
-            //                udaraAnying.physicsBody?.contactTestBitMask = PhysicsCategory.projectile // 4
-            //                udaraAnying.physicsBody?.collisionBitMask = PhysicsCategory.none // 5
-            //                udaraAnying.physicsBody?.usesPreciseCollisionDetection = true
-            //                udaraAnying.physicsBody?.mass = 0.0000000001
-            //                udaraAnying.physicsBody?.affectedByGravity = false
-            //                udaraAnying.physicsBody?.restitution = 0
-            //                udaraAnying.physicsBody?.friction = 0
-            self.addChild((udaraAnying))
-            lebarM += 1
-            //            }
-        }
-        
-        for i in stride(from: 5, to: (scene?.size.height)!, by: CGFloat(poinKeMeterDibagi)) {
-            //            for j in stride(from: player.position.y, to: view.bounds.height, by: 10){
-            let udaraAnying = SKShapeNode(circleOfRadius: 5)
-            udaraAnying.fillColor = SKColor.red
-            udaraAnying.position = CGPoint(x: 5, y: i)
-            //                udaraAnying.physicsBody = SKPhysicsBody(circleOfRadius: 5)
-            //                udaraAnying.physicsBody?.categoryBitMask = PhysicsCategory.udaraAnying // 3
-            //                udaraAnying.physicsBody?.contactTestBitMask = PhysicsCategory.projectile // 4
-            //                udaraAnying.physicsBody?.collisionBitMask = PhysicsCategory.none // 5
-            //                udaraAnying.physicsBody?.usesPreciseCollisionDetection = true
-            //                udaraAnying.physicsBody?.mass = 0.0000000001
-            //                udaraAnying.physicsBody?.affectedByGravity = false
-            //                udaraAnying.physicsBody?.restitution = 0
-            //                udaraAnying.physicsBody?.friction = 0
-            self.addChild((udaraAnying))
-            tinggiM += 1
-            //            }
-        }
         
         
+
+  
         
-        print("lebarnya \(lebarM), tingginya \(tinggiM)") */
-        // Run the sequence of action of spawning monster
-        //        run(SKAction.repeatForever(
-        //            SKAction.sequence([
-        //                SKAction.run(addMonster),
-        //                SKAction.wait(forDuration: 1.0)
-        //            ])
-        //        ))
-        //
-        //        // Adding the background music
-        //        let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
-        //        backgroundMusic.autoplayLooped = true
-        //        addChild(backgroundMusic)
-        
-    }
-    
-    func random() -> CGFloat {
-        return CGFloat(Float(arc4random()) / 4294967296)
-    }
-    
-    func random(min: CGFloat, max: CGFloat) -> CGFloat {
-        return random() * (max-min) + min
     }
     
     func resetLab() {
         for node in nodeArrayDeletable {
             node.removeFromParent()
         }
-        for projectile in projectileArray {
-            projectile.position = player.position
+        for projectileSekarang in projectileArray {
+            projectileSekarang.position = CGPoint(x: initialX, y: initialY)
+            projectileSekarang.physicsBody?.velocity = .zero
+            
         }
         index = 0
     }
@@ -302,19 +212,11 @@ class SpriteScene: SKScene {
         lineActive = true
         jarakXMaxReal = 0
         jarakXRealtime = 0
+        
         guard index < projectileArray.count else {return}
-        //        run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
-        //
-        //        vectorY.removeFromParent()
-        //        vectorX.removeFromParent()
-        
-        
+ 
         currentProjectile = projectileArray[index]
-        
-        
-        
-        projectileArray[index].position = player.position
-        
+        currentProjectile?.position = CGPoint(x: initialX, y: initialY)
         currentProjectile?.physicsBody = SKPhysicsBody(circleOfRadius: currentProjectile!.size.width/3)
         currentProjectile?.physicsBody?.isDynamic = true
         currentProjectile?.physicsBody?.allowsRotation = false
@@ -327,9 +229,8 @@ class SpriteScene: SKScene {
         //        currentProjectile?.physicsBody?.collisionBitMask = PhysicsCategory.none
         //        currentProjectile?.physicsBody?.usesPreciseCollisionDetection = true
         //
-        currentProjectile?.physicsBody?.velocity = CGVector(dx: engineSK.kecepatanXAwalEngine(sudutTembak: 45, kecepatanAwal: kecAwal), dy: engineSK.kecepatanYAwalEngine(sudutTembak: 45, kecepatanAwal: kecAwal))
         
-        print(engineSK.kecepatanXAwalEngine(sudutTembak: 45, kecepatanAwal: kecAwal))
+        currentProjectile?.physicsBody?.velocity = CGVector(dx: engineSK.kecepatanXAwalEngine(sudutTembak: sudutTembakScene, kecepatanAwal: kecAwal), dy: engineSK.kecepatanYAwalEngine(sudutTembak: sudutTembakScene, kecepatanAwal: kecAwal))
         
         addChild(currentProjectile ?? projectile)
         
@@ -376,7 +277,46 @@ extension SpriteScene: SKPhysicsContactDelegate {
     }
 }
 
+// MARK: - GET GET GETAE
+extension SpriteScene {
+    
+    func getUdaraDitembakCie() -> Int {
+        return udaraDitembakCie
+    }
+    
+    func getPerpindahanXDalamPoin () -> Float {
+        return perpindahanXDalamPoin
+    }
+    
+    func getJarakXRealtime () -> Float {
+        return jarakXRealtime
+    }
+    
+    func getJarakYRealtime () -> Float {
+        return jarakYRealtime
+    }
+    func getJarakXMaxReal () -> Float {
+        return jarakXMaxReal
+    }
+    
+    func getWaktuRealtime () -> Float {
+        return waktuRealTime
+    }
+    
+    func getKecepatanTotal () -> Float {
+        return kecTotal
+    }
+    
+    func getKecepatanXReal () -> Float {
+        return kecepatanXReal
+    }
+    
+    func getKecepatanYReal () -> Float {
+        return kecepatanYreal
+    }
+}
 
+// MARK: - Tumbukan kawan~
 struct PhysicsCategory {
     static let none      : UInt32 = 0
     static let all       : UInt32 = UInt32.max
@@ -385,34 +325,3 @@ struct PhysicsCategory {
     static let bentol: UInt32 = 0b11 //3
 }
 
-//func +(left: CGPoint, right: CGPoint) -> CGPoint {
-//    return CGPoint(x: left.x + right.x, y: left.y + right.y)
-//}
-//
-//func -(left: CGPoint, right: CGPoint) -> CGPoint {
-//    return CGPoint(x: left.x - right.x, y: left.y - right.y)
-//}
-//
-//func *(point: CGPoint, scalar: CGFloat) -> CGPoint {
-//    return CGPoint(x: point.x * scalar, y: point.y * scalar)
-//}
-//
-//func /(point: CGPoint, scalar: CGFloat) -> CGPoint {
-//    return CGPoint(x: point.x / scalar, y: point.y / scalar)
-//}
-//
-//#if !(arch(x86_64) || arch(arm64))
-//func sqrt(a: CGFloat) -> CGFloat {
-//    return CGFloat(sqrtf(Float(a)))
-//}
-//#endif
-//
-//extension CGPoint {
-//    func length() -> CGFloat {
-//        return sqrt(x*x + y*y)
-//    }
-//
-//    func normalized() -> CGPoint {
-//        return self / length()
-//    }
-//}

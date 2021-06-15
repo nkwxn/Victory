@@ -109,28 +109,32 @@ class VictoryEngine{
     }
     
     func titikTertinggiDariKecepatanAwalReal(kecepatanAwal: Float, sudutTembak: Double, gravitasi: Float) -> Float {
-        return (pow(kecepatanAwal, 2) * pow(Float(__sinpi(sudutTembak/180)), 2))/(2*gravitasi)
+        return (pow(kecepatanAwal, 2) * pow(Float(__sinpi(sudutTembak/180)), 2))/(2 * -gravitasi)
         
     }
     
     func titikTertinggiDariKecepatanAwalYReal(kecepatanAwalY: Float, gravitasi: Float) -> Float {
-        return (pow(kecepatanAwalY, 2))/(2*gravitasi)
+        return (pow(kecepatanAwalY, 2))/(2 * -gravitasi)
     }
     
     func jarakTerjauhDariKecepatanAwalReal(kecepatanAwal: Float, sudutTembak: Double, gravitasi: Float) -> Float{
-        return (pow(kecepatanAwal,2)/gravitasi) * Float(__sinpi((2*sudutTembak)/180))
+        return (pow(kecepatanAwal,2) / -gravitasi) * Float(__sinpi((2*sudutTembak)/180))
     }
     
     func waktuUntukTitikTertinggiReal(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
-        return kecepatanAwal * Float(__sinpi(sudutTembak/180)) / gravitasi
+        return kecepatanAwal * Float(__sinpi(sudutTembak/180)) / -gravitasi
     }
     
     func waktuUntukJarakTerjauhEngine(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
-        return 2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasiEngine)
+        print("ini gravitasi dari engine \(-gravitasiEngine)")
+        print("ini gravitasi biasa \(-gravitasi * 150)")
+        print("ini total waktu biasa \(2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi * 150))")
+        print("ini total waktu engine \(2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasiEngine))")
+        return 2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi * 150)
     }
     
     func waktuUntukJarakTerjauhReal(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
-        return 2 * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (gravitasi)
+        return 2 * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi)
     }
     
     
@@ -151,12 +155,44 @@ class VictoryEngine{
     
     func yProyektilTerhadapWaktuReal(kecepatanAwal: Float, sudutTembak: Double, waktu: Float, gravitasi: Float)-> CGFloat {
         let part1 = (kecepatanAwal * Float(__sinpi(sudutTembak/180) * Double(waktu)))
-        let part2 = (0.5 * pow(Float(waktu),2) * gravitasi)
+        let part2 = (0.5 * pow(Float(waktu),2) * -gravitasi)
         return CGFloat(part1 - part2)
     }
     
-//    func kecepatanY(sudutTembak: Double, kecepatanAwal: Float, waktu: Float, gravitasi: Float) -> CGFloat {
-//        return CGFloat((kecepatanAwal * Float(__sinpi(sudutTembak/180))) - (gravitasi * waktu))
-//    }
+    func kecepatanY(sudutTembak: Double, kecepatanAwal: Float, waktu: Float, gravitasi: Float) -> CGFloat {
+        return CGFloat((kecepatanAwal * Float(__sinpi(sudutTembak/180))) - (-gravitasi * waktu))
+    }
+    
+    
+    // MARK: - Math Function
+    
+    func quadraticTimeSolver(quadraticValue: Float, nonQuadraticValue: Float, constantValue: Float) -> Double {
+        let a = Double(quadraticValue)
+        let b = Double(nonQuadraticValue)
+        let c = Double(constantValue)
+        let bSquared = b * b
+        let discriminant = bSquared - (4 * a * c)
+        let isImaginary = discriminant < 0
+        let discrimimantAbsSqrt = sqrt(fabs(discriminant))
+
+        if isImaginary {
+            print("X = (\(-b) + \(discrimimantAbsSqrt)i)/\(2*a) & (\(-b) - \(discrimimantAbsSqrt)i)/\(2*a)")
+            fatalError("manya heueu nilainya imajiner")
+        } else {
+            let topFormula = -b + discrimimantAbsSqrt
+            let bottomFormula = 2 * a
+            let totalX = topFormula / bottomFormula
+
+            let topFormula2 = -b - discrimimantAbsSqrt
+            let totalX2 = topFormula2 / bottomFormula
+
+            print("X = \(totalX) & \(totalX2)")
+            if totalX >= 0 {
+                return totalX
+            } else {
+                return totalX2
+            }
+        }
+    }
 }
 
