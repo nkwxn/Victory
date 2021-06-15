@@ -1,3 +1,4 @@
+// swiftlint:disable valid_ibinspectable
 //
 //  UIView+Extension.swift
 //  victory
@@ -8,17 +9,14 @@
 import UIKit
 
 extension UIView {
-    
     enum Corners {
         case topLeft
         case topRight
         case bottomLeft
         case bottomRight
     }
-    
     func roundedCorners(_ corners: [Corners], radius: CGFloat) {
-        
-        var caCornerMask : CACornerMask = .init()
+        var caCornerMask: CACornerMask = .init()
 
         for data in corners {
             if data == Corners.topLeft {
@@ -34,19 +32,15 @@ extension UIView {
                 caCornerMask.insert(.layerMinXMaxYCorner)
             }
         }
-                
         self.clipsToBounds = true
         self.layer.cornerRadius = radius
         self.layer.maskedCorners = caCornerMask
-
     }
 }
-
 @IBDesignable
 class RoundCornersUIView: UIView {
-    
     @IBInspectable
-    /// Should the corner be as circle
+    // Should the corner be as circle
     public var circleCorner: Bool {
         get {
             return min(bounds.size.height, bounds.size.width) / 2 == cornerRadius
@@ -55,21 +49,19 @@ class RoundCornersUIView: UIView {
             cornerRadius = newValue ? min(bounds.size.height, bounds.size.width) / 2 : cornerRadius
         }
     }
-    
     @IBInspectable
-    /// Corner radius of view; also inspectable from Storyboard.
+    // Corner radius of view; also inspectable from Storyboard
     public var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
         set {
             layer.cornerRadius = circleCorner ? min(bounds.size.height, bounds.size.width) / 2 : newValue
-            //abs(CGFloat(Int(newValue * 100)) / 100)
+            // abs(CGFloat(Int(newValue * 100)) / 100)
         }
     }
-    
     @IBInspectable
-    /// Border color of view; also inspectable from Storyboard.
+    // Border color of view; also inspectable from Storyboard
     public var borderColor: UIColor? {
         get {
             guard let color = layer.borderColor else {
@@ -85,9 +77,8 @@ class RoundCornersUIView: UIView {
             layer.borderColor = color.cgColor
         }
     }
-    
     @IBInspectable
-    /// Border width of view; also inspectable from Storyboard.
+    // Border width of view; also inspectable from Storyboard
     public var borderWidth: CGFloat {
         get {
             return layer.borderWidth
@@ -96,9 +87,8 @@ class RoundCornersUIView: UIView {
             layer.borderWidth = newValue
         }
     }
-    
     @IBInspectable
-    /// Shadow color of view; also inspectable from Storyboard.
+    // Shadow color of view; also inspectable from Storyboard
     public var shadowColor: UIColor? {
         get {
             guard let color = layer.shadowColor else {
@@ -110,9 +100,8 @@ class RoundCornersUIView: UIView {
             layer.shadowColor = newValue?.cgColor
         }
     }
-    
     @IBInspectable
-    /// Shadow offset of view; also inspectable from Storyboard.
+    // Shadow offset of view; also inspectable from Storyboard
     public var shadowOffset: CGSize {
         get {
             return layer.shadowOffset
@@ -121,9 +110,8 @@ class RoundCornersUIView: UIView {
             layer.shadowOffset = newValue
         }
     }
-    
     @IBInspectable
-    /// Shadow opacity of view; also inspectable from Storyboard.
+    // Shadow opacity of view; also inspectable from Storyboard
     public var shadowOpacity: Double {
         get {
             return Double(layer.shadowOpacity)
@@ -132,9 +120,8 @@ class RoundCornersUIView: UIView {
             layer.shadowOpacity = Float(newValue)
         }
     }
-    
     @IBInspectable
-    /// Shadow radius of view; also inspectable from Storyboard.
+    // Shadow radius of view; also inspectable from Storyboard
     public var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
@@ -143,9 +130,8 @@ class RoundCornersUIView: UIView {
             layer.shadowRadius = newValue
         }
     }
-    
     @IBInspectable
-    /// Shadow path of view; also inspectable from Storyboard.
+    // Shadow path of view; also inspectable from Storyboard
     public var shadowPath: CGPath? {
         get {
             return layer.shadowPath
@@ -154,10 +140,9 @@ class RoundCornersUIView: UIView {
             layer.shadowPath = newValue
         }
     }
-    
     @IBInspectable
-    /// Should shadow rasterize of view; also inspectable from Storyboard.
-    /// cache the rendered shadow so that it doesn't need to be redrawn
+    // Should shadow rasterize of view; also inspectable from Storyboard
+    // Cache the rendered shadow so that it doesn't need to be redrawn
     public var shadowShouldRasterize: Bool {
         get {
             return layer.shouldRasterize
@@ -166,10 +151,9 @@ class RoundCornersUIView: UIView {
             layer.shouldRasterize = newValue
         }
     }
-    
     @IBInspectable
-    /// Should shadow rasterize of view; also inspectable from Storyboard.
-    /// cache the rendered shadow so that it doesn't need to be redrawn
+    // Should shadow rasterize of view; also inspectable from Storyboard
+    // cache the rendered shadow so that it doesn't need to be redrawn
     public var shadowRasterizationScale: CGFloat {
         get {
             return layer.rasterizationScale
@@ -178,9 +162,8 @@ class RoundCornersUIView: UIView {
             layer.rasterizationScale = newValue
         }
     }
-    
     @IBInspectable
-    /// Corner radius of view; also inspectable from Storyboard.
+    // Corner radius of view; also inspectable from Storyboard
     public var maskToBounds: Bool {
         get {
             return layer.masksToBounds
@@ -189,6 +172,4 @@ class RoundCornersUIView: UIView {
             layer.masksToBounds = newValue
         }
     }
-    
 }
-
