@@ -54,13 +54,13 @@
 //
 //    }
 //
-//
+//      Setiap kecepatan berubah, total waktu akan langsung dihitung -> spritescene
 //    @IBAction func sliderUhuy(_ sender: UISlider) {
 //        kecAwalyey = Float(sender.value * kecMax)
 //
 //        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasi)
 //
-//        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasi)
+//        totalWaktuReal = engine.waktuUntuxarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasi)
 //        settingsTableView.reloadData()
 //
 //        if let gameScene = skView.scene as? SpriteScene {
@@ -153,17 +153,17 @@
 //            cell.textLabel?.text = "KecAwal"
 //            cell.detailTextLabel?.text = "\(kecAwalyey)"
 //            return cell
-//        case 2:
+//        case 2: -> Waktu
 //            cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 //            cell.textLabel?.text = "Waktu"
 //            cell.detailTextLabel?.text = String(round(waktuRealtime*100)/100)
 //            return cell
-//        case 3:
+//        case 3: -> Posisi X / Jarak (Xt)
 //            cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 //            cell.textLabel?.text = "PosisiX"
 //            cell.detailTextLabel?.text = String(round(posisiXRealTime*100)/100)
 //            return cell
-//        case 4:
+//        case 4: -> Ketinggian (Yt)
 //            cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 //            cell.textLabel?.text = "PosisiY"
 //            cell.detailTextLabel?.text = String(round(posisiYRealTime * 100)/100)

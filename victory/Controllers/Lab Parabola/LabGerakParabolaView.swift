@@ -29,12 +29,12 @@ class LabGerakParabolaView: UIView {
     @IBOutlet weak var waktuTitikTertinggi: UILabel!
     
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
     
     // Nomor lab sesuai dengan nomor soal (0-2) dan selesai / belum, sertakan delegate
     var nomorLab: Int?
@@ -51,6 +51,10 @@ class LabGerakParabolaView: UIView {
             }
         }
     }
+    var sudutLemparan = 30.0
+    var massaProyektil = 50.0
+    var kecepatanAwal = 100.0
+    var ketinggianAwal = 0.0
     var delegate: LabGerakParabolaDelegate?
     
     init(frame: CGRect, noLab: Int? = nil) {
@@ -106,6 +110,11 @@ class LabGerakParabolaView: UIView {
             btnResetVariabel.setTitle("Reset Tampilan", for: .normal)
         }
         
+        // SpriteKit Scene Setup
+        let sceneGerakParabola = SpriteScene(size: skView.bounds.size)
+        sceneGerakParabola.delegate = self
+        skView.delegate = self
+        skView.presentScene(sceneGerakParabola)
     }
     
     @IBAction func sliderPosisiValueChanged(_ sender: UISlider) {
@@ -126,17 +135,45 @@ class LabGerakParabolaView: UIView {
                       let cellVelocity = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? VariableSliderCell,
                       let cellHeight = variableTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? VariableSliderCell
                 else { return }
-                cellAngle.varSlider.value = (cellAngle.variableSetting?.getDefaultValue())!
-                cellMass.varSlider.value = (cellMass.variableSetting?.getDefaultValue())!
-                cellVelocity.varSlider.value = (cellVelocity.variableSetting?.getDefaultValue())!
-                cellHeight.varSlider.value = (cellHeight.variableSetting?.getDefaultValue())!
+                cellAngle.varSlider.setValue((cellAngle.variableSetting?.getDefaultValue())!, animated: true)
+                cellMass.varSlider.setValue((cellMass.variableSetting?.getDefaultValue())!, animated: true)
+                cellVelocity.varSlider.setValue((cellVelocity.variableSetting?.getDefaultValue())!, animated: true)
+                cellHeight.varSlider.setValue((cellHeight.variableSetting?.getDefaultValue())!, animated: true)
+                
+                // Set the label value while resetting
+                cellAngle.lblVarAmount.text = "\(cellAngle.varSlider.value.rounded()) \(cellAngle.variableSetting?.getUnit() ?? "")"
+                cellMass.lblVarAmount.text = "\(cellMass.varSlider.value.rounded()) \(cellMass.variableSetting?.getUnit() ?? "")"
+                cellVelocity.lblVarAmount.text = "\(cellVelocity.varSlider.value.rounded()) \(cellVelocity.variableSetting?.getUnit() ?? "")"
+                cellHeight.lblVarAmount.text = "\(cellHeight.varSlider.value.rounded()) \(cellHeight.variableSetting?.getUnit() ?? "")"
             } else {
                 // Reset variabel di sebelah kiri (kecuali lks) + clear all projectiles
                 guard let editableVar = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? VariableSliderCell else { return }
-                editableVar.varSlider.value = (editableVar.variableSetting?.getDefaultValue())!
+                editableVar.varSlider.setValue((editableVar.variableSetting?.getDefaultValue())!, animated: true)
+                editableVar.lblVarAmount.text = "\(editableVar.varSlider.value.rounded()) \(editableVar.variableSetting?.getUnit() ?? "")"
+                
+                /*
+                switch nomorLab {
+                case 0:
+                    <#code#>
+                case 1:
+                    <#code#>
+                case 2:
+                    <#code#>
+                default:
+                    <#code#>
+                }*/
+            }
+            
+            // Reset the sprite scene dots
+            if let scene = skView.scene as? SpriteScene {
+                scene.resetLab()
             }
         case btnLuncurkan:
             print("Should launch projectile (Manipulate SKScene Actions)")
+            
+            if let parabolaScene = skView.scene as? SpriteScene {
+                parabolaScene.shootStraight(kecAwal: 10)
+            }
         default:
             print("Button not identified")
         }
@@ -182,9 +219,9 @@ enum SliderVariable: String {
         case .massaProyektil:
             return "m"
         case .kecAwal:
-            return "Vo"
+            return "v₀"
         case .ketAwal:
-            return "Ho"
+            return "h₀"
         }
     }
     

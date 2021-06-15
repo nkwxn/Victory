@@ -30,7 +30,7 @@ class VariableSliderCell: UITableViewCell {
             // Slider values
             varSlider.minimumValue = (variableSetting?.getMinSlider())!
             varSlider.maximumValue = (variableSetting?.getMaxSlider())!
-            varSlider.value = (variableSetting?.getDefaultValue())!
+            varSlider.setValue((variableSetting?.getDefaultValue())!, animated: true)
         }
     }
     

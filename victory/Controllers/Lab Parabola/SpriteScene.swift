@@ -99,7 +99,7 @@ class SpriteScene: SKScene {
     override func didSimulatePhysics() {
         
         super.didSimulatePhysics()
-        
+        /*
         if lineActive == true {
             
             //        guard let positionBuled = currentProjectile?.position else {return}
@@ -119,13 +119,17 @@ class SpriteScene: SKScene {
             }
             indexBentol += 1
         }
-        
+        */
         guard let posisiXProjectile = currentProjectile?.position.x else {return}
         
         let perpindahanX = Float(posisiXProjectile - player.position.x)
         perpindahanXDalamPoin = perpindahanX / poinKeMeterDibagi
         jarakXMaxEngine = Float(engineSK.xProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuEngine))
+        
+        // Jarak Maksimum
         jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene,waktu: totalWaktuReal))
+        
+        // Ketinggian Maksimum
         jarakYMaxReal = Float(engineSK.yProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: 0.5 * totalWaktuReal, gravitasi: gravitasi))
         
         var rasioXEngine = perpindahanX/jarakXMaxEngine
@@ -204,8 +208,9 @@ class SpriteScene: SKScene {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 210, left: 0, bottom: 0, right: 0)))
         
         totalWaktuEngine = engineSK.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasi )
-        totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasi)
         
+        totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasi)
+        print("\(totalWaktuReal) s")
         
         //        print("ini tinggi \(scene?.size.height), ini panjang \(scene?.size.width)")
         //        let leftWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 100, height: frame.height))
@@ -214,7 +219,7 @@ class SpriteScene: SKScene {
         //        leftWall.physicsBody!.isDynamic = false
         //        self.addChild(leftWall)
         
-        
+        /*
         
         var tinggiM = 0
         var lebarM = 0
@@ -256,7 +261,9 @@ class SpriteScene: SKScene {
             //            }
         }
         
-        print("lebarnya \(lebarM), tingginya \(tinggiM)")
+        
+        
+        print("lebarnya \(lebarM), tingginya \(tinggiM)") */
         // Run the sequence of action of spawning monster
         //        run(SKAction.repeatForever(
         //            SKAction.sequence([
@@ -280,7 +287,7 @@ class SpriteScene: SKScene {
         return random() * (max-min) + min
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func resetLab() {
         for node in nodeArrayDeletable {
             node.removeFromParent()
         }

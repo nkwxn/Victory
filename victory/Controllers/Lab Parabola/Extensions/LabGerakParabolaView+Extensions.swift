@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
     
@@ -165,6 +166,33 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension LabGerakParabolaView: SKViewDelegate, SKSceneDelegate {
+    func update(_ currentTime: TimeInterval, for scene: SKScene) {
+        if let scene = scene as? SpriteScene {
+            if nomorLab == nil {
+                let tableCells = variableTableView.visibleCells
+                guard let cellWaktu = variableTableView.cellForRow(at: IndexPath(row: 0, section: 1)),
+                      let cellJarak = variableTableView.cellForRow(at: IndexPath(row: 1, section: 1)),
+                      let cellTinggi = variableTableView.cellForRow(at: IndexPath(row: 2, section: 1)),
+                      let cellKecepatan = variableTableView.cellForRow(at: IndexPath(row: 3, section: 1))
+                else { return }
+                
+                if scene.jarakXRealtime < scene.jarakXMaxReal {
+                    cellJarak.detailTextLabel?.text = "\(scene.getJarakXRealtime().rounded()) m"
+                    cellTinggi.detailTextLabel?.text = "\(scene.getJarakYRealtime().rounded()) m"
+                    cellKecepatan.detailTextLabel?.text = "0 m/s"
+                    cellWaktu.detailTextLabel?.text = "\(scene.getWaktuRealtime().rounded()) s"
+                } else {
+                    cellJarak.detailTextLabel?.text = "\(scene.jarakXMaxReal.rounded()) m"
+                    cellTinggi.detailTextLabel?.text = "0.0 m"
+                    cellKecepatan.detailTextLabel?.text = "0 m/s"
+                    cellWaktu.detailTextLabel?.text = "\(scene.totalWaktuReal.rounded()) s"
+                }
+            }
+        }
+    }
+}
+
 // MARK: - Delegate jika tombol pada header disentuh (should open popover) dan untuk memilih gravitasi
 extension LabGerakParabolaView: VariableHeaderDelegate, GravityPopoverDelegate {
     func chooseGravity(chosenValue planet: Planet) {
@@ -172,7 +200,7 @@ extension LabGerakParabolaView: VariableHeaderDelegate, GravityPopoverDelegate {
     }
     
     func actionForButton() {
-        print("Should open popover")
+        print("Should open popover of lab guide")
         // Open popover for panduan if the button is on the right popover
 //        delegate?.presentView(<#T##view: UIViewController##UIViewController#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
