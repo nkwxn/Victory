@@ -12,9 +12,9 @@
         <!--Semua Praktikum-->
         <scene sceneID="HAk-Vg-DX2">
             <objects>
-                <viewController id="PG9-na-59i" customClass="MateriViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Semua Praktikum" id="PG9-na-59i" customClass="MateriViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV7-QI-PeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-Ye-Iny">
@@ -64,12 +64,12 @@
             </objects>
             <point key="canvasLocation" x="1239.1959798994974" y="441.00719424460436"/>
         </scene>
-        <!--Media View Controller-->
+        <!--Gerak Parabola-->
         <scene sceneID="ftI-fO-QnB">
             <objects>
-                <viewController id="fIK-T7-WC0" customClass="MediaViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MediaViewControllerScene" title="Gerak Parabola" id="fIK-T7-WC0" customClass="MediaViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oE6-yn-rh1">
-                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="guv-ve-0gt">
@@ -106,13 +106,14 @@
                     <navigationItem key="navigationItem" id="Pi3-8A-BHi"/>
                     <connections>
                         <outlet property="mediaCollectionView" destination="guv-ve-0gt" id="ikt-i4-Qtd"/>
-                        <segue destination="RX9-no-1sv" kind="show" id="eFl-Sd-6V6"/>
-                        <segue destination="84k-bT-Pmf" kind="show" id="uun-y1-GJA"/>
+                        <outlet property="superview" destination="oE6-yn-rh1" id="76C-3A-7vB"/>
+                        <segue destination="RX9-no-1sv" kind="show" identifier="moveToDenganPanduan" id="eFl-Sd-6V6"/>
+                        <segue destination="84k-bT-Pmf" kind="show" identifier="moveToTanpaPanduan" id="uun-y1-GJA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmw-wU-VIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907.537688442211" y="439.56834532374103"/>
+            <point key="canvasLocation" x="1908" y="440"/>
         </scene>
         <!--Eksperimen-->
         <scene sceneID="1Xm-as-d5Y">

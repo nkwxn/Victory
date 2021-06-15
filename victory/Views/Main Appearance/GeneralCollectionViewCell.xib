@@ -34,8 +34,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belum ada materi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5l-Ti-atI">
                                         <rect key="frame" x="20" y="164" width="215" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="2en-hB-rmI"/>
-                                            <constraint firstAttribute="width" constant="215" id="a4l-rH-8jk"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="215" id="kzN-BD-L9Z"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="xzA-sM-cUd"/>
                                         </constraints>
@@ -45,7 +43,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Materi: Besaran dan Satuan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnU-bH-AjL">
                                         <rect key="frame" x="20" y="190" width="215" height="18"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="Fsp-Lr-Mzi"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="1gw-HI-0Zd"/>
                                             <constraint firstAttribute="width" constant="215" id="WyX-Z0-9pG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -107,6 +105,9 @@
                 <outlet property="generalCollectionSubtitleLabel" destination="dnU-bH-AjL" id="jrJ-0W-3Hg"/>
                 <outlet property="generalCollectionTitleLabel" destination="H5l-Ti-atI" id="f9y-j0-RuH"/>
                 <outlet property="generalCollectionView" destination="ITg-eN-CoX" id="mPt-IP-lrh"/>
+                <outlet property="heightConstraintImageView" destination="7AO-6T-LHQ" id="keV-hu-JgB"/>
+                <outlet property="heightConstraintTitleLabel" destination="xzA-sM-cUd" id="OD6-u7-2EP"/>
+                <outlet property="heightConstraintsSubtitleLabel" destination="1gw-HI-0Zd" id="ZaY-Qm-HJM"/>
             </connections>
             <point key="canvasLocation" x="8.9928057553956844" y="106.53266331658291"/>
         </collectionViewCell>

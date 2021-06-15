@@ -82,23 +82,14 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell", for: indexPath) as! GeneralCollectionViewCell
         
         if showAll && filteredPraktikum.isEmpty {
-            cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
-            cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
-            cell.generalCollectionView.shadowRadius = 10.0
             cell.generalCollectionImageView.image = praktikum[indexPath.row].gambar
             cell.generalCollectionTitleLabel.text = praktikum[indexPath.row].nama
             cell.generalCollectionSubtitleLabel.text = praktikum[indexPath.row].subtitleMateri
         } else if filteredPraktikum.isEmpty {
-            cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
-            cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
-            cell.generalCollectionView.shadowRadius = 10.0
             cell.generalCollectionImageView.image = emptyStateImage
             cell.generalCollectionTitleLabel.text = emptyStateTitle
             cell.generalCollectionSubtitleLabel.text = emptyStateSubtitle
         } else {
-            cell.generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
-            cell.generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
-            cell.generalCollectionView.shadowRadius = 10.0
             cell.generalCollectionImageView.image = filteredPraktikum[indexPath.row].gambar
             cell.generalCollectionTitleLabel.text = filteredPraktikum[indexPath.row].nama
             cell.generalCollectionSubtitleLabel.text = filteredPraktikum[indexPath.row].subtitleMateri
@@ -108,20 +99,19 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !filteredPraktikum.isEmpty || showAll {
-            performSegue(withIdentifier: "moveToMediaPraktikum", sender: self)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let destVC = storyBoard.instantiateViewController(withIdentifier: "MediaViewControllerScene") as! MediaViewController
+            destVC.selectedPraktikum = self.praktikum[indexPath.row]
+            
+            self.navigationController?.pushViewController(destVC, animated: true)
+            self.splitViewController?.hide(UISplitViewController.Column.primary)
         }
     }
+    
+    
     
    
 

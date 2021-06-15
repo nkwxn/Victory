@@ -47,13 +47,80 @@ enum Mapel: String {
     }
 }
 
+enum Step: String, CaseIterable {
+    case materi = "Materi"
+    case labOne = "Lab 1"
+    case labTwo = "Lab 2"
+    case labThree = "Lab 3"
+    case kuis = "Kuis"
+    /*
+     // enum Functions
+     */
+    func getIndex() -> Int {
+        switch self {
+        case .materi:
+            return 0
+        case .labOne:
+            return 1
+        case .labTwo:
+            return 2
+        case .labThree:
+            return 3
+        case .kuis:
+            return 4
+        }
+    }
+    
+    func getImageActive() -> UIImage {
+        switch self {
+        case .materi:
+            return UIImage(systemName: "1.circle.fill")!
+        case .labOne:
+            return UIImage(systemName: "2.circle.fill")!
+        case .labTwo:
+            return UIImage(systemName: "3.circle.fill")!
+        case .labThree:
+            return UIImage(systemName: "4.circle.fill")!
+        case .kuis:
+            return UIImage(systemName: "5.circle.fill")!
+        }
+    }
+    
+    func getImageNormal() -> UIImage {
+        switch self {
+        case .materi:
+            return UIImage(systemName: "1.circle")!
+        case .labOne:
+            return UIImage(systemName: "2.circle")!
+        case .labTwo:
+            return UIImage(systemName: "3.circle")!
+        case .labThree:
+            return UIImage(systemName: "4.circle")!
+        case .kuis:
+            return UIImage(systemName: "5.circle")!
+        }
+    }
+    func getImageLock() -> UIImage {
+        return UIImage(systemName: "lock.circle")!
+    }
+    func getImageDoneNormal() -> UIImage {
+        return UIImage(systemName: "checkmark.circle")!
+    }
+    func getImageDoneActive() -> UIImage {
+        return UIImage(systemName: "checkmark.circle.fill")!
+    }
+}
+
 struct Praktikum {
     var nama: String
     var gambar: UIImage
     var kelas: Kelas
     var mataPelajaran: Mapel
     var subtitleMateri: String
-    var pertanyaanQuiz: [Question]
+    var pertanyaanQuiz: QuizBrain
+    var currentStep: Step = .materi
+    var stepUnlockList: [Step] = [.materi]
+    var stepDoneList: [Step] = []
 }
 
 struct Question {
@@ -78,6 +145,11 @@ struct Question {
 struct MediaPraktikum {
     var namaMedia: String
     var gambarMedia: UIImage
+}
+
+struct TipePraktikum {
+    var namaTipe: String
+    var gambarTipe: UIImage
 }
 
 struct TujuanPraktikum {
