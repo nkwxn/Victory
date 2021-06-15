@@ -9,6 +9,19 @@
 import Foundation
 
 class Constants {
+    static let arrayOfTipePraktikum = [
+        TipePraktikum (namaTipe: "Dengan Panduan (LKS)", gambarTipe: #imageLiteral(resourceName: "gravity")),
+        TipePraktikum (namaTipe: "Tanpa Panduan (LKS)", gambarTipe: #imageLiteral(resourceName: "gravity_gray"))
+    ]
+    static let arrayOfMediaPraktikum = [
+        MediaPraktikum (namaMedia: "Praktikum", gambarMedia: #imageLiteral(resourceName: "angle")),
+        MediaPraktikum (namaMedia: "Permainan", gambarMedia: #imageLiteral(resourceName: "gravity_gray")),
+        MediaPraktikum (namaMedia: "Augmented Reality (AR)", gambarMedia: #imageLiteral(resourceName: "gravity"))
+    ]
+    
+    static let arrayOfPraktikum = [
+        Praktikum (nama: "Gerak Parabola", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k10, mataPelajaran: .fisika, subtitleMateri: "Materi: Gerak", pertanyaanQuiz: QuizBrain(), currentStep: .materi, stepUnlockList: [], stepDoneList: [])
+    ]
     static let panduanLabs = [
         Panduanlab(langkah: ["Tujuan Lab 1: Menentukan pengaruh massa dalam gerak parabola. Langkah-langkahnya adalah sebagai berikut", "Pada Lab 1, variabel sudut lemparan (θ) sebesar 30° dan kecepatan awal (vo) sebesar 100 m/s bernilai konstan", "Pada bagian Variabel, atur massa proyektil sebesar 1 kg kemudian luncurkan proyektil tersebut", "Amati jarak tembaknya (Xmax), isi tabel lembar kerja", "Hitung ketinggian maksimum yang dapat dicapai proyektil (Ymax) dan waktu yang dibutuhkan untuk menempuh ketinggian maksimum (t(Ymax)), isi tabel lembar kerja", "Ulangi langkah 2,3,4 namun menggunakan proyektil dengan massa 10, 50, 100, dan 200 kg", "Jika jawaban pada tabel lembar kerja sudah tepat, maka isian akan berubah warna menjadi hijau"]),
         Panduanlab(langkah: ["Tujuan Lab 2: Menentukan pengaruh sudut lemparan dalam gerak parabola. Langkah-langkahnya adalah sebagai berikut", "Pada Lab 2, variabel kecepatan awal (vo) sebesar 100 m/s dan massa proyektil sebesar 50 kg bernilai konstan", "Pada bagian Variabel, atur sudut lemparan (θ) sebesar 0° kemudian luncurkan proyektil tersebut", "Amati jarak tembaknya (Xmax), isi tabel lembar kerja", "Hitung ketinggian maksimum yang dapat dicapai proyektil (Ymax) dan waktu yang dibutuhkan untuk menempuh ketinggian maksimum (t(Ymax)), isi tabel lembar kerja", "Ulangi langkah 2,3,4 namun menggunakan sudut lemparan 30°, 45°, 60°, dan 90°", "Jika jawaban pada tabel lembar kerja sudah tepat, maka isian akan berubah warna menjadi hijau"]),

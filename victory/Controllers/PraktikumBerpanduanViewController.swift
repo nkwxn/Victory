@@ -53,9 +53,11 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         super.viewDidLoad()
         // Should pass data from MediaViewController via function prepSetup()
         // But these are dummy variable inits, will be deleted soon
+        self.navigationItem.largeTitleDisplayMode = .never
+            
         quizBrain = QuizBrain()
         praktikum = Praktikum(nama: "Gerak Prabola", gambar: UIImage(systemName: "sun.max.fill")!,
-                              kelas: .k10, mataPelajaran: .fisika, pertanyaanQuiz: quizBrain!)
+                              kelas: .k10, mataPelajaran: .fisika, subtitleMateri: "", pertanyaanQuiz: quizBrain!)
         currentStep = praktikum?.currentStep
         stepUnlockList = praktikum?.stepUnlockList
         stepDoneList = praktikum?.stepDoneList
@@ -213,5 +215,9 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     func showOnBoardingKuisView() {
         onBoardingKuisView.isHidden = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = praktikum?.nama
     }
 }

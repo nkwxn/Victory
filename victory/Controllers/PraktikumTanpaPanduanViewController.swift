@@ -1,19 +1,22 @@
 //
-//  MediaViewController.swift
+//  PraktikumTanpaPanduanViewController.swift
 //  victory
 //
-//  Created by Nicholas on 09/06/21.
+//  Created by Nicholas on 15/06/21.
 //
 
 import UIKit
 
-class MediaViewController: UIViewController {
+class PraktikumTanpaPanduanViewController: UIViewController {
+    var praktikum: Praktikum?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+
     /*
     // MARK: - Navigation
 

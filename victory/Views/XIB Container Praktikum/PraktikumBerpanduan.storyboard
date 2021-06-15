@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3ZS-sy-5Og">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3ZS-sy-5Og">
     <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,32 +12,20 @@
         <!--Praktikum Berpanduan View Controller-->
         <scene sceneID="PdP-2z-E3o">
             <objects>
-                <viewController id="3ZS-sy-5Og" customClass="PraktikumBerpanduanViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PraktikumBerpanduanScene" id="3ZS-sy-5Og" customClass="PraktikumBerpanduanViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ip4-aB-r9I">
                         <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOv-zu-wuh">
-                                <rect key="frame" x="0.0" y="0.0" width="1180" height="50"/>
-                                <items>
-                                    <navigationItem title="Gerak Parabola" id="SQ9-0T-402">
-                                        <barButtonItem key="leftBarButtonItem" title="Back Btn" image="chevron.backward" catalog="system" id="7AP-A9-JhV">
-                                            <connections>
-                                                <action selector="onBackBtnPressed:" destination="3ZS-sy-5Og" id="quU-Te-qgh"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tS-Xj-gvS" customClass="TimelineView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="1180" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1180" height="50"/>
                                 <color key="backgroundColor" name="vc_side_menu"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qhI-rR-w9q"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGZ-qk-zsL">
-                                <rect key="frame" x="551.5" y="443.5" width="77" height="33"/>
+                                <rect key="frame" x="551.5" y="418.5" width="77" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Finish Lab"/>
                                 <connections>
@@ -45,15 +33,15 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-Di-B9Z" customClass="MateriView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
+                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-F6-Gjt" customClass="KontenKuisView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
+                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHf-be-Ak4" customClass="OnBoardingKuisView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
+                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGk-ft-bFl" customClass="DimOverlayView" customModule="victory" customModuleProvider="target">
@@ -93,9 +81,7 @@
                             <constraint firstItem="JGZ-qk-zsL" firstAttribute="centerX" secondItem="ip4-aB-r9I" secondAttribute="centerX" id="BUq-gv-xN9"/>
                             <constraint firstAttribute="bottom" secondItem="gdo-Di-B9Z" secondAttribute="bottom" id="Bmq-dh-Nqx"/>
                             <constraint firstItem="LHf-be-Ak4" firstAttribute="trailing" secondItem="sSJ-R5-Xfc" secondAttribute="trailing" id="DY3-Lz-3Bq"/>
-                            <constraint firstItem="XOv-zu-wuh" firstAttribute="top" secondItem="sSJ-R5-Xfc" secondAttribute="top" id="Hni-Y1-s2f"/>
                             <constraint firstItem="Tsc-pC-IdD" firstAttribute="centerX" secondItem="ip4-aB-r9I" secondAttribute="centerX" id="I1i-TL-UWk"/>
-                            <constraint firstItem="8tS-Xj-gvS" firstAttribute="top" secondItem="XOv-zu-wuh" secondAttribute="bottom" id="L7p-Pk-JgK"/>
                             <constraint firstAttribute="bottom" secondItem="LHf-be-Ak4" secondAttribute="bottom" id="MBW-11-b4R"/>
                             <constraint firstItem="8tS-Xj-gvS" firstAttribute="leading" secondItem="sSJ-R5-Xfc" secondAttribute="leading" id="Mhs-jW-hnz"/>
                             <constraint firstItem="sSJ-R5-Xfc" firstAttribute="trailing" secondItem="8tS-Xj-gvS" secondAttribute="trailing" id="NND-9m-GJY"/>
@@ -114,10 +100,9 @@
                             <constraint firstItem="8Zf-IS-3wG" firstAttribute="centerY" secondItem="ip4-aB-r9I" secondAttribute="centerY" id="dBW-fP-gAY"/>
                             <constraint firstItem="XeH-F6-Gjt" firstAttribute="trailing" secondItem="sSJ-R5-Xfc" secondAttribute="trailing" id="huK-ha-lJD"/>
                             <constraint firstAttribute="trailing" secondItem="oGk-ft-bFl" secondAttribute="trailing" id="k7e-qk-1PL"/>
-                            <constraint firstItem="XOv-zu-wuh" firstAttribute="leading" secondItem="sSJ-R5-Xfc" secondAttribute="leading" id="lMT-Ns-RiB"/>
+                            <constraint firstItem="8tS-Xj-gvS" firstAttribute="top" secondItem="sSJ-R5-Xfc" secondAttribute="top" id="mbo-d5-7yd"/>
                             <constraint firstAttribute="bottom" secondItem="XeH-F6-Gjt" secondAttribute="bottom" id="wrH-0y-wfM"/>
                             <constraint firstAttribute="bottom" secondItem="oGk-ft-bFl" secondAttribute="bottom" id="zJN-ZA-uF2"/>
-                            <constraint firstItem="XOv-zu-wuh" firstAttribute="trailing" secondItem="sSJ-R5-Xfc" secondAttribute="trailing" id="zfp-mh-hhW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -138,7 +123,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <namedColor name="vc_nav_bar">
             <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

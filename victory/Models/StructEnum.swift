@@ -54,16 +54,26 @@ struct Praktikum {
     var gambar: UIImage
     var kelas: Kelas
     var mataPelajaran: Mapel
+    var subtitleMateri: String
     var pertanyaanQuiz: QuizBrain
     var currentStep: Step = .materi
     var stepUnlockList: [Step] = [.materi]
     var stepDoneList: [Step] = []
 }
 
+struct MediaPraktikum {
+    var namaMedia: String
+    var gambarMedia: UIImage
+}
+
+struct TipePraktikum {
+    var namaTipe: String
+    var gambarTipe: UIImage
+}
+
 struct TujuanPraktikum {
     var textTujuan: String
     var iconTujuan: UIImage
-    // MARK: - INI NANTI DIDISKUIIN LAGI,PERLU PAKE ICON ATAU CUKUP DENGAN PENOMORAN AJA
 }
 
 struct AlatPraktikum {
