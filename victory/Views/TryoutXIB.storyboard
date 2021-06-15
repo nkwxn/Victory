@@ -8,20 +8,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tryout View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="XIBTryoutViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tryout menampilkan reusableview kedalam UIView container" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-UT-U0z">
+                                <rect key="frame" x="0.0" y="0.0" width="1180" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-M8-Ivx">
+                                <rect key="frame" x="0.0" y="21" width="1180" height="799"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1ag-UT-U0z" secondAttribute="trailing" id="2fh-dY-bwy"/>
+                            <constraint firstAttribute="bottom" secondItem="FCh-M8-Ivx" secondAttribute="bottom" id="5Am-5k-Frg"/>
+                            <constraint firstAttribute="trailing" secondItem="FCh-M8-Ivx" secondAttribute="trailing" id="ESe-Sn-ieC"/>
+                            <constraint firstItem="FCh-M8-Ivx" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Wwn-P1-0gx"/>
+                            <constraint firstItem="1ag-UT-U0z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YPs-UN-KSt"/>
+                            <constraint firstItem="FCh-M8-Ivx" firstAttribute="top" secondItem="1ag-UT-U0z" secondAttribute="bottom" id="ZKd-rr-M4a"/>
+                            <constraint firstItem="1ag-UT-U0z" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pH8-H6-Ncf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="FCh-M8-Ivx" id="KZS-an-DeS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="117"/>
+            <point key="canvasLocation" x="149" y="104"/>
         </scene>
     </scenes>
     <resources>

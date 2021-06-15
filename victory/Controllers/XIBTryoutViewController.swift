@@ -8,11 +8,20 @@
 import UIKit
 
 class XIBTryoutViewController: UIViewController {
-
+    @IBOutlet var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Initialize the tryout xib view
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+        let tryoutView = LabGerakParabolaView(frame: frame, noLab: nil) // noLab allowed values: 0, 1, 2, nil
+        tryoutView.delegate = self
+        containerView.addSubview(tryoutView)
     }
     
 
@@ -26,4 +35,10 @@ class XIBTryoutViewController: UIViewController {
     }
     */
 
+}
+
+extension XIBTryoutViewController: LabGerakParabolaDelegate {
+    func presentView(_ view: UIViewController, completion: (() -> Void)? = nil) {
+        self.present(view, animated: true, completion: completion)
+    }
 }

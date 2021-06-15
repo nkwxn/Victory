@@ -51,10 +51,15 @@ class LabGerakParabolaView: UIView {
             }
         }
     }
+    
+    var engine = VictoryEngine()
     var sudutLemparan = 30.0
     var massaProyektil = 50.0
     var kecepatanAwal = 100.0
     var ketinggianAwal = 0.0
+    
+    var gravitasi = 9.8
+    
     var delegate: LabGerakParabolaDelegate?
     
     init(frame: CGRect, noLab: Int? = nil) {
@@ -145,24 +150,19 @@ class LabGerakParabolaView: UIView {
                 cellMass.lblVarAmount.text = "\(cellMass.varSlider.value.rounded()) \(cellMass.variableSetting?.getUnit() ?? "")"
                 cellVelocity.lblVarAmount.text = "\(cellVelocity.varSlider.value.rounded()) \(cellVelocity.variableSetting?.getUnit() ?? "")"
                 cellHeight.lblVarAmount.text = "\(cellHeight.varSlider.value.rounded()) \(cellHeight.variableSetting?.getUnit() ?? "")"
+                
+                
             } else {
                 // Reset variabel di sebelah kiri (kecuali lks) + clear all projectiles
                 guard let editableVar = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? VariableSliderCell else { return }
                 editableVar.varSlider.setValue((editableVar.variableSetting?.getDefaultValue())!, animated: true)
                 editableVar.lblVarAmount.text = "\(editableVar.varSlider.value.rounded()) \(editableVar.variableSetting?.getUnit() ?? "")"
-                
-                /*
-                switch nomorLab {
-                case 0:
-                    <#code#>
-                case 1:
-                    <#code#>
-                case 2:
-                    <#code#>
-                default:
-                    <#code#>
-                }*/
             }
+            
+            self.sudutLemparan = Double(SliderVariable.sudutLemparan.getDefaultValue())
+            self.massaProyektil = Double(SliderVariable.massaProyektil.getDefaultValue())
+            self.kecepatanAwal = Double(SliderVariable.kecAwal.getDefaultValue())
+            self.ketinggianAwal = Double(SliderVariable.ketAwal.getDefaultValue())
             
             // Reset the sprite scene dots
             if let scene = skView.scene as? SpriteScene {

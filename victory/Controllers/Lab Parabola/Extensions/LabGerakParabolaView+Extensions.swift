@@ -170,7 +170,7 @@ extension LabGerakParabolaView: SKViewDelegate, SKSceneDelegate {
     func update(_ currentTime: TimeInterval, for scene: SKScene) {
         if let scene = scene as? SpriteScene {
             if nomorLab == nil {
-                let tableCells = variableTableView.visibleCells
+                // Update di TableView
                 guard let cellWaktu = variableTableView.cellForRow(at: IndexPath(row: 0, section: 1)),
                       let cellJarak = variableTableView.cellForRow(at: IndexPath(row: 1, section: 1)),
                       let cellTinggi = variableTableView.cellForRow(at: IndexPath(row: 2, section: 1)),
@@ -188,6 +188,12 @@ extension LabGerakParabolaView: SKViewDelegate, SKSceneDelegate {
                     cellKecepatan.detailTextLabel?.text = "0 m/s"
                     cellWaktu.detailTextLabel?.text = "\(scene.totalWaktuReal.rounded()) s"
                 }
+                
+                // Update di UIView Statistik
+                self.infoTitilTertinggi.text = "\(round(scene.jarakYMaxReal*100)/100) m"
+                self.infoTotalJangkauan.text = "\(round(scene.getJarakXMaxReal()*100)/200) m"
+                self.waktuTempuh.text = "\(scene.totalWaktuReal.rounded()) s"
+                self.waktuTitikTertinggi.text = "\(scene.totalWaktuReal.rounded() / 2) s"
             }
         }
     }
@@ -233,5 +239,33 @@ extension LabGerakParabolaView: VariableSliderDelegate {
     func sendSliderValue(from sliderValue: Float, withUnit: SliderVariable?) {
         guard let unit = withUnit?.getUnit() else { return }
         print("\(sliderValue) \(unit)")
+        
+        guard let scene = skView.scene as? SpriteScene else { return }
+        
+        switch withUnit {
+        case .sudutLemparan:
+            scene.sudutTembakScene = Double(sliderValue)
+        case .massaProyektil:
+            self.massaProyektil = Double(sliderValue)
+            
+        case .kecAwal:
+            self.kecepatanAwal = Double(sliderValue)
+            var kecAwalyey = sliderValue * 15
+            
+            var totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutLemparan, gravitasi: 9.8)
+            
+            var totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutLemparan, gravitasi: 9.8)
+            
+            if let gameScene = skView.scene as? SpriteScene {
+                gameScene.totalWaktuEngine = totalWaktuEngine
+                gameScene.kecAwalScene = kecAwalyey
+                gameScene.totalWaktuReal = totalWaktuReal
+            }
+        case .ketAwal:
+            self.ketinggianAwal = Double(sliderValue)
+            // Nice to have sih ini
+        default:
+            print("Unit not identified")
+        }
     }
 }
