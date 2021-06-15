@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
 		983396402678362B00BD24A5 /* ViewControllerKane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9833963F2678362B00BD24A5 /* ViewControllerKane.swift */; };
+		983396422678370800BD24A5 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983396412678370800BD24A5 /* SpriteScene.swift */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
@@ -45,6 +46,7 @@
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9833963F2678362B00BD24A5 /* ViewControllerKane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKane.swift; sourceTree = "<group>"; };
+		983396412678370800BD24A5 /* SpriteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				D58328AA2670B690007753E9 /* LabGerakParabolaView.swift */,
+				983396412678370800BD24A5 /* SpriteScene.swift */,
 				9833963F2678362B00BD24A5 /* ViewControllerKane.swift */,
 				D5EA421926736F830085D6A0 /* GravityPopoverViewController.swift */,
 				D58328AE2670E0D1007753E9 /* Extensions */,
@@ -350,6 +353,7 @@
 				983396402678362B00BD24A5 /* ViewControllerKane.swift in Sources */,
 				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
 				D5EA421B26736F830085D6A0 /* GravityPopoverViewController.swift in Sources */,
+				983396422678370800BD24A5 /* SpriteScene.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				D5D97CFD2671DAF200C28CDA /* rowLKSHeaderCell.swift in Sources */,
