@@ -44,19 +44,15 @@
                                     <action selector="onFinishLabBtnPressed:" destination="3ZS-sy-5Og" eventType="touchUpInside" id="yVo-eX-0vR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubl-Aq-tlL">
-                                <rect key="frame" x="541.5" y="443.5" width="97" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Finish Materi"/>
-                                <connections>
-                                    <action selector="onFinishMateriBtnPressed:" destination="3ZS-sy-5Og" eventType="touchUpInside" id="lhm-LY-amw"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-Di-B9Z" customClass="OnBoardingKuisView" customModule="victory" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-Di-B9Z" customClass="MateriView" customModule="victory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-F6-Gjt" customClass="KontenKuisView" customModule="victory" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHf-be-Ak4" customClass="OnBoardingKuisView" customModule="victory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -96,24 +92,26 @@
                             <constraint firstItem="XeH-F6-Gjt" firstAttribute="leading" secondItem="sSJ-R5-Xfc" secondAttribute="leading" id="4vx-Mc-wID"/>
                             <constraint firstItem="JGZ-qk-zsL" firstAttribute="centerX" secondItem="ip4-aB-r9I" secondAttribute="centerX" id="BUq-gv-xN9"/>
                             <constraint firstAttribute="bottom" secondItem="gdo-Di-B9Z" secondAttribute="bottom" id="Bmq-dh-Nqx"/>
+                            <constraint firstItem="LHf-be-Ak4" firstAttribute="trailing" secondItem="sSJ-R5-Xfc" secondAttribute="trailing" id="DY3-Lz-3Bq"/>
                             <constraint firstItem="XOv-zu-wuh" firstAttribute="top" secondItem="sSJ-R5-Xfc" secondAttribute="top" id="Hni-Y1-s2f"/>
                             <constraint firstItem="Tsc-pC-IdD" firstAttribute="centerX" secondItem="ip4-aB-r9I" secondAttribute="centerX" id="I1i-TL-UWk"/>
                             <constraint firstItem="8tS-Xj-gvS" firstAttribute="top" secondItem="XOv-zu-wuh" secondAttribute="bottom" id="L7p-Pk-JgK"/>
+                            <constraint firstAttribute="bottom" secondItem="LHf-be-Ak4" secondAttribute="bottom" id="MBW-11-b4R"/>
                             <constraint firstItem="8tS-Xj-gvS" firstAttribute="leading" secondItem="sSJ-R5-Xfc" secondAttribute="leading" id="Mhs-jW-hnz"/>
                             <constraint firstItem="sSJ-R5-Xfc" firstAttribute="trailing" secondItem="8tS-Xj-gvS" secondAttribute="trailing" id="NND-9m-GJY"/>
                             <constraint firstItem="JGZ-qk-zsL" firstAttribute="centerY" secondItem="gdo-Di-B9Z" secondAttribute="centerY" id="P5y-Sc-4vd"/>
                             <constraint firstItem="oGk-ft-bFl" firstAttribute="top" secondItem="ip4-aB-r9I" secondAttribute="top" id="QFV-cp-bk3"/>
                             <constraint firstItem="oGk-ft-bFl" firstAttribute="leading" secondItem="ip4-aB-r9I" secondAttribute="leading" id="RjA-ue-JEa"/>
+                            <constraint firstItem="LHf-be-Ak4" firstAttribute="top" secondItem="8tS-Xj-gvS" secondAttribute="bottom" id="TCt-LH-pAr"/>
                             <constraint firstItem="gdo-Di-B9Z" firstAttribute="trailing" secondItem="sSJ-R5-Xfc" secondAttribute="trailing" id="TU2-CB-5RK"/>
                             <constraint firstItem="8Zf-IS-3wG" firstAttribute="centerX" secondItem="ip4-aB-r9I" secondAttribute="centerX" id="V8g-3h-bz5"/>
                             <constraint firstItem="j67-e8-ffK" firstAttribute="centerY" secondItem="ip4-aB-r9I" secondAttribute="centerY" id="VT4-Yz-NkU"/>
+                            <constraint firstItem="LHf-be-Ak4" firstAttribute="leading" secondItem="sSJ-R5-Xfc" secondAttribute="leading" id="WQR-Jt-w6y"/>
                             <constraint firstItem="Tsc-pC-IdD" firstAttribute="centerY" secondItem="ip4-aB-r9I" secondAttribute="centerY" id="YW9-cS-hyP"/>
                             <constraint firstItem="XeH-F6-Gjt" firstAttribute="top" secondItem="8tS-Xj-gvS" secondAttribute="bottom" id="bMF-Cd-Hcc"/>
                             <constraint firstItem="gdo-Di-B9Z" firstAttribute="top" secondItem="8tS-Xj-gvS" secondAttribute="bottom" id="cvU-aH-y1k"/>
                             <constraint firstItem="gdo-Di-B9Z" firstAttribute="leading" secondItem="sSJ-R5-Xfc" secondAttribute="leading" id="d6J-tr-Fov"/>
                             <constraint firstItem="8Zf-IS-3wG" firstAttribute="centerY" secondItem="ip4-aB-r9I" secondAttribute="centerY" id="dBW-fP-gAY"/>
-                            <constraint firstItem="Ubl-Aq-tlL" firstAttribute="centerX" secondItem="ip4-aB-r9I" secondAttribute="centerX" id="erw-kH-vLf"/>
-                            <constraint firstItem="Ubl-Aq-tlL" firstAttribute="centerY" secondItem="gdo-Di-B9Z" secondAttribute="centerY" id="goF-wK-50k"/>
                             <constraint firstItem="XeH-F6-Gjt" firstAttribute="trailing" secondItem="sSJ-R5-Xfc" secondAttribute="trailing" id="huK-ha-lJD"/>
                             <constraint firstAttribute="trailing" secondItem="oGk-ft-bFl" secondAttribute="trailing" id="k7e-qk-1PL"/>
                             <constraint firstItem="XOv-zu-wuh" firstAttribute="leading" secondItem="sSJ-R5-Xfc" secondAttribute="leading" id="lMT-Ns-RiB"/>
@@ -125,8 +123,8 @@
                     <connections>
                         <outlet property="dimOverlayView" destination="oGk-ft-bFl" id="lrC-ri-0eR"/>
                         <outlet property="finishLabBtn" destination="JGZ-qk-zsL" id="uyZ-uX-mvW"/>
-                        <outlet property="finishMateriBtn" destination="Ubl-Aq-tlL" id="Cai-P0-gPl"/>
-                        <outlet property="onBoardingKuisView" destination="gdo-Di-B9Z" id="Sf9-KP-Bn2"/>
+                        <outlet property="materiView" destination="gdo-Di-B9Z" id="np0-f6-muF"/>
+                        <outlet property="onBoardingKuisView" destination="LHf-be-Ak4" id="bMu-9c-AkI"/>
                         <outlet property="onBoardingLabView" destination="8Zf-IS-3wG" id="vMJ-lV-rHh"/>
                         <outlet property="panduanLabView" destination="j67-e8-ffK" id="Ng6-Vm-o6m"/>
                         <outlet property="quizView" destination="XeH-F6-Gjt" id="Cqf-B7-h1y"/>

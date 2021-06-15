@@ -17,7 +17,11 @@ class KontenKuisView: UIView {
     @IBOutlet weak var optionCButton: UIButton!
     @IBOutlet weak var optionDButton: UIButton!
     @IBOutlet weak var correctAnswerLabel: UILabel!
+    @IBOutlet weak var jawabanTepatLbl: UILabel!
+    @IBOutlet weak var correctAnswerBg: RoundCornersUIView!
     @IBOutlet weak var explanationLabel: UILabel!
+    @IBOutlet weak var pembahasanLbl: UILabel!
+    @IBOutlet weak var explanationBg: RoundCornersUIView!
     @IBOutlet weak var currentPageLabel: UILabel!
     @IBOutlet weak var previousLabel: UILabel!
     @IBOutlet weak var nextLabel: UILabel!
@@ -48,7 +52,7 @@ class KontenKuisView: UIView {
     // Variables
     */
     weak var delegate: PraktikumBerpanduanViewControllerDelegate?
-    var quizBrain = QuizBrain()
+    var quizBrain = QuizBrain() // Should recieve data from PraktikumBerpanduanViewController
     var optionButtonList: [UIButton] = []
     /*
     // Init Functions
@@ -98,7 +102,11 @@ class KontenKuisView: UIView {
     }
     private func hideExplanationComponents() {
         quizChecklistImage.isHidden = true
+        jawabanTepatLbl.isHidden = true
+        correctAnswerBg.isHidden = true
         correctAnswerLabel.isHidden = true
+        pembahasanLbl.isHidden = true
+        explanationBg.isHidden = true
         explanationLabel.isHidden = true
     }
     private func setupOptionBtnsText() {

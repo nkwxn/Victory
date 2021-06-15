@@ -54,7 +54,10 @@ struct Praktikum {
     var gambar: UIImage
     var kelas: Kelas
     var mataPelajaran: Mapel
-    var pertanyaanQuiz: [Quiz]
+    var pertanyaanQuiz: QuizBrain
+    var currentStep: Step = .materi
+    var stepUnlockList: [Step] = [.materi]
+    var stepDoneList: [Step] = []
 }
 
 struct TujuanPraktikum {

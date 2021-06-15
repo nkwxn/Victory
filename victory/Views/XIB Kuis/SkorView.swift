@@ -21,8 +21,7 @@ class SkorView: UIView {
         delegate?.closeSkorView()
     }
     @IBAction func onKeluarPraktikumBtnPressed(_ sender: UIButton) {
-        // To - Do exit Praktikum (back to Mathod Page options)
-        print("keluar Praktikum")
+        delegate?.exitPraktikum()
     }
     weak var delegate: PraktikumBerpanduanViewControllerDelegate?
     /*

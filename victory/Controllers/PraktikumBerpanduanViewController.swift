@@ -8,21 +8,19 @@
 import UIKit
 
 protocol PraktikumBerpanduanViewControllerDelegate: class {
-    /*
     // Protocol for Timeline View
-    */
     func moveToPanduanView()
     func closePanduanView()
     func changeStep(to step: Step)
-    /*
     // Protocol for Kuis View
-    */
     func startKuisView()
     func showSkorView(quizBrain: QuizBrain)
     func closeSkorView()
-    /*
+    // Protocol for Skor View
+    func exitPraktikum()
+    // Protocol for Materi View
+    func showLabView()
     // Protocol for Lab View
-    */
     // To - Do Add protocol functions for Lab View
 }
 
@@ -33,54 +31,61 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     @IBOutlet weak var panduanLabView: PanduanLabView!
     @IBOutlet weak var dimOverlayView: DimOverlayView!
     @IBOutlet weak var onBoardingKuisView: OnBoardingKuisView!
+    @IBOutlet weak var materiView: MateriView!
     @IBOutlet weak var quizView: KontenKuisView!
     @IBOutlet weak var scoreView: SkorView!
-    @IBOutlet weak var finishMateriBtn: UIButton!
     @IBOutlet weak var finishLabBtn: UIButton!
     // To - Do init @IBOutlets for Lab View
     @IBAction func onBackBtnPressed(_ sender: Any) {
-        // To - Do exit Praktikum (back to Mathod Page options)
-        print("keluar Praktikum")
+        exitPraktikum()
     }
     @IBAction func onFinishLabBtnPressed(_ sender: UIButton) {
         // Simulation when all step Lab done
-        stepDoneList.append(.labOne)
-        stepDoneList.append(.labTwo)
-        stepDoneList.append(.labThree)
-        stepUnlockList.append(.kuis)
+        stepDoneList!.append(.labOne)
+        stepDoneList!.append(.labTwo)
+        stepDoneList!.append(.labThree)
+        stepUnlockList!.append(.kuis)
         changeStep(to: .kuis)
         showOnBoardingKuisView()
-    }
-    @IBAction func onFinishMateriBtnPressed(_ sender: UIButton) {
-        // Simulation when step Materi done
-        stepDoneList.append(.materi)
-        stepUnlockList.append(.labOne)
-        stepUnlockList.append(.labTwo)
-        stepUnlockList.append(.labThree)
-        finishMateriBtn.isHidden = true
-        finishLabBtn.isHidden = false
-        changeStep(to: .labOne)
-        showOnBoardingLabView()
     }
     var viewList: [UIView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewList = [timelineView, onBoardingLabView, panduanLabView, dimOverlayView,
-                    onBoardingKuisView, scoreView, quizView] // , materiView, labView
+        // Should pass data from MediaViewController via function prepSetup()
+        // But these are dummy variable inits, will be deleted soon
+        quizBrain = QuizBrain()
+        praktikum = Praktikum(nama: "Gerak Prabola", gambar: UIImage(systemName: "sun.max.fill")!,
+                              kelas: .k10, mataPelajaran: .fisika, pertanyaanQuiz: quizBrain!)
+        currentStep = praktikum?.currentStep
+        stepUnlockList = praktikum?.stepUnlockList
+        stepDoneList = praktikum?.stepDoneList
+        //
+        //
+        viewList = [timelineView, materiView, quizView, onBoardingLabView, panduanLabView, dimOverlayView,
+                    onBoardingKuisView, scoreView] // To - Do add labView
         timelineView.delegate = self
         panduanLabView.delegate = self
         onBoardingLabView.delegate = self
         onBoardingKuisView.delegate = self
         quizView.delegate = self
         scoreView.delegate = self
-        setupView()
+        materiView.delegate = self
+        scoreView.delegate = self
+        setupInitialView()
     }
     /*
     // Variables
     */
-    var currentStep: Step = .materi
-    var stepUnlockList: [Step] = [.materi]
-    var stepDoneList: [Step] = []
+    // Save data passed from MediaViewController
+    var quizBrain: QuizBrain?
+    var currentStep: Step?
+    var stepDoneList: [Step]?
+    var stepUnlockList: [Step]?
+    var praktikum: Praktikum? {
+        didSet {
+            prepSetup()
+        }
+    }
     /*
     // Delegate Functions
     */
@@ -89,39 +94,50 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         showPanduanView()
     }
     func closePanduanView() {
+        finishLabBtn.isHidden = false
         panduanLabView.isHidden = true
         dimOverlayView.isHidden = true
     }
     func changeStep(to step: Step) {
         currentStep = step
-        for unlockStep in stepUnlockList {
+        for unlockStep in stepUnlockList! {
             timelineView.setupTimelineComponentStage(step: unlockStep, isActive: false, isLocked: false)
         }
-        for doneStep in stepDoneList {
+        for doneStep in stepDoneList! {
             timelineView.setupBtnImageToDone(for: doneStep, isActive: false)
         }
-        timelineView.setupTimelineComponentStage(step: currentStep, isActive: true, isLocked: false)
-        if stepDoneList.contains(currentStep) {
-            timelineView.setupBtnImageToDone(for: currentStep, isActive: true)
+        timelineView.setupTimelineComponentStage(step: currentStep!, isActive: true, isLocked: false)
+        if stepDoneList!.contains(currentStep!) {
+            timelineView.setupBtnImageToDone(for: currentStep!, isActive: true)
         }
         changeView(for: step)
     }
     func changeView(for view: Step) {
         // To - Do change view (show - hidden) based on selected timeline's step
-        // when back to quiz use following func
+        for view in viewList[1...2] {
+            view.isHidden = true
+        }
         switch view {
+        case .materi:
+            materiView.isHidden = false
+        case .labOne:
+            print("To Lab 1 View")
+        case .labTwo:
+            print("To Lab 2 View")
+        case .labThree:
+            print("To Lab 3 View")
         case .kuis:
+            quizView.isHidden = false
             quizView.setupToLastVisitedNumberUI()
-        default:
-            return
         }
     }
     func startKuisView() {
         onBoardingKuisView.isHidden = true
+        quizView.quizBrain = self.quizBrain!
         quizView.isHidden = false
     }
     func showSkorView(quizBrain: QuizBrain) {
-        stepDoneList.append(.kuis)
+        stepDoneList!.append(.kuis)
         changeStep(to: .kuis)
         dimOverlayView.isHidden = false
         scoreView.isHidden = false
@@ -131,10 +147,28 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         dimOverlayView.isHidden = true
         scoreView.isHidden = true
     }
+    func showLabView() {
+        stepDoneList!.append(.materi)
+        stepUnlockList!.append(.labOne)
+        stepUnlockList!.append(.labTwo)
+        stepUnlockList!.append(.labThree)
+        materiView.isHidden = true
+        changeStep(to: .labOne)
+        showOnBoardingLabView()
+    }
+    func exitPraktikum() {
+        // To - Do exit to Media StoryBoard
+    }
     /*
     // Setup View Functions
     */
-    func setupView() {
+    func prepSetup() {
+//        quizBrain = praktikum?.quizBrain
+//        currentStep = praktikum?.currentStep
+//        stepUnlockList = praktikum?.stepUnlockList
+//        stepDoneList = praktikum?.stepDoneList
+    }
+    func setupInitialView() {
         setupPanduanLabView()
         setupOnboardingLabView()
         setupDimOverlayView()
@@ -142,7 +176,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         finishLabBtn.isHidden = true
         // Show - Hide XIB Component on init
         // Only show XIB Materi & Timeline  View
-        for view in viewList[1...] {
+        for view in viewList[2...] {
             view.isHidden = true
         }
     }

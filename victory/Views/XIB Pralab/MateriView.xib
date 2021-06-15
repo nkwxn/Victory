@@ -3,6 +3,7 @@
     <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,8 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MateriView" customModule="victory" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="Ced-EH-Mn3"/>
-                <outlet property="webView" destination="FfH-9s-ogQ" id="oOO-UI-Qwa"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="2AF-M6-ySK"/>
+                <outlet property="lanjutKeLabBtn" destination="9iB-3j-y9Y" id="VfW-48-ByE"/>
+                <outlet property="webView" destination="FfH-9s-ogQ" id="MxB-nJ-VXx"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,26 +23,48 @@
             <subviews>
                 <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfH-9s-ogQ">
                     <rect key="frame" x="0.0" y="0.0" width="1194" height="710"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-3j-y9Y">
+                    <rect key="frame" x="465" y="600" width="264" height="50"/>
+                    <color key="backgroundColor" name="vc_blue_active"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="WEb-PP-rc4"/>
+                        <constraint firstAttribute="width" constant="264" id="Y2E-g2-z2c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="Lanjut ke Laboratorium">
+                        <color key="titleColor" name="vc_background"/>
+                    </state>
+                    <connections>
+                        <action selector="onLanjutKeLabBtnPressed:" destination="-1" eventType="touchUpInside" id="oWW-r9-vxa"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="9iB-3j-y9Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OME-Er-2fd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9iB-3j-y9Y" secondAttribute="bottom" constant="60" id="Odf-V4-1VA"/>
                 <constraint firstItem="FfH-9s-ogQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QuI-3p-d0b"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FfH-9s-ogQ" secondAttribute="trailing" id="U98-yb-pjf"/>
                 <constraint firstItem="FfH-9s-ogQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lcv-ja-TxM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FfH-9s-ogQ" secondAttribute="bottom" id="ol1-nj-dOp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-196" y="120"/>
+            <point key="canvasLocation" x="-196.4824120603015" y="119.42446043165468"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="vc_background">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="vc_blue_active">
+            <color red="0.0" green="0.34099999070167542" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
