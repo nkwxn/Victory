@@ -34,6 +34,7 @@ class MediaViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.title = selectedPraktikum?.nama
         // Do any additional setup after loading the view.
     }
+<<<<<<< HEAD
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -53,6 +54,9 @@ class MediaViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     
+=======
+    /*
+>>>>>>> main
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

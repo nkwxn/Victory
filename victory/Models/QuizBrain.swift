@@ -1,3 +1,4 @@
+// swiftlint:disable line_length
 //
 //  QuizBrain.swift
 //  victory
@@ -7,57 +8,56 @@
 
 import UIKit
 
-struct QuizBrain {
-    
-    var questionNumber = 0
-    var score = 0
-    
-    let quiz = [
-        Question(q: "Which is the largest organ in the human body?", a: ["Heart", "Skin", "Large Intestine"], correctAnswer: "Skin", solusi: "eheeheheh")
-//        Question(q: "Five dollars is worth how many nickels?", a: ["25", "50", "100"], correctAnswer: "100"),
-//        Question(q: "What do the letters in the GMT time zone stand for?", a: ["Global Meridian Time", "Greenwich Mean Time", "General Median Time"], correctAnswer: "Greenwich Mean Time"),
-//        Question(q: "What is the French word for 'hat'?", a: ["Chapeau", "Écharpe", "Bonnet"], correctAnswer: "Chapeau"),
-//        Question(q: "In past times, what would a gentleman keep in his fob pocket?", a: ["Notebook", "Handkerchief", "Watch"], correctAnswer: "Watch"),
-//        Question(q: "How would one say goodbye in Spanish?", a: ["Au Revoir", "Adiós", "Salir"], correctAnswer: "Adiós"),
-//        Question(q: "Which of these colours is NOT featured in the logo for Google?", a: ["Green", "Orange", "Blue"], correctAnswer: "Orange"),
-//        Question(q: "What alcoholic drink is made from molasses?", a: ["Rum", "Whisky", "Gin"], correctAnswer: "Rum"),
-//        Question(q: "What type of animal was Harambe?", a: ["Panda", "Gorilla", "Crocodile"], correctAnswer: "Gorilla"),
-//        Question(q: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland"], correctAnswer: "Australia")
+class QuizBrain {
+    var questionNumber: Int
+    var totalCorrect = 0
+    var answerList: [QuizOption] = []
+    let quizList = [
+        Quiz(questionNumber: 1, question: "Dari praktikum yang kamu lakukan, apa pengaruh massa terhadap ketinggian proyektil? Semakin______massa, maka tinggi maksimum proyektil juga akan semakin ______, dan sebaliknya.", options: ["A. besar, besar", "B. besar, kecil", "C. kecil, besar", "D. tidak ada pengaruh"], correctAnswerKey: .optionD, explaination: "Sesuai dengan persamaan: y = v0 sin Θ - 1/2gt^2 sehingga dapat disimpulkan bahwa massa tidak berpengaruh pada ketinggian proyektil."),
+        Quiz(questionNumber: 2, question: "Dari praktikum yang kamu lakukan, apa pengaruh massa terhadap jarak maksimum proyektil? Semakin______massa, maka jarak maksimum yang ditempuh proyektil juga akan semakin______, dan sebaliknya.", options: ["A. besar, jauh", "B. besar, dekat", "C. kecil, jauh", "D. tidak ada pengaruh"], correctAnswerKey: .optionD, explaination: "Sesuai dengan persamaan: x = v0 cos Θ t sehingga dapat disimpulkan bahwa massa tidak berpengaruh pada jarak maksimum yang ditempuh proyektil."),
+        Quiz(questionNumber: 3, question: "Dari praktikum yang kamu lakukan, jika kecepatan awal benda makin besar maka tinggi maksimum yang ditempuh benda akan______.", options: ["A. semakin besar", "B. semakin kecil", "C. sama saja", "D. tidak dapat ditentukan"], correctAnswerKey: .optionA, explaination: "Sesuai dengan persamaan INI PERSAMAANNYA BELOM YA. Kecepatan awal berbanding lurus dengan tinggi maksimum benda, jika kecepatan awal makin besar, maka tinggi maksimum yang dicapai benda juga akan semakin besar, dan sebaliknya jika kecepatan awal semakin kecil, maka tinggi maksimum juga semakin kecil.Sehingga dapat disimpulkan bahwa semakin besar kecepatan awal benda maka tinggi maksimum yang dicapai juga akan semakin besar."),
+        Quiz(questionNumber: 4, question: "Dari praktikum yang kamu lakukan, sudut yang mempunyai jarak maksimum yang terjauh adalah______.", options: ["A. 30°", "B. 45°", "C. 60°", "D. 90°"], correctAnswerKey: .optionB, explaination: "Berdasarkan percobaan yang telah dilakukan, diketahui bahwa sudut dengan jarak maksimum adalah 45°. Dapat dibuktikan oleh persamaan: INI BELOM PERSAMAANNYA dimana nilai maksimum dari sin 2Θ  sebesar 1 dapat diperoleh dengan  sebesar  45°."),
+        Quiz(questionNumber: 5, question: "Dari praktikum yang kamu lakukan, sudut yang mempunyai tinggi maksimum tertinggi adalah______.", options: ["A. 30°", "B. 45°", "C. 60°", "D. 90°"], correctAnswerKey: .optionD, explaination: "Berdasarkan percobaan yang telah dilakukan, diketahui bahwa sudut dengan ketinggian maksimum adalah 90°. Dapat dibuktikan dengan persamaan: dimana nilai maksimum dari sin kuadrat Θ sebesar 1 dapat diperoleh dengan  sebesar 90°.")
     ]
-    
+    init() {
+        questionNumber = 1
+    }
+    /*
+    // Struct Functions
+    */
+    func getQuiz() -> Quiz {
+        return quizList[questionNumber - 1]
+    }
+    func getTotalQuestion() -> Int {
+        return quizList.count
+    }
     func getQuestionText() -> String {
-        return quiz[questionNumber].text
+        return quizList[questionNumber - 1].question
     }
-    
-    //Need a way of fetching the answer choices.
-    func getAnswers() -> [String] {
-        return quiz[questionNumber].answers
+    func getCorrectAnswerKey() -> QuizOption {
+        return quizList[questionNumber - 1].correctAnswerKey
     }
-    
-    func getProgress() -> Float {
-        return Float(questionNumber) / Float(quiz.count)
+    func getCorrectAnswer() -> String {
+        let index = quizList[questionNumber - 1].correctAnswerKey.getIndex()
+        return quizList[questionNumber - 1].options[index]
     }
-    
-    mutating func getScore() -> Int {
-        return score
+    func getExplanation() -> String {
+        return quizList[questionNumber - 1].explaination
     }
-    
-     mutating func nextQuestion() {
-        
-        if questionNumber + 1 < quiz.count {
-            questionNumber += 1
-        } else {
-            questionNumber = 0
-        }
+    func getOptions() -> [String] {
+        return quizList[questionNumber - 1].options
     }
-    
-    mutating func checkAnswer(userAnswer: String) -> Bool {
-        //Need to change answer to rightAnswer here.
-        if userAnswer == quiz[questionNumber].rightAnswer {
-            score += 1
-            return true
-        } else {
-            return false
-        }
+    func getAnswer() -> QuizOption {
+        return answerList[questionNumber - 1]
+    }
+    func getTotalAnsweredQuestion() -> Int {
+        return answerList.count
+    }
+    func setQuestionNumber(by number: Int) {
+        questionNumber += number
+    }
+    func checkAnswer(selectedAnswer: QuizOption) -> Bool {
+        let correctAnswer = quizList[questionNumber - 1].correctAnswerKey
+        return (correctAnswer == selectedAnswer ? true : false)
     }
 }

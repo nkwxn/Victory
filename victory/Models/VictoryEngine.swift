@@ -58,11 +58,9 @@ class VictoryEngine{
     func kecepatanYDariSudut(sudutTembak: Double, kecepatanAwal: Float) -> CGFloat {
         return CGFloat(kecepatanAwal * Float(__sinpi(sudutTembak/180)))
     }
-    
     func sudutDariKecepatanAwalY(kecepatanAwal: Float, kecepatanAwalY: Float) -> Float {
         return asin(kecepatanAwalY/kecepatanAwal)*180/Float.pi
     }
-    
     func sudutDariKecepatanAwalX(kecepatanAwal: Float, kecepatanAwalX: Float) -> Float {
         return acos(kecepatanAwalX/kecepatanAwal)*180/Float.pi
     }
@@ -70,7 +68,6 @@ class VictoryEngine{
     func titikTertinggiDariKecepatanAwal(kecepatanAwal: Float, sudutTembak: Double, gravitasi: Float) -> Float {
         return (pow(kecepatanAwal, 2) * pow(Float(__sinpi(sudutTembak/180)), 2))/(2*gravitasi)
     }
-    
     func titikTertinggiDariKecepatanAwalY(kecepatanAwalY: Float, gravitasi: Float) -> Float {
         return (pow(kecepatanAwalY, 2))/(2*gravitasi)
     }
@@ -87,4 +84,3 @@ class VictoryEngine{
         return 2 * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / gravitasi
     }
 }
-

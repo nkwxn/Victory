@@ -7,12 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3031644D26720C660085E518 /* OnBoardingLabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3031644C26720C660085E518 /* OnBoardingLabView.xib */; };
+		30316478267239480085E518 /* OnBoardingLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30316477267239480085E518 /* OnBoardingLabView.swift */; };
+		3031647C26724CD20085E518 /* PanduanLabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3031647B26724CD20085E518 /* PanduanLabView.xib */; };
+		3031647F26724CDF0085E518 /* PanduanLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031647E26724CDF0085E518 /* PanduanLabView.swift */; };
+		3031648326724E360085E518 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031648226724E360085E518 /* Constants.swift */; };
+		3031648A267256860085E518 /* PanduanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30316488267256860085E518 /* PanduanTableViewCell.swift */; };
+		3031648B267256860085E518 /* PanduanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30316489267256860085E518 /* PanduanTableViewCell.xib */; };
+		303164AC26735B460085E518 /* MateriView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303164AB26735B460085E518 /* MateriView.xib */; };
+		303164AF26735B560085E518 /* MateriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303164AE26735B560085E518 /* MateriView.swift */; };
+		3072ABDC2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */; };
+		307BEC9626748B7000948951 /* DimOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307BEC9526748B7000948951 /* DimOverlayView.xib */; };
+		307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BEC9826748C5E00948951 /* DimOverlayView.swift */; };
+		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
 		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
+<<<<<<< HEAD
 		5D6B5BA42671B71B00B9D1C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6B5BA32671B71B00B9D1C2 /* Constants.swift */; };
 		5D79F3FE26784B3A008EB592 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79F3FD26784B3A008EB592 /* CustomAlert.swift */; };
 		5DCDFD842670AF96001F6B64 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCDFD822670AF96001F6B64 /* GeneralCollectionViewCell.swift */; };
 		5DCDFD852670AF96001F6B64 /* GeneralCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCDFD832670AF96001F6B64 /* GeneralCollectionViewCell.xib */; };
+=======
+		30ACD4C6267725FF00C9F62E /* KontenKuisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACD4C0267725FF00C9F62E /* KontenKuisView.swift */; };
+		30ACD4C7267725FF00C9F62E /* SkorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ACD4C1267725FF00C9F62E /* SkorView.xib */; };
+		30ACD4C8267725FF00C9F62E /* KontenKuisView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ACD4C2267725FF00C9F62E /* KontenKuisView.xib */; };
+		30ACD4C9267725FF00C9F62E /* OnBoardingKuisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACD4C3267725FF00C9F62E /* OnBoardingKuisView.swift */; };
+		30ACD4CA267725FF00C9F62E /* OnBoardingKuisView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ACD4C4267725FF00C9F62E /* OnBoardingKuisView.xib */; };
+		30ACD4CB267725FF00C9F62E /* SkorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACD4C5267725FF00C9F62E /* SkorView.swift */; };
+		30B8DE612670E005002DEC0C /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8DE5F2670E005002DEC0C /* TimelineView.swift */; };
+>>>>>>> main
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
@@ -32,12 +55,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3031644C26720C660085E518 /* OnBoardingLabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingLabView.xib; sourceTree = "<group>"; };
+		30316477267239480085E518 /* OnBoardingLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingLabView.swift; sourceTree = "<group>"; };
+		3031647B26724CD20085E518 /* PanduanLabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanduanLabView.xib; sourceTree = "<group>"; };
+		3031647E26724CDF0085E518 /* PanduanLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanduanLabView.swift; sourceTree = "<group>"; };
+		3031648226724E360085E518 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30316488267256860085E518 /* PanduanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanduanTableViewCell.swift; sourceTree = "<group>"; };
+		30316489267256860085E518 /* PanduanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanduanTableViewCell.xib; sourceTree = "<group>"; };
+		303164AB26735B460085E518 /* MateriView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateriView.xib; sourceTree = "<group>"; };
+		303164AE26735B560085E518 /* MateriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriView.swift; sourceTree = "<group>"; };
+		3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraktikumBerpanduanViewController.swift; sourceTree = "<group>"; };
+		307BEC9526748B7000948951 /* DimOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimOverlayView.xib; sourceTree = "<group>"; };
+		307BEC9826748C5E00948951 /* DimOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimOverlayView.swift; sourceTree = "<group>"; };
+		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		5D6B5BA32671B71B00B9D1C2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D79F3FD26784B3A008EB592 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		5DCDFD822670AF96001F6B64 /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
 		5DCDFD832670AF96001F6B64 /* GeneralCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralCollectionViewCell.xib; sourceTree = "<group>"; };
+=======
+		30ACD4C0267725FF00C9F62E /* KontenKuisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KontenKuisView.swift; sourceTree = "<group>"; };
+		30ACD4C1267725FF00C9F62E /* SkorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkorView.xib; sourceTree = "<group>"; };
+		30ACD4C2267725FF00C9F62E /* KontenKuisView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KontenKuisView.xib; sourceTree = "<group>"; };
+		30ACD4C3267725FF00C9F62E /* OnBoardingKuisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingKuisView.swift; sourceTree = "<group>"; };
+		30ACD4C4267725FF00C9F62E /* OnBoardingKuisView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingKuisView.xib; sourceTree = "<group>"; };
+		30ACD4C5267725FF00C9F62E /* SkorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkorView.swift; sourceTree = "<group>"; };
+		30B8DE5F2670E005002DEC0C /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+>>>>>>> main
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D540E8FC266F6E9600FACF72 /* WebKitView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebKitView; sourceTree = "<group>"; };
@@ -69,10 +115,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3031648126724E270085E518 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3031648226724E360085E518 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		3099E73C2670D08600B44701 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				5D6B5BA22671B70500B9D1C2 /* Constants */,
+=======
+				3031648126724E270085E518 /* Constants */,
+>>>>>>> main
 				3099E73D2670D0B600B44701 /* Extensions */,
 			);
 			path = Helpers;
@@ -86,12 +144,45 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		5D6B5BA22671B70500B9D1C2 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				5D6B5BA32671B71B00B9D1C2 /* Constants.swift */,
 			);
 			path = Constants;
+=======
+		30ACD4BF267725FF00C9F62E /* XIB Kuis */ = {
+			isa = PBXGroup;
+			children = (
+				30ACD4C0267725FF00C9F62E /* KontenKuisView.swift */,
+				30ACD4C2267725FF00C9F62E /* KontenKuisView.xib */,
+				30ACD4C3267725FF00C9F62E /* OnBoardingKuisView.swift */,
+				30ACD4C4267725FF00C9F62E /* OnBoardingKuisView.xib */,
+				30ACD4C5267725FF00C9F62E /* SkorView.swift */,
+				30ACD4C1267725FF00C9F62E /* SkorView.xib */,
+			);
+			path = "XIB Kuis";
+			sourceTree = "<group>";
+		};
+		30B8DE5D2670DFE8002DEC0C /* XIB Pralab */ = {
+			isa = PBXGroup;
+			children = (
+				308E6F9926712AF600D6A45D /* TimelineView.xib */,
+				30B8DE5F2670E005002DEC0C /* TimelineView.swift */,
+				3031644C26720C660085E518 /* OnBoardingLabView.xib */,
+				30316477267239480085E518 /* OnBoardingLabView.swift */,
+				3031647B26724CD20085E518 /* PanduanLabView.xib */,
+				3031647E26724CDF0085E518 /* PanduanLabView.swift */,
+				30316489267256860085E518 /* PanduanTableViewCell.xib */,
+				30316488267256860085E518 /* PanduanTableViewCell.swift */,
+				303164AB26735B460085E518 /* MateriView.xib */,
+				303164AE26735B560085E518 /* MateriView.swift */,
+				307BEC9526748B7000948951 /* DimOverlayView.xib */,
+				307BEC9826748C5E00948951 /* DimOverlayView.swift */,
+			);
+			path = "XIB Pralab";
+>>>>>>> main
 			sourceTree = "<group>";
 		};
 		D583289926709111007753E9 /* Main Appearance */ = {
@@ -167,6 +258,8 @@
 		D5B0D60E26678D0B0027AEF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30ACD4BF267725FF00C9F62E /* XIB Kuis */,
+				30B8DE5D2670DFE8002DEC0C /* XIB Pralab */,
 				D540E8FC266F6E9600FACF72 /* WebKitView */,
 				D583289926709111007753E9 /* Main Appearance */,
 				D583289F2670935D007753E9 /* XIB Container Praktikum */,
@@ -181,6 +274,7 @@
 			children = (
 				D583289A26709167007753E9 /* Main Appearance */,
 				D58328A626709527007753E9 /* XIBTryoutViewController.swift */,
+				3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,6 +299,7 @@
 				D5983E142665D6AC00C199EA /* Sources */,
 				D5983E152665D6AC00C199EA /* Frameworks */,
 				D5983E162665D6AC00C199EA /* Resources */,
+				30ACD4CF26772F9500C9F62E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,11 +348,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */,
+				3031648B267256860085E518 /* PanduanTableViewCell.xib in Resources */,
+				307BEC9626748B7000948951 /* DimOverlayView.xib in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
+<<<<<<< HEAD
 				5DCDFD852670AF96001F6B64 /* GeneralCollectionViewCell.xib in Resources */,
+=======
+				30ACD4C7267725FF00C9F62E /* SkorView.xib in Resources */,
+				303164AC26735B460085E518 /* MateriView.xib in Resources */,
+				3031647C26724CD20085E518 /* PanduanLabView.xib in Resources */,
+				3031644D26720C660085E518 /* OnBoardingLabView.xib in Resources */,
+				30ACD4C8267725FF00C9F62E /* KontenKuisView.xib in Resources */,
+				30ACD4CA267725FF00C9F62E /* OnBoardingKuisView.xib in Resources */,
+>>>>>>> main
 				D58328A52670948A007753E9 /* TryoutXIB.storyboard in Resources */,
 				D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */,
+				308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */,
 				3099E7212670C63200B44701 /* Colors.xcassets in Resources */,
 				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
@@ -266,20 +373,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30ACD4CF26772F9500C9F62E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D5983E142665D6AC00C199EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3031648A267256860085E518 /* PanduanTableViewCell.swift in Sources */,
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
+				30ACD4CB267725FF00C9F62E /* SkorView.swift in Sources */,
+				3031647F26724CDF0085E518 /* PanduanLabView.swift in Sources */,
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
+				307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */,
+				30ACD4C6267725FF00C9F62E /* KontenKuisView.swift in Sources */,
 				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
+<<<<<<< HEAD
 				5DCDFD842670AF96001F6B64 /* GeneralCollectionViewCell.swift in Sources */,
+=======
+				30B8DE612670E005002DEC0C /* TimelineView.swift in Sources */,
+>>>>>>> main
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
+				303164AF26735B560085E518 /* MateriView.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
 				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
+				30ACD4C9267725FF00C9F62E /* OnBoardingKuisView.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
+				30316478267239480085E518 /* OnBoardingLabView.swift in Sources */,
+				3031648326724E360085E518 /* Constants.swift in Sources */,
+				3072ABDC2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift in Sources */,
 				3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 				5D79F3FE26784B3A008EB592 /* CustomAlert.swift in Sources */,

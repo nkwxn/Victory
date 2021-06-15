@@ -32,6 +32,7 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.materiCollectionView.register(nib, forCellWithReuseIdentifier: "generalCollectionCell")
         // Do any additional setup after loading the view.
     }
+<<<<<<< HEAD
     
     @objc func getNotified(_ object: Notification) {
         filteredPraktikum = []
@@ -98,6 +99,9 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
         return cell
     }
     
+=======
+    /*
+>>>>>>> main
     // MARK: - Navigation
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
