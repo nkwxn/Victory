@@ -125,17 +125,37 @@ class VictoryEngine{
         return kecepatanAwal * Float(__sinpi(sudutTembak/180)) / -gravitasi
     }
     
-    func waktuUntukJarakTerjauhEngine(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
-        print("ini gravitasi dari engine \(-gravitasiEngine)")
-        print("ini gravitasi biasa \(-gravitasi * 150)")
-        print("ini total waktu biasa \(2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi * 150))")
-        print("ini total waktu engine \(2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasiEngine))")
-        return 2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi * 150)
+//    func waktuUntukJarakTerjauhEngine(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
+//        return 2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi * 150)
+//    }
+    
+    func waktuUntukJarakTerjauhEngine(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float, ketinggian: Float) -> Float{
+        if ketinggian == 0 {
+            return 2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi * 150)
+        } else {
+            //referensi https://ftp.unpad.ac.id/bse/Kurikulum_2006/11_SMA/Praktis_belajar_fisika_SMA_XI_IPA_Aip_S_dkk.pdf
+            let komponenNonQuadratic = kecepatanYAwalEngine(sudutTembak: sudutTembak, kecepatanAwal: kecepatanAwal)
+            let komponenQuadratic = 0.5 * gravitasi * 150 //emg pengen nilainya minus
+            
+            return Float(quadraticTimeSolver(quadraticValue: komponenQuadratic, nonQuadraticValue: Float(komponenNonQuadratic), constantValue: ketinggian))
+        }
     }
     
-    func waktuUntukJarakTerjauhReal(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
-        return 2 * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi)
+    func waktuUntukJarakTerjauhReal(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float, ketinggian: Float) -> Float{
+        if ketinggian == 0 {
+            return 2 * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi)
+        } else {
+            //referensi https://ftp.unpad.ac.id/bse/Kurikulum_2006/11_SMA/Praktis_belajar_fisika_SMA_XI_IPA_Aip_S_dkk.pdf
+            let komponenNonQuadratic = kecepatanYAwalReal(sudutTembak: sudutTembak, kecepatanAwal: kecepatanAwal)
+            let komponenQuadratic = 0.5 * gravitasi //emg pengen nilainya minus
+            
+            return Float(quadraticTimeSolver(quadraticValue: komponenQuadratic, nonQuadraticValue: Float(komponenNonQuadratic), constantValue: ketinggian))
+        }
     }
+    
+//    func waktuUntukJarakTerjauhReal(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
+//        return 2 * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi)
+//    }
     
     
     // MARK: - FUNGSI TERHADAP WAKTU

@@ -63,10 +63,17 @@ class SpriteScene: SKScene {
     var kecTotal : Float = 0
     var kecepatanXReal : Float = 0
     var kecepatanYreal : Float = 0
+    var ketinggianReal : Float = 0
+    var ketinggianEngine : Float = 0
     
     var initialX : CGFloat = 0
     var initialY : CGFloat = 0
     
+    
+    override func didEvaluateActions() {
+        super.didEvaluateActions()
+        physicsWorld.gravity = CGVector(dx: 0, dy: CGFloat(gravitasiVektor))
+    }
     override func didSimulatePhysics() {
         super.didSimulatePhysics()
         player.position = CGPoint(x: initialX, y: initialY)
@@ -122,13 +129,17 @@ class SpriteScene: SKScene {
         perpindahanXDalamPoin = perpindahanX / poinKeMeterDibagi
         jarakXMaxEngine = Float(engineSK.xProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuEngine))
         jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene,waktu: totalWaktuReal))
-        jarakYMaxReal = Float(engineSK.yProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: 0.5 * totalWaktuReal, gravitasi: gravitasiVektor))
+        
+        
+//        //otwapos
+//        jarakYMaxReal = Float(engineSK.yProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: 0.5 * totalWaktuReal, gravitasi: gravitasiVektor))
         
         var rasioXEngine = perpindahanX/jarakXMaxEngine
         
         if jarakXRealtime <= jarakXMaxReal {
             jarakXRealtime = rasioXEngine * jarakXMaxReal
             waktuRealTime = rasioXEngine * totalWaktuReal
+            print(waktuRealTime)
             
             kecepatanXReal = Float(engineSK.kecepatanXAwalReal(sudutTembak: sudutTembakScene, kecepatanAwal: kecAwalScene))
             kecepatanYreal = Float(engineSK.kecepatanY(sudutTembak: sudutTembakScene, kecepatanAwal: kecAwalScene, waktu: waktuRealTime, gravitasi: gravitasiVektor))
@@ -141,7 +152,7 @@ class SpriteScene: SKScene {
                 let bedanya = rasioXEngine - 0.5
                 rasioXEngine = 0.5 - bedanya
             }
-            jarakYRealtime = 2 * rasioXEngine * jarakYMaxReal
+            jarakYRealtime = Float(engineSK.yProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: waktuRealTime, gravitasi: gravitasiVektor))
         }
 
 //        player.size = CGSize(width: currentProjectile?.physicsBody?.velocity.dx ?? 100 , height: currentProjectile?.physicsBody?.velocity.dy ?? 100)
@@ -177,8 +188,8 @@ class SpriteScene: SKScene {
         
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 210, left: 0, bottom: 0, right: 0)))
         
-        totalWaktuEngine = engineSK.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor )
-        totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor)
+        totalWaktuEngine = engineSK.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine )
+        totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
         
         
         //        print("ini tinggi \(scene?.size.height), ini panjang \(scene?.size.width)")
@@ -195,7 +206,7 @@ class SpriteScene: SKScene {
         
     }
     
-    func resetLab() {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for node in nodeArrayDeletable {
             node.removeFromParent()
         }
@@ -205,6 +216,8 @@ class SpriteScene: SKScene {
             
         }
         index = 0
+        
+        print("aw kepencet -----------------------------------------")
     }
     
     func shootStraight(kecAwal: Float) {
