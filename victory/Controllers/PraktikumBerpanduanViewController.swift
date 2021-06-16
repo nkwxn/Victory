@@ -53,7 +53,6 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         super.viewDidLoad()
         // Should pass data from MediaViewController via function prepSetup()
         // But these are dummy variable inits, will be deleted soon
-        self.navigationItem.largeTitleDisplayMode = .never
             
         quizBrain = QuizBrain()
         praktikum = Praktikum(nama: "Gerak Prabola", gambar: UIImage(systemName: "sun.max.fill")!,

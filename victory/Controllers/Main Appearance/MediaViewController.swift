@@ -85,20 +85,26 @@ class MediaViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func moveToTanpaPanduan() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "PraktikumTanpaPanduan", bundle: nil)
-        let destVC = storyBoard.instantiateViewController(withIdentifier: "PraktikumTanpaPanduanScene") as! PraktikumTanpaPanduanViewController
-        destVC.praktikum = self.selectedPraktikum
-        
-        self.navigationController?.pushViewController(destVC, animated: true)
+        self.performSegue(withIdentifier: "moveToTanpaPanduan", sender: self)
         print ("move to tanpa panduan")
     }
     
     func moveToDenganPanduan() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "PraktikumBerpanduan", bundle: nil)
-        let destVC = storyBoard.instantiateViewController(withIdentifier: "PraktikumBerpanduanScene") as! PraktikumBerpanduanViewController
-        destVC.praktikum = self.selectedPraktikum
-        
-        self.navigationController?.pushViewController(destVC, animated: true)
+        self.performSegue(withIdentifier: "moveToDenganPanduan", sender: self)
         print ("move to dengan panduan")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "moveToTanpaPanduan":
+            let tanpaPanduan = segue.destination as! PraktikumTanpaPanduanViewController
+            tanpaPanduan.praktikum = self.selectedPraktikum
+        case "moveToDenganPanduan":
+            print("Move")
+            let berpanduan = segue.destination as! PraktikumBerpanduanViewController
+            berpanduan.praktikum = self.selectedPraktikum
+        default:
+            print("Segue unavailable")
+        }
     }
 }

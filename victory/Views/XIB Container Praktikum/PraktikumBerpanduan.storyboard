@@ -105,6 +105,7 @@
                             <constraint firstAttribute="bottom" secondItem="oGk-ft-bFl" secondAttribute="bottom" id="zJN-ZA-uF2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="b1K-P3-bQD"/>
                     <connections>
                         <outlet property="dimOverlayView" destination="oGk-ft-bFl" id="lrC-ri-0eR"/>
                         <outlet property="finishLabBtn" destination="JGZ-qk-zsL" id="uyZ-uX-mvW"/>

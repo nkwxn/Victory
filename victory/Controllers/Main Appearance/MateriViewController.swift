@@ -108,10 +108,13 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
             destVC.selectedPraktikum = self.praktikum[indexPath.row]
             
             self.navigationController?.pushViewController(destVC, animated: true)
-            self.splitViewController?.hide(UISplitViewController.Column.primary)
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.splitViewController?.hide(UISplitViewController.Column.primary)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
