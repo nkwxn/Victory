@@ -95,19 +95,14 @@ class KontenKuisView: UIView {
             explanationLabel.text = quizBrain.getExplanation()
         }
     }
-    private func showExplanationComponents() {
-        quizChecklistImage.isHidden = false
-        correctAnswerLabel.isHidden = false
-        explanationLabel.isHidden = false
-    }
-    private func hideExplanationComponents() {
-        quizChecklistImage.isHidden = true
-        jawabanTepatLbl.isHidden = true
-        correctAnswerBg.isHidden = true
-        correctAnswerLabel.isHidden = true
-        pembahasanLbl.isHidden = true
-        explanationBg.isHidden = true
-        explanationLabel.isHidden = true
+    private func showHideExplanationComponent(hidden: Bool) {
+        quizChecklistImage.isHidden = hidden
+        jawabanTepatLbl.isHidden = hidden
+        correctAnswerBg.isHidden = hidden
+        correctAnswerLabel.isHidden = hidden
+        pembahasanLbl.isHidden = hidden
+        explanationBg.isHidden = hidden
+        explanationLabel.isHidden = hidden
     }
     private func setupOptionBtnsText() {
         for (index, button) in optionButtonList.enumerated() {
@@ -164,7 +159,7 @@ class KontenKuisView: UIView {
         let correctAnswer = quizBrain.getCorrectAnswerKey()
         disableOptionButtons()
         resetOptionBtnsColor()
-        showExplanationComponents()
+        showHideExplanationComponent(hidden: false)
         setupQuizComponentsText(isPembahasan: true)
         setupOptionBtnsText()
         setupToolBarUI(isPembahasan: true)
@@ -187,7 +182,7 @@ class KontenKuisView: UIView {
     private func setupToDefaultUI() {
         enableOptionButtons()
         resetOptionBtnsColor()
-        hideExplanationComponents()
+        showHideExplanationComponent(hidden: true)
         setupQuizComponentsText(isPembahasan: false)
         setupOptionBtnsText()
         setupToolBarUI(isPembahasan: false)

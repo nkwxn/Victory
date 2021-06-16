@@ -160,6 +160,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     func exitPraktikum() {
         // To - Do exit to Media StoryBoard
+        self.navigationController?.popViewController(animated: true)
     }
     /*
     // Setup View Functions
@@ -188,6 +189,13 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     func setupDimOverlayView() {
         dimOverlayView.alpha = 0.6
+        
+        /*
+        let currentWindow: UIWindow? = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+        
+        dimOverlayView.frame = self.view.bounds
+        currentWindow?.addSubview(dimOverlayView)
+        */
     }
     func setupPanduanLabView() {
         panduanLabView.layer.cornerRadius = 13
