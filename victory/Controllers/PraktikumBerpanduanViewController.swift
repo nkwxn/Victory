@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PraktikumBerpanduanViewControllerDelegate: class {
+protocol PraktikumBerpanduanViewControllerDelegate: AnyObject {
     // Protocol for Timeline View
     func moveToPanduanView()
     func closePanduanView()
@@ -28,6 +28,10 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
 
     @IBOutlet weak var timelineView: TimelineView!
     @IBOutlet weak var onBoardingLabView: OnBoardingLabView!
+    @IBOutlet weak var praktikum1View: UIView!
+    @IBOutlet weak var praktikum2View: UIView!
+    @IBOutlet weak var praktikum3View: UIView!
+    
     @IBOutlet weak var panduanLabView: PanduanLabView!
     @IBOutlet weak var dimOverlayView: DimOverlayView!
     @IBOutlet weak var onBoardingKuisView: OnBoardingKuisView!
@@ -36,9 +40,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     @IBOutlet weak var scoreView: SkorView!
     @IBOutlet weak var finishLabBtn: UIButton!
     // To - Do init @IBOutlets for Lab View
-    @IBAction func onBackBtnPressed(_ sender: Any) {
-        exitPraktikum()
-    }
+
     @IBAction func onFinishLabBtnPressed(_ sender: UIButton) {
         // Simulation when all step Lab done
         stepDoneList!.append(.labOne)
@@ -48,6 +50,11 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         changeStep(to: .kuis)
         showOnBoardingKuisView()
     }
+    
+    func labFinished() {
+        stepUnlockList!.append(.kuis)
+    }
+    
     var viewList: [UIView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +69,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         stepDoneList = praktikum?.stepDoneList
         //
         //
-        viewList = [timelineView, materiView, quizView, onBoardingLabView, panduanLabView, dimOverlayView,
+        viewList = [timelineView, materiView, quizView, praktikum1View, praktikum2View, praktikum3View, onBoardingLabView, panduanLabView, dimOverlayView,
                     onBoardingKuisView, scoreView] // To - Do add labView
         timelineView.delegate = self
         panduanLabView.delegate = self
@@ -123,10 +130,19 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
             materiView.isHidden = false
         case .labOne:
             print("To Lab 1 View")
+            praktikum1View.isHidden = false
+            praktikum2View.isHidden = true
+            praktikum3View.isHidden = true
         case .labTwo:
             print("To Lab 2 View")
+            praktikum1View.isHidden = true
+            praktikum2View.isHidden = false
+            praktikum3View.isHidden = true
         case .labThree:
             print("To Lab 3 View")
+            praktikum1View.isHidden = true
+            praktikum2View.isHidden = true
+            praktikum3View.isHidden = false
         case .kuis:
             quizView.isHidden = false
             quizView.setupToLastVisitedNumberUI()
