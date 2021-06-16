@@ -177,20 +177,22 @@ extension LabGerakParabolaView: SKViewDelegate, SKSceneDelegate {
                       let cellKecepatan = variableTableView.cellForRow(at: IndexPath(row: 3, section: 1))
                 else { return }
                 
-                if scene.jarakXRealtime < scene.jarakXMaxReal {
-                    cellJarak.detailTextLabel?.text = "\(scene.getJarakXRealtime().rounded()) m"
-                    cellTinggi.detailTextLabel?.text = "\(scene.getJarakYRealtime().rounded()) m"
-                    cellKecepatan.detailTextLabel?.text = "0 m/s"
-                    cellWaktu.detailTextLabel?.text = "\(scene.getWaktuRealtime().rounded()) s"
-                } else {
-                    cellJarak.detailTextLabel?.text = "\(scene.jarakXMaxReal.rounded()) m"
-                    cellTinggi.detailTextLabel?.text = "0.0 m"
-                    cellKecepatan.detailTextLabel?.text = "0 m/s"
-                    cellWaktu.detailTextLabel?.text = "\(scene.totalWaktuReal.rounded()) s"
+                if timeMasterClicked == false {
+                    if scene.jarakXRealtime < scene.jarakXMaxReal {
+                        cellJarak.detailTextLabel?.text = "\(scene.getJarakXRealtime().rounded()) m"
+                        cellTinggi.detailTextLabel?.text = "\(scene.getJarakYRealtime().rounded()) m"
+                        cellKecepatan.detailTextLabel?.text = "0 m/s"
+                        cellWaktu.detailTextLabel?.text = "\(scene.getWaktuRealtime().rounded()) s"
+                    } else {
+                        cellJarak.detailTextLabel?.text = "\(scene.jarakXMaxReal.rounded()) m"
+                        cellTinggi.detailTextLabel?.text = "0.0 m"
+                        cellKecepatan.detailTextLabel?.text = "0 m/s"
+                        cellWaktu.detailTextLabel?.text = "\(scene.totalWaktuReal.rounded()) s"
+                    }
                 }
                 
                 // Update di UIView Statistik
-                self.infoTitilTertinggi.text = "\(round(scene.jarakYMaxReal*100)/100) m"
+                self.infoTitikTertinggi.text = "\(round(scene.jarakYMaxReal*100)/100) m"
                 self.infoTotalJangkauan.text = "\(round(scene.getJarakXMaxReal()*100)/200) m"
                 self.waktuTempuh.text = "\(scene.totalWaktuReal.rounded()) s"
                 self.waktuTitikTertinggi.text = "\(scene.totalWaktuReal.rounded() / 2) s"
@@ -236,6 +238,11 @@ class CustomClearTabl: UITableViewCell {
 
 // MARK: - Delegate untuk perubahan value pada slider (GUNAKAN UNTUK MEMANIPULASI PHYSICS BODY PADA SKSCENE!)
 extension LabGerakParabolaView: VariableSliderDelegate {
+    // MARK: - variabel sementara taro sini dlu yaa, ntar baru rapihin
+    
+    
+    
+    
     func sendSliderValue(from sliderValue: Float, withUnit: SliderVariable?) {
         guard let unit = withUnit?.getUnit() else { return }
         print("\(sliderValue) \(unit)")
@@ -243,27 +250,50 @@ extension LabGerakParabolaView: VariableSliderDelegate {
         guard let scene = skView.scene as? SpriteScene else { return }
         
         switch withUnit {
+        
         case .sudutLemparan:
-            scene.sudutTembakScene = Double(sliderValue)
+            sudutFirstDummy = Double(sliderValue)
+                    if sudutFirstDummy < 90 {
+                        sudutLemparan = sudutFirstDummy
+                    } else {
+                        sudutLemparan = 89.99999
+                    }
+            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
+            
+            scene.sudutTembakScene = sudutLemparan
+            scene.totalWaktuEngine = totalWaktuEngine
+            scene.totalWaktuReal = totalWaktuReal
+            
         case .massaProyektil:
             self.massaProyektil = Double(sliderValue)
             
         case .kecAwal:
             self.kecepatanAwal = Double(sliderValue)
-            var kecAwalyey = sliderValue * 15
+            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
+
+            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
             
-            var totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutLemparan, gravitasi: 9.8)
+          
+                scene.totalWaktuEngine = totalWaktuEngine
+                scene.kecAwalScene = Float(kecepatanAwal)
+                scene.totalWaktuReal = totalWaktuReal
             
-            var totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutLemparan, gravitasi: 9.8)
-            
-            if let gameScene = skView.scene as? SpriteScene {
-                gameScene.totalWaktuEngine = totalWaktuEngine
-                gameScene.kecAwalScene = kecAwalyey
-                gameScene.totalWaktuReal = totalWaktuReal
-            }
         case .ketAwal:
             self.ketinggianAwal = Double(sliderValue)
-            // Nice to have sih ini
+            ketinggianReal = sliderValue
+            ketinggianEngine = sliderValue * 50
+            
+            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
+            
+            scene.initialY = scene.size.height * 0.5 + CGFloat(ketinggianEngine)
+            scene.totalWaktuEngine = totalWaktuEngine
+            scene.totalWaktuReal = totalWaktuReal
+            scene.ketinggianReal = ketinggianReal
+            scene.ketinggianEngine = ketinggianEngine
+            
+           
         default:
             print("Unit not identified")
         }

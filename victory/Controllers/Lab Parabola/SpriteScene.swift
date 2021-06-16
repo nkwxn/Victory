@@ -206,7 +206,7 @@ class SpriteScene: SKScene {
         
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func resetLab() {
         for node in nodeArrayDeletable {
             node.removeFromParent()
         }

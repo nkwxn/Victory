@@ -16,7 +16,7 @@
                 <outlet property="btnTampilkanMateri" destination="tSE-Je-oGr" id="iz2-Fl-VFa"/>
                 <outlet property="heightDisclaimer" destination="Ii5-K3-I3Z" id="J8l-3m-NHp"/>
                 <outlet property="heightStatistik" destination="osJ-mN-ShN" id="B5A-TS-e2f"/>
-                <outlet property="infoTitilTertinggi" destination="YWw-iz-9eE" id="3sQ-LZ-deB"/>
+                <outlet property="infoTitikTertinggi" destination="YWw-iz-9eE" id="3sQ-LZ-deB"/>
                 <outlet property="infoTotalJangkauan" destination="xdY-bX-l87" id="eZn-lK-eCO"/>
                 <outlet property="skView" destination="kw8-Zc-JQb" id="2Bo-6K-3f8"/>
                 <outlet property="sliderPosisi" destination="Jb8-jX-n7O" id="rti-mw-TN8"/>

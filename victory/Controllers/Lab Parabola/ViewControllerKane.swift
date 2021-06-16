@@ -65,9 +65,9 @@
 //        skView.presentScene(scene)
 //
 //
-//        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor )
+//        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine )
 //
-//        totalWaktuReal =  engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor)
+//        totalWaktuReal =  engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
 //
 //        sudutOutlet.maximumValue = 90
 //        sudutOutlet.minimumValue = 0
@@ -85,8 +85,18 @@
 //    @IBAction func ketinggianUhuy(_ sender: UISlider) {
 //        ketinggianReal = sender.value
 //        ketinggianEngine = sender.value * 50
+//
+//        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+//        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
+//
+//
+//
 //        if let gameScene = skView.scene as? SpriteScene {
 //            gameScene.initialY = gameScene.size.height * 0.5 + CGFloat(ketinggianEngine)
+//            gameScene.totalWaktuEngine = totalWaktuEngine
+//            gameScene.totalWaktuReal = totalWaktuReal
+//            gameScene.ketinggianReal = ketinggianReal
+//            gameScene.ketinggianEngine = ketinggianEngine
 //        }
 //
 //    }
@@ -99,8 +109,8 @@
 //            sudutFirst = 89.99999
 //        }
 //
-//        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor)
-//        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor)
+//        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+//        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
 //
 //        if let gameScene = skView.scene as? SpriteScene {
 //            gameScene.sudutTembakScene = sudutFirst
@@ -113,8 +123,8 @@
 //    @IBAction func sliderUhuy(_ sender: UISlider) {
 //        kecAwalyey = Float(sender.value * kecMax)
 //
-//        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor)
-//        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor)
+//        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+//        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
 //        settingsTableView.reloadData()
 //
 //        if let gameScene = skView.scene as? SpriteScene {
@@ -142,12 +152,18 @@
 //
 //            posisiXRealTime = Float(engine.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, waktu: waktuRealtime))
 //
-//            kecepatanXReal = Float(engine.kecepatanXAwalReal(sudutTembak: sudutFirst, kecepatanAwal: kecAwalyey))
-//            kecepatanYReal = Float(engine.kecepatanY(sudutTembak: sudutFirst, kecepatanAwal: kecAwalyey, waktu: waktuRealtime, gravitasi: gravitasiVektor))
+//            if waktuRealtime < totalWaktuReal {
+//                kecepatanXReal = Float(engine.kecepatanXAwalReal(sudutTembak: sudutFirst, kecepatanAwal: kecAwalyey))
+//                kecepatanYReal = Float(engine.kecepatanY(sudutTembak: sudutFirst, kecepatanAwal: kecAwalyey, waktu: waktuRealtime, gravitasi: gravitasiVektor))
 //
-//            let kecepatanXKuadrat = pow(kecepatanXReal, 2)
-//            let kecepatanYKuadrat = pow(kecepatanYReal,2)
-//            kecTotal = pow(kecepatanXKuadrat + kecepatanYKuadrat, 0.5)
+//                let kecepatanXKuadrat = pow(kecepatanXReal, 2)
+//                let kecepatanYKuadrat = pow(kecepatanYReal,2)
+//                kecTotal = pow(kecepatanXKuadrat + kecepatanYKuadrat, 0.5)
+//            } else {
+//                kecepatanXReal = 0
+//                kecepatanYReal = 0
+//                kecTotal = 0
+//            }
 //
 //
 //            let posisiY = engine.yProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalyey, sudutTembak: sudutFirst, waktu: waktuEngine, gravitasi: gravitasiVektor)
@@ -180,7 +196,7 @@
 //            posisiXMaxReal = gameScene.getJarakXMaxReal()
 //
 //            if timeMasterClicked == false {
-////                if gameScene.jarakXRealtime < gameScene.jarakXMaxReal {
+//                if gameScene.jarakXRealtime < gameScene.jarakXMaxReal {
 //                    posisiXRealTime = gameScene.getJarakXRealtime()
 //                    posisiYRealTime = gameScene.getJarakYRealtime()
 //                    waktuRealtime = gameScene.getWaktuRealtime()
@@ -189,15 +205,20 @@
 //                    kecepatanYReal = gameScene.getKecepatanYReal()
 //
 //
-////                } else {
-////                    posisiXRealTime = gameScene.jarakXMaxReal
-////                    posisiYRealTime = 0
-////                    waktuRealtime = gameScene.totalWaktuReal
-////                    kecTotal = 0
-////                    kecepatanXReal = 0
-////                    kecepatanYReal = 0                }
-//            }
+//                } else if gameScene.jarakXRealtime > gameScene.jarakXMaxReal {
+//                    posisiXRealTime = gameScene.jarakXMaxReal
+//                    waktuRealtime = gameScene.totalWaktuReal
+//                    kecTotal = 0
+//                    kecepatanXReal = 0
+//                    kecepatanYReal = 0
+//                    if ketinggianReal == 0 {
+//                        posisiYRealTime = 0
+//                    } else {
+//                        posisiYRealTime = -ketinggianReal
+//                    }
 //
+//                }
+//            }
 //            settingsTableView.reloadData()
 //        }
 //    }
@@ -257,12 +278,12 @@
 //        case 8:
 //            cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 //            cell.textLabel?.text = "Sudut"
-//            cell.detailTextLabel?.text = String(sudutFirstDummy)
+//            cell.detailTextLabel?.text = String(round(sudutFirstDummy * 100)/100)
 //            return cell
 //        case 9:
 //            cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 //            cell.textLabel?.text = "Ketinggian"
-//            cell.detailTextLabel?.text = String(ketinggianReal)
+//            cell.detailTextLabel?.text = String(round(ketinggianReal * 100)/100)
 //            return cell
 //        default:
 //            cell = UITableViewCell()
@@ -274,4 +295,3 @@
 //        tableView.deselectRow(at: indexPath, animated: true)
 //    }
 //}
-////

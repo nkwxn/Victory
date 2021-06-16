@@ -25,7 +25,7 @@ class LabGerakParabolaView: UIView {
     // Label statistik freestyle
     @IBOutlet weak var infoTotalJangkauan: UILabel!
     @IBOutlet weak var waktuTempuh: UILabel!
-    @IBOutlet weak var infoTitilTertinggi: UILabel!
+    @IBOutlet weak var infoTitikTertinggi: UILabel!
     @IBOutlet weak var waktuTitikTertinggi: UILabel!
     
     /*
@@ -52,13 +52,37 @@ class LabGerakParabolaView: UIView {
         }
     }
     
-    var engine = VictoryEngine()
+//    var engine = VictoryEngine()
     var sudutLemparan = 30.0
     var massaProyektil = 50.0
-    var kecepatanAwal = 100.0
+    var kecepatanAwal = 15.0
     var ketinggianAwal = 0.0
+//
+//    var gravitasi = 9.8
+        var sudutFirstDummy: Double = 45
+        var engine = VictoryEngine()
+        var gravitasiVektor : Float = -9.8
+        var totalWaktuEngine : Float = 0
+        var totalWaktuReal : Float = 0
+        var waktuEngine : Float = 0
+        var waktuRealtime : Float = 0
+        var posisiXRealTime: Float = 0
+        var posisiYRealTime: Float = 0
+        var posisiXMaxReal : Float = 0
     
-    var gravitasi = 9.8
+        var kecTotal : Float = 0
+        var kecepatanXReal : Float = 0
+        var kecepatanYReal : Float = 0
+        var ketinggianReal : Float = 0
+        var ketinggianEngine : Float = 0
+    
+        var perpindahanXDalamPoin : Float = 0
+        var timeMasterClicked = false
+    
+        var initialX : Float = 0
+        var initialY : Float = 0
+    
+    
     
     var delegate: LabGerakParabolaDelegate?
     
@@ -124,6 +148,38 @@ class LabGerakParabolaView: UIView {
     
     @IBAction func sliderPosisiValueChanged(_ sender: UISlider) {
         print(sender.value)
+        timeMasterClicked = true
+        waktuEngine = totalWaktuEngine * sender.value
+        waktuRealtime = totalWaktuReal * sender.value
+        if let gameScene = skView.scene as? SpriteScene {
+            gameScene.lineActive = false
+            let posisiX = engine.xProyektilTerhadapWaktuEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuEngine)
+            
+            posisiXRealTime = Float(engine.xProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuRealtime))
+            
+            if waktuRealtime < totalWaktuReal {
+                kecepatanXReal = Float(engine.kecepatanXAwalReal(sudutTembak: sudutLemparan, kecepatanAwal: Float(kecepatanAwal)))
+                kecepatanYReal = Float(engine.kecepatanY(sudutTembak: sudutLemparan, kecepatanAwal: Float(kecepatanAwal), waktu: waktuRealtime, gravitasi: gravitasiVektor))
+                
+                let kecepatanXKuadrat = pow(kecepatanXReal, 2)
+                let kecepatanYKuadrat = pow(kecepatanYReal,2)
+                kecTotal = pow(kecepatanXKuadrat + kecepatanYKuadrat, 0.5)
+            } else {
+                kecepatanXReal = 0
+                kecepatanYReal = 0
+                kecTotal = 0
+            }
+            
+            
+            let posisiY = engine.yProyektilTerhadapWaktuEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuEngine, gravitasi: gravitasiVektor)
+            
+            posisiYRealTime = Float(engine.yProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuRealtime, gravitasi: gravitasiVektor))
+            
+            gameScene.currentProjectile?.physicsBody?.velocity = .zero
+            gameScene.currentProjectile?.physicsBody?.affectedByGravity = false
+            gameScene.currentProjectile?.position = CGPoint(x: posisiX + gameScene.player.position.x, y: posisiY + gameScene.player.position.y)
+        }
+        
     }
     
     @IBAction func btnPressed(_ sender: UIButton) {
@@ -171,8 +227,9 @@ class LabGerakParabolaView: UIView {
         case btnLuncurkan:
             print("Should launch projectile (Manipulate SKScene Actions)")
             
+            timeMasterClicked = false
             if let parabolaScene = skView.scene as? SpriteScene {
-                parabolaScene.shootStraight(kecAwal: 10)
+                parabolaScene.shootStraight(kecAwal: Float(kecepatanAwal))
             }
         default:
             print("Button not identified")
@@ -245,7 +302,7 @@ enum SliderVariable: String {
         case .massaProyektil:
             return 1
         case .kecAwal:
-            return 25
+            return 5
         case .ketAwal:
             return 0
         }
@@ -258,9 +315,9 @@ enum SliderVariable: String {
         case .massaProyektil:
             return 200
         case .kecAwal:
-            return 125
+            return 15
         case .ketAwal:
-            return 20
+            return 10
         }
     }
     
