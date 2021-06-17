@@ -50,7 +50,7 @@ extension rowLKSBodyCell: UITextFieldDelegate {
         var hasilYMax: Double
         var hasilTymax: Double
         
-        var nilaiV0 = 100.0 // m/s
+        var nilaiV0 = 15.0 // m/s
         var nilaiTeta = 30.0 // deg
         var nilaiMassa = 50.0 // kg
         

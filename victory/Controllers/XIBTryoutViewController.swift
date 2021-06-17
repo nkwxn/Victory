@@ -19,7 +19,7 @@ class XIBTryoutViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
-        let tryoutView = LabGerakParabolaView(frame: frame, noLab: nil) // noLab allowed values: 0, 1, 2, nil
+        let tryoutView = LabGerakParabolaView(frame: frame, noLab: 1) // noLab allowed values: 0, 1, 2, nil
         tryoutView.delegate = self
         containerView.addSubview(tryoutView)
     }
