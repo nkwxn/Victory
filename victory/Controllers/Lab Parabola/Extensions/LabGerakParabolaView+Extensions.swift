@@ -179,23 +179,29 @@ extension LabGerakParabolaView: SKViewDelegate, SKSceneDelegate {
                 
                 if timeMasterClicked == false {
                     if scene.jarakXRealtime < scene.jarakXMaxReal {
-                        cellJarak.detailTextLabel?.text = "\(scene.getJarakXRealtime().rounded()) m"
-                        cellTinggi.detailTextLabel?.text = "\(scene.getJarakYRealtime().rounded()) m"
-                        cellKecepatan.detailTextLabel?.text = "0 m/s"
-                        cellWaktu.detailTextLabel?.text = "\(scene.getWaktuRealtime().rounded()) s"
+                        cellJarak.detailTextLabel?.text = "\(round(scene.getJarakXRealtime() * 100) / 100) m"
+                        cellTinggi.detailTextLabel?.text = "\(round(scene.getJarakYRealtime() * 100) / 100) m"
+                        cellKecepatan.detailTextLabel?.text = "\(round(scene.getKecepatanTotal() * 100) / 100)"
+                        cellWaktu.detailTextLabel?.text = "\(round(scene.getWaktuRealtime() * 100) / 100) s"
                     } else {
-                        cellJarak.detailTextLabel?.text = "\(scene.jarakXMaxReal.rounded()) m"
-                        cellTinggi.detailTextLabel?.text = "0.0 m"
+                        cellJarak.detailTextLabel?.text = "\(round(scene.jarakXMaxReal * 100) / 100) m"
+                        
                         cellKecepatan.detailTextLabel?.text = "0 m/s"
-                        cellWaktu.detailTextLabel?.text = "\(scene.totalWaktuReal.rounded()) s"
+                        cellWaktu.detailTextLabel?.text = "\(round(scene.totalWaktuReal * 100) / 100) s"
+                        
+                        if scene.ketinggianReal == 0 {
+                            cellTinggi.detailTextLabel?.text = "\(scene.ketinggianReal)"
+                        } else {
+                            cellTinggi.detailTextLabel?.text = "\(-scene.ketinggianReal)"
+                        }
                     }
                 }
                 
                 // Update di UIView Statistik
-                self.infoTitikTertinggi.text = "\(round(scene.jarakYMaxReal*100)/100) m"
-                self.infoTotalJangkauan.text = "\(round(scene.getJarakXMaxReal()*100)/200) m"
-                self.waktuTempuh.text = "\(scene.totalWaktuReal.rounded()) s"
-                self.waktuTitikTertinggi.text = "\(scene.totalWaktuReal.rounded() / 2) s"
+                self.infoTitikTertinggi.text = "\(round(engine.titikTertinggiDariKecepatanAwalReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor)*100)/100) m"
+                self.infoTotalJangkauan.text = "\(round(scene.getJarakXMaxReal()*100)/100) m"
+                self.waktuTempuh.text = "\(round(scene.totalWaktuReal * 100) / 100) s"
+                self.waktuTitikTertinggi.text = "\(round(scene.totalWaktuReal / 2)) s"
             }
         }
     }
@@ -258,8 +264,8 @@ extension LabGerakParabolaView: VariableSliderDelegate {
                     } else {
                         sudutLemparan = 89.99999
                     }
-            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
-            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
+//            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+//            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
             
             scene.sudutTembakScene = sudutLemparan
             scene.totalWaktuEngine = totalWaktuEngine
@@ -270,9 +276,10 @@ extension LabGerakParabolaView: VariableSliderDelegate {
             
         case .kecAwal:
             self.kecepatanAwal = Double(sliderValue)
-            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
-
-            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
+            
+//            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
+//
+//            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
             
           
                 scene.totalWaktuEngine = totalWaktuEngine
@@ -284,8 +291,8 @@ extension LabGerakParabolaView: VariableSliderDelegate {
             ketinggianReal = sliderValue
             ketinggianEngine = sliderValue * 50
             
-            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
-            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
+//            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+//            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
             
             scene.initialY = scene.size.height * 0.5 + CGFloat(ketinggianEngine)
             scene.totalWaktuEngine = totalWaktuEngine

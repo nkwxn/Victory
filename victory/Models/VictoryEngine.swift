@@ -196,7 +196,7 @@ class VictoryEngine{
         let discrimimantAbsSqrt = sqrt(fabs(discriminant))
 
         if isImaginary {
-            print("X = (\(-b) + \(discrimimantAbsSqrt)i)/\(2*a) & (\(-b) - \(discrimimantAbsSqrt)i)/\(2*a)")
+//            print("X = (\(-b) + \(discrimimantAbsSqrt)i)/\(2*a) & (\(-b) - \(discrimimantAbsSqrt)i)/\(2*a)")
             fatalError("manya heueu nilainya imajiner")
         } else {
             let topFormula = -b + discrimimantAbsSqrt

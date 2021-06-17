@@ -39,7 +39,7 @@ class SpriteScene: SKScene {
     var yArray : [CGFloat] = []
     var kecAwalScene : Float = 15
     var gravitasiVektor : Float = -9.8
-    var sudutTembakScene : Double = 45
+    var sudutTembakScene : Double = 30
     var udaraDitembakCie = 0
     var indexBentol = 0
     var lineActive : Bool = true
@@ -73,31 +73,12 @@ class SpriteScene: SKScene {
     override func didEvaluateActions() {
         super.didEvaluateActions()
         physicsWorld.gravity = CGVector(dx: 0, dy: CGFloat(gravitasiVektor))
+        totalWaktuEngine = engineSK.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+        totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
     }
     override func didSimulatePhysics() {
         super.didSimulatePhysics()
         player.position = CGPoint(x: initialX, y: initialY)
-    }
-    
-    override func didApplyConstraints() {
-        super.didApplyConstraints()
-        
-        vectorY.removeFromParent()
-        vectorX.removeFromParent()
-        vectorX = SKShapeNode(rectOf: CGSize(width: currentProjectile?.physicsBody?.velocity.dx ?? 0, height: 20))
-        vectorX.fillColor = SKColor.red
-        
-        vectorX.position.x = CGFloat(0.5 * (currentProjectile?.physicsBody?.velocity.dx ?? 0))
-        vectorX.position.y = CGFloat(0)
-        
-        vectorY = SKShapeNode(rectOf: CGSize(width: 20, height: currentProjectile?.physicsBody?.velocity.dy ?? 0))
-        vectorY.position.x = CGFloat(0)
-        vectorY.position.y = CGFloat(0.5 * (currentProjectile?.physicsBody?.velocity.dy ?? 0))
-        vectorY.fillColor = SKColor.blue
-        currentProjectile?.addChild(vectorX)
-        currentProjectile?.addChild(vectorY)
-        player.zRotation = CGFloat(sudutTembakScene)/55
-        
         
         if lineActive == true {
             
@@ -130,10 +111,6 @@ class SpriteScene: SKScene {
         jarakXMaxEngine = Float(engineSK.xProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuEngine))
         jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene,waktu: totalWaktuReal))
         
-        
-//        //otwapos
-//        jarakYMaxReal = Float(engineSK.yProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: 0.5 * totalWaktuReal, gravitasi: gravitasiVektor))
-        
         var rasioXEngine = perpindahanX/jarakXMaxEngine
         
         if jarakXRealtime <= jarakXMaxReal {
@@ -156,6 +133,27 @@ class SpriteScene: SKScene {
         }
 
 //        player.size = CGSize(width: currentProjectile?.physicsBody?.velocity.dx ?? 100 , height: currentProjectile?.physicsBody?.velocity.dy ?? 100)
+    }
+    
+    override func didApplyConstraints() {
+        super.didApplyConstraints()
+        
+        vectorY.removeFromParent()
+        vectorX.removeFromParent()
+        vectorX = SKShapeNode(rectOf: CGSize(width: currentProjectile?.physicsBody?.velocity.dx ?? 0, height: 20))
+        vectorX.fillColor = SKColor.red
+        
+        vectorX.position.x = CGFloat(0.5 * (currentProjectile?.physicsBody?.velocity.dx ?? 0))
+        vectorX.position.y = CGFloat(0)
+        
+        vectorY = SKShapeNode(rectOf: CGSize(width: 20, height: currentProjectile?.physicsBody?.velocity.dy ?? 0))
+        vectorY.position.x = CGFloat(0)
+        vectorY.position.y = CGFloat(0.5 * (currentProjectile?.physicsBody?.velocity.dy ?? 0))
+        vectorY.fillColor = SKColor.blue
+        currentProjectile?.addChild(vectorX)
+        currentProjectile?.addChild(vectorY)
+        player.zRotation = CGFloat(sudutTembakScene)/55
+        
     }
     
     

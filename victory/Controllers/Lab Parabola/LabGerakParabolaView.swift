@@ -105,6 +105,9 @@ class LabGerakParabolaView: UIView {
             addSubview(parabolaView)
             parabolaView.frame = self.bounds
             parabolaView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine )
+            
+            totalWaktuReal =  engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
         }
         
         initViews()
@@ -147,15 +150,23 @@ class LabGerakParabolaView: UIView {
     }
     
     @IBAction func sliderPosisiValueChanged(_ sender: UISlider) {
-        print(sender.value)
+        print("ini slider value \(sender.value)")
         timeMasterClicked = true
+        
+        totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
+        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
+        
         waktuEngine = totalWaktuEngine * sender.value
         waktuRealtime = totalWaktuReal * sender.value
+        
         if let gameScene = skView.scene as? SpriteScene {
             gameScene.lineActive = false
+            
             let posisiX = engine.xProyektilTerhadapWaktuEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuEngine)
             
+            posisiXMaxReal = Float(engine.xProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: totalWaktuReal))
             posisiXRealTime = Float(engine.xProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuRealtime))
+            
             
             if waktuRealtime < totalWaktuReal {
                 kecepatanXReal = Float(engine.kecepatanXAwalReal(sudutTembak: sudutLemparan, kecepatanAwal: Float(kecepatanAwal)))
@@ -164,6 +175,7 @@ class LabGerakParabolaView: UIView {
                 let kecepatanXKuadrat = pow(kecepatanXReal, 2)
                 let kecepatanYKuadrat = pow(kecepatanYReal,2)
                 kecTotal = pow(kecepatanXKuadrat + kecepatanYKuadrat, 0.5)
+                
             } else {
                 kecepatanXReal = 0
                 kecepatanYReal = 0
@@ -174,11 +186,36 @@ class LabGerakParabolaView: UIView {
             let posisiY = engine.yProyektilTerhadapWaktuEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuEngine, gravitasi: gravitasiVektor)
             
             posisiYRealTime = Float(engine.yProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuRealtime, gravitasi: gravitasiVektor))
-            
+
             gameScene.currentProjectile?.physicsBody?.velocity = .zero
             gameScene.currentProjectile?.physicsBody?.affectedByGravity = false
             gameScene.currentProjectile?.position = CGPoint(x: posisiX + gameScene.player.position.x, y: posisiY + gameScene.player.position.y)
-        }
+            
+            guard let cellWaktu = variableTableView.cellForRow(at: IndexPath(row: 0, section: 1)),
+                  let cellJarak = variableTableView.cellForRow(at: IndexPath(row: 1, section: 1)),
+                  let cellTinggi = variableTableView.cellForRow(at: IndexPath(row: 2, section: 1)),
+                  let cellKecepatan = variableTableView.cellForRow(at: IndexPath(row: 3, section: 1))
+            else { return }
+
+                if posisiXRealTime < posisiXMaxReal {
+                    cellJarak.detailTextLabel?.text = "\(round(posisiXRealTime * 100) / 100) m"
+                    cellTinggi.detailTextLabel?.text = "\(round(posisiYRealTime * 100) / 100) m"
+                    cellKecepatan.detailTextLabel?.text = "\(round(kecTotal * 100) / 100)"
+                    cellWaktu.detailTextLabel?.text = "\(round(waktuRealtime * 100) / 100) s"
+                } else {
+                    cellJarak.detailTextLabel?.text = "\(round(posisiXMaxReal * 100) / 100) m"
+
+                    cellKecepatan.detailTextLabel?.text = "0 m/s"
+                    cellWaktu.detailTextLabel?.text = "\(round(totalWaktuReal * 100) / 100) s"
+
+                    if ketinggianReal == 0 {
+                        cellTinggi.detailTextLabel?.text = "\(ketinggianReal)"
+                    } else {
+                        cellTinggi.detailTextLabel?.text = "\(-ketinggianReal)"
+                    }
+                }
+            }
+        
         
     }
     
@@ -196,6 +233,8 @@ class LabGerakParabolaView: UIView {
                       let cellVelocity = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? VariableSliderCell,
                       let cellHeight = variableTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? VariableSliderCell
                 else { return }
+                
+                // Set the slider value
                 cellAngle.varSlider.setValue((cellAngle.variableSetting?.getDefaultValue())!, animated: true)
                 cellMass.varSlider.setValue((cellMass.variableSetting?.getDefaultValue())!, animated: true)
                 cellVelocity.varSlider.setValue((cellVelocity.variableSetting?.getDefaultValue())!, animated: true)
@@ -206,7 +245,6 @@ class LabGerakParabolaView: UIView {
                 cellMass.lblVarAmount.text = "\(cellMass.varSlider.value.rounded()) \(cellMass.variableSetting?.getUnit() ?? "")"
                 cellVelocity.lblVarAmount.text = "\(cellVelocity.varSlider.value.rounded()) \(cellVelocity.variableSetting?.getUnit() ?? "")"
                 cellHeight.lblVarAmount.text = "\(cellHeight.varSlider.value.rounded()) \(cellHeight.variableSetting?.getUnit() ?? "")"
-                
                 
             } else {
                 // Reset variabel di sebelah kiri (kecuali lks) + clear all projectiles
@@ -223,6 +261,10 @@ class LabGerakParabolaView: UIView {
             // Reset the sprite scene dots
             if let scene = skView.scene as? SpriteScene {
                 scene.resetLab()
+                scene.kecAwalScene = Float(kecepatanAwal)
+                scene.sudutTembakScene = sudutLemparan
+                scene.ketinggianReal = Float(ketinggianAwal)
+                scene.ketinggianEngine = Float(ketinggianAwal * 50)
             }
         case btnLuncurkan:
             print("Should launch projectile (Manipulate SKScene Actions)")
@@ -263,7 +305,7 @@ enum SliderVariable: String {
         case .massaProyektil:
             return 50
         case .kecAwal:
-            return 100
+            return 15
         case .ketAwal:
             return 0
         }
