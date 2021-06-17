@@ -103,7 +103,6 @@ class VictoryEngine{
     func sudutDariKecepatanAwalY(kecepatanAwal: Float, kecepatanAwalY: Float) -> Float {
         return asin(kecepatanAwalY/kecepatanAwal)*180/Float.pi
     }
-    
     func sudutDariKecepatanAwalX(kecepatanAwal: Float, kecepatanAwalX: Float) -> Float {
         return acos(kecepatanAwalX/kecepatanAwal)*180/Float.pi
     }
@@ -115,6 +114,8 @@ class VictoryEngine{
     
     func titikTertinggiDariKecepatanAwalYReal(kecepatanAwalY: Float, gravitasi: Float) -> Float {
         return (pow(kecepatanAwalY, 2))/(2 * -gravitasi)
+    func titikTertinggiDariKecepatanAwalY(kecepatanAwalY: Float, gravitasi: Float) -> Float {
+        return (pow(kecepatanAwalY, 2))/(2*gravitasi)
     }
     
     func jarakTerjauhDariKecepatanAwalReal(kecepatanAwal: Float, sudutTembak: Double, gravitasi: Float) -> Float{
@@ -215,4 +216,3 @@ class VictoryEngine{
         }
     }
 }
-
