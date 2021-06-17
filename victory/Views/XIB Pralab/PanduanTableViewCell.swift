@@ -13,8 +13,8 @@ class PanduanTableViewCell: UITableViewCell {
     /*
     // Setup View
     */
-    func setView(index: Int) {
-        panduanLbl.text = Constants.panduanLabs[0].langkah[index]
+    func setView(index: Int, panduanLab: Panduanlab) {
+        panduanLbl.text = panduanLab.langkah[index]
         switch index {
         case 0:
             panduanImageView.image = UIImage(systemName: "person.crop.circle.badge.checkmark")

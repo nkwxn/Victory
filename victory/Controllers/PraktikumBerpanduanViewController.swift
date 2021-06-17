@@ -51,10 +51,6 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         showOnBoardingKuisView()
     }
     
-    func labFinished() {
-        stepUnlockList!.append(.kuis)
-    }
-    
     var viewList: [UIView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -262,5 +258,55 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
 extension PraktikumBerpanduanViewController: LabGerakParabolaDelegate {
     func presentView(_ view: UIViewController, completion: (() -> Void)?) {
         self.present(view, animated: true, completion: completion)
+    }
+    
+    // Validasi jika seluruhnya benar / salah
+    func validateLKS(forLabSection: Int, lksCorrect: Bool) {
+        print("LKS is validating")
+        print("Lab Section: \(forLabSection)")
+        print("All Correct: \(lksCorrect)")
+        
+        if lksCorrect {
+            switch forLabSection {
+            case 0:
+                stepDoneList?.append(.labOne)
+            case 1:
+                stepDoneList?.append(.labTwo)
+            case 2:
+                stepDoneList?.append(.labThree)
+            default:
+                print("LKS unknown")
+            }
+        } else {
+            switch forLabSection {
+            case 0:
+                stepDoneList?.removeAll(where: {
+                    $0 == .labOne
+                })
+            case 1:
+                stepDoneList?.removeAll(where: {
+                    $0 == .labTwo
+                })
+            case 2:
+                stepDoneList?.removeAll(where: {
+                    $0 == .labThree
+                })
+            default:
+                print("LKS unknown")
+            }
+        }
+        
+        // If All LKS Done unlock Quiz
+        guard let allLabsDone = stepDoneList?.contains(where: {
+            return $0 == .labOne && $0 == .labTwo && $0 == .labThree
+        }) else { return }
+        
+        if allLabsDone {
+            stepUnlockList?.append(.kuis)
+        } else {
+            stepUnlockList?.removeAll(where: {
+                $0 == .kuis
+            })
+        }
     }
 }

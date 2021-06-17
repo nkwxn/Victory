@@ -38,6 +38,10 @@ class XIBTryoutViewController: UIViewController {
 }
 
 extension XIBTryoutViewController: LabGerakParabolaDelegate {
+    func validateLKS(forLabSection: Int, lksCorrect: Bool) {
+        
+    }
+    
     func presentView(_ view: UIViewController, completion: (() -> Void)? = nil) {
         self.present(view, animated: true, completion: completion)
     }

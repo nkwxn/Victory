@@ -89,6 +89,8 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "LKSContent", for: indexPath) as! rowLKSBodyCell
                     cell.variableSetup = sliderValues[nomorLab]
                     cell.angkaSoal = sliderValues[nomorLab].getLembarKerjaValues()[indexPath.row - 1]
+                    cell.lksIndexPath = indexPath
+                    cell.delegate = self
                     return cell
                 }
             }
@@ -208,7 +210,19 @@ extension LabGerakParabolaView: SKViewDelegate, SKSceneDelegate {
 }
 
 // MARK: - Delegate jika tombol pada header disentuh (should open popover) dan untuk memilih gravitasi
-extension LabGerakParabolaView: VariableHeaderDelegate, GravityPopoverDelegate {
+extension LabGerakParabolaView: VariableHeaderDelegate, GravityPopoverDelegate, rowLKSBodyDelegate {
+    func getCorrectValidation(_ threeFieldsCorrect: Bool, ip forLKS: IndexPath) {
+        print("Should get validation from all TableViewCell")
+        guard let nomorLab = nomorLab else { return }
+        if forLKS.section == 1 {
+            self.arrLKSRowValidation[forLKS.row - 1] = threeFieldsCorrect
+        }
+        let allRowVal = arrLKSRowValidation.allSatisfy {
+            $0 == true
+        }
+        delegate?.validateLKS(forLabSection: nomorLab, lksCorrect: allRowVal)
+    }
+    
     func chooseGravity(chosenValue planet: Planet) {
         chosenPlanet = planet
         gravitasiVektor = (Float(-chosenPlanet.getGravityValue()))
@@ -217,10 +231,14 @@ extension LabGerakParabolaView: VariableHeaderDelegate, GravityPopoverDelegate {
         }
     }
     
-    func actionForButton() {
-        print("Should open popover of lab guide")
+    func actionForButton(button selectedButton: UIButton) {
         // Open popover for panduan if the button is on the right popover
-//        delegate?.presentView(<#T##view: UIViewController##UIViewController#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        let panduanVC = PanduanViewController()
+        panduanVC.panduanLabArray = nomorLab
+        panduanVC.modalPresentationStyle = .popover
+        let popover: UIPopoverPresentationController = panduanVC.popoverPresentationController!
+        popover.sourceView = selectedButton
+        delegate?.presentView(panduanVC, completion: nil)
     }
 }
 

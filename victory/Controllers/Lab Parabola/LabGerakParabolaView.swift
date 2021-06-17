@@ -38,6 +38,7 @@ class LabGerakParabolaView: UIView {
     
     // Nomor lab sesuai dengan nomor soal (0-2) dan selesai / belum, sertakan delegate
     var nomorLab: Int?
+    var arrLKSRowValidation: [Bool] = [false, false, false, false, false]
     let variabelEdit: [SliderVariable] = [.sudutLemparan, .massaProyektil, .kecAwal, .ketAwal]
     var done: Bool = false
     var chosenPlanet: Planet = .earth {
@@ -380,4 +381,5 @@ enum SliderVariable: String {
 // Gerak Parabola Delegate
 protocol LabGerakParabolaDelegate: AnyObject {
     func presentView(_ view: UIViewController, completion: (() -> Void)?)
+    func validateLKS(forLabSection: Int, lksCorrect: Bool)
 }
