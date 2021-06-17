@@ -21,8 +21,6 @@
 		307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BEC9826748C5E00948951 /* DimOverlayView.swift */; };
 		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
 		3099E7212670C63200B44701 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3099E7202670C63200B44701 /* Colors.xcassets */; };
-		983396402678362B00BD24A5 /* ViewControllerKane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9833963F2678362B00BD24A5 /* ViewControllerKane.swift */; };
-		983396422678370800BD24A5 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983396412678370800BD24A5 /* SpriteScene.swift */; };
 		3099E73F2670D0C000B44701 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099E73E2670D0C000B44701 /* UIView+Extension.swift */; };
 		30ACD4C6267725FF00C9F62E /* KontenKuisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACD4C0267725FF00C9F62E /* KontenKuisView.swift */; };
 		30ACD4C7267725FF00C9F62E /* SkorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ACD4C1267725FF00C9F62E /* SkorView.xib */; };
@@ -31,6 +29,8 @@
 		30ACD4CA267725FF00C9F62E /* OnBoardingKuisView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30ACD4C4267725FF00C9F62E /* OnBoardingKuisView.xib */; };
 		30ACD4CB267725FF00C9F62E /* SkorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ACD4C5267725FF00C9F62E /* SkorView.swift */; };
 		30B8DE612670E005002DEC0C /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8DE5F2670E005002DEC0C /* TimelineView.swift */; };
+		983396402678362B00BD24A5 /* ViewControllerKane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9833963F2678362B00BD24A5 /* ViewControllerKane.swift */; };
+		983396422678370800BD24A5 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983396412678370800BD24A5 /* SpriteScene.swift */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D515DCC92678BCA600AAD6D2 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */; };
@@ -59,7 +59,6 @@
 		D5983E252665D6AD00C199EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5983E242665D6AD00C199EA /* Assets.xcassets */; };
 		D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5983E262665D6AD00C199EA /* LaunchScreen.storyboard */; };
 		D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0D61726678FFF0027AEF2 /* StructEnum.swift */; };
-		D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0D63B2668B7070027AEF2 /* MataPelajaranTableController.swift */; };
 		D5D97CFA2671C78B00C28CDA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D97CF92671C78B00C28CDA /* UIButton+Extension.swift */; };
 		D5D97CFD2671DAF200C28CDA /* rowLKSHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D97CFB2671DAF200C28CDA /* rowLKSHeaderCell.swift */; };
 		D5D97CFE2671DAF200C28CDA /* rowLKSHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D97CFC2671DAF200C28CDA /* rowLKSHeaderCell.xib */; };
@@ -85,8 +84,6 @@
 		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
 		3099E7202670C63200B44701 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3099E73E2670D0C000B44701 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		9833963F2678362B00BD24A5 /* ViewControllerKane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKane.swift; sourceTree = "<group>"; };
-		983396412678370800BD24A5 /* SpriteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		30ACD4C0267725FF00C9F62E /* KontenKuisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KontenKuisView.swift; sourceTree = "<group>"; };
 		30ACD4C1267725FF00C9F62E /* SkorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkorView.xib; sourceTree = "<group>"; };
 		30ACD4C2267725FF00C9F62E /* KontenKuisView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KontenKuisView.xib; sourceTree = "<group>"; };
@@ -94,6 +91,8 @@
 		30ACD4C4267725FF00C9F62E /* OnBoardingKuisView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnBoardingKuisView.xib; sourceTree = "<group>"; };
 		30ACD4C5267725FF00C9F62E /* SkorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkorView.swift; sourceTree = "<group>"; };
 		30B8DE5F2670E005002DEC0C /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		9833963F2678362B00BD24A5 /* ViewControllerKane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKane.swift; sourceTree = "<group>"; };
+		983396412678370800BD24A5 /* SpriteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
@@ -203,6 +202,14 @@
 			path = "XIB Pralab";
 			sourceTree = "<group>";
 		};
+		D5001CA8267B25FD00BFEB26 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				D5B0D63B2668B7070027AEF2 /* MataPelajaranTableController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		D583289926709111007753E9 /* Main Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +299,7 @@
 			children = (
 				D5983E1A2665D6AC00C199EA /* victory */,
 				D5983E192665D6AC00C199EA /* Products */,
+				D5001CA8267B25FD00BFEB26 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -443,7 +451,6 @@
 				308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */,
 				D515DCD22678BD1400AAD6D2 /* Main.storyboard in Resources */,
 				3099E7212670C63200B44701 /* Colors.xcassets in Resources */,
-				D5983E232665D6AC00C199EA /* Main.storyboard in Resources */,
 				D5D97D022671DB0600C28CDA /* rowLKSBodyCell.xib in Resources */,
 				D5EA421C26736F830085D6A0 /* GravityPopoverViewController.xib in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
@@ -483,14 +490,11 @@
 				D58328A726709527007753E9 /* XIBTryoutViewController.swift in Sources */,
 				D58328B42670E7F1007753E9 /* VariableSliderCell.swift in Sources */,
 				D58328B82670F4B3007753E9 /* LabVariableHeaderView.swift in Sources */,
-				D583289C267091D4007753E9 /* MateriViewController.swift in Sources */,
 				D5983E1C2665D6AC00C199EA /* AppDelegate.swift in Sources */,
 				983396402678362B00BD24A5 /* ViewControllerKane.swift in Sources */,
-				D583289E2670928A007753E9 /* MediaViewController.swift in Sources */,
 				D5EA421B26736F830085D6A0 /* GravityPopoverViewController.swift in Sources */,
 				983396422678370800BD24A5 /* SpriteScene.swift in Sources */,
 				984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */,
-				D5B0D63C2668B7070027AEF2 /* MataPelajaranTableController.swift in Sources */,
 				D5D97CFD2671DAF200C28CDA /* rowLKSHeaderCell.swift in Sources */,
 				98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */,
 				D58328B02670E11F007753E9 /* LabGerakParabolaView+Extensions.swift in Sources */,

@@ -28,9 +28,9 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
 
     @IBOutlet weak var timelineView: TimelineView!
     @IBOutlet weak var onBoardingLabView: OnBoardingLabView!
-    @IBOutlet weak var praktikum1View: UIView!
-    @IBOutlet weak var praktikum2View: UIView!
-    @IBOutlet weak var praktikum3View: UIView!
+    @IBOutlet var praktikum1View: UIView!
+    @IBOutlet var praktikum2View: UIView!
+    @IBOutlet var praktikum3View: UIView!
     
     @IBOutlet weak var panduanLabView: PanduanLabView!
     @IBOutlet weak var dimOverlayView: DimOverlayView!
@@ -60,7 +60,21 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         super.viewDidLoad()
         // Should pass data from MediaViewController via function prepSetup()
         // But these are dummy variable inits, will be deleted soon
-            
+        
+        // initializing the LabGerakParabolaView and the delegate methods
+        let praktikumFrame = CGRect(x: 0, y: 0, width: praktikum1View.frame.width, height: praktikum1View.frame.height)
+        let prak1 = LabGerakParabolaView(frame: praktikumFrame, noLab: 0)
+        let prak2 = LabGerakParabolaView(frame: CGRect(x: 0, y: 0, width: praktikum2View.frame.width, height: praktikum2View.frame.height), noLab: 1)
+        let prak3 = LabGerakParabolaView(frame: praktikumFrame, noLab: 2)
+        
+        prak1.delegate = self
+        prak2.delegate = self
+        prak3.delegate = self
+        
+        praktikum1View.addSubview(prak1)
+        praktikum2View.addSubview(prak2)
+        praktikum3View.addSubview(prak2)
+        
         quizBrain = QuizBrain()
         praktikum = Praktikum(nama: "Gerak Prabola", gambar: UIImage(systemName: "sun.max.fill")!,
                               kelas: .k10, mataPelajaran: .fisika, subtitleMateri: "", pertanyaanQuiz: quizBrain!)
@@ -134,10 +148,10 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
             praktikum2View.isHidden = true
             praktikum3View.isHidden = true
         case .labTwo:
-            print("To Lab 2 View")
             praktikum1View.isHidden = true
             praktikum2View.isHidden = false
             praktikum3View.isHidden = true
+            print("To Lab 2 View")
         case .labThree:
             print("To Lab 3 View")
             praktikum1View.isHidden = true
@@ -242,5 +256,11 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = praktikum?.nama
+    }
+}
+
+extension PraktikumBerpanduanViewController: LabGerakParabolaDelegate {
+    func presentView(_ view: UIViewController, completion: (() -> Void)?) {
+        self.present(view, animated: true, completion: completion)
     }
 }

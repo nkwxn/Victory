@@ -8,13 +8,12 @@
 import UIKit
 import SpriteKit
 
-class VictoryEngine{
+class VictoryEngine {
     /// set up ketinggian masih nunggu pengaturan boundary dari gamescene
     
     //for freestyle mode
     var kecAwal : Float = 100
     var sudutAwal : Double = 45
-    var gravitasiEngine = Float(SKPhysicsWorld().gravity.dy * 150)
     var waktu : Double = 1
     var gravitasiReal : Float = 9.8
     var poinKeMeter : Float = 50
@@ -37,6 +36,7 @@ class VictoryEngine{
         }
     }
     
+    /*
     var ketinggianMaxEngine : Float {
         get {
             return (pow(kecAwal, 2) * pow(Float(__sinpi(sudutAwal/180)), 2))/(2*gravitasiEngine)
@@ -47,6 +47,7 @@ class VictoryEngine{
             return (pow(kecAwal,2)/gravitasiEngine) * Float(__sinpi((2*sudutAwal)/180))
         }
     }
+ */
     
     var jarakMaxReal : Float {
         get {
@@ -54,11 +55,11 @@ class VictoryEngine{
         }
     }
     
-    var waktuKetinggianMaxEngine: Float {
-        get {
-            return kecAwal * Float(__sinpi(sudutAwal/180)) / gravitasiEngine
-        }
-    }
+//    var waktuKetinggianMaxEngine: Float {
+//        get {
+//            return kecAwal * Float(__sinpi(sudutAwal/180)) / gravitasiEngine
+//        }
+//    }
     
     var waktuKetinggianMaxReal: Float {
         get {
@@ -66,18 +67,18 @@ class VictoryEngine{
         }
     }
     
-    var waktuJarakMaxEngine: Float {
-        get {
-            return 2 * waktuKetinggianMaxEngine
-        }
-    }
+//    var waktuJarakMaxEngine: Float {
+//        get {
+//            return 2 * waktuKetinggianMaxEngine
+//        }
+//    }
     
     var waktuJarakMaxReal: Float {
         get {
             return 2 * waktuKetinggianMaxReal
         }
     }
-
+    
     
     //callable function
     func kecepatanXAwalEngine(sudutTembak: Double, kecepatanAwal: Float) -> CGFloat {
@@ -114,6 +115,7 @@ class VictoryEngine{
     
     func titikTertinggiDariKecepatanAwalYReal(kecepatanAwalY: Float, gravitasi: Float) -> Float {
         return (pow(kecepatanAwalY, 2))/(2 * -gravitasi)
+    }
     func titikTertinggiDariKecepatanAwalY(kecepatanAwalY: Float, gravitasi: Float) -> Float {
         return (pow(kecepatanAwalY, 2))/(2*gravitasi)
     }
@@ -126,9 +128,9 @@ class VictoryEngine{
         return kecepatanAwal * Float(__sinpi(sudutTembak/180)) / -gravitasi
     }
     
-//    func waktuUntukJarakTerjauhEngine(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
-//        return 2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi * 150)
-//    }
+    //    func waktuUntukJarakTerjauhEngine(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
+    //        return 2 * poinKeMeter * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi * 150)
+    //    }
     
     func waktuUntukJarakTerjauhEngine(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float, ketinggian: Float) -> Float{
         if ketinggian == 0 {
@@ -154,9 +156,9 @@ class VictoryEngine{
         }
     }
     
-//    func waktuUntukJarakTerjauhReal(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
-//        return 2 * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi)
-//    }
+    //    func waktuUntukJarakTerjauhReal(kecepatanAwal: Float, sudutTembak:Double, gravitasi: Float) -> Float{
+    //        return 2 * kecepatanAwal * Float(__sinpi(sudutTembak/180)) / (-gravitasi)
+    //    }
     
     
     // MARK: - FUNGSI TERHADAP WAKTU
@@ -170,7 +172,7 @@ class VictoryEngine{
     
     func yProyektilTerhadapWaktuEngine(kecepatanAwal: Float, sudutTembak: Double, waktu: Float, gravitasi: Float)-> CGFloat {
         let part1 = (kecepatanAwal * poinKeMeter * Float(__sinpi(sudutTembak/180) * Double(waktu)))
-        let part2 = (0.5 * pow(Float(waktu),2) * gravitasiEngine)
+        let part2 = (0.5 * pow(Float(waktu),2) * gravitasi * 150)
         return CGFloat(part1 + part2)
     }
     
@@ -195,18 +197,18 @@ class VictoryEngine{
         let discriminant = bSquared - (4 * a * c)
         let isImaginary = discriminant < 0
         let discrimimantAbsSqrt = sqrt(fabs(discriminant))
-
+        
         if isImaginary {
-//            print("X = (\(-b) + \(discrimimantAbsSqrt)i)/\(2*a) & (\(-b) - \(discrimimantAbsSqrt)i)/\(2*a)")
+            //            print("X = (\(-b) + \(discrimimantAbsSqrt)i)/\(2*a) & (\(-b) - \(discrimimantAbsSqrt)i)/\(2*a)")
             fatalError("manya heueu nilainya imajiner")
         } else {
             let topFormula = -b + discrimimantAbsSqrt
             let bottomFormula = 2 * a
             let totalX = topFormula / bottomFormula
-
+            
             let topFormula2 = -b - discrimimantAbsSqrt
             let totalX2 = topFormula2 / bottomFormula
-
+            
             print("X = \(totalX) & \(totalX2)")
             if totalX >= 0 {
                 return totalX

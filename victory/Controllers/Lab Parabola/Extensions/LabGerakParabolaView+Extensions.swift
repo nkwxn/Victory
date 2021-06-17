@@ -211,6 +211,10 @@ extension LabGerakParabolaView: SKViewDelegate, SKSceneDelegate {
 extension LabGerakParabolaView: VariableHeaderDelegate, GravityPopoverDelegate {
     func chooseGravity(chosenValue planet: Planet) {
         chosenPlanet = planet
+        gravitasiVektor = (Float(-chosenPlanet.getGravityValue()))
+        if let scene = skView.scene as? SpriteScene {
+            scene.gravitasiVektor = gravitasiVektor
+        }
     }
     
     func actionForButton() {

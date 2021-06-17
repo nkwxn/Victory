@@ -61,7 +61,7 @@ class LabGerakParabolaView: UIView {
 //    var gravitasi = 9.8
         var sudutFirstDummy: Double = 45
         var engine = VictoryEngine()
-        var gravitasiVektor : Float = -9.8
+        var gravitasiVektor : Float = -10
         var totalWaktuEngine : Float = 0
         var totalWaktuReal : Float = 0
         var waktuEngine : Float = 0
@@ -94,7 +94,7 @@ class LabGerakParabolaView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        fatalError("init(coder:) has not been implemented")
+        commonInit()
     }
     
     func commonInit() {

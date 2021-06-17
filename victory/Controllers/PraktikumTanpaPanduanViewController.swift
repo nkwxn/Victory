@@ -14,6 +14,17 @@ class PraktikumTanpaPanduanViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationItem.title = praktikum?.nama
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Adding some ContainerView Tabs
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        let freestyleLab = LabGerakParabolaView(frame: frame)
+        freestyleLab.delegate = self
+        self.view.addSubview(freestyleLab)
     }
     
 
@@ -27,4 +38,12 @@ class PraktikumTanpaPanduanViewController: UIViewController {
     }
     */
 
+}
+
+extension PraktikumTanpaPanduanViewController: LabGerakParabolaDelegate {
+    func presentView(_ view: UIViewController, completion: (() -> Void)?) {
+        self.present(view, animated: true, completion: completion)
+    }
+    
+    // hmm tambahin delegate method apa ya...
 }

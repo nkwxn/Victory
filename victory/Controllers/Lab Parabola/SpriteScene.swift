@@ -38,7 +38,7 @@ class SpriteScene: SKScene {
     var xArray : [CGFloat] = []
     var yArray : [CGFloat] = []
     var kecAwalScene : Float = 15
-    var gravitasiVektor : Float = -9.8
+    var gravitasiVektor : Float = -10
     var sudutTembakScene : Double = 30
     var udaraDitembakCie = 0
     var indexBentol = 0
