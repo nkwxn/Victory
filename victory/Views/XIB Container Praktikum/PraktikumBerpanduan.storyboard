@@ -18,23 +18,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6C-9u-UdE">
-                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
+                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tS-Xj-gvS" customClass="TimelineView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="1180" height="50"/>
+                                <rect key="frame" x="0.0" y="50" width="1180" height="50"/>
                                 <color key="backgroundColor" name="vc_side_menu"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qhI-rR-w9q"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwG-bi-yHK">
-                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
+                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrH-TG-3Gv">
-                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
+                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGZ-qk-zsL">
-                                <rect key="frame" x="551.5" y="418.5" width="77" height="33"/>
+                                <rect key="frame" x="551.5" y="443.5" width="77" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Finish Lab"/>
                                 <connections>
@@ -42,15 +42,15 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-Di-B9Z" customClass="MateriView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
+                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-F6-Gjt" customClass="KontenKuisView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
+                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHf-be-Ak4" customClass="OnBoardingKuisView" customModule="victory" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="1180" height="770"/>
+                                <rect key="frame" x="0.0" y="100" width="1180" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGk-ft-bFl" customClass="DimOverlayView" customModule="victory" customModuleProvider="target">
@@ -127,6 +127,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="b1K-P3-bQD"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="dimOverlayView" destination="oGk-ft-bFl" id="lrC-ri-0eR"/>
                         <outlet property="finishLabBtn" destination="JGZ-qk-zsL" id="uyZ-uX-mvW"/>

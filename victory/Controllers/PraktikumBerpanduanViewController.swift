@@ -64,7 +64,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         // initializing the LabGerakParabolaView and the delegate methods
         let praktikumFrame = CGRect(x: 0, y: 0, width: praktikum1View.frame.width, height: praktikum1View.frame.height)
         let prak1 = LabGerakParabolaView(frame: praktikumFrame, noLab: 0)
-        let prak2 = LabGerakParabolaView(frame: CGRect(x: 0, y: 0, width: praktikum2View.frame.width, height: praktikum2View.frame.height), noLab: 1)
+        let prak2 = LabGerakParabolaView(frame: praktikumFrame, noLab: 1)
         let prak3 = LabGerakParabolaView(frame: praktikumFrame, noLab: 2)
         
         prak1.delegate = self
@@ -73,7 +73,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         
         praktikum1View.addSubview(prak1)
         praktikum2View.addSubview(prak2)
-        praktikum3View.addSubview(prak2)
+        praktikum3View.addSubview(prak3)
         
         quizBrain = QuizBrain()
         praktikum = Praktikum(nama: "Gerak Prabola", gambar: UIImage(systemName: "sun.max.fill")!,
