@@ -70,14 +70,6 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         praktikum2View.addSubview(prak2)
         praktikum3View.addSubview(prak3)
         //
-        quizBrain = QuizBrain()
-        praktikum = Praktikum(nama: "Gerak Prabola", gambar: UIImage(systemName: "sun.max.fill")!,
-                              kelas: .k10, mataPelajaran: .fisika, subtitleMateri: "", pertanyaanQuiz: quizBrain!)
-        currentStep = praktikum?.currentStep
-        stepUnlockList = praktikum?.stepUnlockList
-        stepDoneList = praktikum?.stepDoneList
-        //
-        //
         viewList = [timelineView, materiView, quizView, praktikum1View, praktikum2View, praktikum3View,
                     onBoardingLabView, panduanLabView, dimOverlayView, onBoardingKuisView, scoreView]
         timelineView.delegate = self
@@ -118,6 +110,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     func changeStep(to step: Step) {
         currentStep = step
         for unlockStep in stepUnlockList! {
+            print(unlockStep)
             timelineView.setupTimelineComponentStage(step: unlockStep, isActive: false, isLocked: false)
         }
         for doneStep in stepDoneList! {
@@ -183,10 +176,10 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     // Setup View Functions
     */
     func prepSetup() {
-//        quizBrain = praktikum?.quizBrain
-//        currentStep = praktikum?.currentStep
-//        stepUnlockList = praktikum?.stepUnlockList
-//        stepDoneList = praktikum?.stepDoneList
+        quizBrain = praktikum?.pertanyaanQuiz
+        currentStep = praktikum?.currentStep
+        stepUnlockList = praktikum?.stepUnlockList
+        stepDoneList = praktikum?.stepDoneList
     }
     func setupInitialView() {
         setupPanduanLabView()
