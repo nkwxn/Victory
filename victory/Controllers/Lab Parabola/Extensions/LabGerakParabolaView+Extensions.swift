@@ -1,3 +1,7 @@
+// swiftlint:disable line_length
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable cyclomatic_complexity
+// swiftlint:disable function_body_length
 //
 //  LabGerakParabolaView+Extensions.swift
 //  victory
@@ -16,7 +20,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Cell Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "VarHeader") as! LabVariableHeaderView
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "VarHeader") as? LabVariableHeaderView else { return UIView() }
         
         // Setting variabel untuk button dan kawan2 nya
         switch section {
@@ -73,7 +77,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
                     return cell
                 } else {
                     // Show the custom cell with slider
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as! VariableSliderCell
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as? VariableSliderCell else { return UITableViewCell() }
                     cell.delegate = self
                     cell.variableSetting = sliderValues[nomorLab]
                     return cell
@@ -81,12 +85,12 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
             default:
                 if indexPath.row == 0 {
                     // Dequeue the LKS Header Table
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "LKSHeader", for: indexPath) as! rowLKSHeaderCell
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "LKSHeader", for: indexPath) as? RowLKSHeaderCell else { return UITableViewCell() }
                     cell.varLKS = sliderValues[nomorLab]
                     return cell
                 } else {
                     // Dequeue the LKS Worksheet
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "LKSContent", for: indexPath) as! rowLKSBodyCell
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "LKSContent", for: indexPath) as? RowLKSBodyCell else { return UITableViewCell() }
                     cell.variableSetup = sliderValues[nomorLab]
                     cell.angkaSoal = sliderValues[nomorLab].getLembarKerjaValues()[indexPath.row - 1]
                     return cell
@@ -97,7 +101,7 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
             case 0:
                 if indexPath.row < 4 {
                     let editor = variabelEdit[indexPath.row]
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as! VariableSliderCell
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "VariableSliderCell", for: indexPath) as? VariableSliderCell else { return UITableViewCell() }
                     cell.variableSetting = editor
                     cell.delegate = self
                     
@@ -144,12 +148,12 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
                 delegate?.presentView(gravityChoice, completion: nil)
             } else if UIDevice.current.userInterfaceIdiom == .phone {
                 let gravityChoice = UIAlertController(title: "Gravitasi", message: "Pilihan planet:", preferredStyle: .actionSheet)
-                // TODO: Tambahkan AlertAction beserta actionnnya untuk memilih planet
+                // TO - DO: Tambahkan AlertAction beserta actionnnya untuk memilih planet
                 
                 let planets: [Planet] = [.earth, .moon, .mars, .jupiter]
-                for p in planets {
-                    let planetAction = UIAlertAction(title: "\(p.rawValue): \(p.getGravityValue()) m/s²", style: .default) { _ in
-                        self.chosenPlanet = p
+                for planet in planets {
+                    let planetAction = UIAlertAction(title: "\(planet.rawValue): \(planet.getGravityValue()) m/s²", style: .default) { _ in
+                        self.chosenPlanet = planet
                         tableView.deselectRow(at: indexPath, animated: true)
                     }
                     gravityChoice.addAction(planetAction)
@@ -250,9 +254,6 @@ class CustomClearTabl: UITableViewCell {
 extension LabGerakParabolaView: VariableSliderDelegate {
     // MARK: - variabel sementara taro sini dlu yaa, ntar baru rapihin
     
-    
-    
-    
     func sendSliderValue(from sliderValue: Float, withUnit: SliderVariable?) {
         guard let unit = withUnit?.getUnit() else { return }
         print("\(sliderValue) \(unit)")
@@ -285,7 +286,6 @@ extension LabGerakParabolaView: VariableSliderDelegate {
 //
 //            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
             
-          
                 scene.totalWaktuEngine = totalWaktuEngine
                 scene.kecAwalScene = Float(kecepatanAwal)
                 scene.totalWaktuReal = totalWaktuReal
@@ -304,7 +304,6 @@ extension LabGerakParabolaView: VariableSliderDelegate {
             scene.ketinggianReal = ketinggianReal
             scene.ketinggianEngine = ketinggianEngine
             
-           
         default:
             print("Unit not identified")
         }

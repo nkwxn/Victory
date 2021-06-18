@@ -1,3 +1,4 @@
+// swiftlint:disable trailing_whitespace
 //
 //  PraktikumBerpanduanViewController.swift
 //  victory
@@ -50,31 +51,26 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         changeStep(to: .kuis)
         showOnBoardingKuisView()
     }
-    
     func labFinished() {
         stepUnlockList!.append(.kuis)
     }
-    
     var viewList: [UIView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Should pass data from MediaViewController via function prepSetup()
-        // But these are dummy variable inits, will be deleted soon
-        
         // initializing the LabGerakParabolaView and the delegate methods
         let praktikumFrame = CGRect(x: 0, y: 0, width: praktikum1View.frame.width, height: praktikum1View.frame.height)
         let prak1 = LabGerakParabolaView(frame: praktikumFrame, noLab: 0)
         let prak2 = LabGerakParabolaView(frame: praktikumFrame, noLab: 1)
         let prak3 = LabGerakParabolaView(frame: praktikumFrame, noLab: 2)
-        
+        //
         prak1.delegate = self
         prak2.delegate = self
         prak3.delegate = self
-        
+        //
         praktikum1View.addSubview(prak1)
         praktikum2View.addSubview(prak2)
         praktikum3View.addSubview(prak3)
-        
+        //
         quizBrain = QuizBrain()
         praktikum = Praktikum(nama: "Gerak Prabola", gambar: UIImage(systemName: "sun.max.fill")!,
                               kelas: .k10, mataPelajaran: .fisika, subtitleMateri: "", pertanyaanQuiz: quizBrain!)
@@ -83,8 +79,8 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         stepDoneList = praktikum?.stepDoneList
         //
         //
-        viewList = [timelineView, materiView, quizView, praktikum1View, praktikum2View, praktikum3View, onBoardingLabView, panduanLabView, dimOverlayView,
-                    onBoardingKuisView, scoreView] // To - Do add labView
+        viewList = [timelineView, materiView, quizView, praktikum1View, praktikum2View, praktikum3View,
+                    onBoardingLabView, panduanLabView, dimOverlayView, onBoardingKuisView, scoreView]
         timelineView.delegate = self
         panduanLabView.delegate = self
         onBoardingLabView.delegate = self
@@ -136,7 +132,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     func changeView(for view: Step) {
         // To - Do change view (show - hidden) based on selected timeline's step
-        for view in viewList[1...2] {
+        for view in viewList[1...5] {
             view.isHidden = true
         }
         switch view {
@@ -145,21 +141,14 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         case .labOne:
             print("To Lab 1 View")
             praktikum1View.isHidden = false
-            praktikum2View.isHidden = true
-            praktikum3View.isHidden = true
         case .labTwo:
-            praktikum1View.isHidden = true
             praktikum2View.isHidden = false
-            praktikum3View.isHidden = true
             print("To Lab 2 View")
         case .labThree:
             print("To Lab 3 View")
-            praktikum1View.isHidden = true
-            praktikum2View.isHidden = true
             praktikum3View.isHidden = false
         case .kuis:
             quizView.isHidden = false
-            quizView.setupToLastVisitedNumberUI()
         }
     }
     func startKuisView() {
@@ -218,7 +207,6 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     func setupDimOverlayView() {
         dimOverlayView.alpha = 0.6
-        
         /*
         let currentWindow: UIWindow? = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
         

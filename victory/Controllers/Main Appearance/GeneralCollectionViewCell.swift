@@ -1,3 +1,4 @@
+// swiftlint:disable trailing_whitespace
 //
 //  GeneralCollectionViewCell.swift
 //  victory
@@ -20,7 +21,7 @@ class GeneralCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        generalCollectionView.shadowOffset = CGSize(width: 0,height: 4)
+        generalCollectionView.shadowOffset = CGSize(width: 0, height: 4)
         generalCollectionView.shadowColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
         generalCollectionView.shadowRadius = 10.0
     }

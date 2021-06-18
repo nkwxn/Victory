@@ -1,3 +1,5 @@
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable cyclomatic_complexity
 //
 //  rowLKSBodyCell.swift
 //  victory
@@ -7,7 +9,7 @@
 
 import UIKit
 
-class rowLKSBodyCell: UITableViewCell {
+class RowLKSBodyCell: UITableViewCell {
     @IBOutlet weak var lblUnitOfTest: UILabel!
     @IBOutlet weak var tfXmax: UITextField!
     @IBOutlet weak var tfYmax: UITextField!
@@ -20,9 +22,8 @@ class rowLKSBodyCell: UITableViewCell {
             lblUnitOfTest.text = "\(angkaSoal)"
         }
     }
-    
     var variableSetup: SliderVariable?
-    var delegate: rowLKSBodyDelegate?
+    weak var delegate: rowLKSBodyDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,17 +32,15 @@ class rowLKSBodyCell: UITableViewCell {
         tfYmax.delegate = self
         tfWaktuYMax.delegate = self
     }
-    
     // If end edit, validate answer
     @IBAction func tfEndEdit(_ sender: UITextField) {
     }
 }
 
-extension rowLKSBodyCell: UITextFieldDelegate {
+extension RowLKSBodyCell: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
     }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let angkaSoal = angkaSoal else { return }
         
@@ -65,9 +64,9 @@ extension rowLKSBodyCell: UITextFieldDelegate {
         default:
             textField.backgroundColor = UIColor(named: "vc_green_bg")
         }
-        
         hasilXMax = round(((nilaiV0 * nilaiV0)/10 * sin(2*(nilaiTeta * Double.pi / 180)))*1000)/1000
-        hasilYMax = round(((nilaiV0 * nilaiV0 * sin(nilaiTeta * Double.pi / 180) * sin(nilaiTeta * Double.pi / 180)) / (2*10))*1000)/1000
+        hasilYMax = round(((nilaiV0 * nilaiV0 * sin(nilaiTeta * Double.pi / 180) *
+                                sin(nilaiTeta * Double.pi / 180)) / (2*10))*1000)/1000
         hasilTymax = round(((nilaiV0 * sin(nilaiTeta * Double.pi / 180)) / 10)*1000)/1000
         
         guard let textFieldValue = textField.text else { return }
@@ -84,10 +83,10 @@ extension rowLKSBodyCell: UITextFieldDelegate {
         default:
             validation = false
         }
-        
         textField.backgroundColor = validation ? UIColor(named: "vc_green_bg") : UIColor(named: "vc_red_bg")
 //        sender.layer.borderWidth = 1.0
-//        sender.layer.borderColor = validation ? UIColor(named: "vc_green_active")?.cgColor : UIColor(named: "vc_red_active")?.cgColor
+//        sender.layer.borderColor = validation ? UIColor(named: "vc_green_active")?.cgColor :
+//        UIColor(named: "vc_red_active")?.cgColor
         
         if textFieldValue == "" {
             textField.backgroundColor = .systemBackground
@@ -95,6 +94,6 @@ extension rowLKSBodyCell: UITextFieldDelegate {
     }
 }
 
-protocol rowLKSBodyDelegate {
+protocol rowLKSBodyDelegate: class {
     func getCorrectValidation()
 }

@@ -1,3 +1,4 @@
+// swiftlint:disable trailing_whitespace
 //
 //  MateriViewController.swift
 //  victory
@@ -24,7 +25,8 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(getNotified(_:)), name: NSNotification.Name("menuupdate"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getNotified(_:)),
+                                               name: NSNotification.Name("menuUpdate"), object: nil)
         
         materiCollectionView.dataSource = self
         materiCollectionView.delegate = self
@@ -34,7 +36,6 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Do any additional setup after loading the view.
         self.splitViewController?.presentsWithGesture = false
     }
-    
     @objc func getNotified(_ object: Notification) {
         filteredPraktikum = []
         if let menu = object.userInfo?["indexpath"] as? Int {
@@ -57,19 +58,17 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
             }
         }
     }
-    
     func filterMateri(mapel: Mapel) {
         showAll = false
         materiTitleNavigationItem.title = mapel.rawValue
-        for (index,materi) in praktikum.enumerated() {
-            //HASHMAP
+        for (index, materi) in praktikum.enumerated() {
+            // HASHMAP
             if praktikum[index].mataPelajaran == mapel {
                 filteredPraktikum.append(materi)
             }
             materiCollectionView.reloadData()
         }
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if showAll && filteredPraktikum.isEmpty {
             return praktikum.count
@@ -79,9 +78,11 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
             return filteredPraktikum.count
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell", for: indexPath) as! GeneralCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+    -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell",
+                                                            for: indexPath) as? GeneralCollectionViewCell
+        else { return UICollectionViewCell() }
         
         if showAll && filteredPraktikum.isEmpty {
             cell.generalCollectionImageView.image = praktikum[indexPath.row].gambar
@@ -96,21 +97,18 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
             cell.generalCollectionTitleLabel.text = filteredPraktikum[indexPath.row].nama
             cell.generalCollectionSubtitleLabel.text = filteredPraktikum[indexPath.row].subtitleMateri
         }
-        
         return cell
     }
     // MARK: - Navigation
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !filteredPraktikum.isEmpty || showAll {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let destVC = storyBoard.instantiateViewController(withIdentifier: "MediaViewControllerScene") as! MediaViewController
+            guard let destVC = storyBoard.instantiateViewController(withIdentifier: "MediaViewControllerScene") as?
+                    MediaViewController else { return }
             destVC.selectedPraktikum = self.praktikum[indexPath.row]
-            
             self.navigationController?.pushViewController(destVC, animated: true)
         }
     }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.splitViewController?.hide(UISplitViewController.Column.primary)
@@ -118,7 +116,6 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.splitViewController?.show(UISplitViewController.Column.primary)
     }
 

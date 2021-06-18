@@ -1,4 +1,4 @@
-////
+// swiftlint:disable all
 ////  ViewController.swift
 ////  SpriteKit Trial
 ////

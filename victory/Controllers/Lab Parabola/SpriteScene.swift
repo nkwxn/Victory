@@ -1,3 +1,5 @@
+// swiftlint:disable line_length
+// swiftlint:disable trailing_whitespace
 //
 //  SpriteKitSceneCode.swift
 //  SpriteKit Trial
@@ -21,54 +23,51 @@ class SpriteScene: SKScene {
     let projectile8 = SKSpriteNode(imageNamed: "projectile")
     let projectile9 = SKSpriteNode(imageNamed: "projectile")
     let projectile10 = SKSpriteNode(imageNamed: "projectile")
-    var projectileArray : [SKSpriteNode] = []
-    var currentProjectile : SKSpriteNode?
-    var previousProjectile : SKSpriteNode?
+    var projectileArray: [SKSpriteNode] = []
+    var currentProjectile: SKSpriteNode?
+    var previousProjectile: SKSpriteNode?
     
     var vectorX = SKShapeNode(rectOf: CGSize(width: 0, height: 0))
     var vectorY = SKShapeNode(rectOf: CGSize(width: 0, height: 0))
     
-    
-    var index : Int = 0
-    
+    var index: Int = 0
     
     var monstersDestroyed = 0
     var engineSK = VictoryEngine()
-    var waktuArray : [Int] = []
-    var xArray : [CGFloat] = []
-    var yArray : [CGFloat] = []
-    var kecAwalScene : Float = 15
-    var gravitasiVektor : Float = -10
-    var sudutTembakScene : Double = 30
+    var waktuArray: [Int] = []
+    var xArray: [CGFloat] = []
+    var yArray: [CGFloat] = []
+    var kecAwalScene: Float = 15
+    var gravitasiVektor: Float = -10
+    var sudutTembakScene: Double = 30
     var udaraDitembakCie = 0
     var indexBentol = 0
-    var lineActive : Bool = true
-    var initialTime : TimeInterval = 0
-    var nodeArrayDeletable : [SKNode] = []
-    var janganDihapusArray : [SKNode] = []
+    var lineActive: Bool = true
+    var initialTime: TimeInterval = 0
+    var nodeArrayDeletable: [SKNode] = []
+    var janganDihapusArray: [SKNode] = []
     
-    //Variabel konversi
-    var poinKeMeterDibagi : Float = 15
-    var perpindahanXDalamPoin : Float = 0
+    // Variabel konversi
+    var poinKeMeterDibagi: Float = 15
+    var perpindahanXDalamPoin: Float = 0
     
-    //variabel passing lambung
-    var totalWaktuEngine : Float = 0
-    var totalWaktuReal : Float = 0
-    var waktuRealTime : Float = 0
-    var jarakXMaxEngine : Float = 0
-    var jarakXMaxReal : Float = 0
-    var jarakYMaxReal : Float = 0
-    var jarakXRealtime : Float = 0
-    var jarakYRealtime : Float = 0
-    var kecTotal : Float = 0
-    var kecepatanXReal : Float = 0
-    var kecepatanYreal : Float = 0
-    var ketinggianReal : Float = 0
-    var ketinggianEngine : Float = 0
+    // Variabel passing lambung
+    var totalWaktuEngine: Float = 0
+    var totalWaktuReal: Float = 0
+    var waktuRealTime: Float = 0
+    var jarakXMaxEngine: Float = 0
+    var jarakXMaxReal: Float = 0
+    var jarakYMaxReal: Float = 0
+    var jarakXRealtime: Float = 0
+    var jarakYRealtime: Float = 0
+    var kecTotal: Float = 0
+    var kecepatanXReal: Float = 0
+    var kecepatanYreal: Float = 0
+    var ketinggianReal: Float = 0
+    var ketinggianEngine: Float = 0
     
-    var initialX : CGFloat = 0
-    var initialY : CGFloat = 0
-    
+    var initialX: CGFloat = 0
+    var initialY: CGFloat = 0
     
     override func didEvaluateActions() {
         super.didEvaluateActions()
@@ -92,7 +91,7 @@ class SpriteScene: SKScene {
                         indexBentol += 1
                         return
                     }
-                    if children.count > janganDihapusArray.count  {
+                    if children.count > janganDihapusArray.count {
                         if buled.position.y != CGFloat(0) {
                             addChild(buled)
                             nodeArrayDeletable.append(buled)
@@ -109,7 +108,7 @@ class SpriteScene: SKScene {
         let perpindahanX = Float(posisiXProjectile - initialX)
         perpindahanXDalamPoin = perpindahanX / poinKeMeterDibagi
         jarakXMaxEngine = Float(engineSK.xProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuEngine))
-        jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene,waktu: totalWaktuReal))
+        jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuReal))
         
         var rasioXEngine = perpindahanX/jarakXMaxEngine
         
@@ -122,7 +121,7 @@ class SpriteScene: SKScene {
             kecepatanYreal = Float(engineSK.kecepatanY(sudutTembak: sudutTembakScene, kecepatanAwal: kecAwalScene, waktu: waktuRealTime, gravitasi: gravitasiVektor))
             
             let kecepatanXKuadrat = pow(kecepatanXReal, 2)
-            let kecepatanYKuadrat = pow(kecepatanYreal,2)
+            let kecepatanYKuadrat = pow(kecepatanYreal, 2)
             kecTotal = pow(kecepatanXKuadrat + kecepatanYKuadrat, 0.5)
             
             if rasioXEngine > 0.5 {
@@ -156,8 +155,6 @@ class SpriteScene: SKScene {
         
     }
     
-    
-    
     override func didFinishUpdate() {
         super.didFinishUpdate()
        
@@ -169,7 +166,6 @@ class SpriteScene: SKScene {
         initialY = size.height * 0.5
         player.position = CGPoint(x: initialX, y: initialY)
 
-        
 //        player.anchorPoint = CGPoint(x: 0.0, y: 0.0)
         addChild(player)
         janganDihapusArray.append(player)
@@ -179,16 +175,13 @@ class SpriteScene: SKScene {
         physicsWorld.contactDelegate = self
         physicsWorld.speed = 0.3
         
-        
-        
-        
-        projectileArray = [projectile,projectile1,projectile2,projectile3,projectile4, projectile5,projectile6, projectile7, projectile8,projectile9, projectile10]
+        projectileArray = [projectile, projectile1, projectile2, projectile3, projectile4, projectile5, projectile6,
+                           projectile7, projectile8, projectile9, projectile10]
         
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 210, left: 0, bottom: 0, right: 0)))
         
         totalWaktuEngine = engineSK.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine )
         totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
-        
         
         //        print("ini tinggi \(scene?.size.height), ini panjang \(scene?.size.width)")
         //        let leftWall = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 100, height: frame.height))
@@ -196,12 +189,6 @@ class SpriteScene: SKScene {
         //        leftWall.physicsBody = SKPhysicsBody(rectangleOf: leftWall.size)
         //        leftWall.physicsBody!.isDynamic = false
         //        self.addChild(leftWall)
-        
-        
-        
-
-  
-        
     }
     
     func resetLab() {
@@ -271,14 +258,14 @@ extension SpriteScene: SKPhysicsContactDelegate {
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
-        } else{
+        } else {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
         
         // 2
-        if ((firstBody.categoryBitMask & PhysicsCategory.udaraAnying != 0) &&
-                (secondBody.categoryBitMask & PhysicsCategory.projectile != 0)) {
+        if (firstBody.categoryBitMask & PhysicsCategory.udaraAnying != 0) &&
+                (secondBody.categoryBitMask & PhysicsCategory.projectile != 0) {
             if let udaraAnying = firstBody.node as? SKShapeNode,
                let projectile = secondBody.node as? SKSpriteNode {
                 projectileDidCollideWithUdaraAnying(projectile: projectile, udaraAnying: udaraAnying)
@@ -329,10 +316,9 @@ extension SpriteScene {
 
 // MARK: - Tumbukan kawan~
 struct PhysicsCategory {
-    static let none      : UInt32 = 0
-    static let all       : UInt32 = UInt32.max
-    static let udaraAnying   : UInt32 = 0b1      // 1
-    static let projectile: UInt32 = 0b10 //2
-    static let bentol: UInt32 = 0b11 //3
+    static let none: UInt32 = 0
+    static let all: UInt32 = UInt32.max
+    static let udaraAnying: UInt32 = 0b1 // 1
+    static let projectile: UInt32 = 0b10 // 2
+    static let bentol: UInt32 = 0b11 // 3
 }
-

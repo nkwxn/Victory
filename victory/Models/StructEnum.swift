@@ -38,7 +38,7 @@ enum Mapel: String {
     func getImage() -> UIImage {
         switch self {
         case .fisika:
-            return UIImage(systemName: "thermometer.snowflake")!
+            return UIImage(systemName: "thermometer")!
         case .kimia:
             return UIImage(systemName: "drop.triangle")!
         case .biologi:

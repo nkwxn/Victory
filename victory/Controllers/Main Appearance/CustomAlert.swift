@@ -1,3 +1,4 @@
+// swiftlint:disable trailing_whitespace
 //
 //  AlertViewController.swift
 //  victory
@@ -10,7 +11,7 @@ import UIKit
 class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var tipePraktikum = Constants.arrayOfTipePraktikum
-    var delegate: MediaViewControllerDelegate?
+    weak var delegate: MediaViewControllerDelegate?
     
     struct AlertConstants {
         static let backgroundAlphaTo: CGFloat = 0.5
@@ -22,7 +23,6 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         backgroundView.alpha = 0
         return backgroundView
     }()
-    
     private let alertView: UIView = {
         let alert = UIView()
         alert.backgroundColor = .white
@@ -30,9 +30,7 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         alert.layer.cornerRadius = 12
         return alert
     }()
-    
     func showAlert(with title: String, message: String, on viewController: MediaViewController) {
-        
         guard let targetView = viewController.superview else {
             return
         }
@@ -48,7 +46,6 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         setupCloseButton()
         setupTypeCollectionView()
         
-        
         UIView.animate(withDuration: 0.25, animations: {
             self.backgroundView.alpha = AlertConstants.backgroundAlphaTo
         }, completion: { done in
@@ -59,9 +56,10 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
             }
         })
     }
-    
     func setupTypeCollectionView() {
-        let typeCollectionView: UICollectionView = UICollectionView(frame: (CGRect(x: 48, y: 91, width: 544, height: 244)), collectionViewLayout: UICollectionViewFlowLayout.init())
+        let typeCollectionView: UICollectionView = UICollectionView(frame: (CGRect(x: 48, y: 91, width: 544,
+                                                                                   height: 244)), collectionViewLayout:
+                                                                                    UICollectionViewFlowLayout.init())
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = UICollectionView.ScrollDirection.vertical
         typeCollectionView.setCollectionViewLayout(layout, animated: true)
@@ -77,13 +75,14 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         typeCollectionView.register(nib, forCellWithReuseIdentifier: "generalCollectionCell")
         alertView.addSubview(typeCollectionView)
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         tipePraktikum.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell", for: indexPath) as! GeneralCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+    -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell",
+                                                            for: indexPath) as? GeneralCollectionViewCell
+        else { return UICollectionViewCell() }
         
         cell.generalCollectionImageView.image = tipePraktikum[indexPath.row].gambarTipe
         cell.generalCollectionTitleLabel.text = tipePraktikum[indexPath.row].namaTipe
@@ -93,19 +92,16 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         cell.generalCollectionSubtitleLabel.text = ""
         cell.heightConstraintsSubtitleLabel.constant = 0
         cell.heightConstraintImageView.constant = 189
-        
         return cell
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0{
+        if indexPath.row == 0 {
             delegate?.moveToDenganPanduan()
         } else {
             delegate?.moveToTanpaPanduan()
         }
         dismissAlert()
     }
-    
     func setupTitleLabel(with title: String) {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: alertView.frame.size.width, height: 51))
         titleLabel.text = title
@@ -116,7 +112,6 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
         alertView.addSubview(titleLabel)
     }
-    
     func setupCloseButton() {
         let button = UIButton(frame: CGRect(x: 587, y: 4, width: 44, height: 44))
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -125,7 +120,6 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         alertView.addSubview(button)
     }
-    
     @objc func dismissAlert() {
         UIView.animate(withDuration: 0.25, animations: {
             self.alertView.alpha = 0
