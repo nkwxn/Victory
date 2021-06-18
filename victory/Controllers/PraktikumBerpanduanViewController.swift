@@ -52,6 +52,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     
     var viewList: [UIView] = []
+    var isQuizOnboardingDone = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Should pass data from MediaViewController via function prepSetup()
@@ -159,7 +160,12 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         }
     }
     func startKuisView() {
-        onBoardingKuisView.isHidden = true
+        if isQuizOnboardingDone {
+            showOnBoardingKuisView()
+            isQuizOnboardingDone = true
+        } else {
+            onBoardingKuisView.isHidden = true
+        }
         quizView.quizBrain = self.quizBrain!
         quizView.isHidden = false
     }
@@ -283,26 +289,38 @@ extension PraktikumBerpanduanViewController: LabGerakParabolaDelegate {
                 stepDoneList?.removeAll(where: {
                     $0 == .labOne
                 })
+                changeStep(to: .labOne)
             case 1:
                 stepDoneList?.removeAll(where: {
                     $0 == .labTwo
                 })
+                changeStep(to: .labTwo)
             case 2:
                 stepDoneList?.removeAll(where: {
                     $0 == .labThree
                 })
+                changeStep(to: .labThree)
             default:
                 print("LKS unknown")
             }
         }
         
         // If All LKS Done unlock Quiz
-        guard let allLabsDone = stepDoneList?.contains(where: {
-            return $0 == .labOne && $0 == .labTwo && $0 == .labThree
-        }) else { return }
+        guard let labOneDone = stepDoneList?.contains(.labOne),
+              let labTwoDone = stepDoneList?.contains(.labTwo),
+              let labThreeDone = stepDoneList?.contains(.labThree)
+        else { return }
+        
+        let allLabsDone = labOneDone && labTwoDone && labThreeDone
         
         if allLabsDone {
             stepUnlockList?.append(.kuis)
+//            let alert = UIAlertController(title: "Anda telah menyelesaikan seluruh LKS praktikum.", message: "Langkah selanjutnya dari lab ini adalah Quiz. Silahkan tekan OK untuk melanjutkan", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert in
+//                <#code#>
+//            }))
+//            present(alert, animated: true, completion: { print("Should popup window open") })
+//            changeStep(to: .kuis)
         } else {
             stepUnlockList?.removeAll(where: {
                 $0 == .kuis
