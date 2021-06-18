@@ -39,7 +39,7 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         backgroundView.frame = targetView.bounds
         currentWindow?.addSubview(backgroundView)
         
-        alertView.frame = CGRect(x: 277, y: 227, width: 640, height: 380)
+        alertView.frame = CGRect(x: 277, y: 227, width: 640, height: 367)
         currentWindow?.addSubview(alertView)
         
         setupTitleLabel(with: title)
@@ -57,8 +57,8 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         })
     }
     func setupTypeCollectionView() {
-        let typeCollectionView: UICollectionView = UICollectionView(frame: (CGRect(x: 48, y: 91, width: 544,
-                                                                                   height: 244)), collectionViewLayout:
+        let typeCollectionView: UICollectionView = UICollectionView(frame: (CGRect(x: 42, y: 91, width: 556,
+                                                                                   height: 236)), collectionViewLayout:
                                                                                     UICollectionViewFlowLayout.init())
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = UICollectionView.ScrollDirection.vertical
@@ -68,8 +68,8 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         typeCollectionView.dataSource = self
         typeCollectionView.delegate = self
         
-        layout.itemSize = CGSize(width: 264, height: 244)
-        layout.minimumInteritemSpacing = 16
+        layout.itemSize = CGSize(width: 278, height: 236)
+        layout.minimumInteritemSpacing = 0
         
         let nib = UINib(nibName: "\(GeneralCollectionViewCell.self)", bundle: nil)
         typeCollectionView.register(nib, forCellWithReuseIdentifier: "generalCollectionCell")
