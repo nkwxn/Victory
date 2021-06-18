@@ -85,12 +85,12 @@ extension LabGerakParabolaView: UITableViewDataSource, UITableViewDelegate {
             default:
                 if indexPath.row == 0 {
                     // Dequeue the LKS Header Table
-                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "LKSHeader", for: indexPath) as? RowLKSHeaderCell else { return UITableViewCell() }
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "LKSHeader", for: indexPath) as? rowLKSHeaderCell else { return UITableViewCell() }
                     cell.varLKS = sliderValues[nomorLab]
                     return cell
                 } else {
                     // Dequeue the LKS Worksheet
-                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "LKSContent", for: indexPath) as? RowLKSBodyCell else { return UITableViewCell() }
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "LKSContent", for: indexPath) as? rowLKSBodyCell else { return UITableViewCell() }
                     cell.variableSetup = sliderValues[nomorLab]
                     cell.angkaSoal = sliderValues[nomorLab].getLembarKerjaValues()[indexPath.row - 1]
                     cell.lksIndexPath = indexPath

@@ -1,4 +1,5 @@
 // swiftlint:disable trailing_whitespace
+// swiftlint:disable type_name
 //
 //  rowLKSHeaderCell.swift
 //  victory
@@ -8,7 +9,8 @@
 
 import UIKit
 
-class RowLKSHeaderCell: UITableViewCell {
+class rowLKSHeaderCell: UITableViewCell {
+    
     @IBOutlet weak var variabelLKS: UILabel!
     @IBOutlet weak var satuanVariabelLKS: UILabel!
     

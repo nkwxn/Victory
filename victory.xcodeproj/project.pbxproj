@@ -64,10 +64,10 @@
 		D5983E282665D6AD00C199EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5983E262665D6AD00C199EA /* LaunchScreen.storyboard */; };
 		D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0D61726678FFF0027AEF2 /* StructEnum.swift */; };
 		D5D97CFA2671C78B00C28CDA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D97CF92671C78B00C28CDA /* UIButton+Extension.swift */; };
-		D5D97CFD2671DAF200C28CDA /* RowLKSHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D97CFB2671DAF200C28CDA /* RowLKSHeaderCell.swift */; };
-		D5D97CFE2671DAF200C28CDA /* RowLKSHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D97CFC2671DAF200C28CDA /* RowLKSHeaderCell.xib */; };
-		D5D97D012671DB0600C28CDA /* RowLKSBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D97CFF2671DB0600C28CDA /* RowLKSBodyCell.swift */; };
-		D5D97D022671DB0600C28CDA /* RowLKSBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D97D002671DB0600C28CDA /* RowLKSBodyCell.xib */; };
+		D5D97CFD2671DAF200C28CDA /* rowLKSHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D97CFB2671DAF200C28CDA /* rowLKSHeaderCell.swift */; };
+		D5D97CFE2671DAF200C28CDA /* rowLKSHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D97CFC2671DAF200C28CDA /* rowLKSHeaderCell.xib */; };
+		D5D97D012671DB0600C28CDA /* rowLKSBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D97CFF2671DB0600C28CDA /* rowLKSBodyCell.swift */; };
+		D5D97D022671DB0600C28CDA /* rowLKSBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D97D002671DB0600C28CDA /* rowLKSBodyCell.xib */; };
 		D5EA421B26736F830085D6A0 /* GravityPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EA421926736F830085D6A0 /* GravityPopoverViewController.swift */; };
 		D5EA421C26736F830085D6A0 /* GravityPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5EA421A26736F830085D6A0 /* GravityPopoverViewController.xib */; };
 /* End PBXBuildFile section */
@@ -132,10 +132,10 @@
 		D5983E292665D6AD00C199EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5B0D61726678FFF0027AEF2 /* StructEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructEnum.swift; sourceTree = "<group>"; };
 		D5D97CF92671C78B00C28CDA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		D5D97CFB2671DAF200C28CDA /* RowLKSHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLKSHeaderCell.swift; sourceTree = "<group>"; };
-		D5D97CFC2671DAF200C28CDA /* RowLKSHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowLKSHeaderCell.xib; sourceTree = "<group>"; };
-		D5D97CFF2671DB0600C28CDA /* RowLKSBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLKSBodyCell.swift; sourceTree = "<group>"; };
-		D5D97D002671DB0600C28CDA /* RowLKSBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowLKSBodyCell.xib; sourceTree = "<group>"; };
+		D5D97CFB2671DAF200C28CDA /* rowLKSHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rowLKSHeaderCell.swift; sourceTree = "<group>"; };
+		D5D97CFC2671DAF200C28CDA /* rowLKSHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rowLKSHeaderCell.xib; sourceTree = "<group>"; };
+		D5D97CFF2671DB0600C28CDA /* rowLKSBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rowLKSBodyCell.swift; sourceTree = "<group>"; };
+		D5D97D002671DB0600C28CDA /* rowLKSBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rowLKSBodyCell.xib; sourceTree = "<group>"; };
 		D5EA421926736F830085D6A0 /* GravityPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityPopoverViewController.swift; sourceTree = "<group>"; };
 		D5EA421A26736F830085D6A0 /* GravityPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GravityPopoverViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,8 +287,8 @@
 			children = (
 				D58328B32670E7F1007753E9 /* VariabelCell.xib */,
 				D58328B92670F4D0007753E9 /* LabVariableHeader.xib */,
-				D5D97CFC2671DAF200C28CDA /* RowLKSHeaderCell.xib */,
-				D5D97D002671DB0600C28CDA /* RowLKSBodyCell.xib */,
+				D5D97CFC2671DAF200C28CDA /* rowLKSHeaderCell.xib */,
+				D5D97D002671DB0600C28CDA /* rowLKSBodyCell.xib */,
 			);
 			path = "Custom TableViewCell";
 			sourceTree = "<group>";
@@ -298,8 +298,8 @@
 			children = (
 				D58328B22670E7F1007753E9 /* VariableSliderCell.swift */,
 				D58328B72670F4B3007753E9 /* LabVariableHeaderView.swift */,
-				D5D97CFB2671DAF200C28CDA /* RowLKSHeaderCell.swift */,
-				D5D97CFF2671DB0600C28CDA /* RowLKSBodyCell.swift */,
+				D5D97CFB2671DAF200C28CDA /* rowLKSHeaderCell.swift */,
+				D5D97CFF2671DB0600C28CDA /* rowLKSBodyCell.swift */,
 			);
 			path = CustomTableViewCell;
 			sourceTree = "<group>";
@@ -446,7 +446,7 @@
 				3031648B267256860085E518 /* PanduanTableViewCell.xib in Resources */,
 				307BEC9626748B7000948951 /* DimOverlayView.xib in Resources */,
 				D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */,
-				D5D97CFE2671DAF200C28CDA /* RowLKSHeaderCell.xib in Resources */,
+				D5D97CFE2671DAF200C28CDA /* rowLKSHeaderCell.xib in Resources */,
 				D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */,
 				30ACD4C7267725FF00C9F62E /* SkorView.xib in Resources */,
 				303164AC26735B460085E518 /* MateriView.xib in Resources */,
@@ -461,7 +461,7 @@
 				308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */,
 				D515DCD22678BD1400AAD6D2 /* Main.storyboard in Resources */,
 				3099E7212670C63200B44701 /* Colors.xcassets in Resources */,
-				D5D97D022671DB0600C28CDA /* RowLKSBodyCell.xib in Resources */,
+				D5D97D022671DB0600C28CDA /* rowLKSBodyCell.xib in Resources */,
 				D5EA421C26736F830085D6A0 /* GravityPopoverViewController.xib in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
 			);
@@ -509,7 +509,7 @@
 				D5EA421B26736F830085D6A0 /* GravityPopoverViewController.swift in Sources */,
 				983396422678370800BD24A5 /* SpriteScene.swift in Sources */,
 				3075B104267C7FCF006FA42A /* SubHeaderTableViewCell.swift in Sources */,
-				D5D97CFD2671DAF200C28CDA /* RowLKSHeaderCell.swift in Sources */,
+				D5D97CFD2671DAF200C28CDA /* rowLKSHeaderCell.swift in Sources */,
 				D58328B02670E11F007753E9 /* LabGerakParabolaView+Extensions.swift in Sources */,
 				D515DCD42678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift in Sources */,
 				30ACD4CB267725FF00C9F62E /* SkorView.swift in Sources */,
@@ -532,7 +532,7 @@
 				30CFC0EB267BC5CA001AFFD3 /* MataPelajaranlTableViewCell.swift in Sources */,
 				3075B10D267CD176006FA42A /* CommonFunctions.swift in Sources */,
 				D5D97CFA2671C78B00C28CDA /* UIButton+Extension.swift in Sources */,
-				D5D97D012671DB0600C28CDA /* RowLKSBodyCell.swift in Sources */,
+				D5D97D012671DB0600C28CDA /* rowLKSBodyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

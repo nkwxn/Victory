@@ -2,6 +2,7 @@
 // swiftlint:disable cyclomatic_complexity
 // swiftlint:disable weak_delegate
 // swiftlint:disable function_body_length
+// swiftlint:disable type_name
 //
 //  rowLKSBodyCell.swift
 //  victory
@@ -11,7 +12,8 @@
 
 import UIKit
 
-class RowLKSBodyCell: UITableViewCell {
+class rowLKSBodyCell: UITableViewCell {
+    
     @IBOutlet weak var lblUnitOfTest: UILabel!
     @IBOutlet weak var tfXmax: UITextField!
     @IBOutlet weak var tfYmax: UITextField!
@@ -40,7 +42,7 @@ class RowLKSBodyCell: UITableViewCell {
     }
 }
 
-extension RowLKSBodyCell: UITextFieldDelegate {
+extension rowLKSBodyCell: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
     }
