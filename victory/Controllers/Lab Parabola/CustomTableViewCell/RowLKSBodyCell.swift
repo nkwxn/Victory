@@ -22,6 +22,7 @@ class RowLKSBodyCell: UITableViewCell {
             lblUnitOfTest.text = "\(angkaSoal)"
         }
     }
+    var lksIndexPath: IndexPath?
     var variableSetup: SliderVariable?
     weak var delegate: rowLKSBodyDelegate?
     
@@ -64,6 +65,8 @@ extension RowLKSBodyCell: UITextFieldDelegate {
         default:
             textField.backgroundColor = UIColor(named: "vc_green_bg")
         }
+        
+        // Math Validation
         hasilXMax = round(((nilaiV0 * nilaiV0)/10 * sin(2*(nilaiTeta * Double.pi / 180)))*1000)/1000
         hasilYMax = round(((nilaiV0 * nilaiV0 * sin(nilaiTeta * Double.pi / 180) *
                                 sin(nilaiTeta * Double.pi / 180)) / (2*10))*1000)/1000
@@ -83,17 +86,29 @@ extension RowLKSBodyCell: UITextFieldDelegate {
         default:
             validation = false
         }
+        
+        // Color Coding Validation
         textField.backgroundColor = validation ? UIColor(named: "vc_green_bg") : UIColor(named: "vc_red_bg")
-//        sender.layer.borderWidth = 1.0
-//        sender.layer.borderColor = validation ? UIColor(named: "vc_green_active")?.cgColor :
-//        UIColor(named: "vc_red_active")?.cgColor
+        //        sender.layer.borderWidth = 1.0
+        //        sender.layer.borderColor = validation ? UIColor(named: "vc_green_active")?.cgColor : UIColor(named: "vc_red_active")?.cgColor
         
         if textFieldValue == "" {
             textField.backgroundColor = .systemBackground
         }
+        
+        // Validate if 3 field filled
+        guard let firstFieldCorrect = tfXmax.backgroundColor?.isEqual(UIColor(named: "vc_green_bg")),
+              let secondFieldCorrect = tfYmax.backgroundColor?.isEqual(UIColor(named: "vc_green_bg")),
+              let thirdFieldCorrect = tfWaktuYMax.backgroundColor?.isEqual(UIColor(named: "vc_green_bg")),
+              let lksIndexPath = lksIndexPath
+        else { return }
+        
+        // Direct Validation
+        let threeValidationCorrect = firstFieldCorrect && secondFieldCorrect && thirdFieldCorrect
+        delegate?.getCorrectValidation(threeValidationCorrect, ip: lksIndexPath)
     }
 }
 
-protocol rowLKSBodyDelegate: class {
-    func getCorrectValidation()
+protocol rowLKSBodyDelegate {
+    func getCorrectValidation(_ threeFieldsCorrect: Bool, ip forLKS: IndexPath)
 }

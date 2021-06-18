@@ -15,10 +15,10 @@ class LabVariableHeaderView: UITableViewHeaderFooterView {
     weak var delegate: VariableHeaderDelegate?
     
     @IBAction func btnPressed(_ sender: UIButton) {
-        delegate?.actionForButton()
+        delegate?.actionForButton(button: sender)
     }
 }
 
 protocol VariableHeaderDelegate: AnyObject {
-    func actionForButton()
+    func actionForButton(button selectedButton: UIButton)
 }
