@@ -1,5 +1,7 @@
 // swiftlint:disable trailing_whitespace
 // swiftlint:disable cyclomatic_complexity
+// swiftlint:disable weak_delegate
+// swiftlint:disable function_body_length
 //
 //  rowLKSBodyCell.swift
 //  victory
@@ -24,7 +26,7 @@ class RowLKSBodyCell: UITableViewCell {
     }
     var lksIndexPath: IndexPath?
     var variableSetup: SliderVariable?
-    weak var delegate: rowLKSBodyDelegate?
+    var delegate: rowLKSBodyDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -90,7 +92,8 @@ extension RowLKSBodyCell: UITextFieldDelegate {
         // Color Coding Validation
         textField.backgroundColor = validation ? UIColor(named: "vc_green_bg") : UIColor(named: "vc_red_bg")
         //        sender.layer.borderWidth = 1.0
-        //        sender.layer.borderColor = validation ? UIColor(named: "vc_green_active")?.cgColor : UIColor(named: "vc_red_active")?.cgColor
+        //        sender.layer.borderColor = validation ? UIColor(named: "vc_green_active")?.cgColor :
+        // UIColor(named: "vc_red_active")?.cgColor
         
         if textFieldValue == "" {
             textField.backgroundColor = .systemBackground
@@ -109,6 +112,6 @@ extension RowLKSBodyCell: UITextFieldDelegate {
     }
 }
 
-protocol rowLKSBodyDelegate {
+protocol rowLKSBodyDelegate: class {
     func getCorrectValidation(_ threeFieldsCorrect: Bool, ip forLKS: IndexPath)
 }

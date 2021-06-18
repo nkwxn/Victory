@@ -48,7 +48,6 @@ class MediaViewController: UIViewController, UICollectionViewDataSource,
         cell.generalCollectionTitleLabel.text = mediaPraktikum[indexPath.row].namaMedia
         cell.generalCollectionTitleLabel.textAlignment = .center
         cell.generalCollectionSubtitleLabel.text = ""
-        cell.heightConstraintsSubtitleLabel.constant = 0
         
         return cell
     }

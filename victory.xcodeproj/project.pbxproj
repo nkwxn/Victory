@@ -17,6 +17,9 @@
 		303164AC26735B460085E518 /* MateriView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303164AB26735B460085E518 /* MateriView.xib */; };
 		303164AF26735B560085E518 /* MateriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303164AE26735B560085E518 /* MateriView.swift */; };
 		3072ABDC2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */; };
+		3075B0FF267C7A20006FA42A /* MataPelajaranTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5397E432678F727005909F6 /* MataPelajaranTableController.swift */; };
+		3075B104267C7FCF006FA42A /* SubHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B103267C7FCF006FA42A /* SubHeaderTableViewCell.swift */; };
+		3075B107267C8362006FA42A /* MateriTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B106267C8362006FA42A /* MateriTableViewCell.swift */; };
 		307BEC9626748B7000948951 /* DimOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307BEC9526748B7000948951 /* DimOverlayView.xib */; };
 		307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BEC9826748C5E00948951 /* DimOverlayView.swift */; };
 		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
@@ -38,13 +41,11 @@
 		983396422678370800BD24A5 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983396412678370800BD24A5 /* SpriteScene.swift */; };
 		D515DCC92678BCA600AAD6D2 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */; };
 		D515DCCD2678BCA600AAD6D2 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */; };
-		D515DCCE2678BCA600AAD6D2 /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC82678BCA600AAD6D2 /* SearchCollectionReusableView.swift */; };
 		D515DCD02678BD0500AAD6D2 /* GeneralCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D515DCCF2678BD0500AAD6D2 /* GeneralCollectionViewCell.xib */; };
 		D515DCD22678BD1400AAD6D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D515DCD12678BD1400AAD6D2 /* Main.storyboard */; };
 		D515DCD42678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCD32678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift */; };
 		D5397E402678F643005909F6 /* MateriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5397E3F2678F643005909F6 /* MateriViewController.swift */; };
 		D5397E422678F6C9005909F6 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5397E412678F6C9005909F6 /* MediaViewController.swift */; };
-		D5397E442678F727005909F6 /* MataPelajaranTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5397E432678F727005909F6 /* MataPelajaranTableController.swift */; };
 		D540E8FD266F6E9600FACF72 /* WebKitView in Resources */ = {isa = PBXBuildFile; fileRef = D540E8FC266F6E9600FACF72 /* WebKitView */; };
 		D58328A1267093FE007753E9 /* PraktikumBerpanduan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A0267093FE007753E9 /* PraktikumBerpanduan.storyboard */; };
 		D58328A32670943D007753E9 /* PraktikumTanpaPanduan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58328A22670943D007753E9 /* PraktikumTanpaPanduan.storyboard */; };
@@ -80,6 +81,8 @@
 		303164AB26735B460085E518 /* MateriView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateriView.xib; sourceTree = "<group>"; };
 		303164AE26735B560085E518 /* MateriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriView.swift; sourceTree = "<group>"; };
 		3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraktikumBerpanduanViewController.swift; sourceTree = "<group>"; };
+		3075B103267C7FCF006FA42A /* SubHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		3075B106267C8362006FA42A /* MateriTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriTableViewCell.swift; sourceTree = "<group>"; };
 		307BEC9526748B7000948951 /* DimOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimOverlayView.xib; sourceTree = "<group>"; };
 		307BEC9826748C5E00948951 /* DimOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimOverlayView.swift; sourceTree = "<group>"; };
 		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
-		D515DCC82678BCA600AAD6D2 /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
 		D515DCCF2678BD0500AAD6D2 /* GeneralCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralCollectionViewCell.xib; sourceTree = "<group>"; };
 		D515DCD12678BD1400AAD6D2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D515DCD32678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraktikumTanpaPanduanViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 		D5983E272665D6AD00C199EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5983E292665D6AD00C199EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5B0D61726678FFF0027AEF2 /* StructEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructEnum.swift; sourceTree = "<group>"; };
-		D5B0D63B2668B7070027AEF2 /* MataPelajaranTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MataPelajaranTableController.swift; sourceTree = "<group>"; };
 		D5D97CF92671C78B00C28CDA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		D5D97CFB2671DAF200C28CDA /* RowLKSHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLKSHeaderCell.swift; sourceTree = "<group>"; };
 		D5D97CFC2671DAF200C28CDA /* RowLKSHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowLKSHeaderCell.xib; sourceTree = "<group>"; };
@@ -207,7 +208,6 @@
 		D5001CA8267B25FD00BFEB26 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				D5B0D63B2668B7070027AEF2 /* MataPelajaranTableController.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -226,11 +226,12 @@
 			children = (
 				D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */,
 				D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */,
-				D515DCC82678BCA600AAD6D2 /* SearchCollectionReusableView.swift */,
 				D5397E3F2678F643005909F6 /* MateriViewController.swift */,
 				D5397E412678F6C9005909F6 /* MediaViewController.swift */,
 				D5397E432678F727005909F6 /* MataPelajaranTableController.swift */,
 				30CFC0EA267BC5CA001AFFD3 /* MataPelajaranlTableViewCell.swift */,
+				3075B103267C7FCF006FA42A /* SubHeaderTableViewCell.swift */,
+				3075B106267C8362006FA42A /* MateriTableViewCell.swift */,
 			);
 			path = "Main Appearance";
 			sourceTree = "<group>";
@@ -487,10 +488,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3075B0FF267C7A20006FA42A /* MataPelajaranTableController.swift in Sources */,
 				30CFC0E6267BBEF3001AFFD3 /* XIBTryoutViewController.swift in Sources */,
 				30CFC0E3267BBEE3001AFFD3 /* VictoryEngine.swift in Sources */,
 				30CFC0E4267BBEE3001AFFD3 /* QuizBrain.swift in Sources */,
 				30CFC0E1267BBED1001AFFD3 /* AppDelegate.swift in Sources */,
+				3075B107267C8362006FA42A /* MateriTableViewCell.swift in Sources */,
 				3031648A267256860085E518 /* PanduanTableViewCell.swift in Sources */,
 				D5B0D61826678FFF0027AEF2 /* StructEnum.swift in Sources */,
 				D58328AB2670B690007753E9 /* LabGerakParabolaView.swift in Sources */,
@@ -499,20 +502,19 @@
 				983396402678362B00BD24A5 /* ViewControllerKane.swift in Sources */,
 				D5EA421B26736F830085D6A0 /* GravityPopoverViewController.swift in Sources */,
 				983396422678370800BD24A5 /* SpriteScene.swift in Sources */,
+				3075B104267C7FCF006FA42A /* SubHeaderTableViewCell.swift in Sources */,
 				D5D97CFD2671DAF200C28CDA /* RowLKSHeaderCell.swift in Sources */,
 				D58328B02670E11F007753E9 /* LabGerakParabolaView+Extensions.swift in Sources */,
 				D515DCD42678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift in Sources */,
 				30ACD4CB267725FF00C9F62E /* SkorView.swift in Sources */,
 				3031647F26724CDF0085E518 /* PanduanLabView.swift in Sources */,
 				D5397E422678F6C9005909F6 /* MediaViewController.swift in Sources */,
-				D5397E442678F727005909F6 /* MataPelajaranTableController.swift in Sources */,
 				307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */,
 				30ACD4C6267725FF00C9F62E /* KontenKuisView.swift in Sources */,
 				30B8DE612670E005002DEC0C /* TimelineView.swift in Sources */,
 				D515DCC92678BCA600AAD6D2 /* CustomAlert.swift in Sources */,
 				303164AF26735B560085E518 /* MateriView.swift in Sources */,
 				30ACD4C9267725FF00C9F62E /* OnBoardingKuisView.swift in Sources */,
-				D515DCCE2678BCA600AAD6D2 /* SearchCollectionReusableView.swift in Sources */,
 				30316478267239480085E518 /* OnBoardingLabView.swift in Sources */,
 				3031648326724E360085E518 /* Constants.swift in Sources */,
 				3072ABDC2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift in Sources */,

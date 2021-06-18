@@ -31,7 +31,6 @@ extension PraktikumTanpaPanduanViewController: LabGerakParabolaDelegate {
     func validateLKS(forLabSection: Int, lksCorrect: Bool) {
         print("This unused")
     }
-    
     func presentView(_ view: UIViewController, completion: (() -> Void)?) {
         self.present(view, animated: true, completion: completion)
     }

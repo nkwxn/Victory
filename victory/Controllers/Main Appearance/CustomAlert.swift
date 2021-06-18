@@ -90,8 +90,6 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         cell.generalCollectionTitleLabel.textColor = .white
         cell.generalCollectionTitleLabel.textAlignment = .center
         cell.generalCollectionSubtitleLabel.text = ""
-        cell.heightConstraintsSubtitleLabel.constant = 0
-        cell.heightConstraintImageView.constant = 189
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

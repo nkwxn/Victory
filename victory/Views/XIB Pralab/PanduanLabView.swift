@@ -1,3 +1,4 @@
+// swiftlint:disable trailing_whitespace
 //
 //  PanduanLab.swift
 //  victory
@@ -13,7 +14,6 @@ class PanduanViewController: UIViewController {
     override func viewDidLoad() {
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -33,7 +33,7 @@ extension PanduanViewController: PraktikumBerpanduanViewControllerDelegate {
     }
     
     func changeStep(to step: Step) { }
-    
+
     func startKuisView() { }
     
     func showSkorView(quizBrain: QuizBrain) { }
@@ -43,7 +43,6 @@ extension PanduanViewController: PraktikumBerpanduanViewControllerDelegate {
     func exitPraktikum() { }
     
     func showLabView() { }
-    
     
 }
 

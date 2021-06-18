@@ -10,6 +10,7 @@ import Foundation
 
 class Constants {
     static let subjects: [Mapel] = [.fisika, .kimia, .biologi, .matematika]
+    static let classes: [Kelas] = [.k10, .k11, .k12]
     static let arrayOfTipePraktikum = [
         TipePraktikum(namaTipe: "Dengan Panduan (LKS)", gambarTipe: #imageLiteral(resourceName: "gravity")),
         TipePraktikum(namaTipe: "Tanpa Panduan (LKS)", gambarTipe: #imageLiteral(resourceName: "gravity_gray"))
@@ -20,8 +21,17 @@ class Constants {
         MediaPraktikum(namaMedia: "Augmented Reality (AR)", gambarMedia: #imageLiteral(resourceName: "gravity"))
     ]
     static let arrayOfPraktikum = [
-        Praktikum(nama: "Gerak Parabola", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k10, mataPelajaran: .fisika,
-                   subtitleMateri: "Materi: Gerak", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
+        Praktikum(nama: "Energi Potensial & Kinetik", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k10, mataPelajaran: .fisika,
+                   subtitleMateri: "Energi", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
+                   stepUnlockList: [], stepDoneList: []),
+        Praktikum(nama: "Hukum I Newton", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k11, mataPelajaran: .fisika,
+                   subtitleMateri: "Hukum Newton", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
+                   stepUnlockList: [], stepDoneList: []),
+        Praktikum(nama: "Gerak Parabola", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k12, mataPelajaran: .fisika,
+                   subtitleMateri: "Gerak Benda", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
+                   stepUnlockList: [], stepDoneList: []),
+        Praktikum(nama: "Pengukuran", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k12, mataPelajaran: .fisika,
+                   subtitleMateri: "Besaran dan Satuan", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
                    stepUnlockList: [], stepDoneList: [])
     ]
     static let panduanLabs = [

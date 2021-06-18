@@ -1,4 +1,5 @@
 // swiftlint:disable trailing_whitespace
+// swiftlint:disable cyclomatic_complexity
 //
 //  PraktikumBerpanduanViewController.swift
 //  victory

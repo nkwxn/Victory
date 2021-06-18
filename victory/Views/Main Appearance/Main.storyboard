@@ -18,46 +18,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-Ye-Iny">
-                                <rect key="frame" x="32" y="162" width="810" height="652"/>
-                                <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lXP-t1-ung">
-                                    <size key="itemSize" width="254" height="228"/>
-                                    <size key="estimatedItemSize" width="254" height="228"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MateriCollectionView" id="v8b-d7-iT7">
-                                        <rect key="frame" x="0.0" y="50" width="254" height="228"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ai0-gx-WQe">
-                                            <rect key="frame" x="0.0" y="0.0" width="254" height="228"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-gs-B9g">
+                                <rect key="frame" x="0.0" y="66" width="873.5" height="768"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SubHeaderTableViewCell" rowHeight="32" id="OAA-5d-WhF" customClass="SubHeaderTableViewCell" customModule="victory" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="873.5" height="32"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OAA-5d-WhF" id="aw7-FB-Dfv">
+                                            <rect key="frame" x="0.0" y="0.0" width="873.5" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MateriCollectionVIewHeader" id="Xj1-gS-rha" customClass="SearchCollectionReusableView" customModule="victory" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </collectionReusableView>
-                            </collectionView>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kelas 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-f0-AgT">
+                                                    <rect key="frame" x="32" y="0.0" width="86" height="27"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Zht-f0-AgT" firstAttribute="top" secondItem="aw7-FB-Dfv" secondAttribute="top" id="YvA-F9-m4g"/>
+                                                <constraint firstItem="Zht-f0-AgT" firstAttribute="leading" secondItem="aw7-FB-Dfv" secondAttribute="leading" constant="32" id="m85-QQ-YQP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="classLbl" destination="Zht-f0-AgT" id="8AY-9V-I0k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MateriTableViewCell" rowHeight="236" id="S39-Cl-8yv" customClass="MateriTableViewCell" customModule="victory" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="873.5" height="236"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S39-Cl-8yv" id="WQH-yY-bI7">
+                                            <rect key="frame" x="0.0" y="0.0" width="873.5" height="236"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qZO-1f-88X">
+                                                    <rect key="frame" x="19" y="0.0" width="835.5" height="236"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="0.0" id="r4F-0i-Zig">
+                                                        <size key="itemSize" width="278" height="236"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells/>
+                                                </collectionView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="qZO-1f-88X" firstAttribute="leading" secondItem="WQH-yY-bI7" secondAttribute="leading" constant="19" id="DJa-er-7Sv"/>
+                                                <constraint firstAttribute="trailing" secondItem="qZO-1f-88X" secondAttribute="trailing" constant="19" id="R1G-JE-6eX"/>
+                                                <constraint firstAttribute="bottom" secondItem="qZO-1f-88X" secondAttribute="bottom" id="WNt-Vc-Qxe"/>
+                                                <constraint firstItem="qZO-1f-88X" firstAttribute="top" secondItem="WQH-yY-bI7" secondAttribute="top" id="oEg-9h-MeM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="collectionView" destination="qZO-1f-88X" id="B71-0N-bED"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K89-Rz-LbC"/>
-                        <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zdd-Ye-Iny" firstAttribute="leading" secondItem="UV7-QI-PeQ" secondAttribute="leading" constant="32" id="NFM-z4-x0F"/>
-                            <constraint firstAttribute="trailing" secondItem="zdd-Ye-Iny" secondAttribute="trailing" constant="31.5" id="QIm-cq-wRr"/>
-                            <constraint firstAttribute="bottom" secondItem="zdd-Ye-Iny" secondAttribute="bottom" constant="20" id="lAH-tF-sj8"/>
-                            <constraint firstItem="zdd-Ye-Iny" firstAttribute="top" secondItem="UV7-QI-PeQ" secondAttribute="top" constant="162" id="rbA-xB-ngn"/>
+                            <constraint firstItem="NiD-gs-B9g" firstAttribute="top" secondItem="K89-Rz-LbC" secondAttribute="top" constant="16" id="8pl-KE-6g9"/>
+                            <constraint firstItem="NiD-gs-B9g" firstAttribute="leading" secondItem="K89-Rz-LbC" secondAttribute="leading" id="cYP-Om-fuM"/>
+                            <constraint firstAttribute="trailing" secondItem="NiD-gs-B9g" secondAttribute="trailing" id="iHs-L3-ZdT"/>
+                            <constraint firstAttribute="bottom" secondItem="NiD-gs-B9g" secondAttribute="bottom" id="qac-1u-4eL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Semua Praktikum" id="OA1-Ao-POs"/>
+                    <navigationItem key="navigationItem" title="Semua Praktikum" largeTitleDisplayMode="always" id="OA1-Ao-POs"/>
                     <connections>
-                        <outlet property="materiCollectionView" destination="zdd-Ye-Iny" id="Fd3-u9-ASF"/>
                         <outlet property="materiTitleNavigationItem" destination="OA1-Ao-POs" id="suX-RN-RBE"/>
+                        <outlet property="tableView" destination="NiD-gs-B9g" id="S2s-P3-5Pr"/>
                         <segue destination="fIK-T7-WC0" kind="show" identifier="moveToMediaPraktikum" id="oHg-mA-YsL"/>
                     </connections>
                 </viewController>
@@ -133,7 +169,7 @@
                                     <rect key="frame" x="100" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5a-n9-agU" customClass="RoundCornersUIView" customModule="testing" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5a-n9-agU" customClass="RoundCornersUIView" customModule="victory" customModuleProvider="target">
                                             <rect key="frame" x="16" y="0.0" width="288" height="44"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thermometer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OZA-3t-3PH">
@@ -231,7 +267,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="biR-vx-FQO">
                         <rect key="frame" x="0.0" y="0.0" width="873.5" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="vc_nav_bar"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -265,9 +302,6 @@
     </scenes>
     <resources>
         <image name="thermometer" catalog="system" width="93" height="128"/>
-        <namedColor name="vc_nav_bar">
-            <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="vc_side_menu">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
