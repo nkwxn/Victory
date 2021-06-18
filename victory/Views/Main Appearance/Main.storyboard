@@ -78,6 +78,37 @@
                                             <outlet property="collectionView" destination="qZO-1f-88X" id="B71-0N-bED"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyStateTableViewCell" rowHeight="422" id="PXU-3Z-LmM" customClass="EmptyStateTableViewCell" customModule="victory" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="296" width="873.5" height="422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PXU-3Z-LmM" id="dYJ-PS-KMy">
+                                            <rect key="frame" x="0.0" y="0.0" width="873.5" height="422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pcK-J5-XTE">
+                                                    <rect key="frame" x="117" y="111" width="640" height="243"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="640" id="7cM-4z-2bE"/>
+                                                        <constraint firstAttribute="height" constant="243" id="DEt-7Q-IfT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fitur ini masih dalam pengembangan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VD-d5-5C7">
+                                                    <rect key="frame" x="297" y="382" width="280" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="vc_secondary_text"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9VD-d5-5C7" secondAttribute="bottom" constant="8.5" id="ABD-ii-mPL"/>
+                                                <constraint firstItem="9VD-d5-5C7" firstAttribute="top" secondItem="pcK-J5-XTE" secondAttribute="bottom" constant="28" id="SXf-Yk-MFQ"/>
+                                                <constraint firstItem="pcK-J5-XTE" firstAttribute="top" secondItem="dYJ-PS-KMy" secondAttribute="topMargin" constant="100" id="UdL-2t-k2k"/>
+                                                <constraint firstItem="pcK-J5-XTE" firstAttribute="centerX" secondItem="dYJ-PS-KMy" secondAttribute="centerX" id="iTX-I7-JfG"/>
+                                                <constraint firstItem="9VD-d5-5C7" firstAttribute="centerX" secondItem="pcK-J5-XTE" secondAttribute="centerX" id="ic2-nB-XNI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -302,6 +333,9 @@
     </scenes>
     <resources>
         <image name="thermometer" catalog="system" width="93" height="128"/>
+        <namedColor name="vc_secondary_text">
+            <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="vc_side_menu">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

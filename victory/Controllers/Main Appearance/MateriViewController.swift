@@ -22,10 +22,6 @@ class MateriViewController: UIViewController {
     var selectedMatpelPraktikum: [[Praktikum]] = []
     var showAll = true
     
-    var emptyStateImage = UIImage(systemName: "car")
-    var emptyStateTitle = "Belum ada materi"
-    var emptyStateSubtitle = "Nantikan materinya"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,12 +94,11 @@ extension MateriViewController: UITableViewDataSource, UITableViewDelegate {
             identifier.append(MateriTableViewCell.identifier)
         } else {
             for gradePraktikum in selectedMatpelPraktikum where !gradePraktikum.isEmpty {
-                print("ADA")
                 identifier.append(SubHeaderTableViewCell.identifier)
                 identifier.append(MateriTableViewCell.identifier)
             }
             if identifier.isEmpty {
-//                identifier.append(EmptyStateTableViewCell.identifier)
+                identifier.append(EmptyStateTableViewCell.identifier)
             }
         }
     return identifier
@@ -128,6 +123,7 @@ extension MateriViewController: UITableViewDataSource, UITableViewDelegate {
                 let totalHeight  = rowHeight * Int(totalRow) + bottomOffset + totalLineSpace
                 return CGFloat(totalHeight)
             }
+            return UITableView.automaticDimension
         case 1, 3, 5: // collection cell
             
             switch indexPath.row {
@@ -147,13 +143,17 @@ extension MateriViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             return UITableView.automaticDimension
         }
-        return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = tableViewIdentifier()[indexPath.row]
         let currentCell = indexPath.row
         
         switch identifier {
+        case EmptyStateTableViewCell.identifier:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+                    as? EmptyStateTableViewCell else { return UITableViewCell() }
+            return cell
+            
         case SubHeaderTableViewCell.identifier:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
                     as? SubHeaderTableViewCell else { return UITableViewCell() }

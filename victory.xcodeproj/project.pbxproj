@@ -20,6 +20,7 @@
 		3075B0FF267C7A20006FA42A /* MataPelajaranTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5397E432678F727005909F6 /* MataPelajaranTableController.swift */; };
 		3075B104267C7FCF006FA42A /* SubHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B103267C7FCF006FA42A /* SubHeaderTableViewCell.swift */; };
 		3075B107267C8362006FA42A /* MateriTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B106267C8362006FA42A /* MateriTableViewCell.swift */; };
+		3075B10A267CCB98006FA42A /* EmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B109267CCB98006FA42A /* EmptyStateTableViewCell.swift */; };
 		307BEC9626748B7000948951 /* DimOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307BEC9526748B7000948951 /* DimOverlayView.xib */; };
 		307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BEC9826748C5E00948951 /* DimOverlayView.swift */; };
 		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
@@ -83,6 +84,7 @@
 		3072ABDB2676E4BA004B2F36 /* PraktikumBerpanduanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraktikumBerpanduanViewController.swift; sourceTree = "<group>"; };
 		3075B103267C7FCF006FA42A /* SubHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		3075B106267C8362006FA42A /* MateriTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriTableViewCell.swift; sourceTree = "<group>"; };
+		3075B109267CCB98006FA42A /* EmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateTableViewCell.swift; sourceTree = "<group>"; };
 		307BEC9526748B7000948951 /* DimOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimOverlayView.xib; sourceTree = "<group>"; };
 		307BEC9826748C5E00948951 /* DimOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimOverlayView.swift; sourceTree = "<group>"; };
 		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				30CFC0EA267BC5CA001AFFD3 /* MataPelajaranlTableViewCell.swift */,
 				3075B103267C7FCF006FA42A /* SubHeaderTableViewCell.swift */,
 				3075B106267C8362006FA42A /* MateriTableViewCell.swift */,
+				3075B109267CCB98006FA42A /* EmptyStateTableViewCell.swift */,
 			);
 			path = "Main Appearance";
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				D58328B02670E11F007753E9 /* LabGerakParabolaView+Extensions.swift in Sources */,
 				D515DCD42678C36900AAD6D2 /* PraktikumTanpaPanduanViewController.swift in Sources */,
 				30ACD4CB267725FF00C9F62E /* SkorView.swift in Sources */,
+				3075B10A267CCB98006FA42A /* EmptyStateTableViewCell.swift in Sources */,
 				3031647F26724CDF0085E518 /* PanduanLabView.swift in Sources */,
 				D5397E422678F6C9005909F6 /* MediaViewController.swift in Sources */,
 				307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */,
