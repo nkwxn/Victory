@@ -21,6 +21,7 @@
 		3075B104267C7FCF006FA42A /* SubHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B103267C7FCF006FA42A /* SubHeaderTableViewCell.swift */; };
 		3075B107267C8362006FA42A /* MateriTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B106267C8362006FA42A /* MateriTableViewCell.swift */; };
 		3075B10A267CCB98006FA42A /* EmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B109267CCB98006FA42A /* EmptyStateTableViewCell.swift */; };
+		3075B10D267CD176006FA42A /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B10C267CD176006FA42A /* CommonFunctions.swift */; };
 		307BEC9626748B7000948951 /* DimOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307BEC9526748B7000948951 /* DimOverlayView.xib */; };
 		307BEC9926748C5E00948951 /* DimOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307BEC9826748C5E00948951 /* DimOverlayView.swift */; };
 		308E6F9A26712AF600D6A45D /* TimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308E6F9926712AF600D6A45D /* TimelineView.xib */; };
@@ -85,6 +86,7 @@
 		3075B103267C7FCF006FA42A /* SubHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		3075B106267C8362006FA42A /* MateriTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriTableViewCell.swift; sourceTree = "<group>"; };
 		3075B109267CCB98006FA42A /* EmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateTableViewCell.swift; sourceTree = "<group>"; };
+		3075B10C267CD176006FA42A /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
 		307BEC9526748B7000948951 /* DimOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimOverlayView.xib; sourceTree = "<group>"; };
 		307BEC9826748C5E00948951 /* DimOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimOverlayView.swift; sourceTree = "<group>"; };
 		308E6F9926712AF600D6A45D /* TimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineView.xib; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				3031648126724E270085E518 /* Constants */,
 				3099E73D2670D0B600B44701 /* Extensions */,
+				3075B10C267CD176006FA42A /* CommonFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				D5397E402678F643005909F6 /* MateriViewController.swift in Sources */,
 				D5983E1E2665D6AC00C199EA /* SceneDelegate.swift in Sources */,
 				30CFC0EB267BC5CA001AFFD3 /* MataPelajaranlTableViewCell.swift in Sources */,
+				3075B10D267CD176006FA42A /* CommonFunctions.swift in Sources */,
 				D5D97CFA2671C78B00C28CDA /* UIButton+Extension.swift in Sources */,
 				D5D97D012671DB0600C28CDA /* RowLKSBodyCell.swift in Sources */,
 			);

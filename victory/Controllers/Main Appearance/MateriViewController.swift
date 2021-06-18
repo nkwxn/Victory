@@ -193,18 +193,28 @@ extension MateriViewController: UITableViewDataSource, UITableViewDelegate {
                 guard let destVC = storyBoard.instantiateViewController(withIdentifier: "MediaViewControllerScene") as?
                         MediaViewController else { return }
                 if self?.showAll == true {
-                    destVC.selectedPraktikum = self?.praktikum[indexPath.row]
+                    if indexPath.row == 0 {
+                        destVC.selectedPraktikum = self?.praktikum[indexPath.row]
+                    } else {
+                        self?.present(CommonFunction.shared.showUnderConstructionAlert(),
+                                     animated: true, completion: nil)
+                    }
                 } else {
                     switch currentCell {
-                    case 0:
-                        destVC.selectedPraktikum = self?.praktikum[indexPath.row]
                     case 1:
-                        destVC.selectedPraktikum = self?.praktikumTen[indexPath.row]
-                    case 3:
-                        destVC.selectedPraktikum = self?.praktikumEleven[indexPath.row]
-                    case 5:
-                        destVC.selectedPraktikum = self?.praktikumTwelve[indexPath.row]
+                        if indexPath.row == 0 {
+                            destVC.selectedPraktikum = self?.praktikumTen[indexPath.row]
+                        } else {
+                            self?.present(CommonFunction.shared.showUnderConstructionAlert(),
+                                         animated: true, completion: nil)
+                        }
+//                    case 3:
+//                        destVC.selectedPraktikum = self?.praktikumEleven[indexPath.row]
+//                    case 5:
+//                        destVC.selectedPraktikum = self?.praktikumTwelve[indexPath.row]
                     default:
+                        self?.present(CommonFunction.shared.showUnderConstructionAlert(),
+                                     animated: true, completion: nil)
                         print("no cell found")
                     }
                 }

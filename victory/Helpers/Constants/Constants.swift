@@ -21,14 +21,14 @@ class Constants {
         MediaPraktikum(namaMedia: "Augmented Reality (AR)", gambarMedia: #imageLiteral(resourceName: "gravity"))
     ]
     static let arrayOfPraktikum = [
+        Praktikum(nama: "Gerak Parabola", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k10, mataPelajaran: .fisika,
+                   subtitleMateri: "Gerak Benda", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
+                   stepUnlockList: [], stepDoneList: []),
         Praktikum(nama: "Energi Potensial & Kinetik", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k10, mataPelajaran: .fisika,
                    subtitleMateri: "Energi", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
                    stepUnlockList: [], stepDoneList: []),
         Praktikum(nama: "Hukum I Newton", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k11, mataPelajaran: .fisika,
                    subtitleMateri: "Hukum Newton", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
-                   stepUnlockList: [], stepDoneList: []),
-        Praktikum(nama: "Gerak Parabola", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k12, mataPelajaran: .fisika,
-                   subtitleMateri: "Gerak Benda", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
                    stepUnlockList: [], stepDoneList: []),
         Praktikum(nama: "Pengukuran", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k12, mataPelajaran: .fisika,
                    subtitleMateri: "Besaran dan Satuan", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
