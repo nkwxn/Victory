@@ -311,12 +311,12 @@ extension LabGerakParabolaView: VariableSliderDelegate {
         case .ketAwal:
             self.ketinggianAwal = Double(sliderValue)
             ketinggianReal = sliderValue
-            ketinggianEngine = sliderValue * 50
+            ketinggianEngine = sliderValue * 15
             
 //            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
 //            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
             
-            scene.initialY = scene.size.height * 0.5 + CGFloat(ketinggianEngine)
+            scene.initialY = scene.size.height * 0.2 + CGFloat(ketinggianEngine)
             scene.totalWaktuEngine = totalWaktuEngine
             scene.totalWaktuReal = totalWaktuReal
             scene.ketinggianReal = ketinggianReal
