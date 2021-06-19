@@ -11,28 +11,33 @@ import UIKit
 import SpriteKit
 
 class VictoryEngine {
-    // Set up ketinggian masih nunggu pengaturan boundary dari gamescene
-    // For freestyle mode
-    var kecAwal: Float = 100
-    var sudutAwal: Double = 45
-    var waktu: Double = 1
-    var gravitasiReal: Float = 9.8
-    var poinKeMeter: Float = 50
-    var dx: CGFloat {
-        get {
-            return CGFloat(kecAwal * Float(__cospi(sudutAwal/180)))
-        }
-    }
-    var dy: CGFloat {
-        get {
-            return CGFloat(kecAwal * Float(__sinpi(sudutAwal/180)))
-        }
-    }
-    var ketinggianMaxReal: Float {
-        get {
-            return (pow(kecAwal, 2) * pow(Float(__sinpi(sudutAwal/180)), 2))/(2*gravitasiReal)
-        }
-    }
+    /// set up ketinggian masih nunggu pengaturan boundary dari gamescene
+    
+    //for freestyle mode
+    var kecAwal : Float = 100
+    var sudutAwal : Double = 45
+    var waktu : Double = 1
+    var gravitasiReal : Float = 9.8
+    var poinKeMeter : Float = 50
+    
+//    var dx: CGFloat {
+//        get{
+//            return CGFloat(kecAwal * Float(__cospi(sudutAwal/180)))
+//        }
+//    }
+//
+//    var dy: CGFloat {
+//        get{
+//            return CGFloat(kecAwal * Float(__sinpi(sudutAwal/180)))
+//        }
+//    }
+//
+//    var ketinggianMaxReal : Float {
+//        get {
+//            return (pow(kecAwal, 2) * pow(Float(__sinpi(sudutAwal/180)), 2))/(2*gravitasiReal)
+//        }
+//    }
+//
     /*
     var ketinggianMaxEngine : Float {
         get {
@@ -44,35 +49,40 @@ class VictoryEngine {
             return (pow(kecAwal,2)/gravitasiEngine) * Float(__sinpi((2*sudutAwal)/180))
         }
     }
-    */
-    var jarakMaxReal: Float {
-        get {
-            return (pow(kecAwal, 2)/gravitasiReal) * Float(__sinpi((2*sudutAwal)/180))
-        }
-    }
+ */
+//
+//    var jarakMaxReal : Float {
+//        get {
+//            return (pow(kecAwal,2)/gravitasiReal) * Float(__sinpi((2*sudutAwal)/180))
+//        }
+//    }
+//
 //    var waktuKetinggianMaxEngine: Float {
 //        get {
 //            return kecAwal * Float(__sinpi(sudutAwal/180)) / gravitasiEngine
 //        }
 //    }
-    var waktuKetinggianMaxReal: Float {
-        get {
-            return kecAwal * Float(__sinpi(sudutAwal/180)) / gravitasiReal
-        }
-    }
+    
+//    var waktuKetinggianMaxReal: Float {
+//        get {
+//            return kecAwal * Float(__sinpi(sudutAwal/180)) / gravitasiReal
+//        }
+//    }
+    
 //    var waktuJarakMaxEngine: Float {
 //        get {
 //            return 2 * waktuKetinggianMaxEngine
 //        }
 //    }
-    var waktuJarakMaxReal: Float {
-        get {
-            return 2 * waktuKetinggianMaxReal
-        }
-    }
-    /*
-    // Callable functions
-    */
+    
+//    var waktuJarakMaxReal: Float {
+//        get {
+//            return 2 * waktuKetinggianMaxReal
+//        }
+//    }
+    
+    
+    //callable function
     func kecepatanXAwalEngine(sudutTembak: Double, kecepatanAwal: Float) -> CGFloat {
         return CGFloat(kecepatanAwal * poinKeMeter * Float(__cospi(sudutTembak/180)))
     }
@@ -186,8 +196,8 @@ class VictoryEngine {
             //
             let topFormula2 = -b - discrimimantAbsSqrt
             let totalX2 = topFormula2 / bottomFormula
-            //
-            print("X = \(totalX) & \(totalX2)")
+            
+//            print("X = \(totalX) & \(totalX2)")
             if totalX >= 0 {
                 return totalX
             } else {
