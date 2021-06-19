@@ -15,4 +15,8 @@ class GeneralCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var generalCollectionImageView: UIImageView!
     @IBOutlet weak var generalCollectionTitleLabel: UILabel!
     @IBOutlet weak var generalCollectionSubtitleLabel: UILabel!
+    @IBOutlet var heightConstraintsSubtitleLabel: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintImageView: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintsTitleLabel: NSLayoutConstraint!
+    
 }

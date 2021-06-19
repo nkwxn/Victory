@@ -40,6 +40,9 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Materi: Besaran dan Satuan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnU-bH-AjL">
                                         <rect key="frame" x="20" y="188" width="214" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="qDe-x8-kqw"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -82,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ITg-eN-CoX" secondAttribute="bottom" constant="12" id="CwW-HG-hab"/>
                             <constraint firstItem="ITg-eN-CoX" firstAttribute="leading" secondItem="t97-zq-Ck7" secondAttribute="leading" constant="12" id="MLS-D4-u9r"/>
@@ -104,7 +107,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="t97-zq-Ck7" secondAttribute="bottom" id="NBS-mC-eFr"/>
                 <constraint firstItem="t97-zq-Ck7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="j4e-tH-JAS"/>
@@ -117,6 +120,9 @@
                 <outlet property="generalCollectionSubtitleLabel" destination="dnU-bH-AjL" id="jrJ-0W-3Hg"/>
                 <outlet property="generalCollectionTitleLabel" destination="H5l-Ti-atI" id="f9y-j0-RuH"/>
                 <outlet property="generalCollectionView" destination="ITg-eN-CoX" id="jXM-jk-VlT"/>
+                <outlet property="heightConstraintImageView" destination="3R5-JM-p3B" id="LEz-M9-vV3"/>
+                <outlet property="heightConstraintsSubtitleLabel" destination="qDe-x8-kqw" id="0md-9e-6LA"/>
+                <outlet property="heightConstraintsTitleLabel" destination="mof-RF-X6g" id="nWZ-LS-Us1"/>
             </connections>
             <point key="canvasLocation" x="-8" y="108"/>
         </collectionViewCell>
@@ -124,9 +130,6 @@
     <resources>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

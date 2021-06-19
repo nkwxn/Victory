@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-gs-B9g">
                                 <rect key="frame" x="0.0" y="66" width="873.5" height="768"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SubHeaderTableViewCell" rowHeight="32" id="OAA-5d-WhF" customClass="SubHeaderTableViewCell" customModule="victory" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="873.5" height="32"/>
@@ -112,7 +112,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K89-Rz-LbC"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="vc_tab_bar"/>
                         <constraints>
                             <constraint firstItem="NiD-gs-B9g" firstAttribute="top" secondItem="K89-Rz-LbC" secondAttribute="top" constant="16" id="8pl-KE-6g9"/>
                             <constraint firstItem="NiD-gs-B9g" firstAttribute="leading" secondItem="K89-Rz-LbC" secondAttribute="leading" id="cYP-Om-fuM"/>
@@ -152,7 +152,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XBw-d9-GHU"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="vc_tab_bar"/>
                         <constraints>
                             <constraint firstItem="guv-ve-0gt" firstAttribute="top" secondItem="XBw-d9-GHU" secondAttribute="top" constant="24" id="1JG-1I-fXD"/>
                             <constraint firstItem="XBw-d9-GHU" firstAttribute="trailing" secondItem="guv-ve-0gt" secondAttribute="trailing" constant="32" id="4gr-92-kly"/>
@@ -287,8 +287,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="biR-vx-FQO">
                         <rect key="frame" x="0.0" y="0.0" width="873.5" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="vc_tab_bar"/>
+                        <color key="tintColor" name="vc_blue_active"/>
+                        <color key="barTintColor" name="vc_tab_bar"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -323,11 +324,17 @@
     <resources>
         <image name="cherry-danger-zone" width="303" height="223"/>
         <image name="thermometer" catalog="system" width="93" height="128"/>
+        <namedColor name="vc_blue_active">
+            <color red="0.0" green="0.34099999070167542" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="vc_secondary_text">
             <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="vc_side_menu">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="vc_tab_bar">
+            <color red="0.97299998998641968" green="0.97600001096725464" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
