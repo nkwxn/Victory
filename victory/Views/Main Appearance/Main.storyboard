@@ -14,7 +14,7 @@
             <objects>
                 <viewController title="Semua Praktikum" id="PG9-na-59i" customClass="MateriViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV7-QI-PeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-gs-B9g">
@@ -77,7 +77,7 @@
                                             <outlet property="collectionView" destination="qZO-1f-88X" id="B71-0N-bED"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyStateTableViewCell" rowHeight="422" id="PXU-3Z-LmM" customClass="EmptyStateTableViewCell" customModule="victory" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyStateTableViewCell" rowHeight="422" id="PXU-3Z-LmM" customClass="EmptyStateTableViewCell" customModule="victory" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="296" width="873.5" height="422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PXU-3Z-LmM" id="dYJ-PS-KMy">
@@ -136,7 +136,7 @@
             <objects>
                 <viewController storyboardIdentifier="MediaViewControllerScene" title="Gerak Parabola" id="fIK-T7-WC0" customClass="MediaViewController" customModule="victory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oE6-yn-rh1">
-                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="guv-ve-0gt">
