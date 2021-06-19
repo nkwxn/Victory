@@ -1,3 +1,5 @@
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable weak_delegate
 //
 //  GravityPopoverViewController.swift
 //  victory
@@ -36,12 +38,6 @@ class GravityPopoverViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -53,13 +49,11 @@ class GravityPopoverViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let planet = planets[indexPath.row]
-        let cell = CustomClearTabl(image: nil, title: planet.rawValue, detail: "\(planet.getGravityValue()) m/s²", showAcc: false)
-
-        // Configure the cell...
+        let cell = CustomClearTabl(image: nil, title: planet.rawValue,
+                                   detail: "\(planet.getGravityValue()) m/s²", showAcc: false)
 
         return cell
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Chosen planet: \(planets[indexPath.row])")
         // Should dismiss
@@ -69,6 +63,6 @@ class GravityPopoverViewController: UITableViewController {
     }
 }
 
-protocol GravityPopoverDelegate {
+protocol GravityPopoverDelegate: class {
     func chooseGravity(chosenValue planet: Planet)
 }

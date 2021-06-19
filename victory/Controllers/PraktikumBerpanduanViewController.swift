@@ -1,3 +1,5 @@
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable cyclomatic_complexity
 //
 //  PraktikumBerpanduanViewController.swift
 //  victory
@@ -55,33 +57,22 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     var isQuizOnboardingDone = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Should pass data from MediaViewController via function prepSetup()
-        // But these are dummy variable inits, will be deleted soon
-        
         // initializing the LabGerakParabolaView and the delegate methods
         let praktikumFrame = CGRect(x: 0, y: 0, width: praktikum1View.frame.width, height: praktikum1View.frame.height)
         let prak1 = LabGerakParabolaView(frame: praktikumFrame, noLab: 0)
         let prak2 = LabGerakParabolaView(frame: praktikumFrame, noLab: 1)
         let prak3 = LabGerakParabolaView(frame: praktikumFrame, noLab: 2)
-        
+        //
         prak1.delegate = self
         prak2.delegate = self
         prak3.delegate = self
-        
+        //
         praktikum1View.addSubview(prak1)
         praktikum2View.addSubview(prak2)
         praktikum3View.addSubview(prak3)
-        
-        quizBrain = QuizBrain()
-        praktikum = Praktikum(nama: "Gerak Prabola", gambar: UIImage(systemName: "sun.max.fill")!,
-                              kelas: .k10, mataPelajaran: .fisika, subtitleMateri: "", pertanyaanQuiz: quizBrain!)
-        currentStep = praktikum?.currentStep
-        stepUnlockList = praktikum?.stepUnlockList
-        stepDoneList = praktikum?.stepDoneList
         //
-        //
-        viewList = [timelineView, materiView, quizView, praktikum1View, praktikum2View, praktikum3View, onBoardingLabView, panduanLabView, dimOverlayView,
-                    onBoardingKuisView, scoreView] // To - Do add labView
+        viewList = [timelineView, materiView, quizView, praktikum1View, praktikum2View, praktikum3View,
+                    onBoardingLabView, panduanLabView, dimOverlayView, onBoardingKuisView, scoreView]
         timelineView.delegate = self
         panduanLabView.delegate = self
         onBoardingLabView.delegate = self
@@ -120,6 +111,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     func changeStep(to step: Step) {
         currentStep = step
         for unlockStep in stepUnlockList! {
+            print(unlockStep)
             timelineView.setupTimelineComponentStage(step: unlockStep, isActive: false, isLocked: false)
         }
         for doneStep in stepDoneList! {
@@ -133,7 +125,7 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     func changeView(for view: Step) {
         // To - Do change view (show - hidden) based on selected timeline's step
-        for view in viewList[1...2] {
+        for view in viewList[1...5] {
             view.isHidden = true
         }
         switch view {
@@ -142,32 +134,27 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         case .labOne:
             print("To Lab 1 View")
             praktikum1View.isHidden = false
-            praktikum2View.isHidden = true
-            praktikum3View.isHidden = true
         case .labTwo:
-            praktikum1View.isHidden = true
             praktikum2View.isHidden = false
-            praktikum3View.isHidden = true
             print("To Lab 2 View")
         case .labThree:
             print("To Lab 3 View")
-            praktikum1View.isHidden = true
-            praktikum2View.isHidden = true
             praktikum3View.isHidden = false
         case .kuis:
             quizView.isHidden = false
-            quizView.setupToLastVisitedNumberUI()
         }
     }
     func startKuisView() {
-        if isQuizOnboardingDone {
+        if !isQuizOnboardingDone {
             showOnBoardingKuisView()
             isQuizOnboardingDone = true
+            quizView.quizBrain = self.quizBrain!
+            quizView.isHidden = true
         } else {
             onBoardingKuisView.isHidden = true
+            quizView.quizBrain = self.quizBrain!
+            quizView.isHidden = false
         }
-        quizView.quizBrain = self.quizBrain!
-        quizView.isHidden = false
     }
     func showSkorView(quizBrain: QuizBrain) {
         stepDoneList!.append(.kuis)
@@ -197,10 +184,10 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     // Setup View Functions
     */
     func prepSetup() {
-//        quizBrain = praktikum?.quizBrain
-//        currentStep = praktikum?.currentStep
-//        stepUnlockList = praktikum?.stepUnlockList
-//        stepDoneList = praktikum?.stepDoneList
+        quizBrain = praktikum?.pertanyaanQuiz
+        currentStep = praktikum?.currentStep
+        stepUnlockList = praktikum?.stepUnlockList
+        stepDoneList = praktikum?.stepDoneList
     }
     func setupInitialView() {
         setupPanduanLabView()
@@ -220,7 +207,6 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
     }
     func setupDimOverlayView() {
         dimOverlayView.alpha = 0.6
-        
         /*
         let currentWindow: UIWindow? = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
         
@@ -289,17 +275,17 @@ extension PraktikumBerpanduanViewController: LabGerakParabolaDelegate {
                 stepDoneList?.removeAll(where: {
                     $0 == .labOne
                 })
-                changeStep(to: .labOne)
+                timelineView.onTimelineBtnPressed(timelineView.buttonList[1])
             case 1:
                 stepDoneList?.removeAll(where: {
                     $0 == .labTwo
                 })
-                changeStep(to: .labTwo)
+                timelineView.onTimelineBtnPressed(timelineView.buttonList[2])
             case 2:
                 stepDoneList?.removeAll(where: {
                     $0 == .labThree
                 })
-                changeStep(to: .labThree)
+                timelineView.onTimelineBtnPressed(timelineView.buttonList[3])
             default:
                 print("LKS unknown")
             }
@@ -315,7 +301,9 @@ extension PraktikumBerpanduanViewController: LabGerakParabolaDelegate {
         
         if allLabsDone {
             stepUnlockList?.append(.kuis)
-//            let alert = UIAlertController(title: "Anda telah menyelesaikan seluruh LKS praktikum.", message: "Langkah selanjutnya dari lab ini adalah Quiz. Silahkan tekan OK untuk melanjutkan", preferredStyle: .alert)
+//            let alert = UIAlertController(title: "Anda telah menyelesaikan seluruh LKS praktikum.",
+//                                          message: "Langkah selanjutnya dari lab ini adalah Quiz. Silahkan tekan OK untuk melanjutkan",
+//                                          preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert in
 //                <#code#>
 //            }))

@@ -1,3 +1,5 @@
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable type_name
 //
 //  rowLKSHeaderCell.swift
 //  victory
@@ -8,6 +10,7 @@
 import UIKit
 
 class rowLKSHeaderCell: UITableViewCell {
+    
     @IBOutlet weak var variabelLKS: UILabel!
     @IBOutlet weak var satuanVariabelLKS: UILabel!
     
@@ -15,7 +18,6 @@ class rowLKSHeaderCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
     var varLKS: SliderVariable? {
         didSet {
             guard let unit = varLKS?.getUnit(),
@@ -25,5 +27,4 @@ class rowLKSHeaderCell: UITableViewCell {
             variabelLKS.text = acronym
         }
     }
-    
 }

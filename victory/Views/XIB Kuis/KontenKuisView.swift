@@ -70,7 +70,7 @@ class KontenKuisView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        // initial Default View Config
+        // Initial Default View Config
         optionButtonList = [optionAButton, optionBButton, optionCButton, optionDButton]
         setupToDefaultUI()
     }
@@ -95,14 +95,14 @@ class KontenKuisView: UIView {
             explanationLabel.text = quizBrain.getExplanation()
         }
     }
-    private func showHideExplanationComponent(hidden: Bool) {
-        quizChecklistImage.isHidden = hidden
-        jawabanTepatLbl.isHidden = hidden
-        correctAnswerBg.isHidden = hidden
-        correctAnswerLabel.isHidden = hidden
-        pembahasanLbl.isHidden = hidden
-        explanationBg.isHidden = hidden
-        explanationLabel.isHidden = hidden
+    private func setupExplanationComponent(status: Bool) {
+        quizChecklistImage.isHidden = status
+        jawabanTepatLbl.isHidden = status
+        correctAnswerBg.isHidden = status
+        correctAnswerLabel.isHidden = status
+        pembahasanLbl.isHidden = status
+        explanationBg.isHidden = status
+        explanationLabel.isHidden = status
     }
     private func setupOptionBtnsText() {
         for (index, button) in optionButtonList.enumerated() {
@@ -159,7 +159,7 @@ class KontenKuisView: UIView {
         let correctAnswer = quizBrain.getCorrectAnswerKey()
         disableOptionButtons()
         resetOptionBtnsColor()
-        showHideExplanationComponent(hidden: false)
+        setupExplanationComponent(status: false)
         setupQuizComponentsText(isPembahasan: true)
         setupOptionBtnsText()
         setupToolBarUI(isPembahasan: true)
@@ -182,16 +182,9 @@ class KontenKuisView: UIView {
     private func setupToDefaultUI() {
         enableOptionButtons()
         resetOptionBtnsColor()
-        showHideExplanationComponent(hidden: true)
+        setupExplanationComponent(status: true)
         setupQuizComponentsText(isPembahasan: false)
         setupOptionBtnsText()
         setupToolBarUI(isPembahasan: false)
-    }
-    /*
-    // UIView Setup Main Functions: Last Visited Number UI
-    */
-    func setupToLastVisitedNumberUI() {
-        ((quizBrain.questionNumber) <= (quizBrain.getTotalAnsweredQuestion()) ?
-            setupToPembahasanUI() : setupToDefaultUI())
     }
 }

@@ -1,3 +1,4 @@
+// swiftlint:disable trailing_whitespace
 //
 //  LabVariableHeaderView.swift
 //  victory
@@ -11,7 +12,7 @@ class LabVariableHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var lblHeaderTitle: UILabel!
     @IBOutlet weak var btnHeader: UIButton!
     
-    var delegate: VariableHeaderDelegate?
+    weak var delegate: VariableHeaderDelegate?
     
     @IBAction func btnPressed(_ sender: UIButton) {
         delegate?.actionForButton(button: sender)

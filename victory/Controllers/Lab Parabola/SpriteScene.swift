@@ -1,3 +1,5 @@
+// swiftlint:disable line_length
+// swiftlint:disable trailing_whitespace
 //
 //  SpriteKitSceneCode.swift
 //  SpriteKit Trial
@@ -23,16 +25,14 @@ class SpriteScene: SKScene {
     let projectile8 = SKSpriteNode(imageNamed: "projectile")
     let projectile9 = SKSpriteNode(imageNamed: "projectile")
     let projectile10 = SKSpriteNode(imageNamed: "projectile")
-    var projectileArray : [SKSpriteNode] = []
-    var currentProjectile : SKSpriteNode?
-    var previousProjectile : SKSpriteNode?
+    var projectileArray: [SKSpriteNode] = []
+    var currentProjectile: SKSpriteNode?
+    var previousProjectile: SKSpriteNode?
     
     var vectorX = SKShapeNode(rectOf: CGSize(width: 0, height: 0))
     var vectorY = SKShapeNode(rectOf: CGSize(width: 0, height: 0))
     
-    
-    var index : Int = 0
-    
+    var index: Int = 0
     
     var monstersDestroyed = 0
     var engineSK = VictoryEngine()
@@ -44,14 +44,14 @@ class SpriteScene: SKScene {
     var sudutTembakScene : Double = 30
     var udaraDitembakCie = 0
     var indexBentol = 0
-    var lineActive : Bool = true
-    var initialTime : TimeInterval = 0
-    var nodeArrayDeletable : [SKNode] = []
-    var janganDihapusArray : [SKNode] = []
+    var lineActive: Bool = true
+    var initialTime: TimeInterval = 0
+    var nodeArrayDeletable: [SKNode] = []
+    var janganDihapusArray: [SKNode] = []
     
-    //Variabel konversi
-    var poinKeMeterDibagi : Float = 15
-    var perpindahanXDalamPoin : Float = 0
+    // Variabel konversi
+    var poinKeMeterDibagi: Float = 15
+    var perpindahanXDalamPoin: Float = 0
     
     //variabel passing lambung
     var totalWaktuEngine : Float = 0
@@ -69,9 +69,8 @@ class SpriteScene: SKScene {
     var ketinggianReal : Float = 0
     var ketinggianEngine : Float = 0
     
-    var initialX : CGFloat = 0
-    var initialY : CGFloat = 0
-    
+    var initialX: CGFloat = 0
+    var initialY: CGFloat = 0
     
     override func didEvaluateActions() {
         super.didEvaluateActions()
@@ -116,7 +115,7 @@ class SpriteScene: SKScene {
                         indexBentol += 1
                         return
                     }
-                    if children.count > janganDihapusArray.count  {
+                    if children.count > janganDihapusArray.count {
                         if buled.position.y != CGFloat(0) {
                             addChild(buled)
                             nodeArrayDeletable.append(buled)
@@ -135,7 +134,7 @@ class SpriteScene: SKScene {
         jarakXEngine = Float(posisiXProjectile - initialX)
         perpindahanXDalamPoin = jarakXEngine / poinKeMeterDibagi
         jarakXMaxEngine = Float(engineSK.xProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuEngine))
-        jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene,waktu: totalWaktuReal))
+        jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuReal))
         
         
 //        //otwapos
@@ -151,7 +150,7 @@ class SpriteScene: SKScene {
             kecepatanYreal = Float(engineSK.kecepatanY(sudutTembak: sudutTembakScene, kecepatanAwal: kecAwalScene, waktu: waktuRealTime, gravitasi: gravitasiVektor))
             
             let kecepatanXKuadrat = pow(kecepatanXReal, 2)
-            let kecepatanYKuadrat = pow(kecepatanYreal,2)
+            let kecepatanYKuadrat = pow(kecepatanYreal, 2)
             kecTotal = pow(kecepatanXKuadrat + kecepatanYKuadrat, 0.5)
             
             if rasioXEngine > 0.5 {
@@ -198,10 +197,8 @@ class SpriteScene: SKScene {
         physicsWorld.contactDelegate = self
         physicsWorld.speed = 0.3
         
-        
-        
-        
-        projectileArray = [projectile,projectile1,projectile2,projectile3,projectile4, projectile5,projectile6, projectile7, projectile8,projectile9, projectile10]
+        projectileArray = [projectile, projectile1, projectile2, projectile3, projectile4, projectile5, projectile6,
+                           projectile7, projectile8, projectile9, projectile10]
         
 //        physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 210, left: 0, bottom: 0, right: 0)))
         
@@ -327,7 +324,7 @@ extension SpriteScene: SKPhysicsContactDelegate {
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
-        } else{
+        } else {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
@@ -394,4 +391,3 @@ struct PhysicsCategory {
     static let projectile: UInt32 = 0b10 //2
     static let bentol: UInt32 = 0b11 //3
 }
-

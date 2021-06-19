@@ -1,3 +1,7 @@
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable inclusive_language
+// swiftlint:disable line_length
+// swiftlint:disable function_body_length
 //
 //  LabGerakParabolaView.swift
 //  victory
@@ -11,7 +15,7 @@ import SpriteKit
 class LabGerakParabolaView: UIView {
     @IBOutlet weak var variableTableView: UITableView!
     @IBOutlet weak var skView: SKView!
-    
+
     // Bottom Bar Button
     @IBOutlet weak var btnTampilkanMateri: UIButton!
     @IBOutlet weak var btnResetVariabel: UIButton!
@@ -93,28 +97,27 @@ class LabGerakParabolaView: UIView {
         nomorLab = noLab
         commonInit()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
-    
     func commonInit() {
         let bundle = Bundle.init(for: LabGerakParabolaView.self)
-        if let viewFromXIB = bundle.loadNibNamed("LabGerakParabola", owner: self, options: nil), let parabolaView = viewFromXIB.first as? UIView {
+        if let viewFromXIB = bundle.loadNibNamed("LabGerakParabola", owner: self, options: nil),
+           let parabolaView = viewFromXIB.first as? UIView {
             // Initializing the views
             // Adding Subviews
             addSubview(parabolaView)
             parabolaView.frame = self.bounds
             parabolaView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine )
+            totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal),
+                                                                   sudutTembak: sudutLemparan, gravitasi: gravitasiVektor,
+                                                                   ketinggian: ketinggianEngine )
             
             totalWaktuReal =  engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
         }
-        
         initViews()
     }
-    
     func initViews() {
         // Ngumpetin view sesuai dengan pilihan antara lab dan freestyle
         if nomorLab != nil {
@@ -122,14 +125,15 @@ class LabGerakParabolaView: UIView {
         } else {
             heightDisclaimer.constant = 0
         }
-        
         // TableView Delegate and DataSource
         variableTableView.dataSource = self
         variableTableView.delegate = self
         
         // Register Custom Cells
-        variableTableView.register(UINib(nibName: "LabVariableHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "VarHeader")
-        variableTableView.register(UINib(nibName: "VariabelCell", bundle: nil), forCellReuseIdentifier: "VariableSliderCell")
+        variableTableView.register(UINib(nibName: "LabVariableHeader", bundle: nil),
+                                   forHeaderFooterViewReuseIdentifier: "VarHeader")
+        variableTableView.register(UINib(nibName: "VariabelCell", bundle: nil),
+                                   forCellReuseIdentifier: "VariableSliderCell")
         variableTableView.register(UINib(nibName: "rowLKSHeaderCell", bundle: nil), forCellReuseIdentifier: "LKSHeader")
         variableTableView.register(UINib(nibName: "rowLKSBodyCell", bundle: nil), forCellReuseIdentifier: "LKSContent")
         
@@ -165,40 +169,57 @@ class LabGerakParabolaView: UIView {
         if let gameScene = skView.scene as? SpriteScene {
             gameScene.lineActive = false
             
-            let posisiX = engine.xProyektilTerhadapWaktuEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuEngine)
+            let posisiX = engine.xProyektilTerhadapWaktuEngine(kecepatanAwal: Float(kecepatanAwal),
+                                                               sudutTembak: sudutLemparan, waktu: waktuEngine)
             
-            posisiXMaxReal = Float(engine.xProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: totalWaktuReal))
-            posisiXRealTime = Float(engine.xProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuRealtime))
-            
-            
+            posisiXMaxReal = Float(engine.xProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal),
+                                                                      sudutTembak: sudutLemparan, waktu: totalWaktuReal))
+            posisiXRealTime = Float(engine.xProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal),
+                                                                       sudutTembak: sudutLemparan, waktu: waktuRealtime))
             if waktuRealtime < totalWaktuReal {
-                kecepatanXReal = Float(engine.kecepatanXAwalReal(sudutTembak: sudutLemparan, kecepatanAwal: Float(kecepatanAwal)))
-                kecepatanYReal = Float(engine.kecepatanY(sudutTembak: sudutLemparan, kecepatanAwal: Float(kecepatanAwal), waktu: waktuRealtime, gravitasi: gravitasiVektor))
+                kecepatanXReal = Float(engine.kecepatanXAwalReal(sudutTembak: sudutLemparan,
+                                                                 kecepatanAwal: Float(kecepatanAwal)))
+                kecepatanYReal = Float(engine.kecepatanY(sudutTembak: sudutLemparan,
+                                                         kecepatanAwal: Float(kecepatanAwal), waktu: waktuRealtime,
+                                                         gravitasi: gravitasiVektor))
                 
                 let kecepatanXKuadrat = pow(kecepatanXReal, 2)
-                let kecepatanYKuadrat = pow(kecepatanYReal,2)
+                let kecepatanYKuadrat = pow(kecepatanYReal, 2)
                 kecTotal = pow(kecepatanXKuadrat + kecepatanYKuadrat, 0.5)
-                
             } else {
                 kecepatanXReal = 0
                 kecepatanYReal = 0
                 kecTotal = 0
             }
             
+            let posisiY = engine.yProyektilTerhadapWaktuEngine(kecepatanAwal: Float(kecepatanAwal),
+                                                               sudutTembak: sudutLemparan, waktu: waktuEngine,
+                                                               gravitasi: gravitasiVektor)
             
-            let posisiY = engine.yProyektilTerhadapWaktuEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuEngine, gravitasi: gravitasiVektor)
-            
-            posisiYRealTime = Float(engine.yProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, waktu: waktuRealtime, gravitasi: gravitasiVektor))
+            posisiYRealTime = Float(engine.yProyektilTerhadapWaktuReal(kecepatanAwal: Float(kecepatanAwal),
+                                                                       sudutTembak: sudutLemparan, waktu: waktuRealtime,
+                                                                       gravitasi: gravitasiVektor))
 
             gameScene.currentProjectile?.physicsBody?.velocity = .zero
             gameScene.currentProjectile?.physicsBody?.affectedByGravity = false
-            gameScene.currentProjectile?.position = CGPoint(x: posisiX + gameScene.player.position.x, y: posisiY + gameScene.player.position.y)
+            gameScene.currentProjectile?.position = CGPoint(x: posisiX + gameScene.player.position.x,
+                                                            y: posisiY + gameScene.player.position.y)
             
             guard let cellWaktu = variableTableView.cellForRow(at: IndexPath(row: 0, section: 1)),
                   let cellJarak = variableTableView.cellForRow(at: IndexPath(row: 1, section: 1)),
                   let cellTinggi = variableTableView.cellForRow(at: IndexPath(row: 2, section: 1)),
                   let cellKecepatan = variableTableView.cellForRow(at: IndexPath(row: 3, section: 1))
             else { return }
+            
+            if posisiXRealTime < posisiXMaxReal {
+                cellJarak.detailTextLabel?.text = "\(round(posisiXRealTime * 100) / 100) m"
+                cellTinggi.detailTextLabel?.text = "\(round(posisiYRealTime * 100) / 100) m"
+                cellKecepatan.detailTextLabel?.text = "\(round(kecTotal * 100) / 100)"
+                cellWaktu.detailTextLabel?.text = "\(round(waktuRealtime * 100) / 100) s"
+            } else {
+                cellJarak.detailTextLabel?.text = "\(round(posisiXMaxReal * 100) / 100) m"
+                cellKecepatan.detailTextLabel?.text = "0 m/s"
+                cellWaktu.detailTextLabel?.text = "\(round(totalWaktuReal * 100) / 100) s"
 
                 if posisiXRealTime < posisiXMaxReal {
                     cellJarak.detailTextLabel?.text = "\(round(posisiXRealTime * 100) / 100) m"
@@ -218,8 +239,7 @@ class LabGerakParabolaView: UIView {
 //                    }
                 }
             }
-        
-        
+        }
     }
     
     @IBAction func btnPressed(_ sender: UIButton) {
@@ -231,10 +251,14 @@ class LabGerakParabolaView: UIView {
             if nomorLab == nil {
                 // Reset seluruhnya yang ada di sebelah kiri
                 chosenPlanet = .earth
-                guard let cellAngle = variableTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? VariableSliderCell,
-                      let cellMass = variableTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? VariableSliderCell,
-                      let cellVelocity = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? VariableSliderCell,
-                      let cellHeight = variableTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? VariableSliderCell
+                guard let cellAngle = variableTableView.cellForRow(at: IndexPath(row: 0, section: 0))
+                        as? VariableSliderCell,
+                      let cellMass = variableTableView.cellForRow(at: IndexPath(row: 1, section: 0))
+                        as? VariableSliderCell,
+                      let cellVelocity = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0))
+                        as? VariableSliderCell,
+                      let cellHeight = variableTableView.cellForRow(at: IndexPath(row: 3, section: 0))
+                        as? VariableSliderCell
                 else { return }
                 
                 // Set the slider value
@@ -248,10 +272,10 @@ class LabGerakParabolaView: UIView {
                 cellMass.lblVarAmount.text = "\(cellMass.varSlider.value.rounded()) \(cellMass.variableSetting?.getUnit() ?? "")"
                 cellVelocity.lblVarAmount.text = "\(cellVelocity.varSlider.value.rounded()) \(cellVelocity.variableSetting?.getUnit() ?? "")"
                 cellHeight.lblVarAmount.text = "\(cellHeight.varSlider.value.rounded()) \(cellHeight.variableSetting?.getUnit() ?? "")"
-                
             } else {
                 // Reset variabel di sebelah kiri (kecuali lks) + clear all projectiles
-                guard let editableVar = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? VariableSliderCell else { return }
+                guard let editableVar = variableTableView.cellForRow(at: IndexPath(row: 2, section: 0))
+                        as? VariableSliderCell else { return }
                 editableVar.varSlider.setValue((editableVar.variableSetting?.getDefaultValue())!, animated: true)
                 editableVar.lblVarAmount.text = "\(editableVar.varSlider.value.rounded()) \(editableVar.variableSetting?.getUnit() ?? "")"
             }
@@ -307,7 +331,6 @@ enum SliderVariable: String {
             return UIImage(systemName: "arrow.up.and.down.circle")
         }
     }
-    
     func getDefaultValue() -> Float {
         switch self {
         case .sudutLemparan:
@@ -320,7 +343,6 @@ enum SliderVariable: String {
             return 0
         }
     }
-    
     func getAcronym() -> String {
         switch self {
         case .sudutLemparan:
@@ -333,7 +355,6 @@ enum SliderVariable: String {
             return "h₀"
         }
     }
-    
     func getUnit() -> String {
         switch self {
         case .sudutLemparan:
@@ -346,7 +367,6 @@ enum SliderVariable: String {
             return "m"
         }
     }
-    
     func getMinSlider() -> Float {
         switch self {
         case .sudutLemparan:
@@ -359,7 +379,6 @@ enum SliderVariable: String {
             return 0
         }
     }
-    
     func getMaxSlider() -> Float {
         switch self {
         case .sudutLemparan:
@@ -372,7 +391,6 @@ enum SliderVariable: String {
             return 10
         }
     }
-    
     func getLembarKerjaValues() -> [Int] {
         switch self {
         case .sudutLemparan:

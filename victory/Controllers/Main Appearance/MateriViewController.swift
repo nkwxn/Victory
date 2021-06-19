@@ -1,3 +1,5 @@
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable cyclomatic_complexity
 //
 //  MateriViewController.swift
 //  victory
@@ -8,42 +10,38 @@
 import Foundation
 import UIKit
 
-class MateriViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MateriViewController: UIViewController {
     
-    @IBOutlet weak var materiCollectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var materiTitleNavigationItem: UINavigationItem!
     
     var praktikum = Constants.arrayOfPraktikum
-    var filteredPraktikum: [Praktikum] = []
+    var praktikumTen: [Praktikum] = []
+    var praktikumEleven: [Praktikum] = []
+    var praktikumTwelve: [Praktikum] = []
+    var selectedMatpelPraktikum: [[Praktikum]] = []
     var showAll = true
-    
-    var emptyStateImage = UIImage(systemName: "car")
-    var emptyStateTitle = "Belum ada materi"
-    var emptyStateSubtitle = "Nantikan materinya"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(getNotified(_:)), name: NSNotification.Name("menuupdate"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getNotified(_:)),
+                                               name: NSNotification.Name("menuUpdate"), object: nil)
         
-        materiCollectionView.dataSource = self
-        materiCollectionView.delegate = self
-
-        let nib = UINib(nibName: "\(GeneralCollectionViewCell.self)", bundle: nil)
-        self.materiCollectionView.register(nib, forCellWithReuseIdentifier: "generalCollectionCell")
-        // Do any additional setup after loading the view.
         self.splitViewController?.presentsWithGesture = false
+        setupTableView()
     }
-    
     @objc func getNotified(_ object: Notification) {
-        filteredPraktikum = []
+        selectedMatpelPraktikum = []
+        praktikumTen = []
+        praktikumEleven = []
+        praktikumTwelve = []
         if let menu = object.userInfo?["indexpath"] as? Int {
-            print(menu)
             switch menu {
             case 0:
                 showAll = true
                 materiTitleNavigationItem.title = "Semua Praktikum"
-                materiCollectionView.reloadData()
+                tableView.reloadData()
             case 1:
                 filterMateri(mapel: .fisika)
             case 2:
@@ -53,64 +51,27 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
             case 4:
                 filterMateri(mapel: .matematika)
             default:
-                print("default")
+                return
             }
         }
     }
-    
     func filterMateri(mapel: Mapel) {
         showAll = false
         materiTitleNavigationItem.title = mapel.rawValue
-        for (index,materi) in praktikum.enumerated() {
-            //HASHMAP
-            if praktikum[index].mataPelajaran == mapel {
-                filteredPraktikum.append(materi)
+        for (index, materi) in praktikum.enumerated() where praktikum[index].mataPelajaran == mapel {
+            let grade = praktikum[index].kelas
+            switch grade {
+            case .k10:
+                praktikumTen.append(materi)
+            case .k11:
+                praktikumEleven.append(materi)
+            case .k12:
+                praktikumTwelve.append(materi)
             }
-            materiCollectionView.reloadData()
         }
+        selectedMatpelPraktikum = [praktikumTen, praktikumEleven, praktikumTwelve]
+        tableView.reloadData()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if showAll && filteredPraktikum.isEmpty {
-            return praktikum.count
-        } else if filteredPraktikum.isEmpty {
-            return 1
-        } else {
-            return filteredPraktikum.count
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalCollectionCell", for: indexPath) as! GeneralCollectionViewCell
-        
-        if showAll && filteredPraktikum.isEmpty {
-            cell.generalCollectionImageView.image = praktikum[indexPath.row].gambar
-            cell.generalCollectionTitleLabel.text = praktikum[indexPath.row].nama
-            cell.generalCollectionSubtitleLabel.text = praktikum[indexPath.row].subtitleMateri
-        } else if filteredPraktikum.isEmpty {
-            cell.generalCollectionImageView.image = emptyStateImage
-            cell.generalCollectionTitleLabel.text = emptyStateTitle
-            cell.generalCollectionSubtitleLabel.text = emptyStateSubtitle
-        } else {
-            cell.generalCollectionImageView.image = filteredPraktikum[indexPath.row].gambar
-            cell.generalCollectionTitleLabel.text = filteredPraktikum[indexPath.row].nama
-            cell.generalCollectionSubtitleLabel.text = filteredPraktikum[indexPath.row].subtitleMateri
-        }
-        
-        return cell
-    }
-    // MARK: - Navigation
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if !filteredPraktikum.isEmpty || showAll {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let destVC = storyBoard.instantiateViewController(withIdentifier: "MediaViewControllerScene") as! MediaViewController
-            destVC.selectedPraktikum = self.praktikum[indexPath.row]
-            
-            self.navigationController?.pushViewController(destVC, animated: true)
-        }
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.splitViewController?.hide(UISplitViewController.Column.primary)
@@ -118,8 +79,150 @@ class MateriViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.splitViewController?.show(UISplitViewController.Column.primary)
     }
+}
 
+extension MateriViewController: UITableViewDataSource, UITableViewDelegate {
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    func tableViewIdentifier() -> [String] {
+        var identifier = [String]()
+        if showAll {
+            identifier.append(MateriTableViewCell.identifier)
+        } else {
+            for gradePraktikum in selectedMatpelPraktikum where !gradePraktikum.isEmpty {
+                identifier.append(SubHeaderTableViewCell.identifier)
+                identifier.append(MateriTableViewCell.identifier)
+            }
+            if identifier.isEmpty {
+                identifier.append(EmptyStateTableViewCell.identifier)
+            }
+        }
+    return identifier
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(tableViewIdentifier().count)
+        return tableViewIdentifier().count
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let rowHeight = 236 // per cell
+        let lineSpace = 12
+        let bottomOffset = 40
+        var totalRow = 0.0
+        let numOfColumn = 3
+        
+        switch indexPath.row {
+        case 0:
+            if showAll {
+                totalRow = ceil(Double(praktikum.count) / Double(numOfColumn))
+                let totalLineSpace = (Int(totalRow) - 1) * lineSpace
+                let totalHeight  = rowHeight * Int(totalRow) + bottomOffset + totalLineSpace
+                return CGFloat(totalHeight)
+            }
+            return UITableView.automaticDimension
+        case 1, 3, 5: // collection cell
+            
+            switch indexPath.row {
+            case 1:
+                totalRow = ceil(Double(praktikumTen.count) / Double(numOfColumn))
+            case 3:
+                totalRow = ceil(Double(praktikumEleven.count) / Double(numOfColumn))
+            case 5:
+                totalRow = ceil(Double(praktikumTwelve.count) / Double(numOfColumn))
+            default:
+                print("no cell")
+            }
+            let totalLineSpace = (Int(totalRow) - 1) * lineSpace
+            let totalHeight  = rowHeight * Int(totalRow) + bottomOffset + totalLineSpace
+            return CGFloat(totalHeight)
+
+        default:
+            return UITableView.automaticDimension
+        }
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = tableViewIdentifier()[indexPath.row]
+        let currentCell = indexPath.row
+        
+        switch identifier {
+        case EmptyStateTableViewCell.identifier:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+                    as? EmptyStateTableViewCell else { return UITableViewCell() }
+            return cell
+            
+        case SubHeaderTableViewCell.identifier:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+                    as? SubHeaderTableViewCell else { return UITableViewCell() }
+            
+            switch indexPath.row {
+            case 0: // Kelas 10
+                cell.classLbl.text = Constants.classes[0].getKelas()
+            case 2: // Kelas 11
+                cell.classLbl.text = Constants.classes[1].getKelas()
+            case 4: // Kelas 12
+                cell.classLbl.text = Constants.classes[2].getKelas()
+            default:
+                print("no cell found")
+            }
+            return cell
+        case MateriTableViewCell.identifier:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+                    as? MateriTableViewCell else { return UITableViewCell() }
+            
+            switch indexPath.row {
+            case 0:
+                if showAll {
+                    cell.selectedGradePraktikum = self.praktikum
+                }
+            case 1:
+                cell.selectedGradePraktikum = self.praktikumTen
+            case 3:
+                cell.selectedGradePraktikum = self.praktikumEleven
+            case 5:
+                cell.selectedGradePraktikum = self.praktikumTwelve
+            default:
+                print("no cell found")
+            }
+            
+            cell.didSelectItemAction = { [weak self] indexPath in
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let destVC = storyBoard.instantiateViewController(withIdentifier: "MediaViewControllerScene") as?
+                        MediaViewController else { return }
+                if self?.showAll == true {
+                    if indexPath.row == 0 {
+                        destVC.selectedPraktikum = self?.praktikum[indexPath.row]
+                    } else {
+                        self?.present(CommonFunction.shared.showUnderConstructionAlert(),
+                                     animated: true, completion: nil)
+                    }
+                } else {
+                    switch currentCell {
+                    case 1:
+                        if indexPath.row == 0 {
+                            destVC.selectedPraktikum = self?.praktikumTen[indexPath.row]
+                        } else {
+                            self?.present(CommonFunction.shared.showUnderConstructionAlert(),
+                                         animated: true, completion: nil)
+                        }
+//                    case 3:
+//                        destVC.selectedPraktikum = self?.praktikumEleven[indexPath.row]
+//                    case 5:
+//                        destVC.selectedPraktikum = self?.praktikumTwelve[indexPath.row]
+                    default:
+                        self?.present(CommonFunction.shared.showUnderConstructionAlert(),
+                                     animated: true, completion: nil)
+                        print("no cell found")
+                    }
+                }
+                self?.navigationController?.pushViewController(destVC, animated: true)
+            }
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
 }
