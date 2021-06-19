@@ -145,14 +145,16 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         }
     }
     func startKuisView() {
-        if isQuizOnboardingDone {
+        if !isQuizOnboardingDone {
             showOnBoardingKuisView()
             isQuizOnboardingDone = true
+            quizView.quizBrain = self.quizBrain!
+            quizView.isHidden = true
         } else {
             onBoardingKuisView.isHidden = true
+            quizView.quizBrain = self.quizBrain!
+            quizView.isHidden = false
         }
-        quizView.quizBrain = self.quizBrain!
-        quizView.isHidden = false
     }
     func showSkorView(quizBrain: QuizBrain) {
         stepDoneList!.append(.kuis)
@@ -273,17 +275,17 @@ extension PraktikumBerpanduanViewController: LabGerakParabolaDelegate {
                 stepDoneList?.removeAll(where: {
                     $0 == .labOne
                 })
-                changeStep(to: .labOne)
+                timelineView.onTimelineBtnPressed(timelineView.buttonList[1])
             case 1:
                 stepDoneList?.removeAll(where: {
                     $0 == .labTwo
                 })
-                changeStep(to: .labTwo)
+                timelineView.onTimelineBtnPressed(timelineView.buttonList[2])
             case 2:
                 stepDoneList?.removeAll(where: {
                     $0 == .labThree
                 })
-                changeStep(to: .labThree)
+                timelineView.onTimelineBtnPressed(timelineView.buttonList[3])
             default:
                 print("LKS unknown")
             }
