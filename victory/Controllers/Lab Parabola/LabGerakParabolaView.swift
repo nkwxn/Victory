@@ -74,11 +74,12 @@ class LabGerakParabolaView: UIView {
         var kecTotal : Float = 0
         var kecepatanXReal : Float = 0
         var kecepatanYReal : Float = 0
-        var ketinggianReal : Float = 0
+//        var ketinggianReal : Float = 0
         var ketinggianEngine : Float = 0
     
         var perpindahanXDalamPoin : Float = 0
         var timeMasterClicked = false
+        var sliderPressed = false
     
         var initialX : Float = 0
         var initialY : Float = 0
@@ -108,7 +109,7 @@ class LabGerakParabolaView: UIView {
             parabolaView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine )
             
-            totalWaktuReal =  engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
+            totalWaktuReal =  engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
         }
         
         initViews()
@@ -153,9 +154,10 @@ class LabGerakParabolaView: UIView {
     @IBAction func sliderPosisiValueChanged(_ sender: UISlider) {
         print("ini slider value \(sender.value)")
         timeMasterClicked = true
+        sliderPressed = false
         
         totalWaktuEngine = engine.waktuUntukJarakTerjauhEngine(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine)
-        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
+        totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
         
         waktuEngine = totalWaktuEngine * sender.value
         waktuRealtime = totalWaktuReal * sender.value
@@ -200,7 +202,7 @@ class LabGerakParabolaView: UIView {
 
                 if posisiXRealTime < posisiXMaxReal {
                     cellJarak.detailTextLabel?.text = "\(round(posisiXRealTime * 100) / 100) m"
-                    cellTinggi.detailTextLabel?.text = "\(round(posisiYRealTime * 100) / 100) m"
+                    cellTinggi.detailTextLabel?.text = "\(round((posisiYRealTime + Float(ketinggianAwal)) * 100) / 100) m"
                     cellKecepatan.detailTextLabel?.text = "\(round(kecTotal * 100) / 100)"
                     cellWaktu.detailTextLabel?.text = "\(round(waktuRealtime * 100) / 100) s"
                 } else {
@@ -208,12 +210,12 @@ class LabGerakParabolaView: UIView {
 
                     cellKecepatan.detailTextLabel?.text = "0 m/s"
                     cellWaktu.detailTextLabel?.text = "\(round(totalWaktuReal * 100) / 100) s"
-
-                    if ketinggianReal == 0 {
-                        cellTinggi.detailTextLabel?.text = "\(ketinggianReal)"
-                    } else {
-                        cellTinggi.detailTextLabel?.text = "\(-ketinggianReal)"
-                    }
+                    cellTinggi.detailTextLabel?.text = "\(0)"
+//                    if ketinggianReal == 0 {
+//                        cellTinggi.detailTextLabel?.text = "\(ketinggianReal)"
+//                    } else {
+//                        cellTinggi.detailTextLabel?.text = "\(-ketinggianReal)"
+//                    }
                 }
             }
         
@@ -259,6 +261,8 @@ class LabGerakParabolaView: UIView {
             self.kecepatanAwal = Double(SliderVariable.kecAwal.getDefaultValue())
             self.ketinggianAwal = Double(SliderVariable.ketAwal.getDefaultValue())
             self.ketinggianEngine = Float(ketinggianAwal * 15)
+            self.gravitasiVektor = -10
+            totalWaktuReal = engine.waktuUntukJarakTerjauhReal(kecepatanAwal: Float(kecepatanAwal), sudutTembak: sudutLemparan, gravitasi: gravitasiVektor, ketinggian: Float(ketinggianAwal))
             
             // Reset the sprite scene dots
             if let scene = skView.scene as? SpriteScene {
@@ -268,11 +272,14 @@ class LabGerakParabolaView: UIView {
                 scene.sudutTembakScene = sudutLemparan
                 scene.ketinggianReal = Float(ketinggianAwal)
                 scene.ketinggianEngine = Float(ketinggianAwal * 50)
+                scene.gravitasiVektor = -10
+                scene.totalWaktuReal = totalWaktuReal
             }
         case btnLuncurkan:
             print("Should launch projectile (Manipulate SKScene Actions)")
             
             timeMasterClicked = false
+            sliderPressed = false
             if let parabolaScene = skView.scene as? SpriteScene {
                 parabolaScene.shootStraight(kecAwal: Float(kecepatanAwal))
             }

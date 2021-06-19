@@ -58,6 +58,7 @@ class SpriteScene: SKScene {
     var totalWaktuReal : Float = 0
     var waktuRealTime : Float = 0
     var jarakXMaxEngine : Float = 0
+    var jarakXEngine : Float = 0
     var jarakXMaxReal : Float = 0
     var jarakYMaxReal : Float = 0
     var jarakXRealtime : Float = 0
@@ -128,9 +129,11 @@ class SpriteScene: SKScene {
         }
         
         guard let posisiXProjectile = currentProjectile?.position.x else {return}
+        totalWaktuEngine = engineSK.waktuUntukJarakTerjauhEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor, ketinggian: ketinggianEngine )
+        totalWaktuReal = engineSK.waktuUntukJarakTerjauhReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, gravitasi: gravitasiVektor, ketinggian: ketinggianReal)
         
-        let perpindahanX = Float(posisiXProjectile - initialX)
-        perpindahanXDalamPoin = perpindahanX / poinKeMeterDibagi
+        jarakXEngine = Float(posisiXProjectile - initialX)
+        perpindahanXDalamPoin = jarakXEngine / poinKeMeterDibagi
         jarakXMaxEngine = Float(engineSK.xProyektilTerhadapWaktuEngine(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: totalWaktuEngine))
         jarakXMaxReal = Float(engineSK.xProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene,waktu: totalWaktuReal))
         
@@ -138,7 +141,7 @@ class SpriteScene: SKScene {
 //        //otwapos
 //        jarakYMaxReal = Float(engineSK.yProyektilTerhadapWaktuReal(kecepatanAwal: kecAwalScene, sudutTembak: sudutTembakScene, waktu: 0.5 * totalWaktuReal, gravitasi: gravitasiVektor))
         
-        var rasioXEngine = perpindahanX/jarakXMaxEngine
+        var rasioXEngine = jarakXEngine/jarakXMaxEngine
         
         if jarakXRealtime <= jarakXMaxReal {
             jarakXRealtime = rasioXEngine * jarakXMaxReal
@@ -231,19 +234,19 @@ class SpriteScene: SKScene {
         
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for node in nodeArrayDeletable {
-            node.removeFromParent()
-        }
-        for projectileSekarang in projectileArray {
-            projectileSekarang.position = CGPoint(x: initialX, y: initialY)
-            projectileSekarang.physicsBody?.velocity = .zero
-            
-        }
-        index = 0
-        
-        print("aw kepencet -----------------------------------------")
-    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for node in nodeArrayDeletable {
+//            node.removeFromParent()
+//        }
+//        for projectileSekarang in projectileArray {
+//            projectileSekarang.position = CGPoint(x: initialX, y: initialY)
+//            projectileSekarang.physicsBody?.velocity = .zero
+//
+//        }
+//        index = 0
+//
+//        print("aw kepencet -----------------------------------------")
+//    }
     
     func resetLab() {
         for node in nodeArrayDeletable {
@@ -288,14 +291,25 @@ class SpriteScene: SKScene {
         addChild(currentProjectile ?? projectile)
         
         nodeArrayDeletable.append(currentProjectile ?? projectile)
+        
+        if let emitter = SKEmitterNode(fileNamed: "MyParticle") {
+            currentProjectile?.addChild(emitter)
+//            emitter.physicsBody?.isDynamic = true
+            emitter.targetNode = scene
+            nodeArrayDeletable.append(emitter)
+        }
+        
         index += 1
         
     }
+
+    
     
     func projectileDidCollideWithTembox(projectile: SKSpriteNode, tembox: SKSpriteNode) {
         print("Hit")
         projectile.physicsBody?.velocity = .zero
         
+        projectile.removeAllChildren()
 //        udaraDitembakCie += 1
         //        if monstersDestroyed > 30 {
         //            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)

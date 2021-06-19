@@ -32,6 +32,7 @@
 		983396402678362B00BD24A5 /* ViewControllerKane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9833963F2678362B00BD24A5 /* ViewControllerKane.swift */; };
 		983396422678370800BD24A5 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983396412678370800BD24A5 /* SpriteScene.swift */; };
 		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
+		98B96B6D267DB121003837C3 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 98B96B6C267DB121003837C3 /* MyParticle.sks */; };
 		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D515DCC92678BCA600AAD6D2 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */; };
 		D515DCCD2678BCA600AAD6D2 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */; };
@@ -94,6 +95,7 @@
 		9833963F2678362B00BD24A5 /* ViewControllerKane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerKane.swift; sourceTree = "<group>"; };
 		983396412678370800BD24A5 /* SpriteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		984B52F6266E52A8002408C4 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		98B96B6C267DB121003837C3 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		98D15B5426703EC00059EFF0 /* VictoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryEngine.swift; sourceTree = "<group>"; };
 		D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		D58328AE2670E0D1007753E9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				98B96B6C267DB121003837C3 /* MyParticle.sks */,
 				D58328AF2670E11F007753E9 /* LabGerakParabolaView+Extensions.swift */,
 			);
 			path = Extensions;
@@ -454,6 +457,7 @@
 				D5D97D022671DB0600C28CDA /* rowLKSBodyCell.xib in Resources */,
 				D5EA421C26736F830085D6A0 /* GravityPopoverViewController.xib in Resources */,
 				D540E8FD266F6E9600FACF72 /* WebKitView in Resources */,
+				98B96B6D267DB121003837C3 /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

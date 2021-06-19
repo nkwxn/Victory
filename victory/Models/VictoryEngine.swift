@@ -18,24 +18,24 @@ class VictoryEngine {
     var gravitasiReal : Float = 9.8
     var poinKeMeter : Float = 50
     
-    var dx: CGFloat {
-        get{
-            return CGFloat(kecAwal * Float(__cospi(sudutAwal/180)))
-        }
-    }
-    
-    var dy: CGFloat {
-        get{
-            return CGFloat(kecAwal * Float(__sinpi(sudutAwal/180)))
-        }
-    }
-    
-    var ketinggianMaxReal : Float {
-        get {
-            return (pow(kecAwal, 2) * pow(Float(__sinpi(sudutAwal/180)), 2))/(2*gravitasiReal)
-        }
-    }
-    
+//    var dx: CGFloat {
+//        get{
+//            return CGFloat(kecAwal * Float(__cospi(sudutAwal/180)))
+//        }
+//    }
+//
+//    var dy: CGFloat {
+//        get{
+//            return CGFloat(kecAwal * Float(__sinpi(sudutAwal/180)))
+//        }
+//    }
+//
+//    var ketinggianMaxReal : Float {
+//        get {
+//            return (pow(kecAwal, 2) * pow(Float(__sinpi(sudutAwal/180)), 2))/(2*gravitasiReal)
+//        }
+//    }
+//
     /*
     var ketinggianMaxEngine : Float {
         get {
@@ -48,24 +48,24 @@ class VictoryEngine {
         }
     }
  */
-    
-    var jarakMaxReal : Float {
-        get {
-            return (pow(kecAwal,2)/gravitasiReal) * Float(__sinpi((2*sudutAwal)/180))
-        }
-    }
-    
+//
+//    var jarakMaxReal : Float {
+//        get {
+//            return (pow(kecAwal,2)/gravitasiReal) * Float(__sinpi((2*sudutAwal)/180))
+//        }
+//    }
+//
 //    var waktuKetinggianMaxEngine: Float {
 //        get {
 //            return kecAwal * Float(__sinpi(sudutAwal/180)) / gravitasiEngine
 //        }
 //    }
     
-    var waktuKetinggianMaxReal: Float {
-        get {
-            return kecAwal * Float(__sinpi(sudutAwal/180)) / gravitasiReal
-        }
-    }
+//    var waktuKetinggianMaxReal: Float {
+//        get {
+//            return kecAwal * Float(__sinpi(sudutAwal/180)) / gravitasiReal
+//        }
+//    }
     
 //    var waktuJarakMaxEngine: Float {
 //        get {
@@ -73,11 +73,11 @@ class VictoryEngine {
 //        }
 //    }
     
-    var waktuJarakMaxReal: Float {
-        get {
-            return 2 * waktuKetinggianMaxReal
-        }
-    }
+//    var waktuJarakMaxReal: Float {
+//        get {
+//            return 2 * waktuKetinggianMaxReal
+//        }
+//    }
     
     
     //callable function
@@ -209,7 +209,7 @@ class VictoryEngine {
             let topFormula2 = -b - discrimimantAbsSqrt
             let totalX2 = topFormula2 / bottomFormula
             
-            print("X = \(totalX) & \(totalX2)")
+//            print("X = \(totalX) & \(totalX2)")
             if totalX >= 0 {
                 return totalX
             } else {
