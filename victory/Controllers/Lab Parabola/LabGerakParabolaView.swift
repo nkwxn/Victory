@@ -258,10 +258,12 @@ class LabGerakParabolaView: UIView {
             self.massaProyektil = Double(SliderVariable.massaProyektil.getDefaultValue())
             self.kecepatanAwal = Double(SliderVariable.kecAwal.getDefaultValue())
             self.ketinggianAwal = Double(SliderVariable.ketAwal.getDefaultValue())
+            self.ketinggianEngine = Float(ketinggianAwal * 15)
             
             // Reset the sprite scene dots
             if let scene = skView.scene as? SpriteScene {
                 scene.resetLab()
+                scene.initialY = scene.size.height * 0.2 + CGFloat(ketinggianEngine)
                 scene.kecAwalScene = Float(kecepatanAwal)
                 scene.sudutTembakScene = sudutLemparan
                 scene.ketinggianReal = Float(ketinggianAwal)
