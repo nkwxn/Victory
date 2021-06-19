@@ -299,7 +299,9 @@ extension PraktikumBerpanduanViewController: LabGerakParabolaDelegate {
         
         if allLabsDone {
             stepUnlockList?.append(.kuis)
-//            let alert = UIAlertController(title: "Anda telah menyelesaikan seluruh LKS praktikum.", message: "Langkah selanjutnya dari lab ini adalah Quiz. Silahkan tekan OK untuk melanjutkan", preferredStyle: .alert)
+//            let alert = UIAlertController(title: "Anda telah menyelesaikan seluruh LKS praktikum.",
+//                                          message: "Langkah selanjutnya dari lab ini adalah Quiz. Silahkan tekan OK untuk melanjutkan",
+//                                          preferredStyle: .alert)
 //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert in
 //                <#code#>
 //            }))

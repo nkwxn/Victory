@@ -13,7 +13,7 @@ class Constants {
     static let classes: [Kelas] = [.k10, .k11, .k12]
     static let arrayOfTipePraktikum = [
         TipePraktikum(namaTipe: "Dengan Panduan (LKS)", gambarTipe: #imageLiteral(resourceName: "praktikum_LKS")),
-        TipePraktikum(namaTipe: "Eksploraasi Mandiri", gambarTipe: #imageLiteral(resourceName: "praktikum_freestyle"))
+        TipePraktikum(namaTipe: "Eksplorasi Mandiri", gambarTipe: #imageLiteral(resourceName: "praktikum_freestyle"))
     ]
     static let arrayOfMediaPraktikum = [
         MediaPraktikum(namaMedia: "Praktikum", gambarMedia: #imageLiteral(resourceName: " media_praktikum")),
