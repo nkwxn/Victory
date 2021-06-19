@@ -30,8 +30,8 @@ class Constants {
         Praktikum(nama: "Hukum I Newton", gambar: #imageLiteral(resourceName: "materi_2"), kelas: .k11, mataPelajaran: .fisika,
                    subtitleMateri: "Hukum Newton", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
                    stepUnlockList: [.materi], stepDoneList: []),
-        Praktikum(nama: "Pengukuran", gambar: #imageLiteral(resourceName: "gravity"), kelas: .k12, mataPelajaran: .fisika,
-                   subtitleMateri: "Besaran dan Satuan", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
+        Praktikum(nama: "Bunyi", gambar: #imageLiteral(resourceName: "materi_4"), kelas: .k12, mataPelajaran: .fisika,
+                   subtitleMateri: "Gelombang Bunyi", pertanyaanQuiz: QuizBrain(), currentStep: .materi,
                    stepUnlockList: [.materi], stepDoneList: [])
     ]
     static let panduanLabs = [
