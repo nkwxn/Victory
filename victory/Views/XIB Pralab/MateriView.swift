@@ -8,6 +8,21 @@
 import UIKit
 import WebKit
 
+class MateriBelajarViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Initialize PanduanLabView
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        let materiView = MateriView(frame: frame)
+        self.view.addSubview(materiView)
+    }
+}
+
 class MateriView: UIView, WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var webView: WKWebView!
