@@ -39,7 +39,7 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         backgroundView.frame = targetView.bounds
         currentWindow?.addSubview(backgroundView)
         
-        alertView.frame = CGRect(x: 277, y: 227, width: 640, height: 367)
+        alertView.frame = CGRect(x: 277, y: 227, width: 640, height: 394)
         currentWindow?.addSubview(alertView)
         
         setupTitleLabel(with: title)
@@ -58,7 +58,7 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     }
     func setupTypeCollectionView() {
         let typeCollectionView: UICollectionView = UICollectionView(frame: (CGRect(x: 42, y: 91, width: 556,
-                                                                                   height: 236)), collectionViewLayout:
+                                                                                   height: 266)), collectionViewLayout:
                                                                                     UICollectionViewFlowLayout.init())
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = UICollectionView.ScrollDirection.vertical
@@ -68,7 +68,7 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         typeCollectionView.dataSource = self
         typeCollectionView.delegate = self
         
-        layout.itemSize = CGSize(width: 278, height: 236)
+        layout.itemSize = CGSize(width: 278, height: 266)
         layout.minimumInteritemSpacing = 0
         
         let nib = UINib(nibName: "\(GeneralCollectionViewCell.self)", bundle: nil)
@@ -91,7 +91,8 @@ class MyAlert: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
         cell.generalCollectionTitleLabel.textAlignment = .center
         cell.generalCollectionSubtitleLabel.text = ""
         cell.heightConstraintsSubtitleLabel.constant = 0
-        cell.heightConstraintsTitleLabel.constant = 24
+        cell.heightConstraintImageView.constant = 200
+        cell.heightConstraintsTitleLabel.constant = 16
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
