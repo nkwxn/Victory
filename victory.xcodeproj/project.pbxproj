@@ -41,9 +41,7 @@
 		30CFC0EB267BC5CA001AFFD3 /* MataPelajaranlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFC0EA267BC5CA001AFFD3 /* MataPelajaranlTableViewCell.swift */; };
 		983396402678362B00BD24A5 /* ViewControllerKane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9833963F2678362B00BD24A5 /* ViewControllerKane.swift */; };
 		983396422678370800BD24A5 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983396412678370800BD24A5 /* SpriteScene.swift */; };
-		984B52F7266E52A8002408C4 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984B52F6266E52A8002408C4 /* QuizBrain.swift */; };
 		98B96B6D267DB121003837C3 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 98B96B6C267DB121003837C3 /* MyParticle.sks */; };
-		98D15B5526703EC00059EFF0 /* VictoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D15B5426703EC00059EFF0 /* VictoryEngine.swift */; };
 		D515DCC92678BCA600AAD6D2 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC32678BCA600AAD6D2 /* CustomAlert.swift */; };
 		D515DCCD2678BCA600AAD6D2 /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515DCC72678BCA600AAD6D2 /* GeneralCollectionViewCell.swift */; };
 		D515DCD02678BD0500AAD6D2 /* GeneralCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D515DCCF2678BD0500AAD6D2 /* GeneralCollectionViewCell.xib */; };
@@ -678,7 +676,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = HMMWHN78KV;
 				INFOPLIST_FILE = "victory/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -698,7 +696,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = HMMWHN78KV;
 				INFOPLIST_FILE = "victory/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (

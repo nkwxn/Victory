@@ -67,6 +67,8 @@ class PraktikumBerpanduanViewController: UIViewController, PraktikumBerpanduanVi
         prak2.delegate = self
         prak3.delegate = self
         //
+        finishLabBtn.tintColor = UIColor.clear
+        //
         praktikum1View.addSubview(prak1)
         praktikum2View.addSubview(prak2)
         praktikum3View.addSubview(prak3)
