@@ -246,6 +246,7 @@ class LabGerakParabolaView: UIView {
         switch sender {
         case btnTampilkanMateri:
             print("Should show modal to materi")
+            delegate?.presentView(MateriBelajarViewController(), completion: nil)
         case btnResetVariabel:
             print("Should reset appearance / all variables on the side")
             if nomorLab == nil {
