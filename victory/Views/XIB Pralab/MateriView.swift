@@ -19,7 +19,38 @@ class MateriBelajarViewController: UIViewController {
         // Initialize PanduanLabView
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         let materiView = MateriView(frame: frame)
+        materiView.delegate = self
         self.view.addSubview(materiView)
+    }
+}
+
+extension MateriBelajarViewController: PraktikumBerpanduanViewControllerDelegate {
+    func moveToPanduanView() { }
+    
+    func closePanduanView() { }
+    
+    func changeStep(to step: Step) { }
+    
+    func startKuisView() {
+        
+    }
+    
+    func showSkorView(quizBrain: QuizBrain) {
+        
+    }
+    
+    func closeSkorView() {
+        
+    }
+    
+    func exitPraktikum() {
+        
+    }
+    
+    func showLabView() {
+        self.dismiss(animated: true) {
+            print("Material dismissed")
+        }
     }
 }
 
